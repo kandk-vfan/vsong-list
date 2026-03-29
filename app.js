@@ -1,356 +1,292 @@
-body{
-  background:#0f172a;
-  color:#e5e7eb;
-  font-family:sans-serif;
-  padding:24px;
-  margin:0;
-}
+let data = [];
 
-h1{
-  margin:0 0 20px 0;
-  font-size:32px;
-}
+const STORAGE_KEY = "tableTheme";
 
-.summary{
-  font-size:16px;
-  font-weight:700;
-  margin-bottom:28px;
-  color:#cbd5f5;
-  background:#111827;
-  padding:6px 12px;
-  border-radius:999px;
-  border:1px solid #334155;
-  display:inline-block;
-}
+function getTheme(){
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if(saved) return saved;
 
-.tabs{
-  display:flex;
-  gap:12px;
-  margin-bottom:20px;
-  flex-wrap:wrap;
-}
-
-.tab-button{
-  background:#1e293b;
-  color:#e5e7eb;
-  border:1px solid #334155;
-  border-radius:12px;
-  padding:14px 24px;
-  font-size:16px;
-  font-weight:700;
-  cursor:pointer;
-}
-
-.tab-button:hover{
-  background:#334155;
-}
-
-.tab-button.active{
-  background:#3b82f6;
-  border-color:#3b82f6;
-  color:#ffffff;
-}
-
-.section{
-  margin-top:8px;
-}
-
-.toolbar{
-  display:flex;
-  gap:16px;
-  align-items:center;
-  margin-bottom:20px;
-  flex-wrap:wrap;
-}
-
-input,select{
-  background:#1e293b;
-  color:#e5e7eb;
-  border:1px solid #334155;
-  border-radius:10px;
-  padding:10px 12px;
-  font-size:14px;
-}
-
-input{
-  min-width:320px;
-}
-
-.theme-switch{
-  margin-left:auto;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-
-.theme-label{
-  font-size:13px;
-  color:#94a3b8;
-}
-
-/* トグル */
-
-.toggle{
-  display:flex;
-  align-items:center;
-}
-
-.toggle input{
-  display:none;
-}
-
-.slider{
-  width:42px;
-  height:22px;
-  background:#334155;
-  border-radius:999px;
-  position:relative;
-  cursor:pointer;
-  transition:0.2s;
-}
-
-.slider::before{
-  content:"";
-  position:absolute;
-  width:18px;
-  height:18px;
-  background:#e5e7eb;
-  border-radius:50%;
-  top:2px;
-  left:2px;
-  transition:0.2s;
-}
-
-.toggle input:checked + .slider{
-  background:#3b82f6;
-}
-
-.toggle input:checked + .slider::before{
-  transform:translateX(20px);
-}
-
-table{
-  width:100%;
-  border-collapse:collapse;
-  background:#111827;
-}
-
-thead th{
-  position:sticky;
-  top:0;
-  background:#111827;
-  z-index:2;
-}
-
-td,th{
-  border:1px solid #334155;
-  padding:12px;
-}
-
-tbody tr:nth-child(even){
-  background:#0b1220;
-}
-
-tbody tr:hover{
-  background:#1e293b;
-}
-
-table.light{
-  background:#f8fafc;
-  color:#0f172a;
-}
-
-table.light thead th{
-  background:#e2e8f0;
-}
-
-table.light td, table.light th{
-  border:1px solid #cbd5e1;
-}
-
-table.light tbody tr:nth-child(even){
-  background:#f1f5f9;
-}
-
-table.light tbody tr:hover{
-  background:#e2e8f0;
-}
-
-.hidden{
-  display:none !important;
-}
-
-a{
-  color:#93c5fd;
-  text-decoration:none;
-}
-
-a:hover{
-  text-decoration:underline;
-}
-
-button{
-  background:#1e293b;
-  color:#e5e7eb;
-  border:1px solid #334155;
-  border-radius:8px;
-  padding:8px 12px;
-  cursor:pointer;
-}
-
-button:hover{
-  background:#334155;
-}
-
-.card{
-  border:1px solid #334155;
-  border-radius:14px;
-  padding:20px;
-  margin-bottom:24px;
-  background:#111827;
-}
-
-.song-card.highlight{
-  border-color:#3b82f6;
-  background:#1e293b;
-}
-
-.stream-title-row{
-  font-size:20px;
-  font-weight:700;
-  margin-bottom:10px;
-  line-height:1.4;
-}
-
-.stream-date{
-  font-size:14px;
-  color:#94a3b8;
-  margin-bottom:14px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(5,minmax(0,1fr));
-  gap:12px;
-}
-
-.song-card{
-  border:1px solid #334155;
-  border-radius:12px;
-  padding:14px;
-  background:#0b1220;
-  min-height:130px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
-.song-card-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.song-card-title{
-  font-size:16px;
-  line-height:1.5;
-  word-break:break-all;
-  font-weight:600;
-}
-
-.song-card-artist{
-  font-size:14px;
-  color:#94a3b8;
-  line-height:1.5;
-  word-break:break-all;
-}
-
-.num{
-  font-size:14px;
-  font-weight:700;
-  color:#94a3b8;
-}
-
-.artist-header{
-  background:#020617;
-  font-weight:700;
-  font-size:16px;
-}
-
-.artist-song-row td{
-  padding-left:20px;
-}
-
-#modal.hidden{
-  display:none !important;
-}
-
-#modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.82);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:24px;
-  z-index:9999;
-}
-
-.modal-content{
-  width:min(1400px,96vw);
-}
-
-iframe{
-  width:100%;
-  height:min(78vh,900px);
-  border:0;
-  border-radius:12px;
-}
-
-@media (max-width: 1200px){
-  .grid{
-    grid-template-columns:repeat(4,minmax(0,1fr));
-  }
-}
-
-@media (max-width: 900px){
-  .grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
+  if(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches){
+    return "dark";
   }
 
-  input{
-    min-width:220px;
-    width:100%;
+  return "light";
+}
+
+function applyTheme(){
+  const theme = getTheme();
+  const isLight = theme === "light";
+
+  document.getElementById("songsTable").classList.toggle("light", isLight);
+  document.getElementById("artistsTable").classList.toggle("light", isLight);
+  document.body.classList.toggle("streams-light", isLight);
+}
+
+function toggleTheme(){
+  const next = getTheme() === "dark" ? "light" : "dark";
+  localStorage.setItem(STORAGE_KEY, next);
+  applyTheme();
+  updateButtons();
+}
+
+function updateButtons(){
+  const isLight = getTheme() === "light";
+  document.getElementById("themeToggleSongs").checked = isLight;
+  document.getElementById("themeToggleStreams").checked = isLight;
+  document.getElementById("themeToggleArtists").checked = isLight;
+}
+
+fetch("data.json")
+  .then(r => r.json())
+  .then(j => {
+    data = j;
+    renderAll();
+    applyTheme();
+    updateButtons();
+  });
+
+function key(d){
+  return d.title + "||" + d.artist;
+}
+
+function renderAll(){
+  renderSummary();
+  renderSongs();
+  renderStreams();
+  renderArtists();
+}
+
+function renderSummary(){
+  const songSet = new Set();
+  const artistSet = new Set();
+
+  data.forEach(d=>{
+    songSet.add(key(d));
+    artistSet.add(d.artist);
+  });
+
+  const text = `曲数：${songSet.size} / アーティスト数：${artistSet.size}`;
+
+  document.getElementById("songsSummary").innerText = text;
+  document.getElementById("streamsSummary").innerText = text;
+  document.getElementById("artistsSummary").innerText = text;
+}
+
+function renderSongs(){
+  const map = {};
+
+  data.forEach(d=>{
+    const k = key(d);
+    if(!map[k]){
+      map[k] = {title:d.title, artist:d.artist, count:0, latest:d};
+    }
+    map[k].count++;
+    if(new Date(d.date) > new Date(map[k].latest.date)){
+      map[k].latest = d;
+    }
+  });
+
+  let arr = Object.values(map);
+
+  const keyword = document.getElementById("searchSongs").value.toLowerCase();
+  if(keyword){
+    arr = arr.filter(s =>
+      s.title.toLowerCase().includes(keyword) ||
+      s.artist.toLowerCase().includes(keyword)
+    );
   }
 
-  .toolbar{
-    align-items:stretch;
+  const type = document.getElementById("sortSongsType").value;
+  const order = document.getElementById("sortSongsOrder").value;
+
+  arr.sort((a,b)=>{
+    let res = 0;
+    if(type === "artist") res = a.artist.localeCompare(b.artist);
+    else if(type === "count") res = a.count - b.count;
+    else res = a.title.localeCompare(b.title);
+    return order === "desc" ? -res : res;
+  });
+
+  const tbody = document.getElementById("songsBody");
+  tbody.innerHTML = "";
+
+  arr.forEach(s=>{
+    tbody.innerHTML += `
+<tr>
+<td>${s.title}</td>
+<td>${s.artist}</td>
+<td>${s.count}</td>
+<td><button onclick="play('${s.latest.videoId}','${s.latest.time}')">▶</button></td>
+</tr>`;
+  });
+}
+
+function renderStreams(){
+  const map = {};
+
+  data.forEach(d=>{
+    if(!map[d.videoId]){
+      map[d.videoId] = {
+        title: d.videoTitle,
+        date: d.date,
+        songs: []
+      };
+    }
+    map[d.videoId].songs.push(d);
+  });
+
+  let arr = Object.entries(map);
+
+  const order = document.getElementById("sortStreamsOrder").value;
+
+  arr.sort((a,b)=>{
+    const aDate = Math.max(...a[1].songs.map(s => new Date(s.date).getTime()));
+    const bDate = Math.max(...b[1].songs.map(s => new Date(s.date).getTime()));
+    return order === "desc" ? bDate - aDate : aDate - bDate;
+  });
+
+  const keyword = document.getElementById("searchStreams").value.toLowerCase();
+  const container = document.getElementById("streamsContainer");
+  container.innerHTML = "";
+
+  arr.forEach(([vid, v])=>{
+    const match = v.songs.some(s =>
+      !keyword ||
+      s.title.toLowerCase().includes(keyword) ||
+      s.artist.toLowerCase().includes(keyword)
+    );
+    if(!match) return;
+
+    const unique = [];
+    const seen = new Set();
+
+    v.songs.forEach(s=>{
+      const k = `${s.time}||${s.title}||${s.artist}`;
+      if(!seen.has(k)){
+        seen.add(k);
+        unique.push(s);
+      }
+    });
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+<div class="stream-title-row">
+<a href="https://youtube.com/watch?v=${vid}" target="_blank">${v.title}</a>
+</div>
+
+<div class="stream-date">
+${formatDate(v.date)}
+</div>
+
+<div class="grid">
+${unique.map((s,i)=>`
+<div class="song-card ${keyword && (s.title.toLowerCase().includes(keyword) || s.artist.toLowerCase().includes(keyword)) ? "highlight" : ""}">
+<div class="song-card-head">
+<span class="num">${String(i+1).padStart(2,"0")}</span>
+<button onclick="play('${vid}','${s.time}')">▶</button>
+</div>
+<div class="song-card-title">${s.title}</div>
+<div class="song-card-artist">${s.artist}</div>
+</div>
+`).join("")}
+</div>
+`;
+
+    container.appendChild(card);
+  });
+}
+
+function renderArtists(){
+  const map = {};
+
+  data.forEach(d=>{
+    if(!map[d.artist]) map[d.artist] = new Set();
+    map[d.artist].add(d.title);
+  });
+
+  let artists = Object.keys(map);
+
+  const keyword = document.getElementById("searchArtists").value.toLowerCase();
+
+  if(keyword){
+    artists = artists.filter(a =>
+      a.toLowerCase().includes(keyword) ||
+      Array.from(map[a]).some(t => t.toLowerCase().includes(keyword))
+    );
   }
+
+  const order = document.getElementById("sortArtistsOrder").value;
+
+  artists.sort((a,b)=>{
+    let res = a.localeCompare(b);
+    return order === "desc" ? -res : res;
+  });
+
+  const tbody = document.getElementById("artistsBody");
+  tbody.innerHTML = "";
+
+  artists.forEach(a=>{
+    tbody.innerHTML += `
+<tr class="artist-header">
+<td colspan="2">${a}</td>
+</tr>
+`;
+
+    Array.from(map[a]).sort().forEach(t=>{
+      tbody.innerHTML += `
+<tr class="artist-song-row">
+<td></td>
+<td>${t}</td>
+</tr>
+`;
+    });
+  });
 }
 
-@media (max-width: 600px){
-  .grid{
-    grid-template-columns:1fr;
+function showTab(id, btn){
+  document.querySelectorAll(".section").forEach(el => el.classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
+
+  document.querySelectorAll(".tab-button").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+}
+
+function play(videoId, time){
+  const sec = time.split(":").reduce((a,b)=>a*60+Number(b));
+  document.getElementById("player").innerHTML =
+`<iframe src="https://www.youtube.com/embed/${videoId}?start=${sec}&autoplay=1" allow="autoplay" allowfullscreen></iframe>`;
+  document.getElementById("modal").classList.remove("hidden");
+}
+
+function closeModal(){
+  document.getElementById("player").innerHTML = "";
+  document.getElementById("modal").classList.add("hidden");
+}
+
+function formatDate(d){
+  const date = new Date(d);
+  return `${date.getFullYear()}/${String(date.getMonth()+1).padStart(2,"0")}/${String(date.getDate()).padStart(2,"0")}`;
+}
+
+document.getElementById("searchSongs").addEventListener("input", renderSongs);
+document.getElementById("sortSongsOrder").addEventListener("change", renderSongs);
+
+document.getElementById("sortSongsType").addEventListener("change", () => {
+  const type = document.getElementById("sortSongsType").value;
+  if(type === "count"){
+    document.getElementById("sortSongsOrder").value = "desc";
   }
+  renderSongs();
+});
 
-  .tab-button{
-    width:100%;
-  }
-}
+document.getElementById("searchStreams").addEventListener("input", renderStreams);
+document.getElementById("sortStreamsOrder").addEventListener("change", renderStreams);
 
-/* 追加：配信一覧ライトテーマ */
+document.getElementById("searchArtists").addEventListener("input", renderArtists);
+document.getElementById("sortArtistsOrder").addEventListener("change", renderArtists);
 
-body.streams-light .card{
-  background:#ffffff;
-  border-color:#cbd5e1;
-}
-
-body.streams-light .song-card{
-  background:#f8fafc;
-  border-color:#cbd5e1;
-}
-
-body.streams-light .song-card.highlight{
-  background:#e2e8f0;
-  border-color:#3b82f6;
-}
+document.getElementById("themeToggleSongs").addEventListener("change", toggleTheme);
+document.getElementById("themeToggleStreams").addEventListener("change", toggleTheme);
+document.getElementById("themeToggleArtists").addEventListener("change", toggleTheme);
