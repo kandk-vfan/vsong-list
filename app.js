@@ -38,8 +38,20 @@ function renderSongs(list = data) {
     }
   });
 
-  const arr = Object.values(map);
-  arr.sort((a, b) => a.title.localeCompare(b.title));
+  let arr = Object.values(map);
+
+  const sortType = document.getElementById("sort").value;
+
+  arr.sort((a, b) => {
+    switch (sortType) {
+      case "title_desc": return b.title.localeCompare(a.title);
+      case "artist_asc": return a.artist.localeCompare(b.artist);
+      case "artist_desc": return b.artist.localeCompare(a.artist);
+      case "count_desc": return b.count - a.count;
+      case "count_asc": return a.count - b.count;
+      default: return a.title.localeCompare(b.title);
+    }
+  });
 
   const tbody = document.getElementById("songsBody");
   tbody.innerHTML = "";
@@ -172,3 +184,26 @@ document.getElementById("search").addEventListener("input", e => {
 
   renderSongs(filtered);
 });
+
+//
+// ソート変更
+//
+document.getElementById("sort").addEventListener("change", () => {
+  renderSongs();
+});
+
+//
+// ダークモード
+//
+function toggleDark() {
+  document.body.classList.toggle("dark");
+
+  localStorage.setItem(
+    "darkMode",
+    document.body.classList.contains("dark")
+  );
+}
+
+if (localStorage.getItem("darkMode") === "true") {
+  document.body.classList.add("dark");
+}

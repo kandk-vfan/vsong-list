@@ -9,13 +9,24 @@
 
 <h1>🦊💙🎵 hajime Song List</h1>
 
-<div class="tabs">
+<div class="controls">
   <button onclick="showTab('songs')">曲一覧</button>
   <button onclick="showTab('streams')">配信一覧</button>
   <button onclick="showTab('artists')">アーティスト</button>
-</div>
 
-<input id="search" placeholder="検索">
+  <input id="search" placeholder="検索">
+
+  <select id="sort">
+    <option value="title_asc">曲名 ↑</option>
+    <option value="title_desc">曲名 ↓</option>
+    <option value="artist_asc">アーティスト ↑</option>
+    <option value="artist_desc">アーティスト ↓</option>
+    <option value="count_desc">回数 ↓</option>
+    <option value="count_asc">回数 ↑</option>
+  </select>
+
+  <button onclick="toggleDark()">🌙</button>
+</div>
 
 <!-- 曲一覧 -->
 <div id="songs">
