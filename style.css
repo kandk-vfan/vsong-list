@@ -51,10 +51,6 @@ h1{
   flex-wrap:wrap;
 }
 
-.summary{
-  margin-bottom:28px;
-}
-
 input,select{
   background:#1e293b;
   color:#e5e7eb;
@@ -92,13 +88,6 @@ table.light td, table.light th{
 
 table.light th{
   background:#e2e8f0;
-}
-
-/* ボタン位置 */
-.table-header{
-  display:flex;
-  justify-content:flex-end;
-  margin-bottom:8px;
 }
 
 .hidden{
