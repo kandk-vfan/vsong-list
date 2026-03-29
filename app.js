@@ -1,64 +1,356 @@
-let data = [];
+body{
+  background:#0f172a;
+  color:#e5e7eb;
+  font-family:sans-serif;
+  padding:24px;
+  margin:0;
+}
 
-const STORAGE_KEY = "tableTheme";
+h1{
+  margin:0 0 20px 0;
+  font-size:32px;
+}
 
-function getTheme(){
-  const saved = localStorage.getItem(STORAGE_KEY);
-  if(saved) return saved;
+.summary{
+  font-size:16px;
+  font-weight:700;
+  margin-bottom:28px;
+  color:#cbd5f5;
+  background:#111827;
+  padding:6px 12px;
+  border-radius:999px;
+  border:1px solid #334155;
+  display:inline-block;
+}
 
-  if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
-    return "dark";
+.tabs{
+  display:flex;
+  gap:12px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.tab-button{
+  background:#1e293b;
+  color:#e5e7eb;
+  border:1px solid #334155;
+  border-radius:12px;
+  padding:14px 24px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.tab-button:hover{
+  background:#334155;
+}
+
+.tab-button.active{
+  background:#3b82f6;
+  border-color:#3b82f6;
+  color:#ffffff;
+}
+
+.section{
+  margin-top:8px;
+}
+
+.toolbar{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+input,select{
+  background:#1e293b;
+  color:#e5e7eb;
+  border:1px solid #334155;
+  border-radius:10px;
+  padding:10px 12px;
+  font-size:14px;
+}
+
+input{
+  min-width:320px;
+}
+
+.theme-switch{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.theme-label{
+  font-size:13px;
+  color:#94a3b8;
+}
+
+/* トグル */
+
+.toggle{
+  display:flex;
+  align-items:center;
+}
+
+.toggle input{
+  display:none;
+}
+
+.slider{
+  width:42px;
+  height:22px;
+  background:#334155;
+  border-radius:999px;
+  position:relative;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.slider::before{
+  content:"";
+  position:absolute;
+  width:18px;
+  height:18px;
+  background:#e5e7eb;
+  border-radius:50%;
+  top:2px;
+  left:2px;
+  transition:0.2s;
+}
+
+.toggle input:checked + .slider{
+  background:#3b82f6;
+}
+
+.toggle input:checked + .slider::before{
+  transform:translateX(20px);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:#111827;
+}
+
+thead th{
+  position:sticky;
+  top:0;
+  background:#111827;
+  z-index:2;
+}
+
+td,th{
+  border:1px solid #334155;
+  padding:12px;
+}
+
+tbody tr:nth-child(even){
+  background:#0b1220;
+}
+
+tbody tr:hover{
+  background:#1e293b;
+}
+
+table.light{
+  background:#f8fafc;
+  color:#0f172a;
+}
+
+table.light thead th{
+  background:#e2e8f0;
+}
+
+table.light td, table.light th{
+  border:1px solid #cbd5e1;
+}
+
+table.light tbody tr:nth-child(even){
+  background:#f1f5f9;
+}
+
+table.light tbody tr:hover{
+  background:#e2e8f0;
+}
+
+.hidden{
+  display:none !important;
+}
+
+a{
+  color:#93c5fd;
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+button{
+  background:#1e293b;
+  color:#e5e7eb;
+  border:1px solid #334155;
+  border-radius:8px;
+  padding:8px 12px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#334155;
+}
+
+.card{
+  border:1px solid #334155;
+  border-radius:14px;
+  padding:20px;
+  margin-bottom:24px;
+  background:#111827;
+}
+
+.song-card.highlight{
+  border-color:#3b82f6;
+  background:#1e293b;
+}
+
+.stream-title-row{
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:10px;
+  line-height:1.4;
+}
+
+.stream-date{
+  font-size:14px;
+  color:#94a3b8;
+  margin-bottom:14px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:12px;
+}
+
+.song-card{
+  border:1px solid #334155;
+  border-radius:12px;
+  padding:14px;
+  background:#0b1220;
+  min-height:130px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.song-card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.song-card-title{
+  font-size:16px;
+  line-height:1.5;
+  word-break:break-all;
+  font-weight:600;
+}
+
+.song-card-artist{
+  font-size:14px;
+  color:#94a3b8;
+  line-height:1.5;
+  word-break:break-all;
+}
+
+.num{
+  font-size:14px;
+  font-weight:700;
+  color:#94a3b8;
+}
+
+.artist-header{
+  background:#020617;
+  font-weight:700;
+  font-size:16px;
+}
+
+.artist-song-row td{
+  padding-left:20px;
+}
+
+#modal.hidden{
+  display:none !important;
+}
+
+#modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.82);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:24px;
+  z-index:9999;
+}
+
+.modal-content{
+  width:min(1400px,96vw);
+}
+
+iframe{
+  width:100%;
+  height:min(78vh,900px);
+  border:0;
+  border-radius:12px;
+}
+
+@media (max-width: 1200px){
+  .grid{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+}
+
+@media (max-width: 900px){
+  .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
 
-  return "light";
+  input{
+    min-width:220px;
+    width:100%;
+  }
+
+  .toolbar{
+    align-items:stretch;
+  }
 }
 
-function applyTheme(){
-  const theme = getTheme();
+@media (max-width: 600px){
+  .grid{
+    grid-template-columns:1fr;
+  }
 
-  document.getElementById("songsTable").classList.toggle("light", theme === "light");
-  document.getElementById("artistsTable").classList.toggle("light", theme === "light");
-
-  document.body.classList.toggle("streams-light", theme === "light");
+  .tab-button{
+    width:100%;
+  }
 }
 
-function toggleTheme(){
-  const next = getTheme() === "dark" ? "light" : "dark";
-  localStorage.setItem(STORAGE_KEY, next);
-  applyTheme();
-  updateButtons();
+/* 追加：配信一覧ライトテーマ */
+
+body.streams-light .card{
+  background:#ffffff;
+  border-color:#cbd5e1;
 }
 
-function updateButtons(){
-  const isLight = getTheme() === "light";
-
-  document.getElementById("themeToggleSongs").checked = isLight;
-  document.getElementById("themeToggleArtists").checked = isLight;
-  document.getElementById("themeToggleStreams").checked = isLight;
+body.streams-light .song-card{
+  background:#f8fafc;
+  border-color:#cbd5e1;
 }
 
-fetch("data.json")
-  .then(r => r.json())
-  .then(j => {
-    data = j;
-    renderAll();
-    applyTheme();
-    updateButtons();
-  });
-
-function key(d){
-  return d.title + "||" + d.artist;
+body.streams-light .song-card.highlight{
+  background:#e2e8f0;
+  border-color:#3b82f6;
 }
-
-function renderAll(){
-  renderSummary();
-  renderSongs();
-  renderStreams();
-  renderArtists();
-}
-
-/* 以下既存そのまま */
-
-document.getElementById("themeToggleSongs").addEventListener("change", toggleTheme);
-document.getElementById("themeToggleArtists").addEventListener("change", toggleTheme);
-document.getElementById("themeToggleStreams").addEventListener("change", toggleTheme);
