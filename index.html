@@ -50,7 +50,7 @@
 
   <table id="songsTable">
     <thead>
-      <tr><th>曲名</th><th>アーティスト</th><th>回数</th><th>再生（最新の配信より）</th></tr>
+      <tr><th>曲名</th><th>アーティスト</th><th>回数</th><th>再生 (最新)</th></tr>
     </thead>
     <tbody id="songsBody"></tbody>
   </table>
@@ -84,6 +84,12 @@
 
   <div class="toolbar">
     <input id="searchArtists" placeholder="曲・アーティスト検索">
+
+    <select id="sortArtistsType">
+      <option value="name">アーティスト名</option>
+      <option value="count">曲数</option>
+    </select>
+
     <select id="sortArtistsOrder">
       <option value="asc">昇順</option>
       <option value="desc">降順</option>
