@@ -14,41 +14,40 @@ function debounce(fn, delay=200){
   };
 }
 
-function setTheme(mode){
-  localStorage.setItem(STORAGE_KEY, mode);
-  applyTheme();
-}
-
 function getTheme(){
   return localStorage.getItem(STORAGE_KEY) || "dark";
 }
 
 function applyTheme(){
-  const isLight = getTheme()==="light";
+  const isLight = getTheme() === "light";
+
   document.getElementById("songsTable").classList.toggle("light", isLight);
   document.getElementById("artistsTable").classList.toggle("light", isLight);
   document.body.classList.toggle("streams-light", isLight);
+
   document.getElementById("themeToggle").checked = isLight;
 }
 
-document.getElementById("themeToggle")?.addEventListener("change",(e)=>{
-  setTheme(e.target.checked ? "light" : "dark");
-});
+function toggleTheme(){
+  const next = getTheme() === "dark" ? "light" : "dark";
+  localStorage.setItem(STORAGE_KEY, next);
+  applyTheme();
+}
 
 fetch("data.json")
 .then(r=>r.json())
 .then(j=>{
-  data=j.map(d=>({
+  data = j.map(d=>({
     ...d,
-    title:normalize(d.title),
-    artist:normalize(d.artist)
+    title: normalize(d.title),
+    artist: normalize(d.artist)
   }));
   renderAll();
   applyTheme();
 });
 
 function key(d){
-  return d.title+"||"+d.artist;
+  return d.title + "||" + d.artist;
 }
 
 function renderAll(){
@@ -61,11 +60,14 @@ function renderAll(){
 function renderSummary(){
   const s=new Set();
   const a=new Set();
+
   data.forEach(d=>{
     s.add(key(d));
     a.add(d.artist);
   });
+
   const text=`曲数：${s.size} / アーティスト数：${a.size}`;
+
   songsSummary.innerText=text;
   streamsSummary.innerText=text;
   artistsSummary.innerText=text;
@@ -73,6 +75,7 @@ function renderSummary(){
 
 function renderSongs(){
   const map={};
+
   data.forEach(d=>{
     const k=key(d);
     if(!map[k]) map[k]={...d,count:0};
@@ -131,7 +134,6 @@ function renderStreams(){
   const kw=searchStreams.value.toLowerCase();
 
   streamsContainer.innerHTML="";
-
   let hit=0;
 
   arr.forEach(([vid,v])=>{
@@ -147,11 +149,10 @@ function renderStreams(){
 </div>
 <div class="stream-date">${v.date}</div>
 <div class="grid">
-${list.map((s,i)=>`
+${list.map((s)=>`
 <div class="song-card ${kw&&(s.title.toLowerCase().includes(kw)||s.artist.toLowerCase().includes(kw))?"highlight":""}">
-<div>${i+1}</div>
-<div>${s.title}</div>
-<div>${s.artist}</div>
+<div class="song-card-title">${s.title}</div>
+<div class="song-card-artist">${s.artist}</div>
 </div>`).join("")}
 </div>
 </div>`;
@@ -228,3 +229,5 @@ sortSongsType.addEventListener("change",()=>{
   if(sortSongsType.value==="count") sortSongsOrder.value="desc";
   renderSongs();
 });
+
+themeToggle.addEventListener("change",toggleTheme);
