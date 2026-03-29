@@ -11,6 +11,17 @@ h1{
   font-size:32px;
 }
 
+.summary{
+  font-size:16px;
+  font-weight:700;
+  margin-bottom:28px;
+  color:#cbd5f5;
+  background:#111827;
+  padding:12px 16px;
+  border-radius:10px;
+  border:1px solid #334155;
+}
+
 .tabs{
   display:flex;
   gap:12px;
@@ -64,11 +75,17 @@ input{
   min-width:320px;
 }
 
-/* 既存（そのまま） */
 table{
   width:100%;
   border-collapse:collapse;
   background:#111827;
+}
+
+thead th{
+  position:sticky;
+  top:0;
+  background:#111827;
+  z-index:2;
 }
 
 td,th{
@@ -76,17 +93,32 @@ td,th{
   padding:12px;
 }
 
-/* 追加だけ */
+tbody tr:nth-child(even){
+  background:#0b1220;
+}
+
+tbody tr:hover{
+  background:#1e293b;
+}
+
 table.light{
   background:#f8fafc;
   color:#0f172a;
+}
+
+table.light thead th{
+  background:#e2e8f0;
 }
 
 table.light td, table.light th{
   border:1px solid #cbd5e1;
 }
 
-table.light th{
+table.light tbody tr:nth-child(even){
+  background:#f1f5f9;
+}
+
+table.light tbody tr:hover{
   background:#e2e8f0;
 }
 
@@ -116,14 +148,17 @@ button:hover{
   background:#334155;
 }
 
-/* 配信カード */
-
 .card{
   border:1px solid #334155;
   border-radius:14px;
   padding:20px;
   margin-bottom:24px;
   background:#111827;
+}
+
+.song-card.highlight{
+  border-color:#3b82f6;
+  background:#1e293b;
 }
 
 .stream-title-row{
@@ -182,8 +217,6 @@ button:hover{
   color:#94a3b8;
 }
 
-/* アーティスト */
-
 .artist-header{
   background:#020617;
   font-weight:700;
@@ -193,8 +226,6 @@ button:hover{
 .artist-song-row td{
   padding-left:20px;
 }
-
-/* モーダル */
 
 #modal.hidden{
   display:none !important;
@@ -221,8 +252,6 @@ iframe{
   border:0;
   border-radius:12px;
 }
-
-/* レスポンシブ */
 
 @media (max-width: 1200px){
   .grid{

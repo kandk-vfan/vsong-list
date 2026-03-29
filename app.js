@@ -2,28 +2,23 @@ let data = [];
 
 const STORAGE_KEY = "tableTheme";
 
-/* ===== テーマ取得 ===== */
 function getTheme(){
   const saved = localStorage.getItem(STORAGE_KEY);
   if(saved) return saved;
 
-  // ブラウザ設定に従う
   if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
     return "dark";
   }
 
-  // デフォルト
   return "light";
 }
 
-/* ===== テーマ適用 ===== */
 function applyTheme(){
   const theme = getTheme();
   document.getElementById("songsTable").classList.toggle("light", theme === "light");
   document.getElementById("artistsTable").classList.toggle("light", theme === "light");
 }
 
-/* ===== 切替 ===== */
 function toggleTheme(){
   const next = getTheme() === "dark" ? "light" : "dark";
   localStorage.setItem(STORAGE_KEY, next);
@@ -31,7 +26,6 @@ function toggleTheme(){
   updateButtons();
 }
 
-/* ===== ボタン表示 ===== */
 function updateButtons(){
   const next = getTheme() === "dark" ? "ライト" : "ダーク";
   document.getElementById("themeToggleSongs").innerText = next;
@@ -58,7 +52,6 @@ function renderAll(){
   renderArtists();
 }
 
-/* サマリー */
 function renderSummary(){
   const songSet = new Set();
   const artistSet = new Set();
@@ -183,7 +176,7 @@ ${formatDate(v.date)}
 
 <div class="grid">
 ${unique.map((s,i)=>`
-<div class="song-card">
+<div class="song-card ${keyword && (s.title.toLowerCase().includes(keyword) || s.artist.toLowerCase().includes(keyword)) ? 'highlight' : ''}">
 <div class="song-card-head">
 <span class="num">${String(i+1).padStart(2,"0")}</span>
 <button onclick="play('${vid}','${s.time}')">▶</button>
