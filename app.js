@@ -1,10 +1,38 @@
 let data = [];
 
+const STORAGE_KEY = "tableTheme";
+
+function getTheme(){
+  return localStorage.getItem(STORAGE_KEY) || "dark";
+}
+
+function setTheme(theme){
+  localStorage.setItem(STORAGE_KEY, theme);
+  applyTheme();
+  updateButtons();
+}
+
+function applyTheme(){
+  const theme = getTheme();
+  document.getElementById("songsTable").className = theme;
+  document.getElementById("artistsTable").className = theme;
+}
+
+function updateButtons(){
+  const theme = getTheme();
+  const next = theme === "dark" ? "ライト" : "ダーク";
+
+  document.getElementById("themeToggleSongs").innerText = next;
+  document.getElementById("themeToggleArtists").innerText = next;
+}
+
 fetch("data.json")
   .then(r => r.json())
   .then(j => {
     data = j;
     renderAll();
+    applyTheme();
+    updateButtons();
   });
 
 function key(d){
@@ -18,7 +46,7 @@ function renderAll(){
   renderArtists();
 }
 
-/* ===== サマリー ===== */
+/* サマリー */
 function renderSummary(){
   const songSet = new Set();
   const artistSet = new Set();
@@ -239,3 +267,11 @@ document.getElementById("searchStreams").addEventListener("input", renderStreams
 
 document.getElementById("searchArtists").addEventListener("input", renderArtists);
 document.getElementById("sortArtistsOrder").addEventListener("change", renderArtists);
+
+document.getElementById("themeToggleSongs").addEventListener("click", ()=>{
+  setTheme(getTheme() === "dark" ? "light" : "dark");
+});
+
+document.getElementById("themeToggleArtists").addEventListener("click", ()=>{
+  setTheme(getTheme() === "dark" ? "light" : "dark");
+});

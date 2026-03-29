@@ -11,7 +11,6 @@ h1{
   font-size:32px;
 }
 
-/* サマリー */
 .summary{
   font-size:16px;
   font-weight:700;
@@ -59,6 +58,12 @@ h1{
   flex-wrap:wrap;
 }
 
+.table-header{
+  display:flex;
+  justify-content:flex-end;
+  margin-bottom:10px;
+}
+
 input,select{
   background:#1e293b;
   color:#e5e7eb;
@@ -72,20 +77,27 @@ input{
   min-width:320px;
 }
 
-/* テーブル（ライト化） */
-table{
-  width:100%;
-  border-collapse:collapse;
+/* ダーク */
+table.dark{
+  background:#111827;
+  color:#e5e7eb;
+}
+
+table.dark td, table.dark th{
+  border:1px solid #334155;
+}
+
+/* ライト */
+table.light{
   background:#f8fafc;
   color:#0f172a;
 }
 
-td,th{
+table.light td, table.light th{
   border:1px solid #cbd5e1;
-  padding:12px;
 }
 
-th{
+table.light th{
   background:#e2e8f0;
 }
 
@@ -129,7 +141,6 @@ button:hover{
   font-size:20px;
   font-weight:700;
   margin-bottom:10px;
-  line-height:1.4;
 }
 
 .stream-date{
@@ -149,54 +160,14 @@ button:hover{
   border-radius:12px;
   padding:14px;
   background:#0b1220;
-  min-height:130px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
 }
-
-.song-card-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.song-card-title{
-  font-size:16px;
-  line-height:1.5;
-  word-break:break-all;
-  font-weight:600;
-}
-
-.song-card-artist{
-  font-size:14px;
-  color:#94a3b8;
-  line-height:1.5;
-  word-break:break-all;
-}
-
-.num{
-  font-size:14px;
-  font-weight:700;
-  color:#94a3b8;
-}
-
-/* アーティスト（テーブル） */
 
 .artist-header{
-  background:#e2e8f0;
   font-weight:700;
-  font-size:16px;
 }
 
 .artist-song-row td{
   padding-left:20px;
-}
-
-/* モーダル */
-
-#modal.hidden{
-  display:none !important;
 }
 
 #modal{
@@ -206,55 +177,10 @@ button:hover{
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:24px;
-  z-index:9999;
-}
-
-.modal-content{
-  width:min(1400px,96vw);
-}
-
-.modal-actions{
-  margin-top:12px;
-  text-align:right;
 }
 
 iframe{
   width:100%;
-  height:min(78vh,900px);
+  height:70vh;
   border:0;
-  border-radius:12px;
-}
-
-/* レスポンシブ */
-
-@media (max-width: 1200px){
-  .grid{
-    grid-template-columns:repeat(4,minmax(0,1fr));
-  }
-}
-
-@media (max-width: 900px){
-  .grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-
-  input{
-    min-width:220px;
-    width:100%;
-  }
-
-  .toolbar{
-    align-items:stretch;
-  }
-}
-
-@media (max-width: 600px){
-  .grid{
-    grid-template-columns:1fr;
-  }
-
-  .tab-button{
-    width:100%;
-  }
 }
