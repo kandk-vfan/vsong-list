@@ -1,6 +1,6 @@
 let data = [];
 
-const STORAGE_KEY = "theme";
+const STORAGE_KEY = "tableTheme";
 
 function normalize(str){
   return str.replace(/^[\s　]+|[\s　]+$/g, "");
@@ -15,36 +15,50 @@ function debounce(fn, delay=200){
 }
 
 function getTheme(){
-  return localStorage.getItem(STORAGE_KEY) || "dark";
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if(saved) return saved;
+
+  if(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches){
+    return "dark";
+  }
+  return "light";
 }
 
 function applyTheme(){
-  const isLight = getTheme() === "light";
+  const theme = getTheme();
+  const isLight = theme === "light";
 
   document.getElementById("songsTable").classList.toggle("light", isLight);
   document.getElementById("artistsTable").classList.toggle("light", isLight);
   document.body.classList.toggle("streams-light", isLight);
-
-  document.getElementById("themeToggle").checked = isLight;
 }
 
 function toggleTheme(){
   const next = getTheme() === "dark" ? "light" : "dark";
   localStorage.setItem(STORAGE_KEY, next);
   applyTheme();
+  updateButtons();
+}
+
+function updateButtons(){
+  const isLight = getTheme() === "light";
+  document.getElementById("themeToggleSongs").checked = isLight;
+  document.getElementById("themeToggleStreams").checked = isLight;
+  document.getElementById("themeToggleArtists").checked = isLight;
 }
 
 fetch("data.json")
-.then(r=>r.json())
-.then(j=>{
-  data = j.map(d=>({
-    ...d,
-    title: normalize(d.title),
-    artist: normalize(d.artist)
-  }));
-  renderAll();
-  applyTheme();
-});
+  .then(r=>r.json())
+  .then(j=>{
+    data = j.map(d => ({
+      ...d,
+      title: normalize(d.title),
+      artist: normalize(d.artist)
+    }));
+    renderAll();
+    applyTheme();
+    updateButtons();
+  });
 
 function key(d){
   return d.title + "||" + d.artist;
@@ -58,19 +72,19 @@ function renderAll(){
 }
 
 function renderSummary(){
-  const s=new Set();
-  const a=new Set();
+  const songSet=new Set();
+  const artistSet=new Set();
 
   data.forEach(d=>{
-    s.add(key(d));
-    a.add(d.artist);
+    songSet.add(key(d));
+    artistSet.add(d.artist);
   });
 
-  const text=`曲数：${s.size} / アーティスト数：${a.size}`;
+  const text=`曲数：${songSet.size} / アーティスト数：${artistSet.size}`;
 
-  songsSummary.innerText=text;
-  streamsSummary.innerText=text;
-  artistsSummary.innerText=text;
+  document.getElementById("songsSummary").innerText=text;
+  document.getElementById("streamsSummary").innerText=text;
+  document.getElementById("artistsSummary").innerText=text;
 }
 
 function renderSongs(){
@@ -78,37 +92,48 @@ function renderSongs(){
 
   data.forEach(d=>{
     const k=key(d);
-    if(!map[k]) map[k]={...d,count:0};
+    if(!map[k]) map[k]={title:d.title,artist:d.artist,count:0,latest:d};
     map[k].count++;
+    if(new Date(d.date)>new Date(map[k].latest.date)){
+      map[k].latest=d;
+    }
   });
 
   let arr=Object.values(map);
 
-  const kw=searchSongs.value.toLowerCase();
-  if(kw){
-    arr=arr.filter(s=>s.title.toLowerCase().includes(kw)||s.artist.toLowerCase().includes(kw));
+  const keyword=document.getElementById("searchSongs").value.toLowerCase();
+  if(keyword){
+    arr=arr.filter(s=>s.title.toLowerCase().includes(keyword)||s.artist.toLowerCase().includes(keyword));
   }
 
-  const type=sortSongsType.value;
-  const order=sortSongsOrder.value;
+  if(arr.length===0){
+    document.getElementById("songsBody").innerHTML=`<tr><td colspan="4">該当する結果がありません</td></tr>`;
+    return;
+  }
+
+  const type=document.getElementById("sortSongsType").value;
+  const order=document.getElementById("sortSongsOrder").value;
 
   arr.sort((a,b)=>{
-    let r=0;
-    if(type==="count") r=a.count-b.count;
-    else if(type==="artist") r=a.artist.localeCompare(b.artist);
-    else r=a.title.localeCompare(b.title);
-    return order==="desc"?-r:r;
+    let res=0;
+    if(type==="artist") res=a.artist.localeCompare(b.artist);
+    else if(type==="count") res=a.count-b.count;
+    else res=a.title.localeCompare(b.title);
+    return order==="desc"?-res:res;
   });
 
-  songsBody.innerHTML = arr.length===0
-    ? `<tr><td colspan="4">該当する結果がありません</td></tr>`
-    : arr.map(s=>`
+  const tbody=document.getElementById("songsBody");
+  tbody.innerHTML="";
+
+  arr.forEach(s=>{
+    tbody.innerHTML+=`
 <tr>
 <td>${s.title}</td>
 <td>${s.artist}</td>
 <td>${s.count}</td>
-<td><button onclick="play('${s.videoId}','${s.time}')">▶</button></td>
-</tr>`).join("");
+<td><button onclick="play('${s.latest.videoId}','${s.latest.time}')">▶</button></td>
+</tr>`;
+  });
 }
 
 function renderStreams(){
@@ -123,7 +148,7 @@ function renderStreams(){
 
   let arr=Object.entries(map);
 
-  const order=sortStreamsOrder.value;
+  const order=document.getElementById("sortStreamsOrder").value;
 
   arr.sort((a,b)=>{
     const aDate=Math.max(...a[1].songs.map(s=>new Date(s.date)));
@@ -131,103 +156,135 @@ function renderStreams(){
     return order==="desc"?bDate-aDate:aDate-bDate;
   });
 
-  const kw=searchStreams.value.toLowerCase();
+  const keyword=document.getElementById("searchStreams").value.toLowerCase();
+  const container=document.getElementById("streamsContainer");
+  container.innerHTML="";
 
-  streamsContainer.innerHTML="";
-  let hit=0;
+  let hitCount=0;
 
   arr.forEach(([vid,v])=>{
-    const list=v.songs.filter(s=>!kw||s.title.toLowerCase().includes(kw)||s.artist.toLowerCase().includes(kw));
-    if(list.length===0) return;
+    const unique=[];
+    const seen=new Set();
 
-    hit++;
+    v.songs.forEach(s=>{
+      const k=`${s.time}||${s.title}||${s.artist}`;
+      if(!seen.has(k)){
+        seen.add(k);
+        unique.push(s);
+      }
+    });
 
-    streamsContainer.innerHTML+=`
-<div class="card">
+    const filtered=unique.filter(s=>!keyword||s.title.toLowerCase().includes(keyword)||s.artist.toLowerCase().includes(keyword));
+    if(filtered.length===0) return;
+
+    hitCount++;
+
+    const card=document.createElement("div");
+    card.className="card";
+
+    card.innerHTML=`
 <div class="stream-title-row">
 <a href="https://youtube.com/watch?v=${vid}" target="_blank">${v.title}</a>
 </div>
-<div class="stream-date">${v.date}</div>
+<div class="stream-date">${formatDate(v.date)}</div>
 <div class="grid">
-${list.map((s)=>`
-<div class="song-card ${kw&&(s.title.toLowerCase().includes(kw)||s.artist.toLowerCase().includes(kw))?"highlight":""}">
+${filtered.map((s,i)=>`
+<div class="song-card ${keyword&&(s.title.toLowerCase().includes(keyword)||s.artist.toLowerCase().includes(keyword))?"highlight":""}">
+<div class="song-card-head">
+<span class="num">${String(i+1).padStart(2,"0")}</span>
+<button onclick="play('${vid}','${s.time}')">▶</button>
+</div>
 <div class="song-card-title">${s.title}</div>
 <div class="song-card-artist">${s.artist}</div>
 </div>`).join("")}
-</div>
 </div>`;
+
+    container.appendChild(card);
   });
 
-  if(hit===0){
-    streamsContainer.innerHTML="<p>該当する結果がありません</p>";
+  if(hitCount===0){
+    container.innerHTML="<p>該当する結果がありません</p>";
   }
 }
 
 function renderArtists(){
   const map={};
+
   data.forEach(d=>{
     if(!map[d.artist]) map[d.artist]=new Set();
     map[d.artist].add(d.title);
   });
 
-  let arr=Object.entries(map).map(([artist,set])=>({
-    artist,
-    songs:[...set],
-    count:set.size
-  }));
+  let artists=Object.keys(map);
 
-  const kw=searchArtists.value.toLowerCase();
+  const keyword=document.getElementById("searchArtists").value.toLowerCase();
 
-  if(kw){
-    arr=arr.filter(a=>a.artist.toLowerCase().includes(kw)||a.songs.some(t=>t.toLowerCase().includes(kw)));
+  if(keyword){
+    artists=artists.filter(a=>a.toLowerCase().includes(keyword)||Array.from(map[a]).some(t=>t.toLowerCase().includes(keyword)));
   }
 
-  const type=sortArtistsType.value;
-  const order=sortArtistsOrder.value;
+  if(artists.length===0){
+    document.getElementById("artistsBody").innerHTML=`<tr><td colspan="2">該当する結果がありません</td></tr>`;
+    return;
+  }
 
-  arr.sort((a,b)=>{
-    let r= type==="count"?a.count-b.count:a.artist.localeCompare(b.artist);
-    return order==="desc"?-r:r;
+  const order=document.getElementById("sortArtistsOrder").value;
+
+  artists.sort((a,b)=>{
+    let res=a.localeCompare(b);
+    return order==="desc"?-res:res;
   });
 
-  artistsBody.innerHTML = arr.length===0
-    ? `<tr><td colspan="2">該当する結果がありません</td></tr>`
-    : arr.map(a=>`
-<tr class="artist-header"><td colspan="2">${a.artist}（${a.count}曲）</td></tr>
-${a.songs.map(t=>`<tr><td></td><td>${t}</td></tr>`).join("")}
-`).join("");
+  const tbody=document.getElementById("artistsBody");
+  tbody.innerHTML="";
+
+  artists.forEach(a=>{
+    tbody.innerHTML+=`<tr class="artist-header"><td colspan="2">${a}</td></tr>`;
+    Array.from(map[a]).sort().forEach(t=>{
+      tbody.innerHTML+=`<tr class="artist-song-row"><td></td><td>${t}</td></tr>`;
+    });
+  });
 }
 
 function showTab(id,btn){
-  document.querySelectorAll(".section").forEach(e=>e.classList.add("hidden"));
+  document.querySelectorAll(".section").forEach(el=>el.classList.add("hidden"));
   document.getElementById(id).classList.remove("hidden");
   document.querySelectorAll(".tab-button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
 }
 
-function play(v,t){
-  const sec=t.split(":").reduce((a,b)=>a*60+Number(b));
-  player.innerHTML=`<iframe src="https://www.youtube.com/embed/${v}?start=${sec}&autoplay=1"></iframe>`;
-  modal.classList.remove("hidden");
+function play(videoId,time){
+  const sec=time.split(":").reduce((a,b)=>a*60+Number(b));
+  document.getElementById("player").innerHTML=
+`<iframe src="https://www.youtube.com/embed/${videoId}?start=${sec}&autoplay=1" allow="autoplay" allowfullscreen></iframe>`;
+  document.getElementById("modal").classList.remove("hidden");
 }
 
 function closeModal(){
-  player.innerHTML="";
-  modal.classList.add("hidden");
+  document.getElementById("player").innerHTML="";
+  document.getElementById("modal").classList.add("hidden");
 }
 
-searchSongs.addEventListener("input",debounce(renderSongs));
-searchStreams.addEventListener("input",debounce(renderStreams));
-searchArtists.addEventListener("input",debounce(renderArtists));
+function formatDate(d){
+  const date=new Date(d);
+  return `${date.getFullYear()}/${String(date.getMonth()+1).padStart(2,"0")}/${String(date.getDate()).padStart(2,"0")}`;
+}
 
-sortSongsOrder.addEventListener("change",renderSongs);
-sortStreamsOrder.addEventListener("change",renderStreams);
-sortArtistsOrder.addEventListener("change",renderArtists);
-sortArtistsType.addEventListener("change",renderArtists);
+document.getElementById("searchSongs").addEventListener("input", debounce(renderSongs));
+document.getElementById("searchStreams").addEventListener("input", debounce(renderStreams));
+document.getElementById("searchArtists").addEventListener("input", debounce(renderArtists));
 
-sortSongsType.addEventListener("change",()=>{
-  if(sortSongsType.value==="count") sortSongsOrder.value="desc";
+document.getElementById("sortSongsOrder").addEventListener("change", renderSongs);
+document.getElementById("sortStreamsOrder").addEventListener("change", renderStreams);
+document.getElementById("sortArtistsOrder").addEventListener("change", renderArtists);
+
+document.getElementById("sortSongsType").addEventListener("change", ()=>{
+  if(document.getElementById("sortSongsType").value==="count"){
+    document.getElementById("sortSongsOrder").value="desc";
+  }
   renderSongs();
 });
 
-themeToggle.addEventListener("change",toggleTheme);
+document.getElementById("themeToggleSongs").addEventListener("change", toggleTheme);
+document.getElementById("themeToggleStreams").addEventListener("change", toggleTheme);
+document.getElementById("themeToggleArtists").addEventListener("change", toggleTheme);
