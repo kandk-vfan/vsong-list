@@ -265,7 +265,15 @@ function formatDate(d){
 }
 
 document.getElementById("searchSongs").addEventListener("input", renderSongs);
-document.getElementById("sortSongsType").addEventListener("change", renderSongs);
+document.getElementById("sortSongsType").addEventListener("change", () => {
+  const type = document.getElementById("sortSongsType").value;
+
+  if(type === "count"){
+    document.getElementById("sortSongsOrder").value = "desc";
+  }
+
+  renderSongs();
+});
 document.getElementById("sortSongsOrder").addEventListener("change", renderSongs);
 
 document.getElementById("searchStreams").addEventListener("input", renderStreams);
