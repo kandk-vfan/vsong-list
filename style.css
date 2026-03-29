@@ -337,3 +337,20 @@ iframe{
     width:100%;
   }
 }
+
+/* 追加：配信一覧ライトテーマ */
+
+body.streams-light .card{
+  background:#ffffff;
+  border-color:#cbd5e1;
+}
+
+body.streams-light .song-card{
+  background:#f8fafc;
+  border-color:#cbd5e1;
+}
+
+body.streams-light .song-card.highlight{
+  background:#e2e8f0;
+  border-color:#3b82f6;
+}
