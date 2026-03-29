@@ -133,10 +133,12 @@ function renderStreams(){
 
   let arr = Object.entries(map);
 
+  const order = document.getElementById("sortStreamsOrder")?.value || "desc";
+
   arr.sort((a,b)=>{
     const aDate = Math.max(...a[1].songs.map(s => new Date(s.date).getTime()));
     const bDate = Math.max(...b[1].songs.map(s => new Date(s.date).getTime()));
-    return bDate - aDate;
+    return order === "desc" ? bDate - aDate : aDate - bDate;
   });
 
   const keyword = document.getElementById("searchStreams").value.toLowerCase();
@@ -276,6 +278,7 @@ document.getElementById("sortSongsType").addEventListener("change", () => {
 });
 
 document.getElementById("searchStreams").addEventListener("input", renderStreams);
+document.getElementById("sortStreamsOrder").addEventListener("change", renderStreams);
 
 document.getElementById("searchArtists").addEventListener("input", renderArtists);
 document.getElementById("sortArtistsOrder").addEventListener("change", renderArtists);
