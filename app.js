@@ -2,16 +2,28 @@ let data = [];
 
 const STORAGE_KEY = "tableTheme";
 
+/* ===== テーマ取得 ===== */
 function getTheme(){
-  return localStorage.getItem(STORAGE_KEY) || "light";
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if(saved) return saved;
+
+  // ブラウザ設定に従う
+  if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+    return "dark";
+  }
+
+  // デフォルト
+  return "light";
 }
 
+/* ===== テーマ適用 ===== */
 function applyTheme(){
   const theme = getTheme();
   document.getElementById("songsTable").classList.toggle("light", theme === "light");
   document.getElementById("artistsTable").classList.toggle("light", theme === "light");
 }
 
+/* ===== 切替 ===== */
 function toggleTheme(){
   const next = getTheme() === "dark" ? "light" : "dark";
   localStorage.setItem(STORAGE_KEY, next);
@@ -19,6 +31,7 @@ function toggleTheme(){
   updateButtons();
 }
 
+/* ===== ボタン表示 ===== */
 function updateButtons(){
   const next = getTheme() === "dark" ? "ライト" : "ダーク";
   document.getElementById("themeToggleSongs").innerText = next;
