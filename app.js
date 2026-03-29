@@ -27,24 +27,20 @@ function renderSongs(){
     const k = key(d);
 
     if(!map[k]){
-      map[k]={
-        title:d.title,
-        artist:d.artist,
-        count:0,
-        latest:d
-      };
+      map[k]={title:d.title,artist:d.artist,count:0,latest:d};
     }
 
     map[k].count++;
 
-    if(new Date(d.date) > new Date(map[k].latest.date)){
-      map[k].latest = d;
+    if(new Date(d.date)>new Date(map[k].latest.date)){
+      map[k].latest=d;
     }
   });
 
   let arr = Object.values(map);
 
   const keyword = document.getElementById("searchSongs").value.toLowerCase();
+
   if(keyword){
     arr = arr.filter(s =>
       s.title.toLowerCase().includes(keyword) ||
@@ -56,7 +52,7 @@ function renderSongs(){
 
   arr.sort((a,b)=>{
     if(sort==="artist") return a.artist.localeCompare(b.artist);
-    if(sort==="count") return b.count - a.count;
+    if(sort==="count") return b.count-a.count;
     return a.title.localeCompare(b.title);
   });
 
@@ -79,10 +75,10 @@ function renderSongs(){
 }
 
 //
-// 配信一覧（カード）
+// 配信一覧（改善版）
 //
 function renderStreams(){
-  const map = {};
+  const map={};
 
   data.forEach(d=>{
     if(!map[d.videoId]){
@@ -96,8 +92,7 @@ function renderStreams(){
   });
 
   let arr = Object.entries(map);
-
-  arr.sort((a,b)=> new Date(b[1].date) - new Date(a[1].date));
+  arr.sort((a,b)=> new Date(b[1].date)-new Date(a[1].date));
 
   const keyword = document.getElementById("searchStreams").value.toLowerCase();
 
@@ -106,13 +101,13 @@ function renderStreams(){
 
   arr.forEach(([vid,v])=>{
 
-    const songs = v.songs.filter(s =>
+    const match = v.songs.some(s =>
       !keyword ||
       s.title.toLowerCase().includes(keyword) ||
       s.artist.toLowerCase().includes(keyword)
     );
 
-    if(songs.length === 0) return;
+    if(!match) return;
 
     const div = document.createElement("div");
     div.className="card";
@@ -122,8 +117,9 @@ function renderStreams(){
 <div class="date">${formatDate(v.date)}</div>
 
 <div class="grid">
-${songs.map((s,i)=>`
-<div class="song" onclick="play('${vid}','${s.time}')">
+${v.songs.map((s,i)=>`
+<div class="song">
+<button onclick="play('${vid}','${s.time}')">▶</button>
 <span class="num">${String(i+1).padStart(2,"0")}</span>
 <span>${s.title} / ${s.artist}</span>
 </div>
@@ -139,12 +135,12 @@ ${songs.map((s,i)=>`
 // アーティスト
 //
 function renderArtists(){
-  const map = {};
+  const map={};
 
   data.forEach(d=>{
     if(!map[d.artist]) map[d.artist]={};
 
-    const k = key(d);
+    const k=key(d);
 
     if(!map[d.artist][k]){
       map[d.artist][k]={title:d.title,count:0};
@@ -153,14 +149,14 @@ function renderArtists(){
     map[d.artist][k].count++;
   });
 
-  let artists = Object.keys(map);
+  let artists=Object.keys(map);
 
-  const sort = document.getElementById("sortArtists").value;
-  artists.sort((a,b)=> sort==="desc" ? b.localeCompare(a) : a.localeCompare(b));
+  const sort=document.getElementById("sortArtists").value;
+  artists.sort((a,b)=> sort==="desc"?b.localeCompare(a):a.localeCompare(b));
 
-  const keyword = document.getElementById("searchArtists").value.toLowerCase();
+  const keyword=document.getElementById("searchArtists").value.toLowerCase();
 
-  const tbody = document.getElementById("artistsBody");
+  const tbody=document.getElementById("artistsBody");
   tbody.innerHTML="";
 
   artists.forEach(a=>{
@@ -200,10 +196,11 @@ function play(videoId,time){
 
 function closeModal(){
   document.getElementById("modal").classList.add("hidden");
+  document.getElementById("player").innerHTML=""; // ←再生停止
 }
 
 function formatDate(d){
-  const date = new Date(d);
+  const date=new Date(d);
   return `${date.getFullYear()}/${String(date.getMonth()+1).padStart(2,"0")}/${String(date.getDate()).padStart(2,"0")} ${String(date.getHours()).padStart(2,"0")}:${String(date.getMinutes()).padStart(2,"0")}`;
 }
 

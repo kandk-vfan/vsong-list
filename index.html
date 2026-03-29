@@ -16,13 +16,15 @@
 </div>
 
 <!-- 曲一覧 -->
-<div id="songs">
-  <input id="searchSongs" placeholder="曲・アーティスト検索">
-  <select id="sortSongs">
-    <option value="title">曲名</option>
-    <option value="artist">アーティスト</option>
-    <option value="count">回数</option>
-  </select>
+<div id="songs" class="section">
+  <div class="toolbar">
+    <input id="searchSongs" placeholder="曲・アーティスト検索">
+    <select id="sortSongs">
+      <option value="title">曲名順</option>
+      <option value="artist">アーティスト順</option>
+      <option value="count">回数順</option>
+    </select>
+  </div>
 
   <table>
     <thead>
@@ -38,18 +40,22 @@
 </div>
 
 <!-- 配信一覧 -->
-<div id="streams" class="hidden">
-  <input id="searchStreams" placeholder="曲・アーティスト検索">
+<div id="streams" class="hidden section">
+  <div class="toolbar">
+    <input id="searchStreams" placeholder="曲・アーティスト検索">
+  </div>
   <div id="streamsContainer"></div>
 </div>
 
 <!-- アーティスト -->
-<div id="artists" class="hidden">
-  <input id="searchArtists" placeholder="曲・アーティスト検索">
-  <select id="sortArtists">
-    <option value="asc">昇順</option>
-    <option value="desc">降順</option>
-  </select>
+<div id="artists" class="hidden section">
+  <div class="toolbar">
+    <input id="searchArtists" placeholder="曲・アーティスト検索">
+    <select id="sortArtists">
+      <option value="asc">昇順</option>
+      <option value="desc">降順</option>
+    </select>
+  </div>
 
   <table>
     <thead>
@@ -63,9 +69,12 @@
   </table>
 </div>
 
+<!-- モーダル -->
 <div id="modal" class="hidden">
-  <div id="player"></div>
-  <button onclick="closeModal()">閉じる</button>
+  <div class="modal-content">
+    <div id="player"></div>
+    <button onclick="closeModal()">閉じる</button>
+  </div>
 </div>
 
 <script src="app.js"></script>
