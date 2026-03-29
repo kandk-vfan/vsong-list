@@ -73,8 +73,6 @@ table{
 td,th{
   border:1px solid #334155;
   padding:12px;
-  text-align:left;
-  vertical-align:top;
 }
 
 .hidden{
@@ -103,36 +101,68 @@ button:hover{
   background:#334155;
 }
 
+/* カード */
+
 .card{
   border:1px solid #334155;
   border-radius:14px;
-  padding:18px;
-  margin-bottom:20px;
+  padding:20px;
+  margin-bottom:24px;
   background:#111827;
 }
 
 .stream-title-row{
-  margin-bottom:14px;
-  font-size:18px;     /* ← 少し大きく */
+  font-size:20px;
   font-weight:700;
+  margin-bottom:10px;
   line-height:1.4;
 }
+
+.stream-date{
+  font-size:15px;
+  color:#94a3b8;
+  margin-bottom:14px;
+}
+
+/* グリッド */
 
 .grid{
   display:grid;
   grid-template-columns:repeat(5,minmax(0,1fr));
-  gap:10px;
+  gap:12px;
 }
 
 .song-card{
   border:1px solid #334155;
   border-radius:12px;
-  padding:12px;       /* ← 少し広げる */
+  padding:14px;
   background:#0b1220;
-  min-height:120px;
+  min-height:130px;
   display:flex;
   flex-direction:column;
   gap:10px;
+}
+
+/* ←ここがメイン改善ポイント */
+
+.song-card-title{
+  font-size:16px;
+  line-height:1.5;
+  word-break:break-word;
+  font-weight:600;
+}
+
+.song-card-artist{
+  font-size:14px;
+  color:#94a3b8;
+  line-height:1.5;
+  word-break:break-word;
+}
+
+.num{
+  font-size:14px;
+  font-weight:700;
+  color:#94a3b8;
 }
 
 .song-card-head{
@@ -141,24 +171,7 @@ button:hover{
   align-items:center;
 }
 
-.song-card-title{
-  font-size:14px;     /* ← 少し大きく */
-  line-height:1.5;
-  word-break:break-word;
-}
-
-.song-card-artist{
-  font-size:13px;     /* ← 少し大きく */
-  color:#94a3b8;
-  line-height:1.5;
-  word-break:break-word;
-}
-
-.num{
-  color:#94a3b8;
-  font-size:13px;     /* ← 少し大きく */
-  font-weight:700;
-}
+/* モーダル */
 
 #modal.hidden{
   display:none !important;
@@ -172,7 +185,6 @@ button:hover{
   justify-content:center;
   align-items:center;
   padding:24px;
-  box-sizing:border-box;
   z-index:9999;
 }
 
@@ -192,6 +204,8 @@ iframe{
   border-radius:12px;
 }
 
+/* レスポンシブ */
+
 @media (max-width: 1200px){
   .grid{
     grid-template-columns:repeat(4,minmax(0,1fr));
@@ -207,10 +221,6 @@ iframe{
     min-width:220px;
     width:100%;
   }
-
-  .toolbar{
-    align-items:stretch;
-  }
 }
 
 @media (max-width: 600px){
@@ -221,10 +231,4 @@ iframe{
   .tab-button{
     width:100%;
   }
-}
-
-.stream-date{
-  font-size:14px;
-  color:#94a3b8;
-  margin-bottom:10px;
 }
