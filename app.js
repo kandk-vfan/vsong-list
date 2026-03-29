@@ -27,9 +27,9 @@ function toggleTheme(){
 }
 
 function updateButtons(){
-  const next = getTheme() === "dark" ? "ライト" : "ダーク";
-  document.getElementById("themeToggleSongs").innerText = next;
-  document.getElementById("themeToggleArtists").innerText = next;
+  const isLight = getTheme() === "light";
+  document.getElementById("themeToggleSongs").checked = isLight;
+  document.getElementById("themeToggleArtists").checked = isLight;
 }
 
 fetch("data.json")
@@ -265,21 +265,20 @@ function formatDate(d){
 }
 
 document.getElementById("searchSongs").addEventListener("input", renderSongs);
+document.getElementById("sortSongsOrder").addEventListener("change", renderSongs);
+
 document.getElementById("sortSongsType").addEventListener("change", () => {
   const type = document.getElementById("sortSongsType").value;
-
   if(type === "count"){
     document.getElementById("sortSongsOrder").value = "desc";
   }
-
   renderSongs();
 });
-document.getElementById("sortSongsOrder").addEventListener("change", renderSongs);
 
 document.getElementById("searchStreams").addEventListener("input", renderStreams);
 
 document.getElementById("searchArtists").addEventListener("input", renderArtists);
 document.getElementById("sortArtistsOrder").addEventListener("change", renderArtists);
 
-document.getElementById("themeToggleSongs").addEventListener("click", toggleTheme);
-document.getElementById("themeToggleArtists").addEventListener("click", toggleTheme);
+document.getElementById("themeToggleSongs").addEventListener("change", toggleTheme);
+document.getElementById("themeToggleArtists").addEventListener("change", toggleTheme);

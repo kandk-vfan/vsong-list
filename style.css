@@ -149,6 +149,47 @@ button:hover{
   background:#334155;
 }
 
+/* トグル */
+
+.toggle{
+  display:flex;
+  align-items:center;
+}
+
+.toggle input{
+  display:none;
+}
+
+.slider{
+  width:42px;
+  height:22px;
+  background:#334155;
+  border-radius:999px;
+  position:relative;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.slider::before{
+  content:"";
+  position:absolute;
+  width:18px;
+  height:18px;
+  background:#e5e7eb;
+  border-radius:50%;
+  top:2px;
+  left:2px;
+  transition:0.2s;
+}
+
+.toggle input:checked + .slider{
+  background:#3b82f6;
+}
+
+.toggle input:checked + .slider::before{
+  transform:translateX(20px);
+}
+
 .card{
   border:1px solid #334155;
   border-radius:14px;
