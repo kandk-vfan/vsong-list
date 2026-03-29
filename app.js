@@ -3,7 +3,7 @@ let data = [];
 const STORAGE_KEY = "tableTheme";
 
 function getTheme(){
-  return localStorage.getItem(STORAGE_KEY) || "dark";
+  return localStorage.getItem(STORAGE_KEY) || "light";
 }
 
 function applyTheme(){
