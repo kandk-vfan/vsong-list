@@ -2,8 +2,13 @@ body{
   background:#0f172a;
   color:#e5e7eb;
   font-family:sans-serif;
-  padding:24px;
-  margin:0;
+  padding:24px 16px;
+  margin:0 auto;
+  max-width:1200px;
+}
+
+th{
+  white-space: nowrap;
 }
 
 h1{
