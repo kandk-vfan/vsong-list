@@ -832,7 +832,7 @@ video: https://www.youtube.com/watch?v=5TNOZHrwN7c
 0:17:15 ハナミズキ / 一青窈
 0:25:29 「僕は...」 / あたらよ
 0:31:49 たしかなこと / 小田和正
-0:38:36 言葉にできない / 小田和正
+0:38:36 言葉にできない / オフコース
 0:47:10 IRIS OUT / 米津玄師
 0:52:46 アウトサイダー / Eve
 0:57:27 お気に召すまま / Eve
@@ -1345,7 +1345,7 @@ video: https://www.youtube.com/watch?v=FFIKd-8ke0o
 1:10:30 One more time one more chance / 山崎まさよし
 1:20:34 未来 / コブクロ
 1:32:27 不可幸力 / Vaundy
-1:41:12 デスペレート / TeddyLoid&Giga feat.LOLUET
+1:41:12 デスぺレート / TeddyLoid&Giga feat. LOLUET
 1:47:48 BALALAIKA / 9Lana
 1:55:06 キスキツネ / ヒメヒナ(HIMEHINA)
 2:05:20 LADY CRAZY / ヒメヒナ(HIMEHINA)
@@ -1501,7 +1501,7 @@ video: https://www.youtube.com/watch?v=w_cqBNeWI0c
 0:40:46 革命道中 / アイナ・ジ・エンド
 0:46:52 ダイヤモンドクレパス / シェリル・ノーム starring May'n
 0:55:38 oath sign / LiSA
-1:02:17 やさしさに包まれたなら / 松任谷由実
+1:02:17 やさしさに包まれたなら / 荒井由実
 1:10:29 残響散歌 / Aimer
 1:17:29 Lemon / 米津玄師
 1:25:39 LADY / 米津玄師
@@ -1623,7 +1623,7 @@ video: https://www.youtube.com/watch?v=R3udjTUdgAQ
 0:56:54 火星人 / ヨルシカ
 1:03:33 鬼ノ宴 / 友成空
 1:09:08 長く短い祭 / 椎名林檎
-1:16:07 デスぺレート / TeddyLoid&Giga feat.LOLUET
+1:16:07 デスぺレート / TeddyLoid&Giga feat. LOLUET
 1:28:28 JOY / YUKI
 1:36:05 魔性の女A / 紫今
 1:42:03 ウワサのあの子 / 紫今
@@ -1820,10 +1820,10 @@ video: https://www.youtube.com/watch?v=LjloafftgxY
 1:40:12 ファンサ / HoneyWorks feat.mona(夏川椎菜)
 1:53:43 十六夜涙 / 吉岡亜衣加
 2:01:26 ダイアモンド クレバス / シェリル・ノーム starring May'n
-2:11:58 桜色舞うころに / 中島美嘉
+2:11:58 桜色舞うころ / 中島美嘉
 2:19:23 Arrietty's Song / セシル・コルベル
 2:24:51 CRY / SawanoHiroyuki[nZk]:mizuki
-2:31:53 フクロウ～フロウが知らせる客が来たと～ / KOKIA
+2:31:53 フクロウ ～フクロウが知らせる客が来たと～ / KOKIA
 
 video: https://www.youtube.com/watch?v=rG0Onw-yPYM
 
@@ -1865,7 +1865,7 @@ video: https://www.youtube.com/watch?v=kCkhd5FLvY0
 01:28:47 分かってないよ / WurtS
 01:35:01 ないものねだり / KANA-BOON
 01:41:48 秒針を噛む / ずっと真夜中でいいのに。
-01:52:22 綺羅キラー / ずっと真夜中で良いのに。
+01:52:22 綺羅キラー / ずっと真夜中でいいのに。
 02:00:05 ダイダイダイダイダイキライ / 雨良
 02:04:46 ずうっといっしょ！ / キタニタツヤ
 02:11:12 モエチャッカファイア / 弌誠
@@ -1893,7 +1893,7 @@ video: https://www.youtube.com/watch?v=9qCquyZNwos
 01:45:55 愛証 / 倖田來未
 01:55:24 桃ノ花ビラ / 大塚愛
 02:03:45 涙そうそう / 夏川りみ
-02:21:32 ズルイ幻 / めいちゃん
+02:21:32 ズルい幻 / めいちゃん
 02:33:17 Call of Silence / 澤野弘之 feat.Gemie
 
 video: https://www.youtube.com/watch?v=KcC2GK_oCEY
@@ -1961,7 +1961,7 @@ video: https://www.youtube.com/watch?v=ll6uZAVL8q8
 01:25:43 火星人 / ヨルシカ
 01:36:13 真赤 / My Hair is Bad
 01:46:21 可愛くてごめん / HoneyWorks
-01:52:56 愛♡スクリ～ム / AiScReam
+01:52:56 愛♡スクリ～ム! / AiScReam
 02:00:32 雨とカプチーノ / ヨルシカ
 02:07:57 rain stops, good-bye / におP
 02:15:27 crossing field / LiSA
@@ -2023,7 +2023,7 @@ video: https://www.youtube.com/watch?v=MTer9cLcPUM
 00:18:45 05410-(ん) / RADWIMPS
 00:23:49 おしゃかしゃま / RADWIMPS
 00:30:18 me me she / RADWIMPS
-00:40:00 忘れじの言の葉 / 未来古代楽団の曲
+00:40:00 忘れじの言の葉 / 未来古代楽団
 00:47:00 oblivious / Kalafina
 00:59:30 secret base～君がくれたもの～ / ZONE
 01:08:44 それがあなたの幸せとしても / Heavenz
@@ -2072,7 +2072,7 @@ video: https://www.youtube.com/watch?v=UlwMFo5QSaY
 01:01:46 スノースマイル / BUMP OF CHICKEN
 01:12:25 紅一葉 / 黒うさP
 01:20:03 深海のリトルクライ / sasakure.UK feat. 土岐麻子
-01:26:40 ハロ/ハワユ / ナノウ
+01:26:40 ハロ／ハワユ / ナノウ
 01:33:48 glow / keeno
 01:42:44 帝国少女 / R Sound Design
 01:49:36 琥珀色の街、上海蟹の朝 / くるり
@@ -2103,7 +2103,7 @@ video: https://www.youtube.com/watch?v=HgRp5LyInRc
 01:51:17 すずめ / RADWIMPS
 01:59:05 フクロウ ～フクロウが知らせる客が来たと～ / KOKIA
 02:07:11 リーベ～幻の光 / シェリル・ノーム starring May'n
-02:15:05 いきのこり●ぼくら / 青葉 市子
+02:15:05 いきのこり●ぼくら / 青葉市子
 02:28:10 愛のうた～ピクミンのテーマ / ストロベリー・フラワー
 02:35:41 月のワルツ / 諫山実生
 02:43:26 魔法の絨毯 / 川崎鷹也
