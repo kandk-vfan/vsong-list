@@ -26,14 +26,20 @@ h1{
 .summary-row{
   display:grid;
   grid-template-columns: 8em 1fr;
+  gap:8px;
 }
 
 .label{
+  position:relative;
   text-align:left;
+  padding-right:1em;
 }
 
 .label::after{
   content:"：";
+  position:absolute;
+  right:0;
+  top:0;
 }
 
 .value{
