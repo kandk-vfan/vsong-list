@@ -23,6 +23,26 @@ h1{
   display:inline-block;
 }
 
+.summary-row{
+  display:grid;
+  grid-template-columns: auto 1fr;
+  gap:8px;
+}
+
+.label{
+  text-align:right;
+  min-width:6em;
+}
+
+.label::after{
+  content:"：";
+  margin-left:2px;
+}
+
+.value{
+  text-align:left;
+}
+
 .tabs{
   display:flex;
   gap:12px;
