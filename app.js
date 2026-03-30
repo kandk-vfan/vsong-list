@@ -216,12 +216,21 @@ function renderStreams(){
 
   let arr=Object.entries(map);
 
-  const order=document.getElementById("sortStreamsOrder").value;
-
+  const type = document.getElementById("sortStreamsType").value;
+  const order = document.getElementById("sortStreamsOrder").value;
+  
   arr.sort((a,b)=>{
-    const aDate=a[1].latestDate;
-    const bDate=b[1].latestDate;
-    return order==="desc"?bDate-aDate:aDate-bDate;
+    let res = 0;
+  
+    if(type==="count"){
+      res = a[1].songs.length - b[1].songs.length;
+    }else{
+      const aDate=a[1].latestDate;
+      const bDate=b[1].latestDate;
+      res = aDate - bDate;
+    }
+  
+    return order==="desc" ? -res : res;
   });
 
   const keyword=document.getElementById("searchStreams").value.toLowerCase();
@@ -330,3 +339,9 @@ document.getElementById("sortSongsType").addEventListener("change", ()=>{
 document.getElementById("themeToggleSongs").addEventListener("change", toggleTheme);
 document.getElementById("themeToggleStreams").addEventListener("change", toggleTheme);
 document.getElementById("themeToggleArtists").addEventListener("change", toggleTheme);
+document.getElementById("sortStreamsType").addEventListener("change", ()=>{
+  if(document.getElementById("sortStreamsType").value==="count"){
+    document.getElementById("sortStreamsOrder").value="desc";
+  }
+  renderStreams();
+});
