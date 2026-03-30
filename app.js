@@ -318,16 +318,26 @@ document.getElementById("sortStreamsOrder").addEventListener("change", renderStr
 document.getElementById("sortArtistsOrder").addEventListener("change", renderArtists);
 
 document.getElementById("sortArtistsType").addEventListener("change", ()=>{
-  if(document.getElementById("sortArtistsType").value === "count"){
+  const type = document.getElementById("sortArtistsType").value;
+
+  if(type === "count"){
     document.getElementById("sortArtistsOrder").value = "desc";
+  }else{
+    document.getElementById("sortArtistsOrder").value = "asc";
   }
+
   renderArtists();
 });
 
 document.getElementById("sortSongsType").addEventListener("change", ()=>{
-  if(document.getElementById("sortSongsType").value==="count"){
-    document.getElementById("sortSongsOrder").value="desc";
+  const type = document.getElementById("sortSongsType").value;
+
+  if(type === "count"){
+    document.getElementById("sortSongsOrder").value = "desc";
+  }else{
+    document.getElementById("sortSongsOrder").value = "asc";
   }
+
   renderSongs();
 });
 
