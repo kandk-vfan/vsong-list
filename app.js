@@ -56,8 +56,8 @@ fetch("data.json")
   .then(j=>{
     data = j.map(d => ({
       ...d,
-      title: normalize(d.title),
-      artist: normalize(d.artist),
+      title: String(d.title ?? "").trim(),
+      artist: String(d.artist ?? "").trim(),
       videoTitle: String(d.videoTitle ?? "").trim(),
       time: String(d.time ?? "").trim(),
       videoId: String(d.videoId ?? "").trim(),
