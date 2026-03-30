@@ -322,26 +322,31 @@ document.getElementById("sortSongsOrder").addEventListener("change", renderSongs
 document.getElementById("sortStreamsOrder").addEventListener("change", renderStreams);
 document.getElementById("sortArtistsOrder").addEventListener("change", renderArtists);
 
-document.getElementById("sortArtistsType").addEventListener("change", ()=>{
-  if(document.getElementById("sortArtistsType").value === "count"){
-    document.getElementById("sortArtistsOrder").value = "desc";
-  }
-  renderArtists();
-});
+const type = document.getElementById("sortArtistsType").value;
+if(type==="count"){
+  document.getElementById("sortArtistsOrder").value="desc";
+}else{
+  document.getElementById("sortArtistsOrder").value="asc";
+}
 
-document.getElementById("sortSongsType").addEventListener("change", ()=>{
-  if(document.getElementById("sortSongsType").value==="count"){
-    document.getElementById("sortSongsOrder").value="desc";
-  }
-  renderSongs();
-});
+const type = document.getElementById("sortSongsType").value;
+if(type==="count"){
+  document.getElementById("sortSongsOrder").value="desc";
+}else{
+  document.getElementById("sortSongsOrder").value="asc";
+}
 
 document.getElementById("themeToggleSongs").addEventListener("change", toggleTheme);
 document.getElementById("themeToggleStreams").addEventListener("change", toggleTheme);
 document.getElementById("themeToggleArtists").addEventListener("change", toggleTheme);
 document.getElementById("sortStreamsType").addEventListener("change", ()=>{
-  if(document.getElementById("sortStreamsType").value==="count"){
+  const type = document.getElementById("sortStreamsType").value;
+
+  if(type==="count"){
     document.getElementById("sortStreamsOrder").value="desc";
+  }else{
+    document.getElementById("sortStreamsOrder").value="asc";
   }
+
   renderStreams();
 });
