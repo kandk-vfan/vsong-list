@@ -12,8 +12,8 @@ function getFilteredData(){
     result = result.filter(d => new Date(d.date) > MONETIZED_DATE);
   }
 
-  const startEl = document.querySelector(".date-filter-area input[id='startDate']");
-  const endEl = document.querySelector(".date-filter-area input[id='endDate']");
+  const startEl = document.querySelector(".startDate");
+  const endEl = document.querySelector(".endDate");
 
   const start = startEl ? startEl.value : "";
   const end = endEl ? endEl.value : "";
@@ -32,11 +32,11 @@ function getFilteredData(){
 }
 
 function syncDateInputs(start, end){
-  document.querySelectorAll("#startDate").forEach(el=>{
+  document.querySelectorAll(".startDate").forEach(el=>{
     el.value = start;
   });
 
-  document.querySelectorAll("#endDate").forEach(el=>{
+  document.querySelectorAll(".endDate").forEach(el=>{
     el.value = end;
   });
 }
@@ -146,8 +146,8 @@ fetch("data.json")
       artist: normalize(d.artist)
     }));
 
-    document.getElementById("startDate").value = "";
-    document.getElementById("endDate").value = "";
+    document.querySelectorAll(".startDate").forEach(el=>el.value = "");
+    document.querySelectorAll(".endDate").forEach(el=>el.value = "");
 
     renderAll();
     applyTheme();
@@ -465,17 +465,19 @@ document.querySelectorAll(".quick-buttons button").forEach(btn=>{
   });
 });
 
-document.querySelectorAll("#startDate").forEach(el=>{
+document.querySelectorAll(".startDate").forEach(el=>{
   el.addEventListener("change", ()=>{
-    syncDateInputs(el.value, document.querySelector("#endDate")?.value || "");
+    const endValue = document.querySelector(".endDate")?.value || "";
+    syncDateInputs(el.value, endValue);
     highlightButton(null);
     renderAll();
   });
 });
 
-document.querySelectorAll("#endDate").forEach(el=>{
+document.querySelectorAll(".endDate").forEach(el=>{
   el.addEventListener("change", ()=>{
-    syncDateInputs(document.querySelector("#startDate")?.value || "", el.value);
+    const startValue = document.querySelector(".startDate")?.value || "";
+    syncDateInputs(startValue, el.value);
     highlightButton(null);
     renderAll();
   });
