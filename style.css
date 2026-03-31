@@ -73,6 +73,7 @@ h1{
 
 .date-input .filter-label{
   white-space:nowrap;
+  width:3.5em;
 }
 
 .quick-buttons{
@@ -558,5 +559,5 @@ body.streams-light #artistsTable tr.artist-header td{
 }
 
 .quick-buttons{
-  margin-left:calc(1em + 8px);
+  margin-left:3.5em;
 }
