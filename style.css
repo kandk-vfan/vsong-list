@@ -20,7 +20,7 @@ h1{
   display:inline-flex;
   align-items:center;
   gap:12px;
-  margin-bottom:16px;
+  margin-bottom:0;
   padding:10px 14px;
   border-radius:12px;
   border:1px solid #334155;
@@ -30,6 +30,10 @@ h1{
 .filter-label{
   font-size:15px;
   color:#94a3b8;
+}
+
+.filter-message{
+  margin-top:0;
 }
 
 .summary{
@@ -45,12 +49,11 @@ h1{
   flex-direction:column;
   justify-content:center;
   min-width:180px;
-  height:100%;
 }
 
 .summary-row-wrap{
   display:flex;
-  align-items:center;
+  align-items:stretch;
   gap:16px;
   margin-bottom:28px;
 }
