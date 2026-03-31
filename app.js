@@ -2,14 +2,22 @@ let data = [];
 
 const STORAGE_KEY = "tableTheme";
 
+function toDateSafe(v){
+  if(v instanceof Date) return v;
+  if(typeof v === "string"){
+    return new Date(v.includes("T") ? v : v + "T00:00:00");
+  }
+  return new Date(NaN);
+}
+
 function getFilteredData(){
   const isOn = document.getElementById("monetizedToggle").checked;
 
   if(!isOn) return data;
 
-  const border = new Date("2026-02-24");
+  const border = new Date("2026-02-23");
 
-  return data.filter(d => new Date(d.date) > border);
+  return data.filter(d => toDateSafe(d.date) > border);
 }
 
 function normalize(str){
@@ -108,7 +116,7 @@ function renderSongs(){
     const k=key(d);
     if(!map[k]) map[k]={title:d.title,artist:d.artist,count:0,latest:d};
     map[k].count++;
-    if(new Date(d.date)>new Date(map[k].latest.date)){
+    if(toDateSafe(d.date) > toDateSafe(map[k].latest.date)){
       map[k].latest=d;
     }
   });
@@ -218,11 +226,11 @@ function renderStreams(){
 
   getFilteredData().forEach(d=>{
     if(!map[d.videoId]){
-      map[d.videoId]={title:d.videoTitle,latestDate:new Date(d.date + "T00:00:00"),songs:[]};
+      map[d.videoId]={title:d.videoTitle,latestDate: toDateSafe(d.date),songs:[]};
     }
     map[d.videoId].songs.push(d);
   
-    const dDate = new Date(d.date + "T00:00:00");
+    const dDate = toDateSafe(d.date);
     if(dDate > map[d.videoId].latestDate){
       map[d.videoId].latestDate = dDate;
     }
@@ -313,7 +321,18 @@ function closeModal(){
 }
 
 function formatDate(d){
-  const date = (d instanceof Date) ? d : new Date(d + "T00:00:00");
+  let date;
+
+  if(d instanceof Date){
+    date = d;
+  }else if(typeof d === "string"){
+    date = new Date(d.includes("T") ? d : d + "T00:00:00");
+  }else{
+    return "";
+  }
+
+  if(isNaN(date.getTime())) return "";
+
   return `${date.getFullYear()}/${String(date.getMonth()+1).padStart(2,"0")}/${String(date.getDate()).padStart(2,"0")}`;
 }
 
