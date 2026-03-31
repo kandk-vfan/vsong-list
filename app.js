@@ -12,8 +12,8 @@ function getFilteredData(){
     result = result.filter(d => new Date(d.date) > MONETIZED_DATE);
   }
 
-  const startEl = document.getElementById("startDate");
-  const endEl = document.getElementById("endDate");
+  const startEl = document.querySelector(".date-filter-area input[id='startDate']");
+  const endEl = document.querySelector(".date-filter-area input[id='endDate']");
 
   const start = startEl ? startEl.value : "";
   const end = endEl ? endEl.value : "";
@@ -29,6 +29,16 @@ function getFilteredData(){
   }
 
   return result;
+}
+
+function syncDateInputs(start, end){
+  document.querySelectorAll("#startDate").forEach(el=>{
+    el.value = start;
+  });
+
+  document.querySelectorAll("#endDate").forEach(el=>{
+    el.value = end;
+  });
 }
 
 function normalize(str){
@@ -66,8 +76,10 @@ function setDateRange(type){
     end = "";
   }
 
-  document.getElementById("startDate").value = formatInputDate(start);
-  document.getElementById("endDate").value = formatInputDate(end);
+  const s = formatInputDate(start);
+  const e = formatInputDate(end);
+
+  syncDateInputs(s, e);
 
   highlightButton(type);
   renderAll();
@@ -453,19 +465,18 @@ document.querySelectorAll(".quick-buttons button").forEach(btn=>{
   });
 });
 
-const startInput = document.getElementById("startDate");
-const endInput = document.getElementById("endDate");
-
-if(startInput){
-  startInput.addEventListener("change", ()=>{
+document.querySelectorAll("#startDate").forEach(el=>{
+  el.addEventListener("change", ()=>{
+    syncDateInputs(el.value, document.querySelector("#endDate")?.value || "");
     highlightButton(null);
     renderAll();
   });
-}
+});
 
-if(endInput){
-  endInput.addEventListener("change", ()=>{
+document.querySelectorAll("#endDate").forEach(el=>{
+  el.addEventListener("change", ()=>{
+    syncDateInputs(document.querySelector("#startDate")?.value || "", el.value);
     highlightButton(null);
     renderAll();
   });
-}
+});
