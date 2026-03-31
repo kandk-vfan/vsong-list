@@ -25,6 +25,7 @@ h1{
   border-radius:12px;
   border:1px solid #334155;
   background:#111827;
+  flex-wrap:nowrap;
 }
 
 .filter-message{
@@ -49,7 +50,7 @@ h1{
 
 .summary-row-wrap{
   display:grid;
-  grid-template-columns:auto minmax(260px,320px) minmax(420px,1fr);
+  grid-template-columns:auto 1fr 2fr;
   align-items:stretch;
   gap:16px;
   margin-bottom:28px;
@@ -67,7 +68,8 @@ h1{
   display:flex;
   align-items:center;
   gap:8px;
-  flex-wrap:wrap;
+  flex-wrap:nowrap;
+  min-width:140px;
 }
 
 .quick-buttons{
