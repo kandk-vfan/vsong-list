@@ -32,15 +32,10 @@ h1{
   color:#94a3b8;
 }
 
-.filter-area{
-  display:flex;
-  flex-direction:column;
-  gap:1px;
-}
-
 .filter-message{
   font-size:13px;
   color:#94a3b8;
+  margin-top:6px;
 }
 
 .summary{
