@@ -473,3 +473,35 @@ iframe{
   opacity:0.4;
   color:#64748b;
 }
+
+#songsTable{
+  table-layout: fixed;
+}
+
+#songsTable th:nth-child(1),
+#songsTable td:nth-child(1){
+  width:40%;
+}
+
+#songsTable th:nth-child(2),
+#songsTable td:nth-child(2){
+  width:30%;
+}
+
+#songsTable th:nth-child(3),
+#songsTable td:nth-child(3){
+  width:10%;
+  text-align:center;
+}
+
+#songsTable th:nth-child(4),
+#songsTable td:nth-child(4){
+  width:20%;
+  text-align:center;
+}
+
+#songsTable td{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
