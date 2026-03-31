@@ -483,7 +483,7 @@ document.querySelectorAll(".quick-buttons button[data-type]").forEach(btn=>{
 
 document.querySelectorAll(".startDate").forEach(el=>{
   el.addEventListener("change", ()=>{
-    syncDateInputs(el.value, document.querySelector("#endDate")?.value || "");
+    syncDateInputs(el.value, document.querySelector(".endDate")?.value || "");
     highlightButton(null);
     renderAll();
   });
@@ -491,30 +491,17 @@ document.querySelectorAll(".startDate").forEach(el=>{
 
 document.querySelectorAll(".endDate").forEach(el=>{
   el.addEventListener("change", ()=>{
-    syncDateInputs(document.querySelector("#startDate")?.value || "", el.value);
+    syncDateInputs(document.querySelector(".startDate")?.value || "", el.value);
     highlightButton(null);
     renderAll();
   });
 });
 
-document.addEventListener("click", (e)=>{
-  const btn = e.target.closest(".quick-buttons button");
-  if(!btn) return;
-
-  const type = btn.dataset.type;
-
-  if(!type){
+document.querySelectorAll(".quick-buttons button:not([data-type])").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
     currentRangeType = null;
-
     syncDateInputs("", "");
-
-    document.querySelectorAll(".quick-buttons button").forEach(b=>{
-      b.classList.remove("active");
-    });
-
+    highlightButton(null);
     renderAll();
-    return;
-  }
-
-  setDateRange(type);
+  });
 });
