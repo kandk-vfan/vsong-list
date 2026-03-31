@@ -424,3 +424,47 @@ iframe{
     width:100%;
   }
 }
+
+.filter-label,
+.theme-label{
+  font-size:13px;
+  font-weight:600;
+  color:#e5e7eb;
+  opacity:0.9;
+  padding:4px 8px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.05);
+}
+
+body.streams-light .filter-label,
+body.streams-light .theme-label{
+  color:#0f172a;
+  background:rgba(0,0,0,0.05);
+}
+
+.slider{
+  width:46px;
+  height:24px;
+  background:#475569;
+  border-radius:999px;
+}
+
+.slider::before{
+  width:20px;
+  height:20px;
+  background:#ffffff;
+}
+
+.toggle input:checked + .slider{
+  background:#2563eb;
+}
+
+.toggle input:checked ~ .filter-label:first-of-type{
+  opacity:0.4;
+  color:#64748b;
+}
+
+.toggle input:not(:checked) ~ .filter-label:last-of-type{
+  opacity:0.4;
+  color:#64748b;
+}
