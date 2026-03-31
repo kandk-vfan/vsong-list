@@ -50,6 +50,13 @@ h1{
   gap:8px;
 }
 
+.summary-row-wrap{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
 .label{
   position:relative;
   text-align:left;
