@@ -28,7 +28,7 @@
 
   <div class="summary-row-wrap">
     <div class="summary" id="songsSummary"></div>
-
+  
     <div class="global-filter">
       <span class="filter-label">🎵全曲</span>
       <label class="toggle">
@@ -70,7 +70,19 @@
 </div>
 
 <div id="streams" class="section hidden">
-  <div class="summary" id="streamsSummary"></div>
+
+  <div class="summary-row-wrap">
+    <div class="summary" id="streamsSummary"></div>
+
+    <div class="global-filter">
+      <span class="filter-label">🎵全曲</span>
+      <label class="toggle">
+        <input type="checkbox" id="monetizedToggle">
+        <span class="slider"></span>
+      </label>
+      <span class="filter-label">📌収益化後のみ（リクエスト用）</span>
+    </div>
+  </div>
 
   <div class="toolbar">
     <input id="searchStreams" placeholder="曲・アーティスト検索">
@@ -92,7 +104,19 @@
 </div>
 
 <div id="artists" class="section hidden">
-  <div class="summary" id="artistsSummary"></div>
+
+  <div class="summary-row-wrap">
+    <div class="summary" id="artistsSummary"></div>
+
+    <div class="global-filter">
+      <span class="filter-label">🎵全曲</span>
+      <label class="toggle">
+        <input type="checkbox" id="monetizedToggle">
+        <span class="slider"></span>
+      </label>
+      <span class="filter-label">📌収益化後のみ（リクエスト用）</span>
+    </div>
+  </div>
 
   <div class="toolbar">
     <input id="searchArtists" placeholder="曲・アーティスト検索">
