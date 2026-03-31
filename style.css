@@ -27,11 +27,6 @@ h1{
   background:#111827;
 }
 
-.filter-label{
-  font-size:18px;
-  color:#94a3b8;
-}
-
 .filter-message{
   margin-top:0;
   font-size:14px;
@@ -140,11 +135,6 @@ input{
   display:flex;
   align-items:center;
   gap:8px;
-}
-
-.theme-label{
-  font-size:13px;
-  color:#94a3b8;
 }
 
 .toggle{
@@ -446,7 +436,7 @@ iframe{
 
 .filter-label,
 .theme-label{
-  font-size:13px;
+  font-size:15px;
   font-weight:600;
   color:#e5e7eb;
   opacity:0.9;
