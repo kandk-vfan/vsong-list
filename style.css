@@ -16,6 +16,18 @@ h1{
   font-size:32px;
 }
 
+.global-filter{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:16px;
+}
+
+.filter-label{
+  font-size:14px;
+  color:#94a3b8;
+}
+
 .summary{
   font-size:16px;
   font-weight:700;
