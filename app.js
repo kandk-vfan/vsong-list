@@ -2,6 +2,16 @@ let data = [];
 
 const STORAGE_KEY = "tableTheme";
 
+function getFilteredData(){
+  const isOn = document.getElementById("monetizedToggle").checked;
+
+  if(!isOn) return data;
+
+  const border = new Date("2026-02-24");
+
+  return data.filter(d => new Date(d.date) >= border);
+}
+
 function normalize(str){
   return str.replace(/^[\s　]+|[\s　]+$/g, "");
 }
@@ -75,14 +85,14 @@ function renderSummary(){
   const songSet=new Set();
   const artistSet=new Set();
 
-  data.forEach(d=>{
+  getFilteredData().forEach(d=>{
     songSet.add(key(d));
     artistSet.add(d.artist);
   });
 
   const html = `
   <div class="summary-row"><span class="label">曲数 (ユニーク)</span><span class="value">${songSet.size}</span></div>
-  <div class="summary-row"><span class="label">歌唱回数</span><span class="value">${data.length}</span></div>
+  <div class="summary-row"><span class="label">歌唱回数</span><span class="value">${getFilteredData().length}</span></div>
   <div class="summary-row"><span class="label">アーティスト数</span><span class="value">${artistSet.size}</span></div>
   `;
 
@@ -94,7 +104,7 @@ function renderSummary(){
 function renderSongs(){
   const map={};
 
-  data.forEach(d=>{
+  getFilteredData().forEach(d=>{
     const k=key(d);
     if(!map[k]) map[k]={title:d.title,artist:d.artist,count:0,latest:d};
     map[k].count++;
@@ -145,7 +155,7 @@ function renderSongs(){
 function renderArtists(){
   const map={};
 
-  data.forEach(d=>{
+  getFilteredData().forEach(d=>{
     if(!map[d.artist]) map[d.artist]=new Set();
     map[d.artist].add(d.title);
   });
@@ -206,7 +216,7 @@ function renderArtists(){
 function renderStreams(){
   const map={};
 
-  data.forEach(d=>{
+  getFilteredData().forEach(d=>{
     if(!map[d.videoId]){
       map[d.videoId]={title:d.videoTitle,latestDate:new Date(d.date),songs:[]};
     }
@@ -246,8 +256,6 @@ function renderStreams(){
       }
     });
 
-    const filtered = unique;
-    
     function isMatch(s){
       if(!keyword) return false;
       return s.title.toLowerCase().includes(keyword) || s.artist.toLowerCase().includes(keyword);
@@ -266,7 +274,7 @@ function renderStreams(){
 </div>
 <div class="stream-date">${formatDate(v.latestDate)}</div>
 <div class="grid">
-${filtered.map((s,i)=>`
+${unique.map((s,i)=>`
 <div class="song-card ${isMatch(s) ? "highlight" : ""}">
 <div class="song-card-head">
 <span class="num">${String(i+1).padStart(2,"0")}</span>
@@ -344,3 +352,4 @@ document.getElementById("sortSongsType").addEventListener("change", ()=>{
 document.getElementById("themeToggleSongs").addEventListener("change", toggleTheme);
 document.getElementById("themeToggleStreams").addEventListener("change", toggleTheme);
 document.getElementById("themeToggleArtists").addEventListener("change", toggleTheme);
+document.getElementById("monetizedToggle").addEventListener("change", renderAll);
