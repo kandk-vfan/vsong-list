@@ -497,13 +497,24 @@ document.querySelectorAll(".endDate").forEach(el=>{
   });
 });
 
-document.querySelectorAll(".resetDate").forEach(btn=>{
-  btn.addEventListener("click", ()=>{
+document.addEventListener("click", (e)=>{
+  const btn = e.target.closest(".quick-buttons button");
+  if(!btn) return;
+
+  const type = btn.dataset.type;
+
+  if(!type){
     currentRangeType = null;
+
     syncDateInputs("", "");
+
     document.querySelectorAll(".quick-buttons button").forEach(b=>{
       b.classList.remove("active");
     });
+
     renderAll();
-  });
+    return;
+  }
+
+  setDateRange(type);
 });
