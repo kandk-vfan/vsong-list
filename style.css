@@ -594,6 +594,6 @@ body.streams-light #artistsTable tr.artist-header td{
 
 @media (max-width: 900px){
   .toolbar input{
-    text-align:center;
+    width:auto;
   }
 }
