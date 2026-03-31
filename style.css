@@ -51,17 +51,17 @@ h1{
   min-width:180px;
 }
 
-.summary-row{
-  display:grid;
-  grid-template-columns: 8em 1fr;
-  gap:8px;
-}
-
 .summary-row-wrap{
   display:flex;
-  align-items:center;
+  align-items:stretch;
   gap:16px;
   flex-wrap:wrap;
+}
+
+.summary{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
 .label{
