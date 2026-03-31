@@ -12,10 +12,8 @@ function getFilteredData(){
     result = result.filter(d => new Date(d.date) > MONETIZED_DATE);
   }
 
-  const activeSection = document.querySelector(".section:not(.hidden)");
-
-  const startEl = activeSection?.querySelector(".startDate");
-  const endEl = activeSection?.querySelector(".endDate");
+  const startEl = document.querySelector(".date-filter-area input[id='startDate']");
+  const endEl = document.querySelector(".date-filter-area input[id='endDate']");
 
   const start = startEl ? startEl.value : "";
   const end = endEl ? endEl.value : "";
@@ -34,11 +32,11 @@ function getFilteredData(){
 }
 
 function syncDateInputs(start, end){
-  document.querySelectorAll(".startDate").forEach(el=>{
+  document.querySelectorAll("#startDate").forEach(el=>{
     el.value = start;
   });
 
-  document.querySelectorAll(".endDate").forEach(el=>{
+  document.querySelectorAll("#endDate").forEach(el=>{
     el.value = end;
   });
 }
@@ -148,8 +146,8 @@ fetch("data.json")
       artist: normalize(d.artist)
     }));
 
-    document.querySelectorAll(".startDate").forEach(el=>el.value = "");
-    document.querySelectorAll(".endDate").forEach(el=>el.value = "");
+    document.getElementById("startDate").value = "";
+    document.getElementById("endDate").value = "";
 
     renderAll();
     applyTheme();
@@ -467,19 +465,17 @@ document.querySelectorAll(".quick-buttons button").forEach(btn=>{
   });
 });
 
-document.querySelectorAll(".startDate").forEach(el=>{
+document.querySelectorAll("#startDate").forEach(el=>{
   el.addEventListener("change", ()=>{
-    const endValue = document.querySelector(".endDate")?.value || "";
-    syncDateInputs(el.value, endValue);
+    syncDateInputs(el.value, document.querySelector("#endDate")?.value || "");
     highlightButton(null);
     renderAll();
   });
 });
 
-document.querySelectorAll(".endDate").forEach(el=>{
+document.querySelectorAll("#endDate").forEach(el=>{
   el.addEventListener("change", ()=>{
-    const startValue = document.querySelector(".startDate")?.value || "";
-    syncDateInputs(startValue, el.value);
+    syncDateInputs(document.querySelector("#startDate")?.value || "", el.value);
     highlightButton(null);
     renderAll();
   });
