@@ -4,7 +4,7 @@ const STORAGE_KEY = "tableTheme";
 const MONETIZED_DATE = new Date("2026-02-23");
 
 function getFilteredData(){
-  const isMonetizedOnly = document.getElementById("monetizedToggle")?.checked;
+  const isMonetizedOnly = document.querySelector(".monetizedToggle")?.checked;
 
   if(!isMonetizedOnly) return data;
 
@@ -361,7 +361,7 @@ document.getElementById("sortSongsType").addEventListener("change", ()=>{
 document.getElementById("themeToggleSongs").addEventListener("change", toggleTheme);
 document.getElementById("themeToggleStreams").addEventListener("change", toggleTheme);
 document.getElementById("themeToggleArtists").addEventListener("change", toggleTheme);
-document.getElementById("monetizedToggle").addEventListener("change", renderAll);
+document.querySelector(".monetizedToggle").addEventListener("change", renderAll);
 document.querySelectorAll(".monetizedToggle").forEach(el=>{
   el.addEventListener("change", ()=>{
     const checked = el.checked;
