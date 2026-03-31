@@ -140,7 +140,8 @@ h1{
 }
 
 .section{
-  margin-top:8px;
+  max-width:900px;
+  margin:0 auto;
 }
 
 .toolbar{
