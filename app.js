@@ -72,8 +72,14 @@ function setDateRange(type){
   }
 
   if(type === "all"){
-    start = "";
-    end = "";
+    if(data.length === 0){
+      start = "";
+      end = "";
+    }else{
+      const dates = data.map(d => new Date(d.date));
+      start = new Date(Math.min(...dates));
+      end = new Date(Math.max(...dates));
+    }
   }
 
   const s = formatInputDate(start);
