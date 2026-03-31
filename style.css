@@ -144,7 +144,7 @@ h1{
 
 .toolbar{
   display:flex;
-  gap:30px;
+  gap:16px;
   align-items:center;
   margin-bottom:20px;
   flex-wrap:wrap;
@@ -571,7 +571,7 @@ body.streams-light #artistsTable tr.artist-header td{
 }
 
 .toolbar .clear-btn{
-  margin-right:8px;
+  margin-right:16px;
 }
 
 #sortSongsType,
