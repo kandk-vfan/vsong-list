@@ -48,16 +48,43 @@ h1{
 }
 
 .summary-row-wrap{
-  display:flex;
+  display:grid;
+  grid-template-columns:auto auto 1fr;
   align-items:stretch;
   gap:16px;
   margin-bottom:28px;
 }
 
-.filter-area{
+.filter-area,
+.date-filter-area{
   display:flex;
   flex-direction:column;
   justify-content:space-between;
+  gap:8px;
+}
+
+.date-input{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.quick-buttons{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.quick-buttons button{
+  padding:6px 10px;
+  font-size:13px;
+}
+
+.quick-buttons button.active{
+  background:#3b82f6;
+  border-color:#3b82f6;
+  color:#fff;
 }
 
 .label{
