@@ -50,7 +50,7 @@ h1{
 
 .summary-row-wrap{
   display:grid;
-  grid-template-columns:auto 1fr 2fr;
+  grid-template-columns:auto 1.5fr 2fr;
   align-items:stretch;
   gap:16px;
   margin-bottom:28px;
