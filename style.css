@@ -436,12 +436,6 @@ iframe{
   background:rgba(255,255,255,0.05);
 }
 
-body.streams-light .filter-label,
-body.streams-light .theme-label{
-  color:#0f172a;
-  background:rgba(0,0,0,0.05);
-}
-
 .slider{
   width:46px;
   height:24px;
