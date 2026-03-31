@@ -86,9 +86,6 @@ h1{
   font-size:16px;
   font-weight:700;
   cursor:pointer;
-  height:48px;
-  display:flex;
-  align-items:center;
 }
 
 .tab-button:hover{
