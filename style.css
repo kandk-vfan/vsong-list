@@ -533,18 +533,19 @@ iframe{
 }
 
 body.streams-light #artistsTable tr.artist-header td{
-  background:#e2e8f0;
+  background:#ffffff;
   color:#0f172a;
-  border:1px solid #94a3b8;
+  border:1px solid #cbd5e1;
   border-bottom:none;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
 }
 
 body.streams-light #artistsTable tr.artist-song-row td{
   background:#ffffff;
-  border-left:1px solid #94a3b8;
-  border-right:1px solid #94a3b8;
+  border-left:1px solid #cbd5e1;
+  border-right:1px solid #cbd5e1;
 }
 
 body.streams-light #artistsTable tr.artist-song-row:last-of-type td{
-  border-bottom:1px solid #94a3b8;
+  border-bottom:1px solid #cbd5e1;
 }
