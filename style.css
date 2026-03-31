@@ -573,3 +573,8 @@ body.streams-light #artistsTable tr.artist-header td{
 .toolbar .clear-btn{
   margin-right:8px;
 }
+
+#sortSongsType,
+#sortArtistsType{
+  margin-right:-8px;
+}
