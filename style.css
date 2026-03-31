@@ -17,7 +17,7 @@ h1{
 }
 
 .global-filter{
-  display:flex;
+  display:inline-flex;
   align-items:center;
   gap:12px;
   margin-bottom:16px;
