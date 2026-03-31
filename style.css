@@ -589,7 +589,9 @@ body.streams-light #artistsTable tr.artist-header td{
 @media (max-width: 900px){
 
   .summary-row-wrap{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr !important;
+    display:flex;
+    flex-direction:column;
   }
   .quick-buttons{
     margin-left:0;
