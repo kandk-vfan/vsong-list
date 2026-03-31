@@ -1,12 +1,12 @@
 let data = [];
-const MONETIZE_DATE = "2026-02-24";
+const MONETIZE_DATE = "2026-02-23";
 let monetizeOnly = false;
 
 const STORAGE_KEY = "tableTheme";
 
 function getFilteredData(){
   if(!monetizeOnly) return data;
-  return data.filter(d => new Date(d.date) >= new Date(MONETIZE_DATE));
+  return data.filter(d => new Date(d.date) > new Date(MONETIZE_DATE));
 }
 
 function normalize(str){
