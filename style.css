@@ -587,7 +587,21 @@ body.streams-light #artistsTable tr.artist-header td{
 }
 
 @media (max-width: 900px){
+
+  .summary-row-wrap{
+    grid-template-columns:1fr;
+  }
+  .quick-buttons{
+    margin-left:0;
+  }
+
+  input{
+    min-width:unset;
+    width:100%;
+  }
+
   .toolbar{
     justify-content:center;
   }
+
 }
