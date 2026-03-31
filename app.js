@@ -496,3 +496,15 @@ document.querySelectorAll(".endDate").forEach(el=>{
     renderAll();
   });
 });
+
+document.getElementById("resetDate").addEventListener("click", ()=>{
+  currentRangeType = null;
+
+  syncDateInputs("", "");
+
+  document.querySelectorAll(".quick-buttons button").forEach(btn=>{
+    btn.classList.remove("active");
+  });
+
+  renderAll();
+});
