@@ -593,9 +593,9 @@ body.streams-light #artistsTable tr.artist-header td{
   min-width:170px;
   max-width:170px;
   box-sizing:border-box;
-  height:40px;
+  height:50px;
   padding:0 12px;
-  line-height:40px;
+  line-height:50px;
 }
 
 @media (max-width: 900px){
