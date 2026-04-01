@@ -57,7 +57,7 @@ h1{
 
 .summary-row-wrap{
   display:grid;
-  grid-template-columns:180px max-content minmax(420px,1fr);
+  grid-template-columns:auto max-content minmax(420px,1fr);
   align-items:stretch;
   gap:16px;
   margin-bottom:28px;
