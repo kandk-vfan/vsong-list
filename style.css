@@ -48,6 +48,12 @@ h1{
   min-width:180px;
 }
 
+.summary-row{
+  display:grid;
+  grid-template-columns: auto 1fr;
+  align-items:center;
+}
+
 .summary-row-wrap{
   display:grid;
   grid-template-columns:auto max-content minmax(420px,1fr);
