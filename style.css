@@ -50,7 +50,7 @@ h1{
 
 .summary-row{
   display:grid;
-  grid-template-columns: 10em 1em 1fr;
+  grid-template-columns: 11em 1fr;
   align-items:center;
 }
 
@@ -100,12 +100,17 @@ h1{
 }
 
 .label{
+  position:relative;
   text-align:left;
+  padding-right:1em;
   white-space:nowrap;
 }
 
-.colon{
-  text-align:center;
+.label::after{
+  content:"：";
+  position:absolute;
+  right:0;
+  top:0;
 }
 
 .value{
