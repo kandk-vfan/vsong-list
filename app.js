@@ -3,6 +3,31 @@ let currentRangeType = null;
 
 const STORAGE_KEY = "tableTheme";
 const MONETIZED_DATE = new Date("2026-02-23");
+const IS_PREVIEW = location.pathname.includes("/preview/");
+
+function isAndroidAppAvailable(){
+  return !!(window.Android && typeof window.Android.share === "function");
+}
+
+function canUseWebShare(){
+  return typeof navigator.share === "function";
+}
+
+function shareText(text){
+  if(isAndroidAppAvailable()){
+    window.Android.share(text);
+    return;
+  }
+
+  if(canUseWebShare()){
+    navigator.share({ text }).catch(() => {});
+    return;
+  }
+
+  if(navigator.clipboard && typeof navigator.clipboard.writeText === "function"){
+    navigator.clipboard.writeText(text).catch(() => {});
+  }
+}
 
 function toLocalDateString(dateStr){
   const d = new Date(dateStr);
