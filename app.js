@@ -4,12 +4,7 @@ let currentRangeType = null;
 const STORAGE_KEY = "tableTheme";
 const MONETIZED_DATE = new Date("2026-02-23");
 
-const YOMI_MAP = {
-  "大塚愛": "おおつかあい",
-  "大柴広己(もじゃ)": "おおしばひろき",
-  "泉こなた(平野綾)・柊かがみ(加藤英美里)・柊つかさ(福原香織)・高良みゆき(遠藤綾)": "いずみこなた",
-  "川崎鷹也": "かわさきたかや"
-};
+const YOMI_MAP = {};
 
 function getYomi(str){
   return YOMI_MAP[str] || str;
@@ -170,22 +165,25 @@ function updateButtons(){
   document.getElementById("themeToggleArtists").checked = isLight;
 }
 
-fetch("data.json")
-  .then(r=>r.json())
-  .then(j=>{
-    data = j.map(d => ({
-      ...d,
-      title: normalize(d.title),
-      artist: normalize(d.artist)
-    }));
+Promise.all([
+  fetch("data.json").then(r=>r.json()),
+  fetch("yomi.json").then(r=>r.json())
+]).then(([dataJson, yomiJson])=>{
+  YOMI_MAP = yomiJson;
 
-    document.querySelectorAll(".startDate").forEach(el=>el.value="");
-    document.querySelectorAll(".endDate").forEach(el=>el.value="");
+  data = dataJson.map(d => ({
+    ...d,
+    title: normalize(d.title),
+    artist: normalize(d.artist)
+  }));
 
-    renderAll();
-    applyTheme();
-    updateButtons();
-  });
+  document.querySelectorAll(".startDate").forEach(el=>el.value="");
+  document.querySelectorAll(".endDate").forEach(el=>el.value="");
+
+  renderAll();
+  applyTheme();
+  updateButtons();
+});
 
 function key(d){
   return d.title + "||" + d.artist;
