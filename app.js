@@ -7,6 +7,8 @@ const MONETIZED_DATE = new Date("2026-02-23");
 let YOMI_MAP = {};
 
 function getYomi(str){
+  if(!str) return "";
+  const s = normalize(str);
   return YOMI_MAP[str] || str;
 }
 
