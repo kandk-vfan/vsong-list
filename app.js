@@ -1,15 +1,30 @@
 let data = [];
 let currentRangeType = null;
+let YOMI_MAP = {};
 
 const STORAGE_KEY = "tableTheme";
 const MONETIZED_DATE = new Date("2026-02-23");
 
-let YOMI_MAP = {};
+const JA_COLLATOR = new Intl.Collator("ja", {
+  sensitivity: "base",
+  numeric: true
+});
+
+function normalize(str){
+  return String(str ?? "").normalize("NFKC").replace(/^[\s　]+|[\s　]+$/g, "");
+}
 
 function getYomi(str){
-  if(!str) return "";
   const s = normalize(str);
-  return YOMI_MAP[str] || str;
+  return YOMI_MAP[s] || s;
+}
+
+function compareJa(a, b){
+  const ay = getYomi(a);
+  const by = getYomi(b);
+  const res = JA_COLLATOR.compare(ay, by);
+  if(res !== 0) return res;
+  return JA_COLLATOR.compare(normalize(a), normalize(b));
 }
 
 function toLocalDateString(dateStr){
@@ -173,7 +188,9 @@ Promise.all([
     .then(r => r.ok ? r.json() : {})
     .catch(() => ({}))
 ]).then(([dataJson, yomiJson])=>{
-  YOMI_MAP = yomiJson || {};
+  YOMI_MAP = Object.fromEntries(
+    Object.entries(yomiJson || {}).map(([k, v]) => [normalize(k), normalize(v)])
+  );
 
   data = dataJson.map(d => ({
     ...d,
@@ -253,9 +270,9 @@ function renderSongs(){
 
   arr.sort((a,b)=>{
     let res=0;
-    if(type==="artist") res=getYomi(a.artist).localeCompare(getYomi(b.artist),"ja");
+    if(type==="artist") res=compareJa(a.artist, b.artist);
     else if(type==="count") res=a.count-b.count;
-    else res=getYomi(a.title).localeCompare(getYomi(b.title),"ja");
+    else res=compareJa(a.title, b.title);
     return order==="desc"?-res:res;
   });
 
@@ -307,7 +324,7 @@ function renderArtists(){
     if(type==="count"){
       res = map[a].size - map[b].size;
     }else{
-      res = getYomi(a).localeCompare(getYomi(b),"ja");
+      res = compareJa(a, b);
     }
 
     return order==="desc"?-res:res;
@@ -324,9 +341,7 @@ function renderArtists(){
 <td colspan="2">${a} (${count}曲)</td>
 </tr>`;
 
-    const songs = Array.from(map[a]).sort((a,b)=>
-      getYomi(a).localeCompare(getYomi(b),"ja")
-    );
+    const songs = Array.from(map[a]).sort(compareJa);
 
     songs.forEach(t=>{
       html+=`
