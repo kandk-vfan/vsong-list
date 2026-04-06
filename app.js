@@ -9,7 +9,7 @@ let YOMI_MAP = {};
 function getYomi(str){
   if(!str) return "";
   const s = normalize(str);
-  return YOMI_MAP[str] || str;
+  return YOMI_MAP[s] || s;
 }
 
 function toLocalDateString(dateStr){
