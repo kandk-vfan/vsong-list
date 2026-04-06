@@ -167,9 +167,11 @@ function updateButtons(){
 
 Promise.all([
   fetch("data.json").then(r=>r.json()),
-  fetch("yomi.json").then(r=>r.json())
+  fetch("yomi.json")
+    .then(r => r.ok ? r.json() : {})
+    .catch(() => ({}))
 ]).then(([dataJson, yomiJson])=>{
-  YOMI_MAP = yomiJson;
+  YOMI_MAP = yomiJson || {};
 
   data = dataJson.map(d => ({
     ...d,
