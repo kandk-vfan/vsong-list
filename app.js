@@ -4,7 +4,7 @@ let currentRangeType = null;
 const STORAGE_KEY = "tableTheme";
 const MONETIZED_DATE = new Date("2026-02-23");
 
-const YOMI_MAP = {};
+let YOMI_MAP = {};
 
 function getYomi(str){
   return YOMI_MAP[str] || str;
