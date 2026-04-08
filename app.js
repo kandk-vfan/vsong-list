@@ -424,6 +424,8 @@ ${filtered.map((s,i)=>`
     container.appendChild(card);
   });
 
+  document.getElementById("streamsCount").innerText = `配信数：${hitCount}件`;
+  
   if(hitCount===0){
     container.innerHTML="<p>該当する結果がありません</p>";
   }
