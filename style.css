@@ -619,3 +619,9 @@ body.streams-light #artistsTable tr.artist-header td{
   }
 
 }
+
+#streamsCount{
+  font-size:16px;
+  font-weight:700;
+  margin-bottom:12px;
+}
