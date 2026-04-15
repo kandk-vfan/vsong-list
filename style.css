@@ -625,3 +625,82 @@ body.streams-light #artistsTable tr.artist-header td{
   font-weight:700;
   margin-bottom:12px;
 }
+
+/* =========================
+   kawaui専用テーマ
+========================= */
+
+/* 背景をピンクに */
+body.kawaui-theme{
+  background:#fbcfe8; /* ピンク */
+  color:#1f2937; /* 全体文字を濃いめに */
+}
+
+/* 上部（ダークモード影響外エリア）を読みやすく */
+body.kawaui-theme h1,
+body.kawaui-theme .filter-label,
+body.kawaui-theme .theme-label,
+body.kawaui-theme .filter-message{
+  color:#1f2937;
+}
+
+/* 上部のボックス類を明るい色に */
+body.kawaui-theme .global-filter,
+body.kawaui-theme .summary{
+  background:#ffffff;
+  color:#1f2937;
+  border:1px solid #f9a8d4;
+}
+
+/* タブボタン */
+body.kawaui-theme .tab-button{
+  background:#f9a8d4;
+  color:#1f2937;
+  border:1px solid #f472b6;
+}
+
+body.kawaui-theme .tab-button.active{
+  background:#ec4899;
+  color:#ffffff;
+}
+
+/* 入力系 */
+body.kawaui-theme input,
+body.kawaui-theme select{
+  background:#ffffff;
+  color:#1f2937;
+  border:1px solid #f9a8d4;
+}
+
+/* テーブル */
+body.kawaui-theme table{
+  background:#ffffff;
+  color:#1f2937;
+}
+
+body.kawaui-theme thead th{
+  background:#fbcfe8;
+}
+
+body.kawaui-theme tbody tr:nth-child(even){
+  background:#fdf2f8;
+}
+
+/* カード */
+body.kawaui-theme .card{
+  background:#ffffff;
+  color:#1f2937;
+  border:1px solid #f9a8d4;
+}
+
+/* ボタン */
+body.kawaui-theme button{
+  background:#f9a8d4;
+  color:#1f2937;
+  border:1px solid #f472b6;
+}
+
+body.kawaui-theme button:hover{
+  background:#f472b6;
+  color:#ffffff;
+}
