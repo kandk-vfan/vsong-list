@@ -1,0 +1,82 @@
+name: deploy multi branches to pages
+
+on:
+  push:
+    branches:
+      - hjm
+      - kawaui
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: prepare workspace
+        run: mkdir public
+
+      # ======================
+      # 固定TOPページ
+      # ======================
+      - name: create root index
+        run: |
+          cat <<EOF > public/index.html
+          <!DOCTYPE html>
+          <html lang="ja">
+          <head>
+            <meta charset="UTF-8">
+            <title>TOP</title>
+          </head>
+          <body>
+            <h1>TOPページ</h1>
+          </body>
+          </html>
+          EOF
+
+      # ======================
+      # hjm
+      # ======================
+      - name: checkout hjm
+        uses: actions/checkout@v4
+        with:
+          ref: hjm
+          path: tmp-hjm
+
+      - name: copy hjm
+        run: |
+          mkdir -p public/hjm
+          rsync -av --exclude='.git' --exclude='.github' tmp-hjm/ public/hjm/
+
+      # ======================
+      # kawaui
+      # ======================
+      - name: checkout kawaui
+        uses: actions/checkout@v4
+        with:
+          ref: kawaui
+          path: tmp-kawaui
+
+      - name: copy kawaui
+        run: |
+          mkdir -p public/kawaui
+          rsync -av --exclude='.git' --exclude='.github' tmp-kawaui/ public/kawaui/
+
+      # ======================
+      # deploy
+      # ======================
+      - name: deploy
+        run: |
+          cd public
+          git init
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+          git add .
+          git commit -m "deploy"
+
+          git branch -M gh-pages
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
+          git push -f origin gh-pages
