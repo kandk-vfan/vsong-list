@@ -756,5 +756,5 @@ body.kawaui-theme #artistsTable{
 
 /* 最上部だけ上線を付ける */
 body.kawaui-theme #artistsTable tr.artist-header:first-child td{
-  border-top:1px solid #f9a8d4;
+  border-top:1px solid #334155;
 }
