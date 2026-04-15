@@ -2,9 +2,9 @@ name: deploy multi branches to pages
 
 on:
   workflow_run:
-      workflows: ["convert txt to json"]
-      types:
-        - completed
+    workflows: ["convert txt to json"]
+    types:
+      - completed
 
 jobs:
   deploy:
@@ -14,13 +14,18 @@ jobs:
         github.event.workflow_run.head_branch == 'hjm' ||
         github.event.workflow_run.head_branch == 'kawaui'
       )
-  
+
     runs-on: ubuntu-latest
 
     permissions:
       contents: write
 
     steps:
+      # ★ 必須：リポジトリをcheckout
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      # 作業ディレクトリ作成
       - name: prepare workspace
         run: mkdir public
 
@@ -71,7 +76,7 @@ jobs:
           rsync -av --exclude='.git' --exclude='.github' tmp-kawaui/ public/kawaui/
 
       # ======================
-      # deploy
+      # gh-pagesへデプロイ
       # ======================
       - name: deploy
         run: |
