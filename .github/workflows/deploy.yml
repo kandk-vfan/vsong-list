@@ -5,16 +5,15 @@ on:
       workflows: ["convert txt to json"]
       types:
         - completed
-  push:
-    branches:
-      - hjm
-      - kawaui
 
 jobs:
   deploy:
     if: |
-      github.event.workflow_run.head_branch == 'hjm' ||
-      github.event.workflow_run.head_branch == 'kawaui'
+      github.event.workflow_run.conclusion == 'success' &&
+      (
+        github.event.workflow_run.head_branch == 'hjm' ||
+        github.event.workflow_run.head_branch == 'kawaui'
+      )
   
     runs-on: ubuntu-latest
 
