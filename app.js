@@ -26,13 +26,7 @@ function toLocalDateString(dateStr){
 }
 
 function getFilteredData(){
-  const isMonetizedOnly = document.querySelector(".monetizedToggle")?.checked;
-
   let result = data;
-
-  if(isMonetizedOnly){
-    result = result.filter(d => toLocalDateString(d.date) >= toLocalDateString(MONETIZED_DATE));
-  }
 
   const startEl = document.querySelector(".startDate");
   const endEl = document.querySelector(".endDate");
@@ -139,39 +133,6 @@ function debounce(fn, delay=300){
   };
 }
 
-function getTheme(){
-  const saved = localStorage.getItem(STORAGE_KEY);
-  if(saved) return saved;
-
-  if(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches){
-    return "dark";
-  }
-  return "light";
-}
-
-function applyTheme(){
-  const theme = getTheme();
-  const isLight = theme === "light";
-
-  document.getElementById("songsTable").classList.toggle("light", isLight);
-  document.getElementById("artistsTable").classList.toggle("light", isLight);
-  document.body.classList.toggle("streams-light", isLight);
-}
-
-function toggleTheme(){
-  const next = getTheme() === "dark" ? "light" : "dark";
-  localStorage.setItem(STORAGE_KEY, next);
-  applyTheme();
-  updateButtons();
-}
-
-function updateButtons(){
-  const isLight = getTheme() === "light";
-  document.getElementById("themeToggleSongs").checked = isLight;
-  document.getElementById("themeToggleStreams").checked = isLight;
-  document.getElementById("themeToggleArtists").checked = isLight;
-}
-
 Promise.all([
   fetch("data.json").then(r=>r.json()),
   fetch("yomi.json")
@@ -190,8 +151,6 @@ Promise.all([
   document.querySelectorAll(".endDate").forEach(el=>el.value="");
 
   renderAll();
-  applyTheme();
-  updateButtons();
 });
 
 function key(d){
@@ -485,22 +444,6 @@ document.getElementById("sortSongsType").addEventListener("change", ()=>{
   }
 
   renderSongs();
-});
-
-document.getElementById("themeToggleSongs").addEventListener("change", toggleTheme);
-document.getElementById("themeToggleStreams").addEventListener("change", toggleTheme);
-document.getElementById("themeToggleArtists").addEventListener("change", toggleTheme);
-document.querySelector(".monetizedToggle").addEventListener("change", renderAll);
-document.querySelectorAll(".monetizedToggle").forEach(el=>{
-  el.addEventListener("change", ()=>{
-    const checked = el.checked;
-
-    document.querySelectorAll(".monetizedToggle").forEach(t=>{
-      t.checked = checked;
-    });
-
-    renderAll();
-  });
 });
 
 document.querySelectorAll(".quick-buttons button[data-type]").forEach(btn=>{
