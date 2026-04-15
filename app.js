@@ -2,7 +2,6 @@ let data = [];
 let currentRangeType = null;
 
 const STORAGE_KEY = "tableTheme";
-const MONETIZED_DATE = new Date("2026-02-23");
 
 let YOMI_MAP = {};
 
