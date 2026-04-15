@@ -726,7 +726,7 @@ body.kawaui-theme .song-card-artist{
 }
 
 /* アーティストヘッダー */
-body.kawaui-theme .artist-header{
+body.kawaui-theme #artistsTable tr.artist-header td{
   background:#f9a8d4;
   color:#1f2937;
 }
