@@ -67,6 +67,9 @@ jobs:
           </body>
           </html>
           EOF
+          
+      - name: create CNAME
+        run: echo "list.kandk-vsongs.work" > public/CNAME
 
       # copy hjm
       - run: |
