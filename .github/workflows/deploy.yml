@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - hjm
+      - kawaui
 
 jobs:
   deploy:
@@ -47,6 +48,20 @@ jobs:
         run: |
           mkdir -p public/hjm
           rsync -av --exclude='.git' --exclude='.github' tmp-hjm/ public/hjm/
+
+      # ======================
+      # kawaui
+      # ======================
+      - name: checkout kawaui
+        uses: actions/checkout@v4
+        with:
+          ref: kawaui
+          path: tmp-kawaui
+
+      - name: copy kawaui
+        run: |
+          mkdir -p public/kawaui
+          rsync -av --exclude='.git' --exclude='.github' tmp-kawaui/ public/kawaui/
 
       # ======================
       # deploy
