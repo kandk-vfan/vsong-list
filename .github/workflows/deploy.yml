@@ -1,45 +1,58 @@
 name: deploy multi branches to pages
 
 on:
-  workflow_run:
-    workflows: ["convert txt to json"]
-    types:
-      - completed
-
   push:
     branches:
       - hjm
       - kawaui
-    paths-ignore:
-      - "songs.txt"
 
 jobs:
   deploy:
-    if: |
-      (
-        github.event_name == 'workflow_run' &&
-        github.event.workflow_run.conclusion == 'success' &&
-        (
-          github.event.workflow_run.head_branch == 'hjm' ||
-          github.event.workflow_run.head_branch == 'kawaui'
-        )
-      )
-      ||
-      (
-        github.event_name == 'push'
-      )
-
     runs-on: ubuntu-latest
 
     permissions:
       contents: write
 
     steps:
+      # ======================
+      # hjm
+      # ======================
       - uses: actions/checkout@v4
+        with:
+          ref: hjm
+          path: tmp-hjm
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - run: |
+          cd tmp-hjm
+          node convert.js
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
+      # ======================
+      # kawaui
+      # ======================
+      - uses: actions/checkout@v4
+        with:
+          ref: kawaui
+          path: tmp-kawaui
+
+      - run: |
+          cd tmp-kawaui
+          node convert.js
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
+      # ======================
+      # workspace
+      # ======================
       - name: prepare workspace
         run: mkdir public
 
+      # TOP
       - name: create root index
         run: |
           cat <<EOF > public/index.html
@@ -55,26 +68,20 @@ jobs:
           </html>
           EOF
 
-      - uses: actions/checkout@v4
-        with:
-          ref: hjm
-          path: tmp-hjm
-
+      # copy hjm
       - run: |
           mkdir -p public/hjm
           rsync -av --exclude='.git' --exclude='.github' tmp-hjm/ public/hjm/
 
-      - uses: actions/checkout@v4
-        with:
-          ref: kawaui
-          path: tmp-kawaui
-
+      # copy kawaui
       - run: |
           mkdir -p public/kawaui
           rsync -av --exclude='.git' --exclude='.github' tmp-kawaui/ public/kawaui/
 
-      - name: deploy
-        run: |
+      # ======================
+      # deploy
+      # ======================
+      - run: |
           cd public
           git init
           git config user.name "github-actions"
