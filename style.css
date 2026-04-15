@@ -758,3 +758,15 @@ body.kawaui-theme #artistsTable{
 body.kawaui-theme #artistsTable tr.artist-header:first-child td{
   border-top:1px solid #334155;
 }
+
+/* 配信日付 */
+body.kawaui-theme .stream-date{
+  color:#374151;
+  font-weight:500;
+}
+
+/* 通し番号 */
+body.kawaui-theme .num{
+  color:#1f2937;
+  font-weight:700;
+}
