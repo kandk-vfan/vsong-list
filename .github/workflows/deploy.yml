@@ -6,13 +6,27 @@ on:
     types:
       - completed
 
+  push:
+    branches:
+      - hjm
+      - kawaui
+    paths-ignore:
+      - "songs.txt"
+
 jobs:
   deploy:
     if: |
-      github.event.workflow_run.conclusion == 'success' &&
       (
-        github.event.workflow_run.head_branch == 'hjm' ||
-        github.event.workflow_run.head_branch == 'kawaui'
+        github.event_name == 'workflow_run' &&
+        github.event.workflow_run.conclusion == 'success' &&
+        (
+          github.event.workflow_run.head_branch == 'hjm' ||
+          github.event.workflow_run.head_branch == 'kawaui'
+        )
+      )
+      ||
+      (
+        github.event_name == 'push'
       )
 
     runs-on: ubuntu-latest
@@ -21,17 +35,11 @@ jobs:
       contents: write
 
     steps:
-      # リポジトリをcheckout
-      - name: checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # 作業ディレクトリ作成
       - name: prepare workspace
         run: mkdir public
 
-      # ======================
-      # 固定TOPページ
-      # ======================
       - name: create root index
         run: |
           cat <<EOF > public/index.html
@@ -47,37 +55,24 @@ jobs:
           </html>
           EOF
 
-      # ======================
-      # hjm
-      # ======================
-      - name: checkout hjm
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: hjm
           path: tmp-hjm
 
-      - name: copy hjm
-        run: |
+      - run: |
           mkdir -p public/hjm
           rsync -av --exclude='.git' --exclude='.github' tmp-hjm/ public/hjm/
 
-      # ======================
-      # kawaui
-      # ======================
-      - name: checkout kawaui
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: kawaui
           path: tmp-kawaui
 
-      - name: copy kawaui
-        run: |
+      - run: |
           mkdir -p public/kawaui
           rsync -av --exclude='.git' --exclude='.github' tmp-kawaui/ public/kawaui/
 
-      # ======================
-      # gh-pagesへデプロイ
-      # ======================
       - name: deploy
         run: |
           cd public
