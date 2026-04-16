@@ -88,6 +88,12 @@ h1{
 .date-input .filter-label{
   white-space:nowrap;
   width:3.5em;
+  background:#f0c2d8;
+  color:#1f2937;
+  padding:4px 10px;
+  border-radius:999px;
+  font-weight:700;
+  border:1px solid #6b7280;
 }
 
 .quick-buttons{
