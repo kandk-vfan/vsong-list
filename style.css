@@ -649,7 +649,7 @@ body.kawaui-theme{
   color:#1f2937;
 }
 
-body.kawaui-theme .page-title{
+body.kawaui-theme h1.page-title{
   display:inline-block;
   background:#ffffff;
   color:#1f2937;
@@ -657,23 +657,7 @@ body.kawaui-theme .page-title{
   border-radius:14px;
   padding:14px 20px;
   margin:0 0 24px 0;
-}
-
-/* 下線 */
-body.kawaui-theme .page-title{
-  position:relative;
-  padding-bottom:16px;
-}
-
-body.kawaui-theme .page-title::after{
-  content:"";
-  position:absolute;
-  left:20px;
-  bottom:10px;
-  width:160px;
-  height:4px;
-  background:#c21875;
-  border-radius:999px;
+  border-bottom:4px solid #c21875;
 }
 
 /* 上部テキスト */
