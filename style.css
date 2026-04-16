@@ -103,9 +103,9 @@ h1{
 
 .quick-buttons{
   display:flex;
-  gap:16px;
+  gap:8px;
   flex-wrap:wrap;
-  margin-left:calc(3.5em + 32px);
+  margin-left:calc(3.5em + 8px);
 }
 
 .quick-buttons button{
