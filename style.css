@@ -708,10 +708,6 @@ body.kawaui-theme thead th{
   background:#e6aaca;
 }
 
-body.kawaui-theme tbody tr:hover{
-  background:#e6aaca;
-}
-
 body.kawaui-theme #songsTable tbody tr:nth-child(even){
   background:#f6d6e6;
 }
@@ -736,12 +732,6 @@ body.kawaui-theme button{
   background:#f0c2d8;
   color:#1f2937;
   border:2px solid #6b7280;
-}
-
-body.kawaui-theme button:hover{
-  background:#a21caf;
-  color:#ffffff;
-  border:2px solid #4b5563;
 }
 
 /* クイックボタン active */
