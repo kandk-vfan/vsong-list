@@ -76,18 +76,22 @@ h1{
 }
 
 .date-filter-area{
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  gap:8px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  column-gap:8px;
+  row-gap:8px;
   margin-left:12px;
 }
 
+.date-input{
+  display:contents;
+}
+
 .quick-buttons{
+  grid-column:2;
   display:flex;
   gap:6px;
   flex-wrap:wrap;
-  margin-left:calc(3.5em + 22px + 8px);
 }
 
 .date-input .filter-label{
