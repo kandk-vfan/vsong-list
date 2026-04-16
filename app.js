@@ -314,7 +314,7 @@ function renderArtists(){
         songs.length === 1
           ? "artist-song-row"
           : `artist-song-row${i % 2 === 1 ? " song-alt" : ""}`;
-    
+
       html+=`
 <tr class="${rowClass}">
 <td></td>
@@ -324,17 +324,6 @@ function renderArtists(){
   });
 
   tbody.innerHTML=html;
-
-  const rows = tbody.querySelectorAll("tr");
-  
-  let groupIndex = -1;
-  
-  rows.forEach(row => {
-    if (row.classList.contains("artist-header")) {
-      groupIndex++;
-    }
-    row.classList.toggle("group-even", groupIndex % 2 === 0);
-  });
 }
 
 function renderStreams(){
