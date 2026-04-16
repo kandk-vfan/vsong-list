@@ -258,9 +258,27 @@ function renderSongs(){
 
   arr.sort((a,b)=>{
     let res=0;
-    if(type==="artist") res=getYomi(a.artist).localeCompare(getYomi(b.artist),"ja");
-    else if(type==="count") res=a.count-b.count;
-    else res=getYomi(a.title, a.artist).localeCompare(getYomi(b.title, b.artist),"ja");
+  
+    if(type==="artist"){
+      res = getYomi(a.artist).localeCompare(getYomi(b.artist),"ja");
+  
+      if(res===0){
+        return getYomi(a.title, a.artist).localeCompare(getYomi(b.title, b.artist),"ja");
+      }
+    }
+  
+    else if(type==="count"){
+      res = a.count - b.count;
+  
+      if(res===0){
+        return getYomi(a.title, a.artist).localeCompare(getYomi(b.title, b.artist),"ja");
+      }
+    }
+  
+    else{
+      res = getYomi(a.title, a.artist).localeCompare(getYomi(b.title, b.artist),"ja");
+    }
+  
     return order==="desc"?-res:res;
   });
 
