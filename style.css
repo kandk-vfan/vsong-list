@@ -103,14 +103,14 @@ h1{
 
 .quick-buttons{
   display:flex;
-  gap:6px;
+  gap:8px;
   flex-wrap:wrap;
-  padding-left:3.5em;
 }
 
 .quick-buttons button{
   padding:6px 10px;
   font-size:13px;
+  margin-left:5.0em;
 }
 
 .quick-buttons button.active{
