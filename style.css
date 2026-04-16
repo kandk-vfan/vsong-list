@@ -63,12 +63,19 @@ h1{
   margin-bottom:28px;
 }
 
-.filter-area,
+.filter-area{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:8px;
+}
+
 .date-filter-area{
   display:flex;
   flex-direction:column;
   justify-content:space-between;
   gap:8px;
+  margin-left:12px;
 }
 
 .date-input{
