@@ -309,9 +309,14 @@ function renderArtists(){
       getYomi(t1, a).localeCompare(getYomi(t2, a),"ja")
     );
 
-    songs.forEach(t=>{
+    songs.forEach((t, i)=>{
+      const rowClass =
+        songs.length === 1
+          ? "artist-song-row"
+          : `artist-song-row${i % 2 === 1 ? " song-alt" : ""}`;
+    
       html+=`
-<tr class="artist-song-row">
+<tr class="${rowClass}">
 <td></td>
 <td>${t}</td>
 </tr>`;
