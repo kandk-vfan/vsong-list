@@ -684,6 +684,11 @@ body.kawaui-theme thead th{
 }
 
 body.kawaui-theme tbody tr:nth-child(even){
+  background:transparent;
+}
+
+/* アーティスト単位で交互 */
+body.kawaui-theme #artistsTable tr.artist-header:nth-of-type(odd) ~ tr.artist-song-row{
   background:#f6d6e6;
 }
 
