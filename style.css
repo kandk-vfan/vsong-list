@@ -103,7 +103,7 @@ h1{
 
 .quick-buttons{
   display:flex;
-  gap:8px;
+  gap:7.5px;
   flex-wrap:wrap;
 }
 
