@@ -683,11 +683,11 @@ body.kawaui-theme thead th{
   background:#e6aaca;
 }
 
-body.kawaui-theme tbody tr:nth-child(even){
-  background:transparent;
+body.kawaui-theme #artistsTable tr.artist-song-row{
+  background:#ffffff;
 }
 
-body.kawaui-theme #artistsTable tr.group-even{
+body.kawaui-theme #artistsTable tr.artist-song-row.song-alt{
   background:#f6d6e6;
 }
 
