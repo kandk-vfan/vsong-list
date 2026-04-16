@@ -687,6 +687,10 @@ body.kawaui-theme tbody tr:nth-child(even){
   background:transparent;
 }
 
+body.kawaui-theme #artistsTable tr.group-even{
+  background:#f6d6e6;
+}
+
 body.kawaui-theme tbody tr:hover{
   background:#e6aaca;
 }
