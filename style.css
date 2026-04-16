@@ -630,12 +630,13 @@ body.streams-light #artistsTable tr.artist-header td{
    kawaui専用テーマ
 ========================= */
 
+/* 背景をピンクに */
 body.kawaui-theme{
   background:#e6aaca;
   color:#1f2937;
 }
 
-/* 上部テキスト */
+/* 上部（ダークモード影響外エリア）を読みやすく */
 body.kawaui-theme h1,
 body.kawaui-theme .filter-label,
 body.kawaui-theme .theme-label,
@@ -643,19 +644,19 @@ body.kawaui-theme .filter-message{
   color:#1f2937;
 }
 
-/* ボックス */
+/* 上部のボックス類を明るい色に */
 body.kawaui-theme .global-filter,
 body.kawaui-theme .summary{
   background:#ffffff;
   color:#1f2937;
-  border:1px solid #e3a2c2;
+  border:1px solid #e6aaca;
 }
 
-/* タブ */
+/* タブボタン */
 body.kawaui-theme .tab-button{
-  background:#f0c2d8;
+  background:#e6aaca;
   color:#1f2937;
-  border:1px solid #e3a2c2;
+  border:1px solid #d88bb5;
 }
 
 body.kawaui-theme .tab-button.active{
@@ -663,12 +664,12 @@ body.kawaui-theme .tab-button.active{
   color:#ffffff;
 }
 
-/* 入力 */
+/* 入力系 */
 body.kawaui-theme input,
 body.kawaui-theme select{
   background:#ffffff;
   color:#1f2937;
-  border:1px solid #e3a2c2;
+  border:1px solid #e6aaca;
 }
 
 /* テーブル */
@@ -678,29 +679,25 @@ body.kawaui-theme table{
 }
 
 body.kawaui-theme thead th{
-  background:#f0c2d8;
+  background:#e6aaca;
 }
 
 body.kawaui-theme tbody tr:nth-child(even){
   background:#f6d6e6;
 }
 
-body.kawaui-theme tbody tr:hover{
-  background:#e6aaca;
-}
-
 /* カード */
 body.kawaui-theme .card{
   background:#ffffff;
   color:#1f2937;
-  border:1px solid #e3a2c2;
+  border:1px solid #e6aaca;
 }
 
 /* ボタン */
 body.kawaui-theme button{
-  background:#f0c2d8;
+  background:#e6aaca;
   color:#1f2937;
-  border:1px solid #e3a2c2;
+  border:1px solid #d88bb5;
 }
 
 body.kawaui-theme button:hover{
@@ -708,11 +705,20 @@ body.kawaui-theme button:hover{
   color:#ffffff;
 }
 
+/* 配信タイトル */
+body.kawaui-theme .stream-title-row a{
+  color:#1f2937;
+}
+
 /* 曲カード */
 body.kawaui-theme .song-card{
   background:#ffffff;
   color:#1f2937;
-  border:1px solid #e3a2c2;
+  border:1px solid #e6aaca;
+}
+
+body.kawaui-theme .song-card-title{
+  color:#1f2937;
 }
 
 body.kawaui-theme .song-card-artist{
@@ -721,17 +727,46 @@ body.kawaui-theme .song-card-artist{
 
 /* アーティストヘッダー */
 body.kawaui-theme #artistsTable tr.artist-header td{
-  background:#f0c2d8;
+  background:#e6aaca;
   color:#1f2937;
-  border-top:1px solid #e3a2c2;
+}
+
+/* hover補正 */
+body.kawaui-theme tbody tr:hover{
+  background:#e6aaca;
+}
+
+/* はみ出し原因の削除 */
+body.kawaui-theme #artistsTable tr.artist-header{
+  border-top:0;
+}
+
+/* 線の統一 */
+body.kawaui-theme #artistsTable tr.artist-header td{
+  background:#e6aaca;
+  color:#1f2937;
+  border-top:1px solid #e6aaca;
+  padding:10px 12px;
+}
+
+/* テーブル枠との違和感解消 */
+body.kawaui-theme #artistsTable{
+  background:#ffffff;
+}
+
+/* 最上部だけ上線を付ける */
+body.kawaui-theme #artistsTable tr.artist-header:first-child td{
+  border-top:1px solid #334155;
 }
 
 /* 配信日付 */
 body.kawaui-theme .stream-date{
   color:#374151;
+  font-weight:500;
 }
 
-/* 番号 */
+/* 通し番号 */
 body.kawaui-theme .num{
   color:#1f2937;
+  font-weight:700;
 }
