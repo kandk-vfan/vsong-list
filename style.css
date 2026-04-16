@@ -80,6 +80,7 @@ h1{
   flex-direction:column;
   justify-content:space-between;
   gap:8px;
+  margin-left:12px;
 }
 
 .date-input{
@@ -92,6 +93,12 @@ h1{
 .date-input .filter-label{
   white-space:nowrap;
   width:3.5em;
+  background:#f0c2d8;
+  color:#1f2937;
+  padding:4px 10px;
+  border-radius:999px;
+  font-weight:700;
+  border:1px solid #6b7280;
 }
 
 .quick-buttons{
@@ -577,6 +584,10 @@ body.streams-light #artistsTable tr.artist-header td{
   border-top:2px solid #3b82f6;
 }
 
+.quick-buttons{
+  margin-left:4.5em;
+}
+
 .clear-btn{
   white-space:nowrap;
 }
@@ -611,6 +622,9 @@ body.streams-light #artistsTable tr.artist-header td{
     grid-template-columns:1fr !important;
     display:flex;
     flex-direction:column;
+  }
+  .quick-buttons{
+    margin-left:0;
   }
 
   input{
