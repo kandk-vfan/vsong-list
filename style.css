@@ -654,7 +654,7 @@ body.kawaui-theme .summary{
 
 /* タブボタン */
 body.kawaui-theme .tab-button{
-  background:#e6aaca;
+  background:#f0c2d8;
   color:#1f2937;
   border:1px solid #d88bb5;
 }
@@ -695,13 +695,19 @@ body.kawaui-theme .card{
 
 /* ボタン */
 body.kawaui-theme button{
-  background:#e6aaca;
+  background:#f0c2d8;
   color:#1f2937;
   border:1px solid #d88bb5;
 }
 
 body.kawaui-theme button:hover{
   background:#d88bb5;
+  color:#ffffff;
+}
+
+body.kawaui-theme .quick-buttons button.active{
+  background:#d88bb5;
+  border-color:#d88bb5;
   color:#ffffff;
 }
 
