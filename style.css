@@ -85,7 +85,7 @@ h1{
 
 .quick-buttons{
   display:flex;
-  gap:8px;
+  gap:16px;
   flex-wrap:wrap;
 }
 
@@ -566,10 +566,6 @@ body.streams-light #artistsTable tr.artist-header td{
   border-top:2px solid #3b82f6;
 }
 
-.quick-buttons{
-  margin-left:4.5em;
-}
-
 .clear-btn{
   white-space:nowrap;
 }
@@ -604,9 +600,6 @@ body.streams-light #artistsTable tr.artist-header td{
     grid-template-columns:1fr !important;
     display:flex;
     flex-direction:column;
-  }
-  .quick-buttons{
-    margin-left:0;
   }
 
   input{
