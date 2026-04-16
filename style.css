@@ -82,6 +82,10 @@ h1{
   margin-left:12px;
 }
 
+.date-input{
+  display:contents;
+}
+
 .date-input .filter-label{
   white-space:nowrap;
   width:3.5em;
