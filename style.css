@@ -110,7 +110,6 @@ h1{
 .quick-buttons button{
   padding:6px 10px;
   font-size:13px;
-  margin-left:4.5em;
 }
 
 .quick-buttons button.active{
@@ -583,6 +582,10 @@ body.streams-light #artistsTable tr.artist-header td{
   background:#e2e8f0;
   color:#0f172a;
   border-top:2px solid #3b82f6;
+}
+
+.quick-buttons{
+  margin-left:4.5em;
 }
 
 .clear-btn{
