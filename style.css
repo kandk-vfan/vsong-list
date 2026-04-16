@@ -636,6 +636,13 @@ body.kawaui-theme{
   color:#1f2937;
 }
 
+body.kawaui-theme h1{
+  display:inline-block;
+  margin:0 0 24px 0;
+  padding-bottom:10px;
+  border-bottom:4px solid #c21875;
+}
+
 /* 上部テキスト */
 body.kawaui-theme h1,
 body.kawaui-theme .filter-label,
