@@ -716,6 +716,10 @@ body.snowshir-theme table{
   color:#1f2937;
 }
 
+body.snowshir-theme #songsTable tbody tr:hover{
+  background:transparent;
+}
+
 body.snowshir-theme thead th{
   background:#f5d0d0;
 }
