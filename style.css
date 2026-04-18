@@ -717,25 +717,13 @@ body.snowshir-theme #songsTable tbody tr:nth-child(even){
   background:#fee2e2;
 }
 
-/* artists（重要：構造維持） */
-body.snowshir-theme #artistsTable{
+/* ←ここ重要：kawauiと完全同一構造 */
+body.snowshir-theme #artistsTable tbody tr:nth-child(even){
+  background:transparent;
+}
+
+body.snowshir-theme #artistsTable tr.artist-song-row{
   background:#ffffff;
-}
-
-body.snowshir-theme #artistsTable tr.artist-header{
-  border-top:14px solid transparent;
-}
-
-body.snowshir-theme #artistsTable tr.artist-header td{
-  background:#f5d0d0;
-  color:#1f2937;
-  border-top:2px solid #dc2626;
-  padding:12px;
-}
-
-body.snowshir-theme #artistsTable tr.artist-song-row td{
-  background:#ffffff;
-  padding:8px 12px;
 }
 
 /* カード */
@@ -777,6 +765,35 @@ body.snowshir-theme .song-card-title{
 
 body.snowshir-theme .song-card-artist{
   color:#6b7280;
+}
+
+/* アーティストヘッダー */
+body.snowshir-theme #artistsTable tr.artist-header td{
+  background:#f5d0d0;
+  color:#1f2937;
+}
+
+/* はみ出し防止 */
+body.snowshir-theme #artistsTable tr.artist-header{
+  border-top:0;
+}
+
+/* 線の統一（←これが最重要：絶対変えない） */
+body.snowshir-theme #artistsTable tr.artist-header td{
+  background:#f5d0d0;
+  color:#1f2937;
+  border-top:1px solid #6b7280;
+  padding:10px 12px;
+}
+
+/* テーブル背景 */
+body.snowshir-theme #artistsTable{
+  background:#ffffff;
+}
+
+/* 最上部だけ上線 */
+body.snowshir-theme #artistsTable tr.artist-header:first-child td{
+  border-top:1px solid #111827;
 }
 
 /* 配信日付 */
