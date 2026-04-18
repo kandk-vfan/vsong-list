@@ -649,12 +649,12 @@ body.streams-light #artistsTable tr.artist-header td{
 ========================= */
 
 /* 背景 */
-body.showshir-theme{
+body.snowshir-theme{
   background:#f5d0d0;
   color:#1f2937;
 }
 
-body.showshir-theme h1.page-title{
+body.snowshir-theme h1.page-title{
   display:inline-block;
   background:#ffffff;
   color:#1f2937;
@@ -666,112 +666,112 @@ body.showshir-theme h1.page-title{
 }
 
 /* 上部テキスト */
-body.showshir-theme h1,
-body.showshir-theme .filter-label,
-body.showshir-theme .theme-label,
-body.showshir-theme .filter-message{
+body.snowshir-theme h1,
+body.snowshir-theme .filter-label,
+body.snowshir-theme .theme-label,
+body.snowshir-theme .filter-message{
   color:#1f2937;
 }
 
 /* 上部ボックス */
-body.showshir-theme .global-filter,
-body.showshir-theme .summary{
+body.snowshir-theme .global-filter,
+body.snowshir-theme .summary{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* タブ */
-body.showshir-theme .tab-button{
+body.snowshir-theme .tab-button{
   background:#fecaca;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
-body.showshir-theme .tab-button.active{
+body.snowshir-theme .tab-button.active{
   background:#dc2626;
   color:#ffffff;
   border:2px solid #111827;
 }
 
 /* 入力 */
-body.showshir-theme input,
-body.showshir-theme select{
+body.snowshir-theme input,
+body.snowshir-theme select{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* テーブル */
-body.showshir-theme table{
+body.snowshir-theme table{
   background:#ffffff;
   color:#1f2937;
 }
 
-body.showshir-theme thead th{
+body.snowshir-theme thead th{
   background:#f5d0d0;
 }
 
-body.showshir-theme #songsTable tbody tr:nth-child(even){
+body.snowshir-theme #songsTable tbody tr:nth-child(even){
   background:#fee2e2;
 }
 
 /* カード */
-body.showshir-theme .card{
+body.snowshir-theme .card{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* ボタン */
-body.showshir-theme button{
+body.snowshir-theme button{
   background:#fecaca;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* クイックボタン active */
-body.showshir-theme .quick-buttons button.active{
+body.snowshir-theme .quick-buttons button.active{
   background:#dc2626;
   border:2px solid #111827;
   color:#ffffff;
 }
 
 /* 配信タイトル */
-body.showshir-theme .stream-title-row a{
+body.snowshir-theme .stream-title-row a{
   color:#1f2937;
 }
 
 /* 曲カード */
-body.showshir-theme .song-card{
+body.snowshir-theme .song-card{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
-body.showshir-theme .song-card-title{
+body.snowshir-theme .song-card-title{
   color:#1f2937;
 }
 
-body.showshir-theme .song-card-artist{
+body.snowshir-theme .song-card-artist{
   color:#6b7280;
 }
 
 /* アーティストヘッダー */
-body.showshir-theme #artistsTable tr.artist-header td{
+body.snowshir-theme #artistsTable tr.artist-header td{
   background:#f5d0d0;
   color:#1f2937;
   border-top:1px solid #6b7280;
 }
 
 /* 配信日付 */
-body.showshir-theme .stream-date{
+body.snowshir-theme .stream-date{
   color:#374151;
   font-weight:500;
 }
 
 /* 番号 */
-body.showshir-theme .num{
+body.snowshir-theme .num{
   color:#1f2937;
   font-weight:700;
 }
