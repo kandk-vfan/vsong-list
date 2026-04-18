@@ -709,6 +709,10 @@ body.kawaui-theme table{
   color:#1f2937;
 }
 
+body.kawaui-theme #songsTable tbody tr:hover{
+  background:transparent;
+}
+
 body.kawaui-theme thead th{
   background:#e6aaca;
 }
