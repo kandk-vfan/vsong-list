@@ -127,7 +127,7 @@ video: https://www.youtube.com/watch?v=gYO0hurHtBs
 0:38:34 革命道中 / アイナ・ジ・エンド
 0:46:24 ワンルーム・オール・ザット・ジャズ / DATEKEN
 0:49:55 ネコミミアーカイブ / 糞田舎P
-0:54:01 ネバーフィクション / Kanaria feat.星街すいせい
+0:54:01 ネバーフィクション / Kanaria feat. 星街すいせい
 0:56:21 Fall in Love / Suiet
 1:01:51 ピアノ×フォルテ×スキャンダル / OSTER project
 1:05:49 ファーストレディー / 奏音69
@@ -166,7 +166,7 @@ video: https://www.youtube.com/watch?v=OB47DvBeYAE
 0:56:14 アスノヨゾラ哨戒班 / Orangestar
 1:03:03 コネクト / ClariS
 1:10:21 残酷な天使のテーゼ / 高橋洋子
-1:14:57 ヒステリックナイトガール / PSYQUI feat.Such
+1:14:57 ヒステリックナイトガール / PSYQUI feat. Such
 1:23:21 Butter-Fly / 和田光司
 1:28:15 ray / BUMP OF CHICKEN
 1:37:22 ハム太郎とっとこうた / ハムちゃんず
@@ -194,7 +194,7 @@ video: https://www.youtube.com/watch?v=I3mWBm2IgLw
 0:38:33 青いベンチ / サスケ
 0:42:48 創聖のアクエリオン / AKINO from bless4
 0:47:36 丸の内サディスティック / 椎名林檎
-0:51:45 ヒステリックナイトガール / PSYQUI
+0:51:45 ヒステリックナイトガール / PSYQUI feat. Such
 1:03:06 愛して愛して愛して / きくお
 1:07:32 秒針を噛む / ずっと真夜中でいいのに。
 1:12:01 ネバーフィクション / Kanaria feat. 星街すいせい
@@ -486,7 +486,7 @@ video: https://www.youtube.com/watch?v=TktbaAqUm7E
 0:14:48 紗痲 / 煮ル果実
 0:18:21 想像フォレスト / じん
 0:22:49 朧月 / まふまふ
-0:27:43 サンドリヨン(Cendrillon) / シグナル
+0:27:43 サンドリヨン(Cendrillon) / シグナルP
 0:35:05 Tell Your World / livetune
 0:41:40 パンダヒーロー / ハチ
 0:45:41 ドーナツホール / ハチ
@@ -770,7 +770,7 @@ video: https://www.youtube.com/watch?v=IHlDkIHbv08
 1:06:40 ルカルカ★ナイトフィーバー / samfree
 1:11:34 おおかみは赤ずきんに恋をした / ひとしずくP×やま△
 1:17:45 レディーレ / バルーン
-1:21:41 ファーストレディー / 奏音69 feat
+1:21:41 ファーストレディー / 奏音69
 1:27:24 竹取オーバーナイトセンセーション / HoneyWorks
 
 video: https://www.youtube.com/watch?v=NyVp625c3-w
@@ -779,7 +779,7 @@ video: https://www.youtube.com/watch?v=NyVp625c3-w
 0:14:12 曖昧劣情Lover / koyori(電ポルP)
 0:18:07 ライカ / yamada
 0:21:58 スキスキ絶頂症 / koyori(電ポルP)
-0:25:39 ヒステリックナイトガール / PSYQUI feat.Such
+0:25:39 ヒステリックナイトガール / PSYQUI feat. Such
 0:39:47 ヤミタイガール / れるりり
 0:44:13 だから僕は音楽を辞めた / ヨルシカ
 0:50:23 深海のリトルクライ / sasakure.UK feat. 土岐麻子
@@ -819,7 +819,7 @@ video: https://www.youtube.com/watch?v=vmOIkpHZkYA
 video: https://www.youtube.com/watch?v=XGceMr_5_ro
 
 0:11:06 ヨンジュウナナ / みきとP
-0:15:53 ネバーフィクション / Kanaria
+0:15:53 ネバーフィクション / Kanaria feat. 星街すいせい
 0:17:58 ラヴィ / すりぃ
 0:20:56 ドーナツホール / ハチ
 0:24:22 ライカ / yamada
