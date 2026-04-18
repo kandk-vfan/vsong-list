@@ -703,6 +703,13 @@ body.snowshir-theme select{
   border:2px solid #6b7280;
 }
 
+/* 期間ラベル */
+body.snowshir-theme .date-input .filter-label{
+  background:#fecaca;
+  color:#1f2937;
+  border:2px solid #6b7280;
+}
+
 /* テーブル */
 body.snowshir-theme table{
   background:#ffffff;
@@ -717,7 +724,6 @@ body.snowshir-theme #songsTable tbody tr:nth-child(even){
   background:#fee2e2;
 }
 
-/* ←ここ重要：kawauiと完全同一構造 */
 body.snowshir-theme #artistsTable tbody tr:nth-child(even){
   background:transparent;
 }
