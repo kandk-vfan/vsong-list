@@ -645,16 +645,16 @@ body.streams-light #artistsTable tr.artist-header td{
 }
 
 /* =========================
-   kawaui専用テーマ
+   showshir専用テーマ
 ========================= */
 
 /* 背景 */
-body.kawaui-theme{
-  background:#e6aaca;
+body.showshir-theme{
+  background:#f5d0d0;
   color:#1f2937;
 }
 
-body.kawaui-theme h1.page-title{
+body.showshir-theme h1.page-title{
   display:inline-block;
   background:#ffffff;
   color:#1f2937;
@@ -662,147 +662,116 @@ body.kawaui-theme h1.page-title{
   border-radius:14px;
   padding:14px 20px;
   margin:0 0 24px 0;
-  box-sizing:border-box;
-  border-bottom:4px solid #c21875;
+  border-bottom:4px solid #dc2626;
 }
 
 /* 上部テキスト */
-body.kawaui-theme h1,
-body.kawaui-theme .filter-label,
-body.kawaui-theme .theme-label,
-body.kawaui-theme .filter-message{
+body.showshir-theme h1,
+body.showshir-theme .filter-label,
+body.showshir-theme .theme-label,
+body.showshir-theme .filter-message{
   color:#1f2937;
 }
 
 /* 上部ボックス */
-body.kawaui-theme .global-filter,
-body.kawaui-theme .summary{
+body.showshir-theme .global-filter,
+body.showshir-theme .summary{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* タブ */
-body.kawaui-theme .tab-button{
-  background:#f0c2d8;
+body.showshir-theme .tab-button{
+  background:#fecaca;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
-body.kawaui-theme .tab-button.active{
-  background:#c21875;
+body.showshir-theme .tab-button.active{
+  background:#dc2626;
   color:#ffffff;
   border:2px solid #111827;
 }
 
 /* 入力 */
-body.kawaui-theme input,
-body.kawaui-theme select{
+body.showshir-theme input,
+body.showshir-theme select{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* テーブル */
-body.kawaui-theme table{
+body.showshir-theme table{
   background:#ffffff;
   color:#1f2937;
 }
 
-body.kawaui-theme thead th{
-  background:#e6aaca;
+body.showshir-theme thead th{
+  background:#f5d0d0;
 }
 
-body.kawaui-theme #songsTable tbody tr:nth-child(even){
-  background:#f6d6e6;
-}
-
-body.kawaui-theme #artistsTable tbody tr:nth-child(even){
-  background:transparent;
-}
-
-body.kawaui-theme #artistsTable tr.artist-song-row{
-  background:#ffffff;
+body.showshir-theme #songsTable tbody tr:nth-child(even){
+  background:#fee2e2;
 }
 
 /* カード */
-body.kawaui-theme .card{
+body.showshir-theme .card{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* ボタン */
-body.kawaui-theme button{
-  background:#f0c2d8;
+body.showshir-theme button{
+  background:#fecaca;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* クイックボタン active */
-body.kawaui-theme .quick-buttons button.active{
-  background:#c21875;
+body.showshir-theme .quick-buttons button.active{
+  background:#dc2626;
   border:2px solid #111827;
   color:#ffffff;
 }
 
 /* 配信タイトル */
-body.kawaui-theme .stream-title-row a{
+body.showshir-theme .stream-title-row a{
   color:#1f2937;
 }
 
 /* 曲カード */
-body.kawaui-theme .song-card{
+body.showshir-theme .song-card{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
-body.kawaui-theme .song-card-title{
+body.showshir-theme .song-card-title{
   color:#1f2937;
 }
 
-body.kawaui-theme .song-card-artist{
+body.showshir-theme .song-card-artist{
   color:#6b7280;
 }
 
 /* アーティストヘッダー */
-body.kawaui-theme #artistsTable tr.artist-header td{
-  background:#e6aaca;
-  color:#1f2937;
-}
-
-/* はみ出し防止 */
-body.kawaui-theme #artistsTable tr.artist-header{
-  border-top:0;
-}
-
-/* 線の統一 */
-body.kawaui-theme #artistsTable tr.artist-header td{
-  background:#e6aaca;
+body.showshir-theme #artistsTable tr.artist-header td{
+  background:#f5d0d0;
   color:#1f2937;
   border-top:1px solid #6b7280;
-  padding:10px 12px;
-}
-
-/* テーブル背景 */
-body.kawaui-theme #artistsTable{
-  background:#ffffff;
-}
-
-/* 最上部だけ上線 */
-body.kawaui-theme #artistsTable tr.artist-header:first-child td{
-  border-top:1px solid #111827;
 }
 
 /* 配信日付 */
-body.kawaui-theme .stream-date{
+body.showshir-theme .stream-date{
   color:#374151;
   font-weight:500;
 }
 
 /* 番号 */
-body.kawaui-theme .num{
+body.showshir-theme .num{
   color:#1f2937;
   font-weight:700;
 }
