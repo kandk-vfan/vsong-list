@@ -132,21 +132,6 @@ h1{
   top:0;
 }
 
-/* 検索オプション（完全一致 / 大文字区別） */
-.search-options{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.search-options label{
-  display:flex;
-  align-items:center;
-  gap:4px;
-  font-size:14px;
-  white-space:nowrap;
-}
-
 .value{
   text-align:right;
 }
