@@ -133,7 +133,7 @@ video: https://www.youtube.com/watch?v=gYO0hurHtBs
 1:05:49 ファーストレディー / 奏音69
 1:11:28 長く短い祭 / 椎名林檎
 1:16:30 自分勝手Dazzling / 星街すいせい
-1:24:23 華奢なリップ / ジェニーハイ feat.ちゃんみな
+1:24:23 華奢なリップ / ジェニーハイ feat. ちゃんみな
 1:30:46 ロミオとシンデレラ / doriko
 1:35:56 絶頂讃歌 / 和ぬか
 
@@ -459,9 +459,9 @@ video: https://www.youtube.com/watch?v=h1T_Ez1kG8Q
 0:44:59 聖槍爆裂ボーイ / れるりり・もじゃ
 0:48:34 ゴーストルール / DECO*27
 0:53:26 東京テディベア / Neru
-1:00:46 質問、恋って何でしょうか？ / HoneyWorks feat.ハコニワリリィ
+1:00:46 質問、恋って何でしょうか？ / HoneyWorks feat. ハコニワリリィ
 1:04:45 神のまにまに / れるりり
-1:19:50 ワールドイズマイン / ryo(supercell)
+1:19:50 ワールドイズマイン / ryo
 1:24:21 メランコリック / Junky
 1:28:37 恋空予報 / koyori(電ポルP)
 1:39:35 パート・オブ・ユア・ワールド / 豊原江理佳
@@ -581,7 +581,7 @@ video: https://www.youtube.com/watch?v=AYuuwihut8Q
 video: https://www.youtube.com/watch?v=Z2HxlnqtKy4
 
 0:11:24 ペルソナズ・ハイグレイ / 白雪りんご
-0:14:58 華奢なリップ / ジェニーハイ feat.ちゃんみな
+0:14:58 華奢なリップ / ジェニーハイ feat. ちゃんみな
 0:21:40 夕立のりぼん / みきとP
 0:25:52 QUEEN / Kanaria
 0:29:43 悪魔の踊り方 / こんにちは谷田さん
@@ -652,7 +652,7 @@ video: https://www.youtube.com/watch?v=o8wN0JTjmCI
 0:22:53 シリョクケンサ / 40mP
 0:27:28 夜もすがら君想ふ / TOKOTOKO(西沢さんP)
 0:31:40 flos / R Sound Design
-0:36:37 華奢なリップ / ジェニーハイ feat.ちゃんみな
+0:36:37 華奢なリップ / ジェニーハイ feat. ちゃんみな
 0:46:12 Fall in Love / Suiet
 0:49:15 ピアノ×フォルテ×スキャンダル / OSTER project
 0:53:38 ワンルーム・オール・ザット・ジャズ / DATEKEN
@@ -761,7 +761,7 @@ video: https://www.youtube.com/watch?v=IHlDkIHbv08
 0:12:33 ノンブレス・オブリージュ / ピノキオピー
 0:16:31 ビターチョコデコレーション / syudou
 0:20:56 花に風 / バルーン
-0:26:46 妄想疾患■ガール / もじゃ
+0:26:46 妄想疾患■ガール / 大柴広己(もじゃ)
 0:30:12 ヤミタイガール / れるりり
 0:41:16 パンダヒーロー / ハチ
 0:45:10 ロミオとシンデレラ / doriko
@@ -814,7 +814,7 @@ video: https://www.youtube.com/watch?v=vmOIkpHZkYA
 1:00:57 ワールド・ランプシェード / buzzG
 1:07:01 IRIS OUT / 米津玄師
 1:11:35 JANE DOE / 米津玄師・宇多田ヒカル
-1:15:34 惑星ループ / Eve feat.ナユタン星人
+1:15:34 惑星ループ / Eve
 
 video: https://www.youtube.com/watch?v=XGceMr_5_ro
 
@@ -969,7 +969,7 @@ video: https://www.youtube.com/watch?v=efnhX23chog
 1:04:25 A Whole New World / Brad Kane and Lea Salonga
 1:11:56 輝く未来 / 小此木麻里・畠中洋
 1:16:02 なんでもないや / RADWIMPS
-1:23:48 点描の唄 / Mrs. GREEN APPLE feat.井上苑子
+1:23:48 点描の唄 / Mrs. GREEN APPLE feat. 井上苑子
 1:29:05 スパークル / RADWIMPS
 
 video: https://www.youtube.com/watch?v=6Ok5iHCSK9M
@@ -997,7 +997,7 @@ video: https://www.youtube.com/watch?v=weqgRZyqQkA
 0:24:30 君色々移り / 風男塾
 0:39:33 四季折々に揺蕩いて / After the Rain
 0:44:12 オツキミリサイタル / じん
-0:48:41 drop pop candy / ギガP
+0:48:41 drop pop candy / Giga
 0:53:07 スキスキ絶頂症 / koyori(電ポルP)
 0:57:01 曖昧劣情Lover / koyori(電ポルP)
 1:14:41 サンドリヨン(Cendrillon) / シグナルP
@@ -1089,7 +1089,7 @@ video: https://www.youtube.com/watch?v=47FbFJ_BqYE
 0:42:25 プライド革命 / CHiCO with HoneyWorks
 0:46:57 完全感覚Dreamer / ONE OK ROCK
 0:51:23 アンチ・クイーンオブハート / 奏音69
-0:54:53 CH4NGE / Gig
+0:54:53 CH4NGE / Giga
 0:57:30 名前のない怪物 / EGOIST
 
 video: https://www.youtube.com/watch?v=YoZZKkBxmJ0
@@ -1116,7 +1116,7 @@ video: https://www.youtube.com/watch?v=8tNuGDdj12g
 0:13:25 モニタリング (Best Friend Remix) / DECO*27
 0:16:37 ロミオとシンデレラ / doriko
 0:21:24 ずうっといっしょ！ / キタニタツヤ
-0:24:23 ヒステリックナイトガール / PSYQUI feat.Such
+0:24:23 ヒステリックナイトガール / PSYQUI feat. Such
 0:29:45 バレリーコ / みきとP
 0:40:50 少女レイ / みきとP
 0:46:04 砂の惑星 / ハチ
@@ -1134,7 +1134,7 @@ video: https://www.youtube.com/watch?v=A5Zj0O0qn7M
 0:15:05 キャットアイメイク / 奏音69
 0:19:54 君色々移り / 風男塾
 0:24:23 アイデンティティ / Kanaria
-0:32:28 アイロニーナ / 煮ル果
+0:32:28 アイロニーナ / 煮ル果実
 0:36:25 阿吽のビーツ / 羽生まゐご
 0:39:56 エゴロック / すりぃ
 0:52:11 ヴィラン / てにをは
@@ -1151,7 +1151,7 @@ video: https://www.youtube.com/watch?v=A5Zj0O0qn7M
 
 video: https://www.youtube.com/watch?v=0dGwrDvmNA8
 
-0:13:33 ネバーフィクション / Kanaria feat.星街すいせい
+0:13:33 ネバーフィクション / Kanaria feat. 星街すいせい
 0:15:49 Dec. / Kanaria
 0:18:11 とても素敵な六月でした / Eight
 0:23:01 ナイトルール / 煮ル果実
@@ -1161,7 +1161,7 @@ video: https://www.youtube.com/watch?v=0dGwrDvmNA8
 0:43:50 リテラシー / wotaku
 0:47:24 モザイクロール (Reloaded) / DECO*27
 0:50:22 一度だけの恋なら / ワルキューレ
-1:02:22 レクイエム / Kanaria feat.星街すいせい
+1:02:22 レクイエム / Kanaria feat. 星街すいせい
 1:05:11 レディーレ / バルーン
 1:09:06 灰色と青 / 米津玄師(+菅田将暉)
 1:15:34 MAD HEAD LOVE / 米津玄師
@@ -1237,7 +1237,7 @@ video: https://www.youtube.com/watch?v=FfpmSoRjzZU
 0:14:39 flos / R Sound Design
 0:19:19 蜜月アン・ドゥ・トロワ / DATEKEN
 0:23:33 ワンルーム・オール・ザット・ジャズ / DATEKEN
-0:32:31 ヒステリックナイトガール / PSYQUI feat.Such
+0:32:31 ヒステリックナイトガール / PSYQUI feat. Such
 0:37:45 メランコリーキッチン / 米津玄師
 0:41:33 マーメイドシアター / 奏音69
 0:46:34 回る空うさぎ / Orangestar
@@ -1289,11 +1289,11 @@ video: https://www.youtube.com/watch?v=4p7z00wXpT4
 0:21:41 自傷無色 / ねこぼーろ
 0:25:44 忘れじの言の葉 / 未来古代楽団 feat.安次嶺希和子
 0:39:03 マフィア / wotaku
-0:42:19 メビウス / 柊キライr
+0:42:19 メビウス / 柊キライ
 0:45:52 1925 / T-POCKET
 0:49:34 天ノ弱 / 164
 0:54:43 モニタリング / DECO*27
-0:58:16 ヒステリックナイトガール / PSYQUI feat.Such
+0:58:16 ヒステリックナイトガール / PSYQUI feat. Such
 1:06:36 罪と罰 / 椎名林檎
 1:12:20 丸の内サディスティック / 椎名林檎
 1:19:38 ギラギラ / Ado
@@ -1308,7 +1308,7 @@ video: https://www.youtube.com/watch?v=NWqGLl-nDJk
 0:22:09 ダーリン / 須田景凪
 0:29:55 ザムザ / てにをは
 0:33:32 スキスキ絶頂症 / koyori(電ポルP)
-0:37:41 ネバーフィクション / Kanaria feat.星街すいせい
+0:37:41 ネバーフィクション / Kanaria feat. 星街すいせい
 0:44:42 妄想感傷代償連盟 / DECO*27
 0:50:34 ド屑 / なきそ
 0:56:14 月のワルツ / 諫山実生
@@ -1342,9 +1342,9 @@ video: https://www.youtube.com/watch?v=cLCXeNchViI
 0:21:10　ゴーゴー幽霊船 / 米津玄師
 0:25:14　ライラック / Mrs. GREEN APPLE
 0:34:22　青と夏 / Mrs. GREEN APPLE
-0:38:59　夏恋花火 / 40mP
+0:38:59　夏恋花火 / 40mP feat. シャノ
 0:43:48　悪役にキスシーンを / 40mP
-0:57:47　ヒステリックナイトガール / PSYQUI feat.Such
+0:57:47　ヒステリックナイトガール / PSYQUI feat. Such
 1:03:09　モニタリング / DECO*27
 1:06:17　ザムザ / てにをは
 1:10:20　Beyond the way / Giga
@@ -1382,7 +1382,7 @@ video: https://www.youtube.com/watch?v=dCq8cC7n2IE
 1:22:07 flos / R Sound Design
 1:27:30 ドナーソング / 大柴広己(もじゃ)
 1:41:00 風になる / つじあやの
-1:45:39 テルーの唄 / 手嶌
+1:45:39 テルーの唄 / 手嶌葵
 1:50:49 なんでもないや / RADWIMPS
 
 video: https://www.youtube.com/watch?v=3DrzU87sEzc
@@ -1463,7 +1463,7 @@ video: https://www.youtube.com/watch?v=gVTvu8HMjd8
 0:15:49 アリアドネ / 黒うさP
 0:19:34 過冷却 / Mizore
 0:23:07 シニカルナイトプラン / Ayase
-0:26:32 ネバーフィクション / Kanaria feat.星街すいせい
+0:26:32 ネバーフィクション / Kanaria feat. 星街すいせい
 0:37:14 ジェヘナ / wotaku
 0:41:23 ずうっといっしょ！ / キタニタツヤ
 0:44:28 紗痲 / 煮ル果実
@@ -1614,7 +1614,7 @@ video: https://www.youtube.com/watch?v=sExoW4yZf88
 0:19:22 地球最後の告白を / kemu
 0:24:01 四季折々に揺蕩いて / After the Rain
 0:33:39 U / ꉈꀧ꒒꒒ꁄꍈꍈꀧ꒦ꉈ ꉣꅔꎡꅔꁕꁄ × Belle
-0:36:43 ネバーフィクション / Kanaria feat.星街すいせい
+0:36:43 ネバーフィクション / Kanaria feat. 星街すいせい
 0:38:53 打上花火 / DAOKO×米津玄師
 0:43:45 ワンルーム・オール・ザット・ジャズ / DATEKEN
 0:47:02 一度だけの恋なら / ワルキューレ
@@ -1624,7 +1624,7 @@ video: https://www.youtube.com/watch?v=sExoW4yZf88
 video: https://www.youtube.com/watch?v=6KI2dQuoy8o
 
 0:12:37 ウミユリ海底譚 / n-buna
-0:16:51 ネバーフィクション / Kanaria feat.星街すいせい
+0:16:51 ネバーフィクション / Kanaria feat. 星街すいせい
 0:19:37 ビビデバ / 星街すいせい
 0:22:58 独りんぼエンヴィー / koyori(電ポルP)
 0:35:55 小さな恋のうた / MONGOL800
@@ -1710,7 +1710,7 @@ video: https://www.youtube.com/watch?v=XT7uoGE96fA
 1:09:08 群青 / YOASOBI
 1:23:43 プロポーズ / 内緒のピアス
 1:27:40 ビビデバ / 星街すいせい
-1:31:23 すずめ / RADWIMPS feat.十明
+1:31:23 すずめ / RADWIMPS feat. 十明
 1:36:04 プラネテス / seiza
 
 video: https://www.youtube.com/watch?v=-XDlKZQ6AIk
@@ -1726,7 +1726,7 @@ video: https://www.youtube.com/watch?v=0BtOXcGe23g
 0:09:33 少女レイ / みきとP
 0:14:54 flos / R Sound Design
 0:19:37 小夜子 / みきとP
-0:36:02 夏恋花火 / 40mP feat.シャノ
+0:36:02 夏恋花火 / 40mP feat. シャノ
 0:40:51 サリシノハラ / みきとP
 0:45:49 月のワルツ / 諫山実生
 0:55:57 過冷却 / Mizore
@@ -1753,7 +1753,7 @@ video: https://www.youtube.com/watch?v=gms_8pL1wBI
 0:36:15 ジェヘナ / wotaku
 0:40:22 月のワルツ / 諫山実生
 0:53:05 ハオ / DECO*27
-0:56:12 夏恋花火 / 40mP feat.シャノ
+0:56:12 夏恋花火 / 40mP feat. シャノ
 1:01:04 ファーストレディー / 奏音69
 1:12:44 イケナイ太陽 / ORANGE RANGE
 1:16:54 青と夏 / Mrs. GREEN APPLE
@@ -1799,7 +1799,7 @@ video: https://www.youtube.com/watch?v=UwToj_qewEY
 1:01:00 プラネタリウムの真実 / 夏代孝明
 1:05:55 小夜子 / みきとP
 1:16:32 残響散歌 / Aimer
-1:19:44 夏恋花火 / 40mP feat.シャノ
+1:19:44 夏恋花火 / 40mP feat. シャノ
 1:24:35 カタオモイ / Aimer
 1:35:27 え？あぁ、そう。 / 蝶々P
 1:38:47 1925 / T-POCKET
@@ -1849,7 +1849,7 @@ video: https://www.youtube.com/watch?v=nE5B6z_AH0w
 1:14:39 蜜月アン・ドゥ・トロワ / DATEKEN
 1:18:58 君色々移り / 風男塾
 1:23:22 だから僕は音楽を辞めた / ヨルシカ
-1:37:03 ヒステリックナイトガール / PSYQUI feat.Such
+1:37:03 ヒステリックナイトガール / PSYQUI feat. Such
 1:42:44 ビビデバ / 星街すいせい
 1:53:26 G4L / Giga
 1:56:43 欲望に満ちた青年団 / ONE OK ROCK
@@ -1905,7 +1905,7 @@ video: https://www.youtube.com/watch?v=AMgnGWix0Fo
 0:46:41 打上花火 / DAOKO×米津玄師
 0:51:32 TEMPLATE / 星街すいせい
 1:02:40 君の知らない物語 / supercell
-1:08:44 夏恋花火 / 40mP feat.シャノ
+1:08:44 夏恋花火 / 40mP feat. シャノ
 1:13:30 Calc. / ジミーサムP
 1:41:16 リードコントロール / なるみや
 1:49:37 ダヴィンチの告白 / 666
@@ -1972,7 +1972,7 @@ video: https://www.youtube.com/watch?v=gJrymanH2NY
 1:00:34 空想フォレスト / じん
 1:04:50 終末じゃない / ぬゆり
 1:26:18 きゅうくらりん / いよわ
-1:30:02 夏恋花火 / 40mP feat.シャノ
+1:30:02 夏恋花火 / 40mP feat. シャノ
 1:48:41 打上花火 / DAOKO×米津玄師
 1:54:12 なんでもないや / RADWIMPS
 
@@ -1999,7 +1999,7 @@ video: https://www.youtube.com/watch?v=hF4UwPnl9Jg
 video: https://www.youtube.com/watch?v=Hnts3oCCXso
 
 0:07:26 ヤミタイガール / れるりり
-0:11:34 ヒステリックナイトガール / PSYQUI
+0:11:34 ヒステリックナイトガール / PSYQUI feat. Such
 0:16:47 U / ꉈꀧ꒒꒒ꁄꍈꍈꀧ꒦ꉈ ꉣꅔꎡꅔꁕꁄ × Belle
 0:20:08 夕立のりぼん / みきとP
 0:24:07 キルマー / 煮ル果実
@@ -2019,8 +2019,8 @@ video: https://www.youtube.com/watch?v=da7A3vloE-k
 0:39:54 ドーナツホール / ハチ
 0:43:30 ダーリン / 須田景凪
 0:45:59 天球、彗星は夜を跨いで / 星街すいせい
-1:00:37 妄想疾患■ガール / もじゃ
-1:03:54 ヒステリックナイトガール / PSYQUI feat.Such
+1:00:37 妄想疾患■ガール / 大柴広己(もじゃ)
+1:03:54 ヒステリックナイトガール / PSYQUI feat. Such
 1:09:03 ヤミタイガール / れるりり
 1:13:27 歌舞伎町の女王 / 椎名林檎
 1:16:33 変わらないもの / 奥華子
@@ -2076,7 +2076,7 @@ video: https://www.youtube.com/watch?v=GwSt4050HLQ
 0:18:20 帝国少女 / R Sound Design
 0:23:36 蜜月アン・ドゥ・トロワ / DATEKEN
 0:35:25 おやすみ泣き声、さよなら歌姫 / クリープハイプ
-0:39:37 ヒステリックナイトガール / PSYQUI feat.Such
+0:39:37 ヒステリックナイトガール / PSYQUI feat. Such
 0:50:43 No Logic / ジミーサムP
 0:55:35 インタビュア / クワガタP
 1:00:34 メランコリーキッチン / 米津玄師
@@ -2237,11 +2237,11 @@ video: https://www.youtube.com/watch?v=LK8kQCml-jI
 2:19:31 可愛いあの子が気にゐらない / なるみや
 2:23:10 勿忘 / Awesome City Club
 2:27:34 スパークル / RADWIMPS
-2:46:00 すずめ / RADWIMPS feat.十明
+2:46:00 すずめ / RADWIMPS feat. 十明
 
 video: https://www.youtube.com/watch?v=moeFKgPkMrM
 
-0:08:28 ヒステリックナイトガール / PSYQUI feat.Such
+0:08:28 ヒステリックナイトガール / PSYQUI feat. Such
 0:14:21 帝国少女 / R Sound Design
 0:29:22 脳裏上のクラッカー / ずっと真夜中でいいのに。
 0:41:33 晩餐歌 / tuki.
@@ -2277,7 +2277,7 @@ video: https://www.youtube.com/watch?v=GRJlipK7FGo
 0:13:49 ロミオとシンデレラ / doriko
 0:29:34 風になる / つじあやの
 0:34:09 世界は恋に落ちている / CHiCO with HoneyWorks
-0:39:37 金曜日のおはよう / Honeyworks feat.Gero
+0:39:37 金曜日のおはよう / Honeyworks feat. Gero
 0:46:32 絶え間なく藍色 / 獅子志司
 0:50:14 生き様 / なつめ千秋
 0:53:23 『エンヴィーベイビー』×『KING』 / Kanaria
@@ -2440,8 +2440,8 @@ video: https://www.youtube.com/watch?v=ueRbWJoBiM4
 
 video: https://www.youtube.com/watch?v=tjCq_uqXZ7M
 
-0:10:45 fflos / R Sound Design
-0:15:20 妄想疾患■ガール / もじゃ
+0:10:45 flos / R Sound Design
+0:15:20 妄想疾患■ガール / 大柴広己(もじゃ)
 0:21:40 ファーストレディー / 奏音69
 0:26:45 よくばり / Ayase
 0:36:12 命に嫌われている。 / カンザキイオリ
@@ -2562,7 +2562,7 @@ video: https://www.youtube.com/watch?v=KEbqThevmRY
 3:07:29 夕立のりぼん / みきとP
 3:11:22 『エンヴィーベイビー』×『KING』 / Kanaria
 3:13:44 ジャンキーナイトタウンオーケストラ / すりぃ
-3:17:54 QUEEN
+3:17:54 QUEEN / Kanaria
 3:32:08 月のワルツ / 諫山実生
 3:36:51 ワンルーム・オール・ザット・ジャズ / DATEKEN
 3:39:53 on the rocks / OSTER project
@@ -2570,7 +2570,7 @@ video: https://www.youtube.com/watch?v=KEbqThevmRY
 3:48:13 蜜月アン・ドゥ・トロワ / DATEKEN
 3:52:30 テレキャスタービーボーイ / すりぃ
 3:55:30 ライオン / May'n/中島愛
-4:00:45 誇り高きアイドル / HoneyWorks feat.mona(夏川椎菜)
+4:00:45 誇り高きアイドル / HoneyWorks feat. mona(夏川椎菜)
 4:05:37 セツナトリップ / Last Note.
 4:15:11 白ゆき / n-buna
 
@@ -2629,7 +2629,7 @@ video: https://www.youtube.com/watch?v=qxq8c7mtbjE
 2:27:21 サリシノハラ / みきとP
 2:49:53 心做し / 蝶々P
 2:59:07 なんでもないや / RADWIMPS
-3:14:30 すずめ / RADWIMPS feat.十明
+3:14:30 すずめ / RADWIMPS feat. 十明
 
 video: https://www.youtube.com/watch?v=rfQO2WknaWI
 
@@ -2980,7 +2980,7 @@ video: https://www.youtube.com/watch?v=GTw5q1_0VsA
 0:10:35 アイロニーナ / 煮ル果実
 0:20:17 G4L / Giga
 0:23:25 ファーストレディー / 奏音69
-0:32:11 誇り高きアイドル / HoneyWorks feat.mona(夏川椎菜)
+0:32:11 誇り高きアイドル / HoneyWorks feat. mona(夏川椎菜)
 0:36:40 心とかいう名前の未発見の臓器の機能についての考察 / adstlaxy
 0:45:13 キルマー / 煮ル果実
 0:48:44 紗痲 / 煮ル果実
@@ -2998,7 +2998,7 @@ video: https://www.youtube.com/watch?v=FYY-t53BMI8
 0:43:09 ラズベリー＊モンスター / HoneyWorks
 0:50:40 星間飛行 / ランカ・リー＝中島愛
 0:54:35 乙女解剖 / DECO*27
-0:58:44 金曜日のおはよう / Honeyworks feat.Gero
+0:58:44 金曜日のおはよう / Honeyworks feat. Gero
 
 video: https://www.youtube.com/watch?v=xbTgBUscPxs
 
@@ -3150,7 +3150,7 @@ video: https://www.youtube.com/watch?v=YQ1sSsWsLQE
 0:10:13 唱 / Ado
 0:21:11 サイバーパンクデッドボーイ / マイキP
 0:30:00 廃墟の国のアリス / まふまふ
-0:49:12 ネバーフィクション / Kanaria feat.星街すいせい
+0:49:12 ネバーフィクション / Kanaria feat. 星街すいせい
 
 video: https://www.youtube.com/watch?v=0ata2KVkzKA
 
@@ -3182,7 +3182,7 @@ video: https://www.youtube.com/watch?v=_fJaOAcqu6g
 video: https://www.youtube.com/watch?v=WkltUpyfL9k
 
 0:08:13 アイロニーナ / 煮ル果実
-0:17:17 ネバーフィクション / Kanaria
+0:17:17 ネバーフィクション / Kanaria feat. 星街すいせい
 0:19:50 MIRROR / Ado
 0:34:18 フィクサー / ぬゆり
 0:43:30 心とかいう名前の未発見の臓器の機能についての考察 / adstlaxy
@@ -3250,7 +3250,7 @@ video: https://www.youtube.com/watch?v=fTt92PzvwLw
 0:09:06 カゲロウデイズ / じん
 0:15:11 メカクシコード / じん
 0:24:13 夜咄ディセイブ / じん
-0:27:52 daze / じん feat.メイリア from GARNiDELiA
+0:27:52 daze / じん feat. メイリア from GARNiDELiA
 0:34:29 想像フォレスト / じん
 0:39:18 アウターサイエンス / じん
 0:52:35 ロスタイムメモリー / じん
@@ -3408,7 +3408,7 @@ video: https://www.youtube.com/watch?v=xqIZL0j0IUc
 0:17:43 心とかいう名前の未発見の臓器の機能についての考察 / adstlaxy
 0:25:00 九龍レトロ / トーマ
 0:29:19 藍二乗 / ヨルシカ
-0:35:43 金曜日のおはよう / Honeyworks feat.Gero
+0:35:43 金曜日のおはよう / Honeyworks feat. Gero
 0:43:58 アイのシナリオ / CHiCO with HoneyWorks
 0:53:26 ヴィクター / めいちゃん
 
@@ -3459,7 +3459,7 @@ video: https://www.youtube.com/watch?v=XkDtfrke7Kw
 video: https://www.youtube.com/watch?v=MrTBVYYUwjw
 
 0:08:19　愛包ダンスホール / HIMEHINA
-0:17:47　アウターサイエンス / じん(自然の敵P)
+0:17:47　アウターサイエンス / じん
 0:29:21　Ice breaker / ねじ式
 0:39:15　愛迷エレジー / DECO*27
 0:42:38　EYE / Kanaria
@@ -3529,7 +3529,7 @@ video: https://www.youtube.com/watch?v=VoJPJd_zwmY
 video: https://www.youtube.com/watch?v=SEdm6Q63c9w
 
 0:09:53 名前のない怪物 / EGOIST
-0:23:18 可愛くてごめん / HoneyWorks feat.ちゅーたん(早見沙織)
+0:23:18 可愛くてごめん / HoneyWorks feat. ちゅーたん(早見沙織)
 0:30:23 KICK BACK / 米津玄師
 0:39:58 秒針を噛む / ずっと真夜中でいいのに。
 0:49:15 QUEEN / Kanaria
@@ -3556,11 +3556,11 @@ video: https://www.youtube.com/watch?v=e_D5B5jn-bk
 0:22:59　ソワレ / 星街すいせい
 0:30:20　アイドル / YOASOBI
 0:38:24　君の知らない物語 / supercell
-0:52:11　ファンサ / HoneyWorks feat.mona(夏川椎菜)
+0:52:11　ファンサ / HoneyWorks feat. mona(夏川椎菜)
 1:05:09　丸の内サディスティック / 椎名林檎
 1:14:34　秒針を噛む / ずっと真夜中でいいのに。
 1:31:01　アスノヨゾラ哨戒班 / Orangestar
-1:38:51　すずめ / RADWIMPS feat.十明
+1:38:51　すずめ / RADWIMPS feat. 十明
 1:48:30　Stellar Stellar / 星街すいせい
 1:57:56　粛聖!! ロリ神レクイエム☆ / しぐれうい
 2:09:50　ライカ / yamada
@@ -3606,7 +3606,7 @@ video: https://www.youtube.com/watch?v=VIPAfxwN0y0
 00:39:48 Overdose / なとり
 00:52:37 ソワレ / 星街すいせい
 01:03:50 蜜月アン・ドゥ・トロワ / DATEKEN
-01:20:18 秒針を噛む
+01:20:18 秒針を噛む / ずっと真夜中でいいのに。
 01:29:13 トウキョウ・シャンディ・ランデヴ / MAISONdes
 01:33:20 エンヴィキャットウォーク / トーマ
 01:50:09 心做し / 蝶々P
