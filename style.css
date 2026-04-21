@@ -682,16 +682,16 @@ body.streams-light #artistsTable tr.artist-header td{
 }
 
 /* =========================
-   snowshir専用テーマ
+   msena専用テーマ（グレーベース）
 ========================= */
 
 /* 背景 */
-body.snowshir-theme{
-  background:#fca5a5;
+body.msena-theme{
+  background:#e5e7eb; /* 薄グレー */
   color:#1f2937;
 }
 
-body.snowshir-theme h1.page-title{
+body.msena-theme h1.page-title{
   display:inline-block;
   background:#ffffff;
   color:#1f2937;
@@ -700,162 +700,157 @@ body.snowshir-theme h1.page-title{
   padding:14px 20px;
   margin:0 0 24px 0;
   box-sizing:border-box;
-  border-bottom:4px solid #dc2626;
+  border-bottom:4px solid #374151; /* アクセント濃グレー */
 }
 
 /* 上部テキスト */
-body.snowshir-theme h1,
-body.snowshir-theme .filter-label,
-body.snowshir-theme .theme-label,
-body.snowshir-theme .filter-message{
+body.msena-theme h1,
+body.msena-theme .filter-label,
+body.msena-theme .theme-label,
+body.msena-theme .filter-message{
   color:#1f2937;
 }
 
 /* 上部ボックス */
-body.snowshir-theme .global-filter,
-body.snowshir-theme .summary{
+body.msena-theme .global-filter,
+body.msena-theme .summary{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* タブ */
-body.snowshir-theme .tab-button{
-  background:#fecaca;
+body.msena-theme .tab-button{
+  background:#d1d5db;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
-body.snowshir-theme .tab-button.active{
-  background:#dc2626;
+body.msena-theme .tab-button.active{
+  background:#374151;
   color:#ffffff;
   border:2px solid #111827;
 }
 
 /* 入力 */
-body.snowshir-theme input,
-body.snowshir-theme select{
+body.msena-theme input,
+body.msena-theme select{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* 期間ラベル */
-body.snowshir-theme .date-input .filter-label{
-  background:#fecaca;
+body.msena-theme .date-input .filter-label{
+  background:#d1d5db;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* テーブル */
-body.snowshir-theme table{
+body.msena-theme table{
   background:#ffffff;
   color:#1f2937;
 }
 
-body.snowshir-theme #songsTable tbody tr:hover{
+body.msena-theme #songsTable tbody tr:hover{
   background:transparent;
 }
 
-body.snowshir-theme thead th{
-  background:#f5d0d0;
+body.msena-theme thead th{
+  background:#e5e7eb;
 }
 
-body.snowshir-theme #songsTable tbody tr:nth-child(even){
-  background:#fee2e2;
+body.msena-theme #songsTable tbody tr:nth-child(even){
+  background:#f3f4f6;
 }
 
-body.snowshir-theme #artistsTable tbody tr:nth-child(even){
+body.msena-theme #artistsTable tbody tr:nth-child(even){
   background:transparent;
 }
 
-body.snowshir-theme #artistsTable tr.artist-song-row{
+body.msena-theme #artistsTable tr.artist-song-row{
   background:#ffffff;
 }
 
 /* カード */
-body.snowshir-theme .card{
+body.msena-theme .card{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* ボタン */
-body.snowshir-theme button{
-  background:#fecaca;
+body.msena-theme button{
+  background:#d1d5db;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* クイックボタン active */
-body.snowshir-theme .quick-buttons button.active{
-  background:#dc2626;
+body.msena-theme .quick-buttons button.active{
+  background:#374151;
   border:2px solid #111827;
   color:#ffffff;
 }
 
 /* 配信タイトル */
-body.snowshir-theme .stream-title-row a{
+body.msena-theme .stream-title-row a{
   color:#1f2937;
 }
 
 /* 曲カード */
-body.snowshir-theme .song-card{
+body.msena-theme .song-card{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
-body.snowshir-theme .song-card.highlight{
-  background:#fee2e2;
-  border-color:#dc2626;
+body.msena-theme .song-card.highlight{
+  background:#f3f4f6;
+  border-color:#374151;
 }
 
-body.snowshir-theme .song-card-title{
+body.msena-theme .song-card-title{
   color:#1f2937;
 }
 
-body.snowshir-theme .song-card-artist{
+body.msena-theme .song-card-artist{
   color:#6b7280;
 }
 
 /* アーティストヘッダー */
-body.snowshir-theme #artistsTable tr.artist-header td{
-  background:#f5d0d0;
+body.msena-theme #artistsTable tr.artist-header td{
+  background:#e5e7eb;
   color:#1f2937;
 }
 
-/* はみ出し防止 */
-body.snowshir-theme #artistsTable tr.artist-header{
-  border-top:0;
-}
-
-/* 線の統一（←これが最重要：絶対変えない） */
-body.snowshir-theme #artistsTable tr.artist-header td{
-  background:#f5d0d0;
+/* 線の統一（絶対維持） */
+body.msena-theme #artistsTable tr.artist-header td{
+  background:#e5e7eb;
   color:#1f2937;
   border-top:1px solid #6b7280;
   padding:10px 12px;
 }
 
 /* テーブル背景 */
-body.snowshir-theme #artistsTable{
+body.msena-theme #artistsTable{
   background:#ffffff;
 }
 
 /* 最上部だけ上線 */
-body.snowshir-theme #artistsTable tr.artist-header:first-child td{
+body.msena-theme #artistsTable tr.artist-header:first-child td{
   border-top:1px solid #111827;
 }
 
 /* 配信日付 */
-body.snowshir-theme .stream-date{
+body.msena-theme .stream-date{
   color:#374151;
   font-weight:500;
 }
 
 /* 番号 */
-body.snowshir-theme .num{
+body.msena-theme .num{
   color:#1f2937;
   font-weight:700;
 }
