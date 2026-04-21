@@ -28,6 +28,22 @@ function matchText(text, keyword, exact, caseSensitive){
   }
 }
 
+function parseKeyword(input){
+  const raw = normalize(input);
+
+  if(raw.includes("&")){
+    return {
+      mode: "AND",
+      keywords: raw.split("&").map(k => normalize(k)).filter(k=>k)
+    };
+  }
+
+  return {
+    mode: "SINGLE",
+    keywords: [raw]
+  };
+}
+
 function toLocalDateString(dateStr){
   const d = new Date(dateStr);
   const y = d.getFullYear();
@@ -213,16 +229,25 @@ function renderSongs(){
 
   let arr=Object.values(map);
 
-  let keyword = normalize(document.getElementById("searchSongs").value);
+  let keyword = document.getElementById("searchSongs").value;
+  const {mode, keywords} = parseKeyword(keyword);
   
   const exact = document.getElementById("exactMatchSongs").checked;
   const caseSensitive = document.getElementById("caseSensitiveSongs").checked;
   
-  if(keyword){
-    arr = arr.filter(s =>
-      matchText(s.title, keyword, exact, caseSensitive) ||
-      matchText(s.artist, keyword, exact, caseSensitive)
-    );
+  if(keywords[0]){
+    arr = arr.filter(s => {
+  
+      if(mode === "AND"){
+        return keywords.every(k =>
+          matchText(s.title, k, exact, caseSensitive) ||
+          matchText(s.artist, k, exact, caseSensitive)
+        );
+      }
+  
+      return matchText(s.title, keywords[0], exact, caseSensitive) ||
+             matchText(s.artist, keywords[0], exact, caseSensitive);
+    });
   }
 
   if(arr.length===0){
@@ -287,16 +312,25 @@ function renderArtists(){
 
   let artists=Object.keys(map);
 
-  let keyword = normalize(document.getElementById("searchArtists").value);
+  let keyword = document.getElementById("searchArtists").value;
+  const {mode, keywords} = parseKeyword(keyword);
   
   const exact = document.getElementById("exactMatchArtists").checked;
   const caseSensitive = document.getElementById("caseSensitiveArtists").checked;
   
-  if(keyword){
-    artists = artists.filter(a =>
-      matchText(a, keyword, exact, caseSensitive) ||
-      Array.from(map[a]).some(t => matchText(t, keyword, exact, caseSensitive))
-    );
+  if(keywords[0]){
+    artists = artists.filter(a => {
+  
+      if(mode === "AND"){
+        return keywords.every(k =>
+          matchText(a, k, exact, caseSensitive) ||
+          Array.from(map[a]).some(t => matchText(t, k, exact, caseSensitive))
+        );
+      }
+  
+      return matchText(a, keywords[0], exact, caseSensitive) ||
+             Array.from(map[a]).some(t => matchText(t, keywords[0], exact, caseSensitive));
+    });
   }
 
   if(artists.length===0){
@@ -373,7 +407,8 @@ function renderStreams(){
     return order==="desc"?bDate-aDate:aDate-bDate;
   });
 
-  let keyword = normalize(document.getElementById("searchStreams").value);
+  let keyword = document.getElementById("searchStreams").value;
+  const {mode, keywords} = parseKeyword(keyword);
   
   const exact = document.getElementById("exactMatchStreams").checked;
   const caseSensitive = document.getElementById("caseSensitiveStreams").checked;
@@ -397,9 +432,17 @@ function renderStreams(){
     const filtered = unique;
     
     function isMatch(s){
-      if(!keyword) return false;
-      return matchText(s.title, keyword, exact, caseSensitive) ||
-             matchText(s.artist, keyword, exact, caseSensitive);
+      if(!keywords[0]) return false;
+    
+      if(mode === "AND"){
+        return keywords.every(k =>
+          matchText(s.title, k, exact, caseSensitive) ||
+          matchText(s.artist, k, exact, caseSensitive)
+        );
+      }
+    
+      return matchText(s.title, keywords[0], exact, caseSensitive) ||
+             matchText(s.artist, keywords[0], exact, caseSensitive);
     }
     
     if(keyword && !unique.some(isMatch)) return;
