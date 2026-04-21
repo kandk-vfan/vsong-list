@@ -682,12 +682,12 @@ body.streams-light #artistsTable tr.artist-header td{
 }
 
 /* =========================
-   msena専用テーマ（グレーベース）
+   msena専用テーマ
 ========================= */
 
 /* 背景 */
 body.msena-theme{
-  background:#e5e7eb; /* 薄グレー */
+  background:#e5e7eb;
   color:#1f2937;
 }
 
@@ -700,7 +700,7 @@ body.msena-theme h1.page-title{
   padding:14px 20px;
   margin:0 0 24px 0;
   box-sizing:border-box;
-  border-bottom:4px solid #374151; /* アクセント濃グレー */
+  border-bottom:4px solid #374151;
 }
 
 /* 上部テキスト */
@@ -825,7 +825,12 @@ body.msena-theme #artistsTable tr.artist-header td{
   color:#1f2937;
 }
 
-/* 線の統一（絶対維持） */
+/* はみ出し防止 */
+body.msena-theme #artistsTable tr.artist-header{
+  border-top:0;
+}
+
+/* 線の統一 */
 body.msena-theme #artistsTable tr.artist-header td{
   background:#e5e7eb;
   color:#1f2937;
