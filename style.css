@@ -806,6 +806,11 @@ body.snowshir-theme .song-card{
   border:2px solid #6b7280;
 }
 
+body.snowshir-theme .song-card.highlight{
+  background:#fee2e2;
+  border-color:#dc2626;
+}
+
 body.snowshir-theme .song-card-title{
   color:#1f2937;
 }
