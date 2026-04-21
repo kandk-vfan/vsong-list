@@ -682,16 +682,16 @@ body.streams-light #artistsTable tr.artist-header td{
 }
 
 /* =========================
-   msena専用テーマ
+   otefu専用テーマ
 ========================= */
 
 /* 背景 */
-body.msena-theme{
-  background:#e5e7eb;
+body.otefu-theme{
+  background:#ede9fe;
   color:#1f2937;
 }
 
-body.msena-theme h1.page-title{
+body.otefu-theme h1.page-title{
   display:inline-block;
   background:#ffffff;
   color:#1f2937;
@@ -700,162 +700,162 @@ body.msena-theme h1.page-title{
   padding:14px 20px;
   margin:0 0 24px 0;
   box-sizing:border-box;
-  border-bottom:4px solid #374151;
+  border-bottom:4px solid #7c3aed;
 }
 
 /* 上部テキスト */
-body.msena-theme h1,
-body.msena-theme .filter-label,
-body.msena-theme .theme-label,
-body.msena-theme .filter-message{
+body.otefu-theme h1,
+body.otefu-theme .filter-label,
+body.otefu-theme .theme-label,
+body.otefu-theme .filter-message{
   color:#1f2937;
 }
 
 /* 上部ボックス */
-body.msena-theme .global-filter,
-body.msena-theme .summary{
+body.otefu-theme .global-filter,
+body.otefu-theme .summary{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* タブ */
-body.msena-theme .tab-button{
-  background:#d1d5db;
+body.otefu-theme .tab-button{
+  background:#ddd6fe;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
-body.msena-theme .tab-button.active{
-  background:#374151;
+body.otefu-theme .tab-button.active{
+  background:#7c3aed;
   color:#ffffff;
   border:2px solid #111827;
 }
 
 /* 入力 */
-body.msena-theme input,
-body.msena-theme select{
+body.otefu-theme input,
+body.otefu-theme select{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* 期間ラベル */
-body.msena-theme .date-input .filter-label{
-  background:#d1d5db;
+body.otefu-theme .date-input .filter-label{
+  background:#ddd6fe;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* テーブル */
-body.msena-theme table{
+body.otefu-theme table{
   background:#ffffff;
   color:#1f2937;
 }
 
-body.msena-theme #songsTable tbody tr:hover{
+body.otefu-theme #songsTable tbody tr:hover{
   background:transparent;
 }
 
-body.msena-theme thead th{
-  background:#e5e7eb;
+body.otefu-theme thead th{
+  background:#e9d5ff;
 }
 
-body.msena-theme #songsTable tbody tr:nth-child(even){
-  background:#f3f4f6;
+body.otefu-theme #songsTable tbody tr:nth-child(even){
+  background:#f5f3ff;
 }
 
-body.msena-theme #artistsTable tbody tr:nth-child(even){
+body.otefu-theme #artistsTable tbody tr:nth-child(even){
   background:transparent;
 }
 
-body.msena-theme #artistsTable tr.artist-song-row{
+body.otefu-theme #artistsTable tr.artist-song-row{
   background:#ffffff;
 }
 
 /* カード */
-body.msena-theme .card{
+body.otefu-theme .card{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* ボタン */
-body.msena-theme button{
-  background:#d1d5db;
+body.otefu-theme button{
+  background:#ddd6fe;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
 /* クイックボタン active */
-body.msena-theme .quick-buttons button.active{
-  background:#374151;
+body.otefu-theme .quick-buttons button.active{
+  background:#7c3aed;
   border:2px solid #111827;
   color:#ffffff;
 }
 
 /* 配信タイトル */
-body.msena-theme .stream-title-row a{
+body.otefu-theme .stream-title-row a{
   color:#1f2937;
 }
 
 /* 曲カード */
-body.msena-theme .song-card{
+body.otefu-theme .song-card{
   background:#ffffff;
   color:#1f2937;
   border:2px solid #6b7280;
 }
 
-body.msena-theme .song-card.highlight{
-  background:#f3f4f6;
-  border-color:#374151;
+body.otefu-theme .song-card.highlight{
+  background:#f5f3ff;
+  border-color:#7c3aed;
 }
 
-body.msena-theme .song-card-title{
+body.otefu-theme .song-card-title{
   color:#1f2937;
 }
 
-body.msena-theme .song-card-artist{
+body.otefu-theme .song-card-artist{
   color:#6b7280;
 }
 
 /* アーティストヘッダー */
-body.msena-theme #artistsTable tr.artist-header td{
-  background:#e5e7eb;
+body.otefu-theme #artistsTable tr.artist-header td{
+  background:#e9d5ff;
   color:#1f2937;
 }
 
 /* はみ出し防止 */
-body.msena-theme #artistsTable tr.artist-header{
+body.otefu-theme #artistsTable tr.artist-header{
   border-top:0;
 }
 
 /* 線の統一 */
-body.msena-theme #artistsTable tr.artist-header td{
-  background:#e5e7eb;
+body.otefu-theme #artistsTable tr.artist-header td{
+  background:#e9d5ff;
   color:#1f2937;
   border-top:1px solid #6b7280;
   padding:10px 12px;
 }
 
 /* テーブル背景 */
-body.msena-theme #artistsTable{
+body.otefu-theme #artistsTable{
   background:#ffffff;
 }
 
 /* 最上部だけ上線 */
-body.msena-theme #artistsTable tr.artist-header:first-child td{
+body.otefu-theme #artistsTable tr.artist-header:first-child td{
   border-top:1px solid #111827;
 }
 
 /* 配信日付 */
-body.msena-theme .stream-date{
+body.otefu-theme .stream-date{
   color:#374151;
   font-weight:500;
 }
 
 /* 番号 */
-body.msena-theme .num{
+body.otefu-theme .num{
   color:#1f2937;
   font-weight:700;
 }
