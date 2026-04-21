@@ -12,6 +12,38 @@ html{
   overflow-y: scroll;
 }
 
+.search-options{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  white-space:nowrap;
+  flex:0 0 auto;
+  margin-left:-28px;
+}
+
+.search-options label{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  font-size:13px;
+  cursor:pointer;
+  margin:0;
+}
+
+.search-options input[type="checkbox"]{
+  width:16px;
+  height:16px;
+  min-width:16px;
+  margin:0;
+  padding:0;
+  flex:0 0 auto;
+  cursor:pointer;
+}
+
+.search-options + select{
+  margin-left:28px;
+}
+
 th{
   white-space: nowrap;
 }
