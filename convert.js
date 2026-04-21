@@ -43,9 +43,16 @@ function fetchVideoInfo(videoId) {
 
       res.on("end", () => {
         try {
+          console.log("==== API RESPONSE START ====");
+          console.log("videoId:", videoId);
+          console.log("statusCode:", res.statusCode);
+          console.log("raw:", data);
+          console.log("==== API RESPONSE END ====");
+      
           const json = JSON.parse(data);
-
+      
           if (!json.items || json.items.length === 0) {
+            console.log("items empty:", json);
             reject(new Error(`Invalid videoId: ${videoId}`));
             return;
           }
