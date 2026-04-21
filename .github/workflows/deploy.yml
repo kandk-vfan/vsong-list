@@ -6,6 +6,8 @@ on:
       - hjm
       - kawaui
       - snowshir
+      - msena
+      - otefu
 
 jobs:
   deploy:
@@ -62,6 +64,34 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
       # ======================
+      # msena
+      # ======================
+      - uses: actions/checkout@v4
+        with:
+          ref: msena
+          path: tmp-msena
+
+      - run: |
+          cd tmp-msena
+          node convert.js
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
+      # ======================
+      # otefu
+      # ======================
+      - uses: actions/checkout@v4
+        with:
+          ref: otefu
+          path: tmp-otefu
+
+      - run: |
+          cd tmp-otefu
+          node convert.js
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
+      # ======================
       # workspace
       # ======================
       - name: prepare workspace
@@ -100,6 +130,16 @@ jobs:
       - run: |
           mkdir -p public/snowshir
           rsync -av --exclude='.git' --exclude='.github' tmp-snowshir/ public/snowshir/
+
+      # copy msena
+      - run: |
+          mkdir -p public/msena
+          rsync -av --exclude='.git' --exclude='.github' tmp-msena/ public/msena/
+
+      # copy otefu
+      - run: |
+          mkdir -p public/otefu
+          rsync -av --exclude='.git' --exclude='.github' tmp-otefu/ public/otefu/
 
       # ======================
       # deploy
