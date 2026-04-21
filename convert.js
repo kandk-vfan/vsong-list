@@ -9,6 +9,24 @@ let videoId = "";
 let videoInfo = null;
 const results = [];
 
+let existing = [];
+try {
+  existing = JSON.parse(fs.readFileSync("data.json", "utf-8"));
+} catch (e) {
+  existing = [];
+}
+
+const videoCache = {};
+
+for (const item of existing) {
+  if (!videoCache[item.videoId]) {
+    videoCache[item.videoId] = {
+      title: item.videoTitle,
+      date: item.date
+    };
+  }
+}
+
 function extractVideoId(url) {
   const patterns = [
     /[?&]v=([^&]+)/,
@@ -52,8 +70,8 @@ function fetchVideoInfo(videoId) {
           const json = JSON.parse(data);
       
           if (!json.items || json.items.length === 0) {
-            console.log("items empty:", json);
-            reject(new Error(`Invalid videoId: ${videoId}`));
+            console.warn(`skip videoId: ${videoId}`);
+            resolve(null);
             return;
           }
 
@@ -105,7 +123,18 @@ function parseSongLine(line) {
     if (line.startsWith("video:")) {
       const url = line.replace(/^video:\s*/, "");
       videoId = extractVideoId(url);
+    if (videoCache[videoId]) {
+      videoInfo = videoCache[videoId];
+    } else {
       videoInfo = await fetchVideoInfo(videoId);
+    
+      if (!videoInfo) {
+        videoId = "";
+        continue;
+      }
+    
+      videoCache[videoId] = videoInfo;
+    }
       continue;
     }
 
