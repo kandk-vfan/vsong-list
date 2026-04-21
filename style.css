@@ -30,9 +30,10 @@ html{
   margin:0;
   padding:4px 10px;
   border-radius:999px;
-  border:1px solid #6b7280;
-  background:#ffffff;
-  color:#1f2937;
+  background:#1e293b;
+  color:#e5e7eb;
+  border:1px solid #334155;
+  transition:0.2s;
 }
 
 .search-options input[type="checkbox"]{
