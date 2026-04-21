@@ -62,6 +62,20 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
       # ======================
+      # msena
+      # ======================
+      - uses: actions/checkout@v4
+        with:
+          ref: msena
+          path: tmp-msena
+
+      - run: |
+          cd tmp-msena
+          node convert.js
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
+      # ======================
       # workspace
       # ======================
       - name: prepare workspace
@@ -100,6 +114,11 @@ jobs:
       - run: |
           mkdir -p public/snowshir
           rsync -av --exclude='.git' --exclude='.github' tmp-snowshir/ public/snowshir/
+
+      # copy msena
+      - run: |
+          mkdir -p public/msena
+          rsync -av --exclude='.git' --exclude='.github' tmp-msena/ public/msena/
 
       # ======================
       # deploy
