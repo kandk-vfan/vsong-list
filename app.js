@@ -5,7 +5,6 @@ const STORAGE_KEY = "tableTheme";
 const MONETIZED_DATE = new Date("2026-02-23");
 
 let YOMI_MAP = {};
-
 function getYomi(str, artist){
   if(!str) return "";
 
@@ -15,6 +14,19 @@ function getYomi(str, artist){
   const key = `${s}||${a}`;
 
   return YOMI_MAP[key] || YOMI_MAP[s] || s;
+}
+
+function matchText(text, keyword, exact, caseSensitive){
+  if(!caseSensitive){
+    text = text.toLowerCase();
+    keyword = keyword.toLowerCase();
+  }
+
+  if(exact){
+    return text === keyword;
+  }else{
+    return text.includes(keyword);
+  }
 }
 
 function toLocalDateString(dateStr){
@@ -243,9 +255,16 @@ function renderSongs(){
 
   let arr=Object.values(map);
 
-  const keyword=document.getElementById("searchSongs").value.toLowerCase();
+  let keyword = normalize(document.getElementById("searchSongs").value);
+  
+  const exact = document.getElementById("exactMatchSongs").checked;
+  const caseSensitive = document.getElementById("caseSensitiveSongs").checked;
+  
   if(keyword){
-    arr=arr.filter(s=>s.title.toLowerCase().includes(keyword)||s.artist.toLowerCase().includes(keyword));
+    arr = arr.filter(s =>
+      matchText(s.title, keyword, exact, caseSensitive) ||
+      matchText(s.artist, keyword, exact, caseSensitive)
+    );
   }
 
   if(arr.length===0){
@@ -310,10 +329,16 @@ function renderArtists(){
 
   let artists=Object.keys(map);
 
-  const keyword=document.getElementById("searchArtists").value.toLowerCase();
-
+  let keyword = normalize(document.getElementById("searchArtists").value);
+  
+  const exact = document.getElementById("exactMatchArtists").checked;
+  const caseSensitive = document.getElementById("caseSensitiveArtists").checked;
+  
   if(keyword){
-    artists=artists.filter(a=>a.toLowerCase().includes(keyword)||Array.from(map[a]).some(t=>t.toLowerCase().includes(keyword)));
+    artists = artists.filter(a =>
+      matchText(a, keyword, exact, caseSensitive) ||
+      Array.from(map[a]).some(t => matchText(t, keyword, exact, caseSensitive))
+    );
   }
 
   if(artists.length===0){
@@ -390,7 +415,10 @@ function renderStreams(){
     return order==="desc"?bDate-aDate:aDate-bDate;
   });
 
-  const keyword=document.getElementById("searchStreams").value.toLowerCase();
+  let keyword = normalize(document.getElementById("searchStreams").value);
+  
+  const exact = document.getElementById("exactMatchStreams").checked;
+  const caseSensitive = document.getElementById("caseSensitiveStreams").checked;
   const container=document.getElementById("streamsContainer");
   container.innerHTML="";
 
@@ -412,7 +440,8 @@ function renderStreams(){
     
     function isMatch(s){
       if(!keyword) return false;
-      return s.title.toLowerCase().includes(keyword) || s.artist.toLowerCase().includes(keyword);
+      return matchText(s.title, keyword, exact, caseSensitive) ||
+             matchText(s.artist, keyword, exact, caseSensitive);
     }
     
     if(keyword && !unique.some(isMatch)) return;
@@ -554,15 +583,30 @@ document.querySelectorAll(".quick-buttons button:not([data-type])").forEach(btn=
 
 document.getElementById("clearSongs").addEventListener("click", ()=>{
   document.getElementById("searchSongs").value = "";
+  document.getElementById("exactMatchSongs").checked = false;
+  document.getElementById("caseSensitiveSongs").checked = false;
   renderSongs();
 });
 
 document.getElementById("clearStreams").addEventListener("click", ()=>{
   document.getElementById("searchStreams").value = "";
+  document.getElementById("exactMatchStreams").checked = false;
+  document.getElementById("caseSensitiveStreams").checked = false;
   renderStreams();
 });
 
 document.getElementById("clearArtists").addEventListener("click", ()=>{
   document.getElementById("searchArtists").value = "";
+  document.getElementById("exactMatchArtists").checked = false;
+  document.getElementById("caseSensitiveArtists").checked = false;
   renderArtists();
 });
+
+document.getElementById("exactMatchSongs").addEventListener("change", renderSongs);
+document.getElementById("caseSensitiveSongs").addEventListener("change", renderSongs);
+
+document.getElementById("exactMatchStreams").addEventListener("change", renderStreams);
+document.getElementById("caseSensitiveStreams").addEventListener("change", renderStreams);
+
+document.getElementById("exactMatchArtists").addEventListener("change", renderArtists);
+document.getElementById("caseSensitiveArtists").addEventListener("change", renderArtists);
