@@ -54,6 +54,11 @@
   <div class="toolbar">
     <input id="searchSongs" placeholder="曲・アーティスト検索">
     <button id="clearSongs" class="clear-btn">クリア</button>
+  
+    <div class="search-options">
+      <label><input type="checkbox" id="exactMatchSongs"> 完全一致</label>
+      <label><input type="checkbox" id="caseSensitiveSongs"> 大文字・小文字を区別</label>
+    </div>
     <select id="sortSongsType">
       <option value="title">曲名</option>
       <option value="artist">アーティスト</option>
@@ -103,6 +108,11 @@
   <div class="toolbar">
     <input id="searchStreams" placeholder="曲・アーティスト検索">
     <button id="clearStreams" class="clear-btn">クリア</button>
+  
+    <div class="search-options">
+      <label><input type="checkbox" id="exactMatchStreams"> 完全一致</label>
+      <label><input type="checkbox" id="caseSensitiveStreams"> 大文字・小文字を区別</label>
+    </div>
     <select id="sortStreamsOrder">
       <option value="desc">新しい順</option>
       <option value="asc">古い順</option>
@@ -142,7 +152,11 @@
   <div class="toolbar">
     <input id="searchArtists" placeholder="曲・アーティスト検索">
     <button id="clearArtists" class="clear-btn">クリア</button>
-
+  
+    <div class="search-options">
+      <label><input type="checkbox" id="exactMatchArtists"> 完全一致</label>
+      <label><input type="checkbox" id="caseSensitiveArtists"> 大文字・小文字を区別</label>
+    </div>
     <select id="sortArtistsType">
       <option value="name">アーティスト名</option>
       <option value="count">曲数</option>
