@@ -794,6 +794,11 @@ body.kawaui-theme .song-card{
   border:2px solid #6b7280;
 }
 
+body.kawaui-theme .song-card.highlight{
+  background:#fce7f3;
+  border-color:#c21875;
+}
+
 body.kawaui-theme .song-card-title{
   color:#1f2937;
 }
