@@ -8,6 +8,7 @@ on:
       - snowshir
       - msena
       - otefu
+      - menil
 
 jobs:
   deploy:
@@ -92,6 +93,20 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
       # ======================
+      # menil
+      # ======================
+      - uses: actions/checkout@v4
+        with:
+          ref: menil
+          path: tmp-menil
+
+      - run: |
+          cd tmp-menil
+          node convert.js
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
+      # ======================
       # workspace
       # ======================
       - name: prepare workspace
@@ -140,6 +155,11 @@ jobs:
       - run: |
           mkdir -p public/otefu
           rsync -av --exclude='.git' --exclude='.github' tmp-otefu/ public/otefu/
+
+      # copy menil
+      - run: |
+          mkdir -p public/menil
+          rsync -av --exclude='.git' --exclude='.github' tmp-menil/ public/menil/
 
       # ======================
       # deploy
