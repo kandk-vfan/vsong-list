@@ -620,7 +620,7 @@ body.hjm-theme h1.page-title{
   padding:14px 20px;
   margin:0 0 24px 0;
   box-sizing:border-box;
-  border-bottom:4px solid #1d4ed8;
+  border-bottom:4px solid #1e40af;
 }
 
 /* 上部テキスト */
@@ -647,7 +647,7 @@ body.hjm-theme .tab-button{
 }
 
 body.hjm-theme .tab-button.active{
-  background:#1d4ed8;
+  background:#1e40af;
   color:#ffffff;
   border:2px solid #1e3a8a;
 }
@@ -702,14 +702,14 @@ body.hjm-theme button{
 
 /* クイックボタン active */
 body.hjm-theme .quick-buttons button.active{
-  background:#1d4ed8;
+  background:#1e40af;
   border:2px solid #1e3a8a;
   color:#ffffff;
 }
 
 /* 配信タイトル */
 body.hjm-theme .stream-title-row a{
-  color:#1d4ed8;
+  color:#1e40af;
 }
 
 /* 曲カード */
@@ -720,8 +720,8 @@ body.hjm-theme .song-card{
 }
 
 body.hjm-theme .song-card.highlight{
-  background:#dbeafe;
-  border-color:#1d4ed8;
+  background:#bfdbfe;
+  border-color:#1e40af;
 }
 
 body.hjm-theme .song-card-title{
@@ -758,7 +758,7 @@ body.hjm-theme #artistsTable{
 
 /* 最上部だけ上線 */
 body.hjm-theme #artistsTable tr.artist-header:first-child td{
-  border-top:1px solid #1e3a8a;
+  border-top:1px solid #1e40af;
 }
 
 /* 配信日付 */
