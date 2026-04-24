@@ -626,7 +626,7 @@ body.hjm-theme h1.page-title{
 /* 上部テキスト */
 body.hjm-theme h1,
 body.hjm-theme .filter-label,
-body.hjm-theme .theme-label,{
+body.hjm-theme .theme-label{
   color:#1f2937;
 }
 
