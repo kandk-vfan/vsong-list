@@ -629,6 +629,15 @@ body.hjm-theme .filter-message{
   color:#0f172a;
 }
 
+body.hjm-theme .date-input .filter-label{
+  background:#cbd5e1;
+  color:#0f172a;
+  border:2px solid #334155;
+  border-radius:999px;
+  padding:4px 10px;
+  font-weight:700;
+}
+
 body.hjm-theme .global-filter,
 body.hjm-theme .summary{
   background:#e5e7eb;
