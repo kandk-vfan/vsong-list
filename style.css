@@ -688,7 +688,7 @@ body.hjm-theme #artistsTable tr.artist-song-row{
 
 /* カード */
 body.hjm-theme .card{
-  background:#ffffff;
+  background:#f8fafc;
   color:#1f2937;
   border:2px solid #6b7280;
 }
