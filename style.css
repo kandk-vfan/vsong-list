@@ -602,7 +602,7 @@ iframe{
 }
 
 /* =========================
-   hjm専用テーマ
+   hjm専用テーマ（調整版）
 ========================= */
 
 /* 背景 */
@@ -613,8 +613,8 @@ body.hjm-theme{
 
 body.hjm-theme h1.page-title{
   display:inline-block;
-  background:#020617;
-  color:#e5e7eb;
+  background:#e2e8f0;
+  color:#020617;
   border:2px solid #334155;
   border-radius:14px;
   padding:14px 20px;
@@ -628,21 +628,21 @@ body.hjm-theme h1,
 body.hjm-theme .filter-label,
 body.hjm-theme .theme-label,
 body.hjm-theme .filter-message{
-  color:#e5e7eb;
+  color:#020617;
 }
 
 /* 上部ボックス */
 body.hjm-theme .global-filter,
 body.hjm-theme .summary{
-  background:#020617;
-  color:#e5e7eb;
+  background:#f1f5f9;
+  color:#020617;
   border:2px solid #334155;
 }
 
 /* タブ */
 body.hjm-theme .tab-button{
-  background:#0f172a;
-  color:#e5e7eb;
+  background:#cbd5e1;
+  color:#020617;
   border:2px solid #334155;
 }
 
@@ -655,15 +655,15 @@ body.hjm-theme .tab-button.active{
 /* 入力 */
 body.hjm-theme input,
 body.hjm-theme select{
-  background:#020617;
-  color:#e5e7eb;
+  background:#f8fafc;
+  color:#020617;
   border:2px solid #334155;
 }
 
 /* テーブル */
 body.hjm-theme table{
-  background:#020617;
-  color:#e5e7eb;
+  background:#f8fafc;
+  color:#020617;
 }
 
 body.hjm-theme #songsTable tbody tr:hover{
@@ -671,11 +671,11 @@ body.hjm-theme #songsTable tbody tr:hover{
 }
 
 body.hjm-theme thead th{
-  background:#020617;
+  background:#e2e8f0;
 }
 
 body.hjm-theme #songsTable tbody tr:nth-child(even){
-  background:#0f172a;
+  background:#f1f5f9;
 }
 
 body.hjm-theme #artistsTable tbody tr:nth-child(even){
@@ -683,20 +683,20 @@ body.hjm-theme #artistsTable tbody tr:nth-child(even){
 }
 
 body.hjm-theme #artistsTable tr.artist-song-row{
-  background:#020617;
+  background:#ffffff;
 }
 
 /* カード */
 body.hjm-theme .card{
-  background:#020617;
-  color:#e5e7eb;
+  background:#f8fafc;
+  color:#020617;
   border:2px solid #334155;
 }
 
 /* ボタン */
 body.hjm-theme button{
-  background:#0f172a;
-  color:#e5e7eb;
+  background:#cbd5e1;
+  color:#020617;
   border:2px solid #334155;
 }
 
@@ -709,33 +709,33 @@ body.hjm-theme .quick-buttons button.active{
 
 /* 配信タイトル */
 body.hjm-theme .stream-title-row a{
-  color:#93c5fd;
+  color:#1d4ed8;
 }
 
 /* 曲カード */
 body.hjm-theme .song-card{
-  background:#020617;
-  color:#e5e7eb;
+  background:#ffffff;
+  color:#020617;
   border:2px solid #334155;
 }
 
 body.hjm-theme .song-card.highlight{
-  background:#1e3a8a;
+  background:#dbeafe;
   border-color:#1d4ed8;
 }
 
 body.hjm-theme .song-card-title{
-  color:#e5e7eb;
+  color:#020617;
 }
 
 body.hjm-theme .song-card-artist{
-  color:#94a3b8;
+  color:#475569;
 }
 
 /* アーティストヘッダー */
 body.hjm-theme #artistsTable tr.artist-header td{
-  background:#020617;
-  color:#e5e7eb;
+  background:#e2e8f0;
+  color:#020617;
 }
 
 /* はみ出し防止 */
@@ -745,15 +745,15 @@ body.hjm-theme #artistsTable tr.artist-header{
 
 /* 線の統一 */
 body.hjm-theme #artistsTable tr.artist-header td{
-  background:#020617;
-  color:#e5e7eb;
+  background:#e2e8f0;
+  color:#020617;
   border-top:1px solid #334155;
   padding:10px 12px;
 }
 
 /* テーブル背景 */
 body.hjm-theme #artistsTable{
-  background:#020617;
+  background:#f8fafc;
 }
 
 /* 最上部だけ上線 */
@@ -763,12 +763,12 @@ body.hjm-theme #artistsTable tr.artist-header:first-child td{
 
 /* 配信日付 */
 body.hjm-theme .stream-date{
-  color:#94a3b8;
+  color:#64748b;
   font-weight:500;
 }
 
 /* 番号 */
 body.hjm-theme .num{
-  color:#e5e7eb;
+  color:#020617;
   font-weight:700;
 }
