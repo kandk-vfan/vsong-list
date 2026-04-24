@@ -612,7 +612,7 @@ body.hjm-theme{
 
 body.hjm-theme h1.page-title{
   display:inline-block;
-  background:#e2e8f0;
+  background:#f8fafc;
   color:#0f172a;
   border:2px solid #334155;
   border-radius:14px;
@@ -630,7 +630,7 @@ body.hjm-theme .filter-message{
 }
 
 body.hjm-theme .date-input .filter-label{
-  background:#cbd5e1;
+  background:#f8fafc;
   color:#0f172a;
   border:2px solid #334155;
   border-radius:999px;
@@ -646,7 +646,7 @@ body.hjm-theme .summary{
 }
 
 body.hjm-theme .tab-button{
-  background:#cbd5e1;
+  background:#f8fafc;
   color:#0f172a;
   border:2px solid #334155;
 }
@@ -696,7 +696,7 @@ body.hjm-theme .card{
 }
 
 body.hjm-theme button{
-  background:#cbd5e1;
+  background:#f8fafc;
   color:#0f172a;
   border:2px solid #334155;
 }
