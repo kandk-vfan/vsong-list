@@ -607,8 +607,8 @@ iframe{
 
 /* 背景 */
 body.hjm-theme{
-  background:#e6aaca;
-  color:#1f2937;
+  background:#0f172a;
+  color:#e5e7eb;
 }
 
 /* タイトル */
@@ -663,13 +663,13 @@ body.hjm-theme select{
 
 /* 検索窓 */
 body.hjm-theme input{
-  background:#f8fafc; /* ←明示 */
+  background:#f8fafc;
 }
 
 /* ソート系 */
 body.hjm-theme #sortSongsType,
 body.hjm-theme #sortArtistsType{
-  background:#f8fafc; /* ←変更 */
+  background:#f8fafc;
 }
 
 /* テーブル */
