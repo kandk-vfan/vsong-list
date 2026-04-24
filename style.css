@@ -286,27 +286,6 @@ tbody tr:hover{
   background:#1e293b;
 }
 
-table.light{
-  background:#f8fafc;
-  color:#0f172a;
-}
-
-table.light thead th{
-  background:#e2e8f0;
-}
-
-table.light td, table.light th{
-  border:1px solid #cbd5e1;
-}
-
-table.light tbody tr:nth-child(even){
-  background:#f1f5f9;
-}
-
-table.light tbody tr:hover{
-  background:#e2e8f0;
-}
-
 .hidden{
   display:none !important;
 }
@@ -318,10 +297,6 @@ a{
 
 a:hover{
   text-decoration:underline;
-}
-
-body.streams-light .stream-title-row a{
-  color:#1e3a8a;
 }
 
 button{
@@ -345,29 +320,9 @@ button:hover{
   background:#111827;
 }
 
-body.streams-light .card{
-  background:#ffffff;
-  color:#0f172a;
-}
-
 .song-card.highlight{
   border-color:#3b82f6;
   background:#1e293b;
-}
-
-body.streams-light .song-card{
-  background:#f8fafc;
-  border-color:#cbd5e1;
-  color:#0f172a;
-}
-
-body.streams-light .song-card-title{
-  color:#0f172a;
-}
-
-body.streams-light .song-card.highlight{
-  background:#dbeafe;
-  border-color:#3b82f6;
 }
 
 .stream-title-row{
@@ -381,10 +336,6 @@ body.streams-light .song-card.highlight{
   font-size:14px;
   color:#94a3b8;
   margin-bottom:14px;
-}
-
-body.streams-light .stream-date{
-  color:#64748b;
 }
 
 .grid{
@@ -428,23 +379,10 @@ td, th{
   font-size:17px;
 }
 
-body.streams-light .song-card-artist{
-  color:#64748b;
-}
-
 .num{
   font-size:14px;
   font-weight:700;
   color:#94a3b8;
-}
-
-body.streams-light .num{
-  color:#64748b;
-}
-
-table.light .artist-header{
-  background:#e2e8f0;
-  color:#0f172a;
 }
 
 .artist-header{
@@ -601,12 +539,6 @@ iframe{
 
 #artistsTable tr.artist-header{
   border-top:14px solid transparent;
-}
-
-body.streams-light #artistsTable tr.artist-header td{
-  background:#e2e8f0;
-  color:#0f172a;
-  border-top:2px solid #3b82f6;
 }
 
 .quick-buttons{
