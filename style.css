@@ -678,7 +678,7 @@ body.hjm-theme thead th{
 }
 
 body.hjm-theme #songsTable tbody tr:nth-child(even){
-  background:#cbd5e1;
+  background:#f1f5f9;
 }
 
 body.hjm-theme #artistsTable tbody tr:nth-child(even){
@@ -735,7 +735,7 @@ body.hjm-theme #artistsTable tr.artist-header{
 }
 
 body.hjm-theme #artistsTable tr.artist-header td{
-  background:#cbd5e1;
+  background:#e2e8f0;
   color:#0f172a;
   border-top:1px solid #334155;
   padding:10px 12px;
