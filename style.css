@@ -671,11 +671,11 @@ body.hjm-theme #songsTable tbody tr:hover{
 }
 
 body.hjm-theme thead th{
-  background:#e5e7eb;
+  background:#94a3b8;
 }
 
 body.hjm-theme #songsTable tbody tr:nth-child(even){
-  background:#e5e7eb;
+  background:#cbd5e1;
 }
 
 body.hjm-theme #artistsTable tbody tr:nth-child(even){
@@ -734,7 +734,7 @@ body.hjm-theme .song-card-artist{
 
 /* アーティストヘッダー */
 body.hjm-theme #artistsTable tr.artist-header td{
-  background:#e5e7eb;
+  background:#94a3b8;
   color:#1f2937;
 }
 
@@ -745,7 +745,7 @@ body.hjm-theme #artistsTable tr.artist-header{
 
 /* 線の統一 */
 body.hjm-theme #artistsTable tr.artist-header td{
-  background:#e5e7eb;
+  background:#cbd5e1;
   color:#1f2937;
   border-top:1px solid #6b7280;
   padding:10px 12px;
