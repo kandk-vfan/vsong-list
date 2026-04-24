@@ -903,7 +903,7 @@ video: https://www.youtube.com/watch?v=KAT0zGOLXaM
 0:45:12 Eternal Love / 菅原紗由理
 0:55:10 キミに贈る歌 / 菅原紗由理
 1:03:51 フェイク / Mr.Children
-1:15:05 カメリア / 天野月子
+1:15:05 カメリア / 天野月
 1:26:51 ココロオドル / nobodyknows+
 1:37:44 One / RIP SLYME
 1:44:36 熱帯夜 / RIP SLYME
@@ -1419,7 +1419,7 @@ video: https://www.youtube.com/watch?v=MsfPjOFODKY
 0:37:41 翡翠のまち / メル
 0:43:37 Sing / Goose house
 0:56:30 Dear My Friend −まだ見ぬ未来へ− / ELISA
-1:03:44 カメリア / 天野月子
+1:03:44 カメリア / 天野月
 1:13:20 箱庭 ～ミニチュアガーデン～ / 天野月
 1:23:39 SPECIALZ / King Gnu
 1:29:37 Spending all my time / Perfume
@@ -2855,9 +2855,9 @@ video: https://www.youtube.com/watch?v=eCphBN_cNXQ
 00:51:40 ライオン / May'n/中島愛
 00:59:57 フラレガイガール / さユり
 01:08:57 unlasting / LiSA
-01:17:18 蝶 / 天野月子
+01:17:18 蝶 / 天野月
 01:25:26 箱庭 ～ミニチュアガーデン～ / 天野月
-01:32:47 カメリア / 天野月子
+01:32:47 カメリア / 天野月
 01:46:17 地獄先生 / 相対性理論
 01:51:16 (恋は)百年戦争 / 相対性理論
 01:59:31 いきのこり●ぼくら / 青葉市子
