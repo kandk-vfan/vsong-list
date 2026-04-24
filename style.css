@@ -671,7 +671,7 @@ body.hjm-theme #songsTable tbody tr:hover{
 }
 
 body.hjm-theme thead th{
-  background:#94a3b8;
+  background:#b6c2d1;
 }
 
 body.hjm-theme #songsTable tbody tr:nth-child(even){
@@ -734,7 +734,7 @@ body.hjm-theme .song-card-artist{
 
 /* アーティストヘッダー */
 body.hjm-theme #artistsTable tr.artist-header td{
-  background:#94a3b8;
+  background:#b6c2d1;
   color:#1f2937;
 }
 
