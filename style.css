@@ -625,9 +625,13 @@ body.hjm-theme h1.page-title{
 
 /* 上部テキスト */
 body.hjm-theme h1,
-body.hjm-theme .filter-label,
-body.hjm-theme .theme-label,
 body.hjm-theme .filter-message{
+  color:#1f2937;
+}
+
+body.hjm-theme .filter-label,
+body.hjm-theme .theme-label{
+  background:#f8fafc;
   color:#1f2937;
 }
 
