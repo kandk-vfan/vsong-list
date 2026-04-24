@@ -640,7 +640,7 @@ body.hjm-theme .date-input .filter-label{
 
 body.hjm-theme .global-filter,
 body.hjm-theme .summary{
-  background:#e5e7eb;
+  background:#f8fafc;
   color:#0f172a;
   border:2px solid #334155;
 }
@@ -690,7 +690,7 @@ body.hjm-theme #artistsTable tr.artist-song-row{
 }
 
 body.hjm-theme .card{
-  background:#e5e7eb;
+  background:#f8fafc;
   color:#0f172a;
   border:2px solid #334155;
 }
@@ -712,7 +712,7 @@ body.hjm-theme .stream-title-row a{
 }
 
 body.hjm-theme .song-card{
-  background:#e5e7eb;
+  background:#f8fafc;
   color:#0f172a;
   border:2px solid #334155;
 }
