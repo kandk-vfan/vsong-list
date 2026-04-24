@@ -611,10 +611,11 @@ body.hjm-theme{
   color:#e5e7eb;
 }
 
+/* タイトル */
 body.hjm-theme h1.page-title{
   display:inline-block;
   background:#cbd5e1;
-  color:#020617;
+  color:#0f172a;
   border:2px solid #334155;
   border-radius:14px;
   padding:14px 20px;
@@ -628,21 +629,21 @@ body.hjm-theme h1,
 body.hjm-theme .filter-label,
 body.hjm-theme .theme-label,
 body.hjm-theme .filter-message{
-  color:#020617;
+  color:#0f172a;
 }
 
 /* 上部ボックス */
 body.hjm-theme .global-filter,
 body.hjm-theme .summary{
   background:#e2e8f0;
-  color:#020617;
+  color:#0f172a;
   border:2px solid #334155;
 }
 
 /* タブ */
 body.hjm-theme .tab-button{
   background:#94a3b8;
-  color:#020617;
+  color:#0f172a;
   border:2px solid #334155;
 }
 
@@ -656,14 +657,14 @@ body.hjm-theme .tab-button.active{
 body.hjm-theme input,
 body.hjm-theme select{
   background:#e2e8f0;
-  color:#020617;
+  color:#0f172a;
   border:2px solid #334155;
 }
 
 /* テーブル */
 body.hjm-theme table{
   background:#e2e8f0;
-  color:#020617;
+  color:#0f172a;
 }
 
 body.hjm-theme #songsTable tbody tr:hover{
@@ -689,14 +690,14 @@ body.hjm-theme #artistsTable tr.artist-song-row{
 /* カード */
 body.hjm-theme .card{
   background:#e2e8f0;
-  color:#020617;
+  color:#0f172a;
   border:2px solid #334155;
 }
 
 /* ボタン */
 body.hjm-theme button{
   background:#94a3b8;
-  color:#020617;
+  color:#0f172a;
   border:2px solid #334155;
 }
 
@@ -715,7 +716,7 @@ body.hjm-theme .stream-title-row a{
 /* 曲カード */
 body.hjm-theme .song-card{
   background:#e2e8f0;
-  color:#020617;
+  color:#0f172a;
   border:2px solid #334155;
 }
 
@@ -725,7 +726,7 @@ body.hjm-theme .song-card.highlight{
 }
 
 body.hjm-theme .song-card-title{
-  color:#020617;
+  color:#0f172a;
 }
 
 body.hjm-theme .song-card-artist{
@@ -735,7 +736,7 @@ body.hjm-theme .song-card-artist{
 /* アーティストヘッダー */
 body.hjm-theme #artistsTable tr.artist-header td{
   background:#cbd5e1;
-  color:#020617;
+  color:#0f172a;
 }
 
 /* はみ出し防止 */
@@ -746,7 +747,7 @@ body.hjm-theme #artistsTable tr.artist-header{
 /* 線の統一 */
 body.hjm-theme #artistsTable tr.artist-header td{
   background:#cbd5e1;
-  color:#020617;
+  color:#0f172a;
   border-top:1px solid #334155;
   padding:10px 12px;
 }
@@ -769,6 +770,6 @@ body.hjm-theme .stream-date{
 
 /* 番号 */
 body.hjm-theme .num{
-  color:#020617;
+  color:#0f172a;
   font-weight:700;
 }
