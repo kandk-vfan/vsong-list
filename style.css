@@ -533,7 +533,7 @@ iframe{
 }
 
 #artistsTable tr.artist-song-row td{
-  background:#e5e7eb;
+  background:transparent;
   padding:8px 12px;
 }
 
@@ -665,7 +665,7 @@ body.hjm-theme select{
 }
 
 body.hjm-theme table{
-  background:#e5e7eb;
+  background:#f8fafc;
   color:#0f172a;
 }
 
@@ -678,7 +678,7 @@ body.hjm-theme thead th{
 }
 
 body.hjm-theme #songsTable tbody tr:nth-child(even){
-  background:#f1f5f9;
+  background:#e5e7eb;
 }
 
 body.hjm-theme #artistsTable tbody tr:nth-child(even){
@@ -686,7 +686,7 @@ body.hjm-theme #artistsTable tbody tr:nth-child(even){
 }
 
 body.hjm-theme #artistsTable tr.artist-song-row{
-  background:#e5e7eb;
+  background:#f8fafc;
 }
 
 body.hjm-theme .card{
@@ -742,7 +742,7 @@ body.hjm-theme #artistsTable tr.artist-header td{
 }
 
 body.hjm-theme #artistsTable{
-  background:#e5e7eb;
+  background:#f8fafc;
 }
 
 body.hjm-theme #artistsTable tr.artist-header:first-child td{
