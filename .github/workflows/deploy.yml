@@ -162,6 +162,18 @@ jobs:
           rsync -av --exclude='.git' --exclude='.github' tmp-menil/ public/menil/
 
       # ======================
+      # commonの保持
+      # ======================
+      - name: restore common
+        run: |
+          git clone --depth=1 --branch gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} old-gh || true
+      
+          if [ -d old-gh/common ]; then
+            mkdir -p public/common
+            cp -r old-gh/common/. public/common/
+          fi
+
+      # ======================
       # deploy
       # ======================
       - run: |
