@@ -162,7 +162,7 @@ function debounce(fn, delay=300){
 
 Promise.all([
   fetch("data.json").then(r=>r.json()),
-  fetch("yomi.json")
+  fetch("../common/yomi.json")
     .then(r => r.ok ? r.json() : {})
     .catch(() => ({}))
 ]).then(([dataJson, yomiJson])=>{
