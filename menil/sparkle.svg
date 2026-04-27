@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-labelledby="title desc">
+  <title>Sparkle Flower Icon</title>
+  <desc>Original free SVG illustration inspired by the ❇️ emoji, with a soft green sparkle-flower motif on a transparent background.</desc>
+
+  <defs>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f3ffd6" stop-opacity="1"/>
+      <stop offset="55%" stop-color="#c8f08a" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#79c94b" stop-opacity="1"/>
+    </radialGradient>
+
+    <radialGradient id="petalGrad" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#f8ffe8" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#d6f7ad" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#79c94b" stop-opacity="1"/>
+    </radialGradient>
+
+    <radialGradient id="innerPetalGrad" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#ecffd1" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#b7ea73" stop-opacity="0.95"/>
+    </radialGradient>
+
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+
+    <filter id="drop" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#3e7d22" flood-opacity="0.25"/>
+    </filter>
+
+    <g id="outerPetal">
+      <path d="M512 140
+               C548 214, 556 292, 512 356
+               C468 292, 476 214, 512 140 Z"
+            fill="url(#petalGrad)" stroke="#63a93e" stroke-width="10" stroke-linejoin="round"/>
+    </g>
+
+    <g id="innerPetal">
+      <path d="M512 248
+               C536 298, 542 350, 512 394
+               C482 350, 488 298, 512 248 Z"
+            fill="url(#innerPetalGrad)" stroke="#b6e27a" stroke-width="6" stroke-linejoin="round" opacity="0.95"/>
+    </g>
+
+    <g id="spark">
+      <path d="M0 -22 L5 -5 L22 0 L5 5 L0 22 L-5 5 L-22 0 L-5 -5 Z" fill="#efffd0" opacity="0.95"/>
+      <circle r="5" fill="#ffffff"/>
+    </g>
+  </defs>
+
+  <rect width="1024" height="1024" fill="none"/>
+
+  <!-- ambient glow -->
+  <circle cx="512" cy="512" r="250" fill="#dff6ab" opacity="0.35" filter="url(#softGlow)"/>
+
+  <!-- outer flower -->
+  <g filter="url(#drop)">
+    <use href="#outerPetal" transform="rotate(0 512 512)"/>
+    <use href="#outerPetal" transform="rotate(45 512 512)"/>
+    <use href="#outerPetal" transform="rotate(90 512 512)"/>
+    <use href="#outerPetal" transform="rotate(135 512 512)"/>
+    <use href="#outerPetal" transform="rotate(180 512 512)"/>
+    <use href="#outerPetal" transform="rotate(225 512 512)"/>
+    <use href="#outerPetal" transform="rotate(270 512 512)"/>
+    <use href="#outerPetal" transform="rotate(315 512 512)"/>
+  </g>
+
+  <!-- inner flower -->
+  <g opacity="0.98">
+    <use href="#innerPetal" transform="rotate(22.5 512 512)"/>
+    <use href="#innerPetal" transform="rotate(67.5 512 512)"/>
+    <use href="#innerPetal" transform="rotate(112.5 512 512)"/>
+    <use href="#innerPetal" transform="rotate(157.5 512 512)"/>
+    <use href="#innerPetal" transform="rotate(202.5 512 512)"/>
+    <use href="#innerPetal" transform="rotate(247.5 512 512)"/>
+    <use href="#innerPetal" transform="rotate(292.5 512 512)"/>
+    <use href="#innerPetal" transform="rotate(337.5 512 512)"/>
+  </g>
+
+  <!-- center -->
+  <g filter="url(#drop)">
+    <circle cx="512" cy="512" r="118" fill="url(#coreGlow)" stroke="#63a93e" stroke-width="12"/>
+    <circle cx="512" cy="512" r="74" fill="#f7ffe7" opacity="0.92"/>
+    <circle cx="512" cy="512" r="38" fill="#d9f48f" opacity="0.95"/>
+  </g>
+
+  <!-- highlight lines -->
+  <g stroke="#f9fff0" stroke-width="10" stroke-linecap="round" opacity="0.72">
+    <path d="M512 204 L512 286"/>
+    <path d="M512 738 L512 820"/>
+    <path d="M204 512 L286 512"/>
+    <path d="M738 512 L820 512"/>
+    <path d="M294 294 L352 352"/>
+    <path d="M672 672 L730 730"/>
+    <path d="M294 730 L352 672"/>
+    <path d="M672 352 L730 294"/>
+  </g>
+
+  <!-- tiny sparkles -->
+  <g>
+    <use href="#spark" transform="translate(218 312) scale(1.2)"/>
+    <use href="#spark" transform="translate(802 332) scale(0.95)"/>
+    <use href="#spark" transform="translate(784 736) scale(1.05)"/>
+    <use href="#spark" transform="translate(250 760) scale(0.85)"/>
+    <use href="#spark" transform="translate(512 132) scale(0.85)"/>
+  </g>
+</svg>

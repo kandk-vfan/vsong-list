@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- 本体 -->
+  <rect x="40" y="80" width="120" height="80" fill="#e5e7eb" stroke="#6b7280" stroke-width="2"></rect>
+
+  <!-- 中央タワー -->
+  <rect x="80" y="40" width="40" height="60" fill="#e5e7eb" stroke="#6b7280" stroke-width="2"></rect>
+  <polygon points="80,40 100,10 120,40" fill="#7c3aed"></polygon>
+
+  <!-- 左タワー -->
+  <rect x="30" y="60" width="25" height="60" fill="#e5e7eb" stroke="#6b7280" stroke-width="2"></rect>
+  <polygon points="30,60 42.5,35 55,60" fill="#7c3aed"></polygon>
+
+  <!-- 右タワー -->
+  <rect x="145" y="60" width="25" height="60" fill="#e5e7eb" stroke="#6b7280" stroke-width="2"></rect>
+  <polygon points="145,60 157.5,35 170,60" fill="#7c3aed"></polygon>
+
+  <!-- 門 -->
+  <rect x="85" y="110" width="30" height="50" fill="#374151"></rect>
+
+  <!-- 旗 -->
+  <line x1="100" y1="10" x2="100" y2="0" stroke="#6b7280" stroke-width="2"></line>
+  <polygon points="100,0 115,5 100,10" fill="#a78bfa"></polygon>
+</svg>
