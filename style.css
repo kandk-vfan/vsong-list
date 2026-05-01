@@ -792,3 +792,15 @@ body.hjm-theme .search-options label{
 body.hjm-theme #songsTable tbody tr:nth-child(odd){
   background:#f8fafc;
 }
+
+/* 再生ボタン */
+body.hjm-theme .play-btn{
+  background:#ff0000;
+  color:#ffffff;
+  border:2px solid #cc0000;
+}
+
+body.hjm-theme .play-btn:hover{
+  background:#cc0000;
+  border-color:#990000;
+}
