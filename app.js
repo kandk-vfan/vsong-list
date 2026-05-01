@@ -300,7 +300,7 @@ function renderSongs(){
 <td>${s.title}</td>
 <td>${s.artist}</td>
 <td>${s.count}</td>
-<td><button onclick="play('${s.latest.videoId}','${s.latest.time}')">▶</button></td>
+<td><button class="play-btn" onclick="play('${s.latest.videoId}','${s.latest.time}')">▶</button></td>
 </tr>`;
   });
 
@@ -469,7 +469,7 @@ ${filtered.map((s,i)=>`
 <div class="song-card ${isMatch(s) ? "highlight" : ""}">
 <div class="song-card-head">
 <span class="num">${String(i+1).padStart(2,"0")}</span>
-<button onclick="play('${vid}','${s.time}')">▶</button>
+<button class="play-btn" onclick="play('${vid}','${s.time}')">▶</button>
 </div>
 <div class="song-card-title">${s.title}</div>
 <div class="song-card-artist">${s.artist}</div>
