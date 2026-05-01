@@ -797,4 +797,5 @@ body.hjm-theme #songsTable tbody tr:nth-child(odd){
 body.hjm-theme .play-btn{
   background:#ef4444;
   color:#ffffff;
+  border:2px solid #ef4444;
 }
