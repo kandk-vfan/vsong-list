@@ -795,12 +795,12 @@ body.hjm-theme #songsTable tbody tr:nth-child(odd){
 
 /* 再生ボタン */
 body.hjm-theme .play-btn{
-  background:#ff0000;
+  background:#dc2626;
   color:#ffffff;
-  border:2px solid #cc0000;
+  border:2px solid #b91c1c;
 }
 
 body.hjm-theme .play-btn:hover{
-  background:#cc0000;
-  border-color:#990000;
+  background:#b91c1c;
+  border-color:#991b1b;
 }
