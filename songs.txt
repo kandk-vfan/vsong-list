@@ -234,7 +234,7 @@ video: https://www.youtube.com/watch?v=soMzWaxlkWw
 1:10:33 Paranoid Doll / natsuP
 1:17:51 ナンセンス文学 / Eve
 1:23:36 shake it！ / emon(Tes.)
-1:34:32 ハロ／ハワユ / ナノウ
+1:34:32 ハロ／ハワユ / ナノウ(ほえほえP)
 1:41:05 余所事 / におP
 1:49:40 らしさ / SUPER BEAVER
 1:56:54 夕景イエスタデイ / じん
@@ -1311,7 +1311,7 @@ video: https://www.youtube.com/watch?v=FiGxpX1_JkM
 1:30:40 パラメタ / 40mP
 1:39:50 ぴんこすてぃっくLuv / 96バナナ
 1:46:35 No Logic / ジミーサムP
-1:53:50 朝焼け、君の唄。 / ナノウ
+1:53:50 朝焼け、君の唄。 / ナノウ(ほえほえP)
 2:02:38 夢町コントラスト / koyori(電ポルP)
 2:11:21 青 / 164
 2:18:31 紅一葉 / 黒うさP
@@ -2642,7 +2642,7 @@ video: https://www.youtube.com/watch?v=UlwMFo5QSaY
 01:01:46 スノースマイル / BUMP OF CHICKEN
 01:12:25 紅一葉 / 黒うさP
 01:20:03 深海のリトルクライ / sasakure.UK feat. 土岐麻子
-01:26:40 ハロ／ハワユ / ナノウ
+01:26:40 ハロ／ハワユ / ナノウ(ほえほえP)
 01:33:48 glow / keeno
 01:42:44 帝国少女 / R Sound Design
 01:49:36 琥珀色の街、上海蟹の朝 / くるり
