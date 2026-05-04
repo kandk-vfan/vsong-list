@@ -90,7 +90,16 @@ function parseSongLine(line) {
   if (!timeMatch) return null;
 
   const time = timeMatch[1];
-  const rest = timeMatch[2];
+  let rest = timeMatch[2];
+
+  let note = "";
+
+  if (rest.includes("｜")) {
+    const parts = rest.split("｜");
+    rest = parts[0].trim();
+    note = parts[1].trim();
+  }
+
   const separator = " / ";
   const idx = rest.lastIndexOf(separator);
 
@@ -98,14 +107,16 @@ function parseSongLine(line) {
     return {
       time,
       title: rest.trim(),
-      artist: ""
+      artist: "",
+      note
     };
   }
 
   return {
     time,
     title: rest.slice(0, idx).trim(),
-    artist: rest.slice(idx + separator.length).trim()
+    artist: rest.slice(idx + separator.length).trim(),
+    note
   };
 }
 
@@ -138,6 +149,7 @@ function parseSongLine(line) {
     results.push({
       title: parsed.title,
       artist: parsed.artist,
+      note: parsed.note || "",
       videoId,
       videoTitle: videoInfo.title,
       date: videoInfo.date,
