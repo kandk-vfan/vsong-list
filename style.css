@@ -579,7 +579,7 @@ iframe{
 
 #songsTable th:nth-child(2),
 #songsTable td:nth-child(2){
-  width:40%;
+  width:35%;
 }
 
 #songsTable th:nth-child(3),
@@ -596,7 +596,7 @@ iframe{
 
 #songsTable th:nth-child(5),
 #songsTable td:nth-child(5){
-  width:10%;
+  width:15%;
 }
 
 #songsTable td{
