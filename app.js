@@ -171,7 +171,8 @@ Promise.all([
   data = dataJson.map(d => ({
     ...d,
     title: normalize(d.title),
-    artist: normalize(d.artist)
+    artist: normalize(d.artist),
+    note: d.note || ""
   }));
 
   document.querySelectorAll(".startDate").forEach(el=>el.value="");
@@ -220,7 +221,13 @@ function renderSongs(){
 
   src.forEach(d=>{
     const k=key(d);
-    if(!map[k]) map[k]={title:d.title,artist:d.artist,count:0,latest:d};
+    if(!map[k]) map[k]={
+      title:d.title,
+      artist:d.artist,
+      note:d.note,
+      count:0,
+      latest:d
+    };
     map[k].count++;
     if(new Date(d.date)>new Date(map[k].latest.date)){
       map[k].latest=d;
@@ -251,7 +258,7 @@ function renderSongs(){
   }
 
   if(arr.length===0){
-    document.getElementById("songsBody").innerHTML=`<tr><td colspan="4">該当する結果がありません</td></tr>`;
+    document.getElementById("songsBody").innerHTML=`<tr><td colspan="5">該当する結果がありません</td></tr>`;
     return;
   }
 
@@ -294,6 +301,7 @@ function renderSongs(){
 <td>${s.artist}</td>
 <td>${s.count}</td>
 <td><button onclick="play('${s.latest.videoId}','${s.latest.time}')">▶</button></td>
+<td>${s.note || ""}</td>
 </tr>`;
   });
 
