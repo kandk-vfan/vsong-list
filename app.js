@@ -231,6 +231,7 @@ function renderSongs(){
     map[k].count++;
     if(new Date(d.date)>new Date(map[k].latest.date)){
       map[k].latest=d;
+      map[k].note = d.note; 
     }
   });
 
