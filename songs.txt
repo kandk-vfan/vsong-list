@@ -33,7 +33,7 @@ video: https://www.youtube.com/watch?v=tTI4dj3-xwY
 0:28:31 ピエロ / KEI
 0:33:38 なんでもないや / RADWIMPS
 0:40:55 ベテルギウス / 優里
-0:47:56 水平線 / back number | サビ以外あやふや
+0:47:56 水平線 / back number | うろ覚え
 0:52:51 瞬き / back number
 1:03:40 花瓶に触れた / バルーン
 1:11:44 雨とペトラ / バルーン
@@ -153,7 +153,7 @@ video: https://www.youtube.com/watch?v=fSLCjPW3fRA
 0:26:53 サリシノハラ / みきとP
 0:32:43 シリョクケンサ / 40mP
 0:40:01 Just Be Friends / Dixie Flatline
-0:50:01 月が綺麗ねと言われたい！ / カササギ | サビだけちょっと歌える
+0:50:01 月が綺麗ねと言われたい！ / カササギ | サビだけ
 0:53:28 ラプンツェル / n-buna
 1:00:05 歌よ / Belle
 1:03:40 創聖のアクエリオン / AKINO from bless4
@@ -848,7 +848,7 @@ video: https://www.youtube.com/watch?v=IHlDkIHbv08
 0:30:12 ヤミタイガール / れるりり
 0:41:16 パンダヒーロー / ハチ
 0:45:10 ロミオとシンデレラ / doriko
-0:57:10 群青讃歌 / Eve
+0:57:10 群青讃歌 / Eve | サビだけ
 1:02:42 ロウワー / ぬゆり
 1:06:40 ルカルカ★ナイトフィーバー / samfree
 1:11:34 おおかみは赤ずきんに恋をした / ひとしずくP×やま△
@@ -1083,6 +1083,7 @@ video: https://www.youtube.com/watch?v=weqgRZyqQkA
 0:48:41 drop pop candy / Giga
 0:53:07 スキスキ絶頂症 / koyori(電ポルP)
 0:57:01 曖昧劣情Lover / koyori(電ポルP)
+1:11:51 アンハッピーリフレイン / wowaka | サビだけ
 1:14:41 サンドリヨン(Cendrillon) / Dios(シグナルP)
 1:21:55 好き！雪！本気マジック / Mitchie M
 1:25:22 白い雪のプリンセスは-Re:incarnation- / のぼる↑
@@ -1228,6 +1229,7 @@ video: https://www.youtube.com/watch?v=A5Zj0O0qn7M
 1:17:34 吉原ラメント / 亜沙
 1:28:52 ヴァンパイア / DECO*27
 1:34:04 骸骨楽団とリリア / トーマ
+1:42:49 ハナタバ / MIMI | サビだけ
 1:44:03 おねがいダーリン / ナナホシ管弦楽団
 1:48:34 ソワレ / 星街すいせい
 1:53:34 花に亡霊 / ヨルシカ
@@ -1658,6 +1660,7 @@ video: https://www.youtube.com/watch?v=PUmnev7q40Q
 0:40:54 ロウワー / ぬゆり
 0:44:48 フラジール / ぬゆり
 0:49:36 プロトディスコ / ぬゆり
+0:59:00 仮装狂騒曲 / 月村手毬(小鹿なお)・倉本千奈(伊藤舞音)・篠澤広(川村玲奈) | うろ覚え
 1:02:48 Bunny Girl / AKASAKI
 1:06:24 Beyond the way / Giga
 1:19:41 ライラック / Mrs. GREEN APPLE
@@ -2698,7 +2701,7 @@ video: https://www.youtube.com/watch?v=qxq8c7mtbjE
 0:49:58 Lemon / 米津玄師
 1:04:39 flos / R Sound Design
 1:09:33 ソワレ / 星街すいせい
-1:15:20 FIESTA / IZ*ONE
+1:15:20 FIESTA / IZ*ONE | うろ覚え
 1:24:37 少女レイ / みきとP
 1:29:32 変わらないもの / 奥華子
 1:39:15 ハム太郎とっとこうた / ハムちゃんず
@@ -2748,7 +2751,7 @@ video: https://www.youtube.com/watch?v=OOasmNQFbzA
 1:50:17 八月の夜 / SILENT SIREN
 2:04:38 ロミオとシンデレラ / doriko
 2:09:31 Overdose / なとり
-2:13:12 三日月 / 絢香
+2:13:12 三日月 / 絢香 | うろ覚え
 2:19:34 プロポーズ / 内緒のピアス
 2:32:28 プラネテス / seiza
 2:38:48 三日月ステップ / r-906
@@ -2900,6 +2903,7 @@ video: https://www.youtube.com/watch?v=Q1-97_HcD90
 0:30:57 花に亡霊 / ヨルシカ
 0:41:25 ハルジオン / YOASOBI
 0:45:33 ワールド・ランプシェード / buzzG
+0:55:13 三原色 / YOASOBI | うろ覚え
 0:59:58 春泥棒 / ヨルシカ
 1:11:19 ノーチラス / ヨルシカ
 1:16:42 雨とカプチーノ / ヨルシカ
@@ -3540,17 +3544,18 @@ video: https://www.youtube.com/watch?v=XkDtfrke7Kw
 
 video: https://www.youtube.com/watch?v=MrTBVYYUwjw
 
-0:08:19　愛包ダンスホール / HIMEHINA
-0:17:47　アウターサイエンス / じん
-0:29:21　Ice breaker / ねじ式
-0:39:15　愛迷エレジー / DECO*27
-0:42:38　EYE / Kanaria
-0:53:03　I'm Your Treasure Box *あなたは マリンせんちょうを たからばこからみつけた。 / 宝鐘マリン
-0:58:44　アカイト / みきとP
-1:07:37　アイのシナリオ / CHiCO with HoneyWorks
-1:20:51　アンヘル / かいりきベア
-1:27:57　アニマル / DECO*27
-1:34:51　アイドル / YOASOBI
+0:08:19 愛包ダンスホール / HIMEHINA
+0:17:47 アウターサイエンス / じん
+0:29:21 Ice breaker / ねじ式
+0:39:15 愛迷エレジー / DECO*27
+0:42:38 EYE / Kanaria
+0:53:03 I'm Your Treasure Box *あなたは マリンせんちょうを たからばこからみつけた。 / 宝鐘マリン
+0:58:44 アカイト / みきとP
+1:07:37 アイのシナリオ / CHiCO with HoneyWorks
+1:20:51 アンヘル / かいりきベア
+1:27:57 アニマル / DECO*27
+1:34:51 アイドル / YOASOBI
+1:41:57 好きな惣菜発表ドラゴン / ンバヂ
 
 video: https://www.youtube.com/watch?v=MgE6PNf_1e0
 
@@ -3691,6 +3696,7 @@ video: https://www.youtube.com/watch?v=VIPAfxwN0y0
 01:20:18 秒針を噛む / ずっと真夜中でいいのに。
 01:29:13 トウキョウ・シャンディ・ランデヴ / MAISONdes
 01:33:20 エンヴィキャットウォーク / トーマ
+01:43:44 クラクラ / Ado | サビだけ
 01:50:09 心做し / 蝶々P
 02:03:11 回る空うさぎ / Orangestar
 
@@ -3701,28 +3707,3 @@ video: https://www.youtube.com/watch?v=As6Gtj87W9M
 video: https://www.youtube.com/watch?v=FEXY1UrvGeU
 
 00:05:23　セツナトリップ / Last Note.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
