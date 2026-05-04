@@ -94,10 +94,10 @@ function parseSongLine(line) {
 
   let note = "";
 
-  if (rest.includes("｜")) {
-    const parts = rest.split("｜");
+  if (rest.includes("|")) {
+    const parts = rest.split("|");
     rest = parts[0].trim();
-    note = parts[1].trim();
+    note = parts.slice(1).join("|").trim();
   }
 
   const separator = " / ";
