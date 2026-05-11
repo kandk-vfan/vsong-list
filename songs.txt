@@ -2238,7 +2238,7 @@ video: https://www.youtube.com/watch?v=7_FM94Kq0X8
 3:12:13 My Soul,Your Beats! / Lia
 3:21:29 鳥の詩 / Lia
 
-via: https://www.youtube.com/watch?v=iCqXGCppXag
+video: https://www.youtube.com/watch?v=iCqXGCppXag
 
 0:06:26 JANE DOE / 米津玄師・宇多田ヒカル
 0:13:28 10月無口な君を忘れる / あたらよ
