@@ -276,6 +276,14 @@ function renderSongs(){
         return getYomi(a.title, a.artist).localeCompare(getYomi(b.title, b.artist),"ja");
       }
     }
+
+    else if(type==="date"){
+      res = new Date(a.latest.date) - new Date(b.latest.date);
+    
+      if(res===0){
+        return getYomi(a.title, a.artist).localeCompare(getYomi(b.title, b.artist),"ja");
+      }
+    }
   
     else{
       res = getYomi(a.title, a.artist).localeCompare(getYomi(b.title, b.artist),"ja");
@@ -293,7 +301,12 @@ function renderSongs(){
 <td>${s.title}</td>
 <td>${s.artist}</td>
 <td>${s.count}</td>
-<td><button onclick="play('${s.latest.videoId}','${s.latest.time}')">▶</button></td>
+<td>
+  <div class="song-play-area">
+    <button onclick="play('${s.latest.videoId}','${s.latest.time}')">▶</button>
+    <div class="song-date">${formatDate(s.latest.date)}</div>
+  </div>
+</td>
 </tr>`;
   });
 
@@ -526,7 +539,7 @@ document.getElementById("sortArtistsType").addEventListener("change", ()=>{
 document.getElementById("sortSongsType").addEventListener("change", ()=>{
   const type = document.getElementById("sortSongsType").value;
 
-  if(type === "count"){
+  if(type === "count" || type === "date"){
     document.getElementById("sortSongsOrder").value = "desc";
   }else{
     document.getElementById("sortSongsOrder").value = "asc";
