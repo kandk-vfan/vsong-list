@@ -301,7 +301,12 @@ function renderSongs(){
 <td>${s.title}</td>
 <td>${s.artist}</td>
 <td>${s.count}</td>
-<td><button onclick="play('${s.latest.videoId}','${s.latest.time}')">▶</button></td>
+<td>
+  <div class="song-play-area">
+    <button onclick="play('${s.latest.videoId}','${s.latest.time}')">▶</button>
+    <div class="song-date">${formatDate(s.latest.date)}</div>
+  </div>
+</td>
 <td>${s.note || ""}</td>
 </tr>`;
   });
