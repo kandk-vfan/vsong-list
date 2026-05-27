@@ -31,10 +31,13 @@ function matchText(text, keyword, exact, caseSensitive){
 function parseKeyword(input){
   const raw = normalize(input);
 
-  if(raw.includes("&")){
+  if(raw.includes("&&") || raw.includes("＆＆")){
     return {
       mode: "AND",
-      keywords: raw.split("&").map(k => normalize(k)).filter(k=>k)
+      keywords: raw
+        .split(/&&|＆＆/)
+        .map(k => normalize(k))
+        .filter(k => k)
     };
   }
 
