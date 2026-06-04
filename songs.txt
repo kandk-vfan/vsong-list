@@ -101,7 +101,7 @@ video: https://www.youtube.com/watch?v=9LVblkX682s
 0:18:35 Long Kiss Good Bye / HALCALI
 0:25:42 10月無口な君を忘れる / あたらよ
 0:34:56 Avid / SawanoHiroyuki[nZk]:mizuki
-0:41:44 キスキツネ / ヒメヒナ(HIMEHINA)
+0:41:44 キスキツネ / HIMEHINA
 0:49:07 COSMOS vs ALIEN / やくしまるえつこ
 0:53:58 ヴィーナスとジーザス / やくしまるえつこ
 0:59:16 Pop Virus / 星野源
@@ -507,7 +507,7 @@ video: https://www.youtube.com/watch?v=55asfmmg8i0
 0:33:43 火炎 / 女王蜂
 0:39:37 長く短い祭 / 椎名林檎
 0:49:30 おしゃかしゃま / RADWIMPS
-0:56:00 キスキツネ / ヒメヒナ(HIMEHINA)
+0:56:00 キスキツネ / HIMEHINA
 1:05:24 UNDEAD / YOASOBI
 1:11:15 雨とカプチーノ / ヨルシカ
 1:17:02 晴る / ヨルシカ
@@ -946,7 +946,7 @@ video: https://www.youtube.com/watch?v=kNDbN2mKJ6Y
 0:29:57 a little pain / OLIVIA inspi' REIRA(TRAPNEST)
 0:40:05 COLORS / FLOW
 0:46:29 モザイクカケラ / SunSet Swish
-0:53:00 キスキツネ / ヒメヒナ(HIMEHINA)
+0:53:00 キスキツネ / HIMEHINA
 0:58:57 恋風 / 幾田りら
 1:05:24 a.m.3:21 / yama
 1:16:04 Ham / ずっと真夜中でいいのに。
@@ -1301,7 +1301,7 @@ video: https://www.youtube.com/watch?v=lkQiXgkJzAo
 1:34:48 つきとさなぎ / ぼくのりりっくのぼうよみ
 1:42:54 ラヴィ / すりぃ
 1:49:24 Boom / Team ahamo
-1:54:31 キスキツネ / ヒメヒナ(HIMEHINA)
+1:54:31 キスキツネ / HIMEHINA
 2:02:28 Chaining Intention / ELECTROCUTICA
 2:10:09 Masked bitcH / Giga(ギガP)
 2:16:38 one more kiss / OSTER project
@@ -1494,7 +1494,7 @@ video: https://www.youtube.com/watch?v=1kEAHEFql7A
 0:51:31 ELECT / niki
 1:00:58 StarCrew / 赤髪
 1:13:32 ネトゲ廃人シュプレヒコール / さつき が てんこもり
-1:21:27 キスキツネ / ヒメヒナ(HIMEHINA)
+1:21:27 キスキツネ / HIMEHINA
 1:30:56 幽霊屋敷の首吊り少女 / トーマ
 1:37:23 アザレアの亡霊 / トーマ
 1:41:50 桜キッス / 河邉千恵子
@@ -1803,7 +1803,7 @@ video: https://www.youtube.com/watch?v=FiGxpX1_JkM
 0:31:52 BURN / yama✕WurtS
 0:36:21 Boom / Team ahamo
 0:42:16 01 / 女王蜂
-0:49:44 キスキツネ / ヒメヒナ(HIMEHINA)
+0:49:44 キスキツネ / HIMEHINA
 0:56:14 カタオモイ / Aimer
 1:05:02 境界線 / amazarashi
 1:13:28 恋 / 奥華子
@@ -2169,7 +2169,7 @@ video: https://www.youtube.com/watch?v=53nkwV6O1qU
 0:10:52 life hack / Vaundy
 0:17:29 オドループ / フレデリック
 0:27:11 モニタリング / DECO*27
-0:32:18 キスキツネ / ヒメヒナ(HIMEHINA)
+0:32:18 キスキツネ / HIMEHINA
 0:38:56 フレンジャー / 大塚愛
 0:46:52 雨とカプチーノ / ヨルシカ
 0:53:46 ただ君に晴れ / ヨルシカ
@@ -2417,8 +2417,8 @@ video: https://www.youtube.com/watch?v=FFIKd-8ke0o
 1:32:27 不可幸力 / Vaundy
 1:41:12 デスぺレート / TeddyLoid&Giga feat. LOLUET
 1:47:48 BALALAIKA / 9Lana
-1:55:06 キスキツネ / ヒメヒナ(HIMEHINA)
-2:05:20 LADY CRAZY / ヒメヒナ(HIMEHINA)
+1:55:06 キスキツネ / HIMEHINA
+2:05:20 LADY CRAZY / HIMEHINA
 2:14:44 あなた / 宇多田ヒカル
 2:22:23 Call of Silence / 澤野弘之 feat. Gemie
 
@@ -2436,7 +2436,7 @@ video: https://www.youtube.com/watch?v=r1PlDVNZqLQ
 1:05:12 ビビデバ / 星街すいせい
 1:10:23 ムーンライト / 星街すいせい
 1:16:40 UNDEAD / YOASOBI
-1:21:58 愛包ダンスホール / ヒメヒナ(HIMEHINA)
+1:21:58 愛包ダンスホール / HIMEHINA
 1:27:29 強風オールバック / ゆこぴ
 1:32:10 鬼ノ宴 / 友成空
 1:41:15 ヨワネハキ / MAISONdes
@@ -2714,9 +2714,9 @@ video: https://www.youtube.com/watch?v=O1JRbGqxbMI
 0:22:22 革命道中 / アイナ・ジ・エンド
 0:29:58 オレンジ / SPYAIR
 0:35:53 ソラニン / ASIAN KUNG-FU GENERATION
-0:43:29 愛包ダンスホール / ヒメヒナ(HIMEHINA)
-0:49:09 キスキツネ / ヒメヒナ(HIMEHINA)
-0:56:06 LADY CRAZY / ヒメヒナ(HIMEHINA)
+0:43:29 愛包ダンスホール / HIMEHINA
+0:49:09 キスキツネ / HIMEHINA
+0:56:06 LADY CRAZY / HIMEHINA
 1:05:49 IRIS OUT / 米津玄師 
 1:10:47 ALONES / Aqua Timez
 1:24:17 ずうっといっしょ！ / キタニタツヤ
@@ -3060,7 +3060,7 @@ video: https://www.youtube.com/watch?v=5eavpy6xYhM
 01:55:32 はいよろこんで / こっちのけんと
 02:00:31 美少女無罪♡パイレーツ / 宝鐘マリン
 02:06:07 III / 宝鐘マリン＆こぼ・かなえる
-02:12:22 キスキツネ / ヒメヒナ(HIMEHINA)
+02:12:22 キスキツネ / HIMEHINA
 02:18:05 fake face dance music / 音田雅則
 02:23:59 Overdose / なとり
 02:29:33 琥珀色の街、上海蟹の朝 / くるり
@@ -3288,7 +3288,7 @@ video: https://www.youtube.com/watch?v=dZyjQfTy728
 01:16:35 世界は恋に落ちている / CHiCO with HoneyWorks
 01:24:02 え？あぁ、そう。 / 蝶々P
 01:31:39 独りんぼエンヴィー / koyori(電ポルP)
-01:37:00 LADY CRAZY / ヒメヒナ(HIMEHINA)
+01:37:00 LADY CRAZY / HIMEHINA
 01:43:16 雨とカプチーノ / ヨルシカ
 01:49:02 夜行 / ヨルシカ
 01:54:24 風を食む / ヨルシカ
@@ -3401,8 +3401,8 @@ video: https://www.youtube.com/watch?v=ilBbH_GPDpY
 00:50:50 鬼ノ宴 / 友成空
 00:57:21 Overdose / なとり
 01:06:42 雨とカプチーノ / ヨルシカ
-01:16:32 キスキツネ / ヒメヒナ(HIMEHINA)
-01:21:07 愛包ダンスホール / ヒメヒナ(HIMEHINA)
+01:16:32 キスキツネ / HIMEHINA
+01:21:07 愛包ダンスホール / HIMEHINA
 01:31:21 愛のうた / ストロベリー・フラワー
 01:37:59 種のうた / ストロベリー・フラワー
 01:44:50 夢をかなえてドラえもん / mao
@@ -3623,7 +3623,7 @@ video: https://www.youtube.com/watch?v=jKPwmdWj4t0
 00:45:32 1・2・3 / After the Rain
 00:52:59 好きな惣菜発表ドラゴン / ンバヂ
 00:56:43 One more time, One more chance / 山崎まさよし
-01:03:49 キスキツネ / ヒメヒナ(HIMEHINA)
+01:03:49 キスキツネ / HIMEHINA
 00:10:52 ボクノート / スキマスイッチ
 01:18:12 真夜中のドア～Stay With Me / 松原みき
 01:24:49 サムライハート(Some Like It Hot!!) / SPYAIR
@@ -3651,12 +3651,12 @@ video: https://www.youtube.com/watch?v=IDBVVGrTZIE
 01:21:02 1・2・3 / After the Rain
 01:28:26 食虫植物 / 理芽
 01:33:31 トウキョウ・シャンディ・ランデヴ / MAISONdes
-01:39:46 愛包ダンスホール / ヒメヒナ(HIMEHINA)
+01:39:46 愛包ダンスホール / HIMEHINA
 01:47:40 ラフ・メイカー / BUMP OF CHICKEN
 01:52:52 プロポーズ / なとり
 02:00:05 酔いどれ知らず / Kanaria
 02:04:52 鬼ノ宴 / 友成空
-02:09:59 LADY CRAZY / ヒメヒナ(HIMEHINA)
+02:09:59 LADY CRAZY / HIMEHINA
 
 video: https://www.youtube.com/watch?v=WwJtPq_fP8E
 
@@ -3665,7 +3665,7 @@ video: https://www.youtube.com/watch?v=WwJtPq_fP8E
 0:24:02 織姫とBABY / ねぐせ。
 0:30:55 プロポーズ / なとり
 0:36:40 マイハートハードピンチ / 相対性理論
-0:45:45 キスキツネ / ヒメヒナ(HIMEHINA)
+0:45:45 キスキツネ / HIMEHINA
 0:55:41 夜行 / ヨルシカ
 1:02:41 Blue Jeans / HANA
 1:09:38 風を食む / ヨルシカ
@@ -3765,8 +3765,8 @@ video: https://www.youtube.com/watch?v=_711bQQ8gUM
 0:24:29 言って。 / ヨルシカ
 0:33:08 シンデレラボーイ / Saucy Dog
 0:42:40 モニタリング / DECO*27
-0:55:38 キスキツネ / ヒメヒナ(HIMEHINA)
-1:03:45 愛包ダンスホール / ヒメヒナ(HIMEHINA)
+0:55:38 キスキツネ / HIMEHINA
+1:03:45 愛包ダンスホール / HIMEHINA
 1:13:29 アポリア  / ヨルシカ
 1:19:36 だから僕は音楽を辞めた / ヨルシカ
 1:26:25 春を告げる / yama
