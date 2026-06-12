@@ -422,6 +422,14 @@ function renderStreams(){
 
   let arr=Object.entries(map);
 
+  const hikigatariOnly = document.getElementById("filterStreamsHikigatari")?.checked;
+  if(hikigatariOnly){
+    arr = arr.filter(([vid, v]) =>
+      normalize(v.title).includes("弾き語り") ||
+      normalize(v.title).includes("ギター")
+    );
+  }
+
   const order=document.getElementById("sortStreamsOrder").value;
 
   arr.sort((a,b)=>{
@@ -631,3 +639,5 @@ document.getElementById("caseSensitiveStreams").addEventListener("change", rende
 
 document.getElementById("exactMatchArtists").addEventListener("change", renderArtists);
 document.getElementById("caseSensitiveArtists").addEventListener("change", renderArtists);
+
+document.getElementById("filterStreamsHikigatari").addEventListener("change", renderStreams);
