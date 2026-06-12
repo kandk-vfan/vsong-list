@@ -12,6 +12,34 @@ html{
   overflow-y: scroll;
 }
 
+.note-filter{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  font-size:13px;
+  cursor:pointer;
+  margin:0;
+  padding:4px 10px;
+  border-radius:999px;
+  background:#f8fafc;
+  color:#1f2937;
+  border:1px solid #6b7280;
+}
+
+.note-filter input[type="checkbox"]{
+  width:16px;
+  height:16px;
+  min-width:16px;
+  margin:0;
+  padding:0;
+  flex:0 0 auto;
+}
+
+.note-filter-row{
+  margin-top:-10px;
+  margin-bottom:10px;
+}
+
 .song-play-area{
   display:flex;
   flex-direction:column;
