@@ -660,4 +660,4 @@ document.getElementById("caseSensitiveStreams").addEventListener("change", rende
 document.getElementById("exactMatchArtists").addEventListener("change", renderArtists);
 document.getElementById("caseSensitiveArtists").addEventListener("change", renderArtists);
 
-document.getElementById("filterStreamsHikigatari").addEventListener("change", renderStreams);
+document.getElementById("filterStreamsHikigatari").addEventListener("change", renderAll);
