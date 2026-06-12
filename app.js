@@ -202,7 +202,30 @@ function renderAll(){
 }
 
 function renderSummary(){
-  const src = getFilteredData();
+  const isStreams = !document.getElementById("streams").classList.contains("hidden");
+
+  let src;
+
+  if(isStreams){
+    const base = getFilteredData();
+
+    const hikigatariOnly = document.getElementById("filterStreamsHikigatari")?.checked;
+
+    if(hikigatariOnly){
+      src = base.filter(d =>
+        normalize(d.videoTitle).includes("弾き語り") ||
+        normalize(d.videoTitle).includes("ギター")
+      );
+    }else{
+      src = base;
+    }
+
+  }else{
+    src = getFilteredData();
+  }
+
+  const songSet=new Set();
+  const artistSet=new Set();
 
   const songSet=new Set();
   const artistSet=new Set();
