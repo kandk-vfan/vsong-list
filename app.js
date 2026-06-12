@@ -227,9 +227,6 @@ function renderSummary(){
   const songSet=new Set();
   const artistSet=new Set();
 
-  const songSet=new Set();
-  const artistSet=new Set();
-
   src.forEach(d=>{
     songSet.add(key(d));
     artistSet.add(d.artist);
