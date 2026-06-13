@@ -250,7 +250,9 @@ function renderSongs(){
 
   src.forEach(d=>{
     const k=key(d);
-    if(!map[k]) map[k]={title:d.title,artist:d.artist,count:0,latest:d};
+    if(!map[k]) map[k]={title:d.title,artist:d.artist,notes:new Set(),count:0,latest:d};
+    const note = (d.note || "").replace(/^[\s　]+|[\s　]+$/g, "");
+    map[k].notes.add(note);
     map[k].count++;
     if(new Date(d.date)>new Date(map[k].latest.date)){
       map[k].latest=d;
@@ -258,6 +260,19 @@ function renderSongs(){
   });
 
   let arr=Object.values(map);
+
+  arr.forEach(s=>{
+    const notes = s.notes;
+    const labels = [];
+    if(notes.has("")) labels.push("音源");
+    if(notes.has("弾き語り")) labels.push("弾き語り");
+    if(labels.length === 1 && labels[0] === "音源"){
+      s.displayNote = "";
+    } else {
+      s.displayNote = labels.join("・");
+    }
+    s.hasHikigatari = notes.has("弾き語り");
+  });
 
   let keyword = document.getElementById("searchSongs").value;
   const {mode, keywords} = parseKeyword(keyword);
@@ -337,6 +352,7 @@ function renderSongs(){
     <div class="song-date">${formatDate(s.latest.date)}</div>
   </div>
 </td>
+<td>${s.displayNote}</td>
 </tr>`;
   });
 
