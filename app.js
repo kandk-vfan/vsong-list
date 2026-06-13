@@ -264,12 +264,21 @@ function renderSongs(){
 
   src.forEach(d=>{
     const k=key(d);
-    if(!map[k]) map[k]={title:d.title,artist:d.artist,notes:new Set(),count:0,latest:d};
+    if(!map[k]) map[k]={title:d.title,artist:d.artist,notes:new Set(),count:0,latest:d,latestOngen:null,latestHikigatari:null};
     const note = (d.note || "").replace(/^[\s　]+|[\s　]+$/g, "");
     map[k].notes.add(note);
     map[k].count++;
     if(new Date(d.date)>new Date(map[k].latest.date)){
       map[k].latest=d;
+    }
+    if(note === "弾き語り"){
+      if(!map[k].latestHikigatari || new Date(d.date)>new Date(map[k].latestHikigatari.date)){
+        map[k].latestHikigatari=d;
+      }
+    }else{
+      if(!map[k].latestOngen || new Date(d.date)>new Date(map[k].latestOngen.date)){
+        map[k].latestOngen=d;
+      }
     }
   });
 
@@ -367,8 +376,15 @@ function renderSongs(){
 <td>${s.count}</td>
 <td>
   <div class="song-play-area">
+    ${s.displayNote.includes("・") ? `
+    <button class="play-btn" onclick="play('${s.latestOngen.videoId}','${s.latestOngen.time}')">▶</button>
+    <div class="song-date">${formatDate(s.latestOngen.date)}<br>(音源)</div>
+    <button class="play-btn" onclick="play('${s.latestHikigatari.videoId}','${s.latestHikigatari.time}')">▶</button>
+    <div class="song-date">${formatDate(s.latestHikigatari.date)}<br>(弾き語り)</div>
+    ` : `
     <button class="play-btn" onclick="play('${s.latest.videoId}','${s.latest.time}')">▶</button>
-    <div class="song-date">${formatDate(s.latest.date)}${s.displayNote.includes("・") ? `<br>(${(s.latest.note || "").replace(/^[\s　]+|[\s　]+$/g, "") || "音源"})` : ""}</div>
+    <div class="song-date">${formatDate(s.latest.date)}</div>
+    `}
   </div>
 </td>
 <td>${s.displayNote}</td>
