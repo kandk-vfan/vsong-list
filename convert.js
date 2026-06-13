@@ -61,14 +61,8 @@ function fetchVideoInfo(videoId) {
 
       res.on("end", () => {
         try {
-          console.log("==== API RESPONSE START ====");
-          console.log("videoId:", videoId);
-          console.log("statusCode:", res.statusCode);
-          console.log("raw:", data);
-          console.log("==== API RESPONSE END ====");
-      
           const json = JSON.parse(data);
-      
+
           if (!json.items || json.items.length === 0) {
             console.warn(`skip videoId: ${videoId}`);
             resolve(null);
@@ -96,7 +90,16 @@ function parseSongLine(line) {
   if (!timeMatch) return null;
 
   const time = timeMatch[1];
-  const rest = timeMatch[2];
+  let rest = timeMatch[2];
+
+  let note = "";
+
+  const pipeIndex = rest.lastIndexOf("|");
+  if (pipeIndex !== -1) {
+    note = rest.slice(pipeIndex + 1).trim();
+    rest = rest.slice(0, pipeIndex).trim();
+  }
+
   const separator = " / ";
   const idx = rest.lastIndexOf(separator);
 
@@ -104,14 +107,16 @@ function parseSongLine(line) {
     return {
       time,
       title: rest.trim(),
-      artist: ""
+      artist: "",
+      note
     };
   }
 
   return {
     time,
     title: rest.slice(0, idx).trim(),
-    artist: rest.slice(idx + separator.length).trim()
+    artist: rest.slice(idx + separator.length).trim(),
+    note
   };
 }
 
@@ -144,6 +149,7 @@ function parseSongLine(line) {
     results.push({
       title: parsed.title,
       artist: parsed.artist,
+      note: parsed.note || "",
       videoId,
       videoTitle: videoInfo.title,
       date: videoInfo.date,
