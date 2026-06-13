@@ -349,7 +349,7 @@ function renderSongs(){
 <td>
   <div class="song-play-area">
     <button class="play-btn" onclick="play('${s.latest.videoId}','${s.latest.time}')">▶</button>
-    <div class="song-date">${formatDate(s.latest.date)}${s.displayNote.includes("・") ? ` (${(s.latest.note || "").replace(/^[\s　]+|[\s　]+$/g, "") || "音源"})` : ""}</div>
+    <div class="song-date">${formatDate(s.latest.date)}${s.displayNote.includes("・") ? `<br>(${(s.latest.note || "").replace(/^[\s　]+|[\s　]+$/g, "") || "音源"})` : ""}</div>
   </div>
 </td>
 <td>${s.displayNote}</td>
