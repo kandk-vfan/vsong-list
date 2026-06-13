@@ -246,9 +246,16 @@ function renderSummary(){
   <div class="summary-row"><span class="label">アーティスト数</span><span class="value">${artistSet.size}</span></div>
   `;
 
-  document.getElementById("songsSummary").innerHTML = html;
-  document.getElementById("streamsSummary").innerHTML = html;
-  document.getElementById("artistsSummary").innerHTML = html;
+  const isStreams = !document.getElementById("streams").classList.contains("hidden");
+  const isArtists = !document.getElementById("artists").classList.contains("hidden");
+
+  if(isStreams){
+    document.getElementById("streamsSummary").innerHTML = html;
+  }else if(isArtists){
+    document.getElementById("artistsSummary").innerHTML = html;
+  }else{
+    document.getElementById("songsSummary").innerHTML = html;
+  }
 }
 
 function renderSongs(){
@@ -564,6 +571,7 @@ function showTab(id,btn){
   document.getElementById(id).classList.remove("hidden");
   document.querySelectorAll(".tab-button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
+  renderSummary();
 }
 
 function play(videoId,time){
