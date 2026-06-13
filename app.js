@@ -247,7 +247,6 @@ function renderSummary(){
   `;
 
   const isStreams = !document.getElementById("streams").classList.contains("hidden");
-  const isArtists = !document.getElementById("artists").classList.contains("hidden");
 
   if(isStreams){
     document.getElementById("streamsSummary").innerHTML = html;
