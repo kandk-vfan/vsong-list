@@ -541,12 +541,12 @@ iframe{
 
 #songsTable th:nth-child(1),
 #songsTable td:nth-child(1){
-  width:40%;
+  width:35%;
 }
 
 #songsTable th:nth-child(2),
 #songsTable td:nth-child(2){
-  width:45%;
+  width:40%;
 }
 
 #songsTable th:nth-child(3),
@@ -559,6 +559,11 @@ iframe{
 #songsTable td:nth-child(4){
   width:10%;
   text-align:center;
+}
+
+#songsTable th:nth-child(5),
+#songsTable td:nth-child(5){
+  width:10%;
 }
 
 #songsTable td{
