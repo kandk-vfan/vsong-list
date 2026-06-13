@@ -221,7 +221,15 @@ function renderSummary(){
     }
 
   }else{
-    src = getFilteredData();
+    const base = getFilteredData();
+    const hikigatariOnly = document.getElementById("filterHikigatari")?.checked;
+    if(hikigatariOnly){
+      src = base.filter(d =>
+        (d.note || "").replace(/^[\s　]+|[\s　]+$/g, "") === "弾き語り"
+      );
+    }else{
+      src = base;
+    }
   }
 
   const songSet=new Set();
