@@ -124,7 +124,7 @@ video: https://www.youtube.com/watch?v=y8cFs6r_s88
 0:51:59 少女レイ / みきとP
 1:01:27 ミス・パラレルワールド / 相対性理論
 1:08:41 永遠のブルー / 羊文学
-1:15:00 革命道中 / アイナ・ジ・エンド
+1:15:00 革命道中 - On The Way / アイナ・ジ・エンド
 1:21:50 フェイク / Mr.Children
 1:29:32 Snow fairy / FUNKIST
 1:35:53 ガラナ / スキマスイッチ
@@ -1034,7 +1034,7 @@ video: https://www.youtube.com/watch?v=-0ARkltjHc4
 1:22:27 III / 宝鐘マリン＆こぼ・かなえる
 1:27:02 ロミオとシンデレラ / doriko
 1:34:56 Last Summer / 加藤ミリヤ
-1:42:14 革命道中 / アイナ・ジ・エンド
+1:42:14 革命道中 - On The Way / アイナ・ジ・エンド
 1:48:17 ハレンチ / ちゃんみな
 2:01:25 Red fraction / MELL
 2:11:50 水流のロック / 日食なつこ
@@ -1250,7 +1250,7 @@ video: https://www.youtube.com/watch?v=qLyxjne_aDg
 0:40:28 JANE DOE / 米津玄師・宇多田ヒカル
 0:46:48 あなた / 宇多田ヒカル
 0:55:04 星座になれたら / 結束バンド
-1:01:47 革命道中 / アイナ・ジ・エンド
+1:01:47 革命道中 - On The Way / アイナ・ジ・エンド
 1:08:04 夜行 / ヨルシカ
 1:14:43 プロポーズ / 内緒のピアス
 1:22:27 B級 / ちゃんみな
@@ -1458,7 +1458,7 @@ video: https://www.youtube.com/watch?v=lkQiXgkJzAo
 0:46:20 嘘 / シド
 0:51:59 ＊～アスタリスク～ / ORANGE RANGE
 0:58:33 chAngE / miwa
-1:09:35 革命道中 / アイナ・ジ・エンド
+1:09:35 革命道中 - On The Way / アイナ・ジ・エンド
 1:17:58 01 / 女王蜂
 1:25:34 不可幸力 / Vaundy
 1:34:48 つきとさなぎ / ぼくのりりっくのぼうよみ
@@ -1822,7 +1822,7 @@ video: https://www.youtube.com/watch?v=CMfbHd1AUt8
 0:17:14 Little Bouquet / Aimer
 0:25:47 彗星になれたなら / はるまきごはん
 0:31:20 浴槽とネオンテトラ / REISAI
-0:38:34 革命道中 / アイナ・ジ・エンド
+0:38:34 革命道中 - On The Way / アイナ・ジ・エンド
 0:47:25 女狐 / ロス
 0:52:20 つきとさなぎ / ぼくのりりっくのぼうよみ
 0:58:46 Burning Friday Night / Lucky Kilimanjaro
@@ -1938,7 +1938,7 @@ video: https://www.youtube.com/watch?v=NzoDtsazY2g
 0:22:36 デジタルラブ / WurtS feat. 星街すいせい
 0:29:29 「僕は...」 / あたらよ
 0:36:06 祝日天国 / 35.7
-0:43:37 革命道中 / アイナ・ジ・エンド
+0:43:37 革命道中 - On The Way / アイナ・ジ・エンド
 0:51:16 琥珀色の街、上海蟹の朝 / くるり
 0:58:42 プロポーズ / なとり
 1:05:14 ずうっといっしょ！ / キタニタツヤ
@@ -2228,7 +2228,7 @@ video: https://www.youtube.com/watch?v=_MmP6g1YRGU
 0:24:07 NIGHT DANCER / imase
 0:30:28 星座になれたら / 結束バンド 
 0:36:40 IRIS OUT / 米津玄師
-0:41:05 革命道中 / アイナ・ジ・エンド
+0:41:05 革命道中 - On The Way / アイナ・ジ・エンド
 0:47:56 彗星になれたなら / はるまきごはん
 0:53:24 女狐 / ロス
 0:58:15 つきとさなぎ / ぼくのりりっくのぼうよみ
@@ -2343,7 +2343,7 @@ video: https://www.youtube.com/watch?v=53nkwV6O1qU
 1:29:53 女狐 / ロス
 1:37:45 プロポーズ / なとり
 1:45:01 ずうっといっしょ！ / キタニタツヤ
-1:54:10 革命道中 / アイナ・ジ・エンド
+1:54:10 革命道中 - On The Way / アイナ・ジ・エンド
 2:04:40 TAIDADA / ずっと真夜中でいいのに。
 2:13:30 SAD SONG / ちゃんみな
 2:22:17 Wind / Akeboshi
@@ -2588,7 +2588,7 @@ video: https://www.youtube.com/watch?v=FFIKd-8ke0o
 video: https://www.youtube.com/watch?v=r1PlDVNZqLQ
 
 0:05:02 JANE DOE / 米津玄師・宇多田ヒカル
-0:13:06 革命道中 / アイナ・ジ・エンド
+0:13:06 革命道中 - On The Way / アイナ・ジ・エンド
 0:18:47 IRIS OUT / 米津玄師
 0:23:37 LADY / 米津玄師
 0:30:00 星座になれたら / 結束バンド
@@ -2731,7 +2731,7 @@ video: https://www.youtube.com/watch?v=w_cqBNeWI0c
 0:14:20 KissHug / aiko
 0:24:51 花火 / aiko
 0:33:11 有心論 / RADWIMPS
-0:40:46 革命道中 / アイナ・ジ・エンド
+0:40:46 革命道中 - On The Way / アイナ・ジ・エンド
 0:46:52 ダイアモンド クレバス / シェリル・ノーム starring May'n
 0:55:38 oath sign / LiSA
 1:02:17 やさしさに包まれたなら / 松任谷由実
@@ -2874,7 +2874,7 @@ video: https://www.youtube.com/watch?v=O1JRbGqxbMI
 
 0:05:31　asphyxia / Cö shu Nie
 0:11:36 25コ目の染色体 / RADWIMPS
-0:22:22 革命道中 / アイナ・ジ・エンド
+0:22:22 革命道中 - On The Way / アイナ・ジ・エンド
 0:29:58 オレンジ / SPYAIR
 0:35:53 ソラニン / ASIAN KUNG-FU GENERATION
 0:43:29 愛包ダンスホール / HIMEHINA
@@ -2992,7 +2992,7 @@ video: https://www.youtube.com/watch?v=40C35J_9EuI
 0:05:03 01 / 女王蜂
 0:14:19 Departures ～あなたにおくるアイの歌～ / EGOIST
 0:22:48 トウキョウト・ロック・シティ / えこ。
-0:33:42 革命道中 / アイナ・ジ・エンド
+0:33:42 革命道中 - On The Way / アイナ・ジ・エンド
 0:40:49 Never Grow Up / ちゃんみな
 0:47:38 SAD SONG / ちゃんみな
 0:57:59 B級 / ちゃんみな
@@ -3137,7 +3137,7 @@ video: https://www.youtube.com/watch?v=KcC2GK_oCEY
 00:27:37 First Love / 宇多田ヒカル
 00:35:56 ROSE / HANA
 00:41:40 怪物 / YOASOBI
-00:48:48 革命道中 / アイナ・ジ・エンド
+00:48:48 革命道中 - On The Way / アイナ・ジ・エンド
 00:56:42 GO! GO! MANIAC / 放課後ティータイム
 01:04:10 God knows... / 涼宮ハルヒ(平野綾)
 01:12:33 プラチナ / 坂本真綾
@@ -3283,7 +3283,7 @@ video: https://www.youtube.com/watch?v=emXo1FuyuK4
 01:05:46 トウキョウ・シャンディ・ランデヴ / MAISONdes
 01:12:38 ずうっといっしょ！ / キタニタツヤ
 01:20:17 春泥棒 / ヨルシカ
-01:30:17 革命道中 / アイナ・ジ・エンド
+01:30:17 革命道中 - On The Way / アイナ・ジ・エンド
 01:35:10 織姫とBABY / ねぐせ。
 01:41:15 SAD SONG / ちゃんみな
 01:50:11 Never Grow Up / ちゃんみな
@@ -3354,7 +3354,7 @@ video: https://www.youtube.com/watch?v=p3wN9uUToSM
 00:52:19 酔いどれ知らず / Kanaria
 00:56:20 DESIRE-情熱- / 中森明菜
 01:02:56 本能 / 椎名林檎
-01:14:59 革命道中 / アイナ・ジ・エンド
+01:14:59 革命道中 - On The Way / アイナ・ジ・エンド
 01:23:48 napori / Vaundy
 01:28:38 Overdose / なとり
 01:34:30 fake face dance music / 音田雅則
@@ -3400,7 +3400,7 @@ video: https://www.youtube.com/watch?v=MfJP7AdM2Iw
 
 00:02:41 琥珀色の街、上海蟹の朝 / くるり
 00:09:35 裸の勇者 / Vaundy
-00:15:30 革命道中 / アイナ・ジ・エンド
+00:15:30 革命道中 - On The Way / アイナ・ジ・エンド
 00:20:36 SAD SONG / ちゃんみな
 00:26:04 Blue Jeans / HANA
 00:33:08 hands / 倖田來未
@@ -3469,7 +3469,7 @@ video: https://www.youtube.com/watch?v=d19kTjbgSUU
 00:27:20 Burning Friday Night / Lucky Kilimanjaro
 00:33:55 366日 / HY
 00:42:43 Automatic / 宇多田ヒカル
-00:51:42 革命道中 / アイナ・ジ・エンド
+00:51:42 革命道中 - On The Way / アイナ・ジ・エンド
 01:04:42 負けないで / ZARD
 01:11:04 火炎 / 女王蜂
 01:16:35 Don't say "lazy" / 桜高軽音部
@@ -3493,7 +3493,7 @@ video: https://www.youtube.com/watch?v=4sXQCzoB4vo
 00:33:06 ドラマチック / YUKI
 00:41:34 The Everlasting Guilty Crown / EGOIST
 00:49:26 プラチナ / 坂本真綾
-00:55:27 革命道中 / アイナ・ジ・エンド
+00:55:27 革命道中 - On The Way / アイナ・ジ・エンド
 01:02:55 夜に駆ける / YOASOBI
 01:10:51 小さなてのひら / riya
 01:17:48 君をのせて / 井上あずみ
@@ -3558,7 +3558,7 @@ video: https://www.youtube.com/watch?v=ilBbH_GPDpY
 00:03:35 奏 / スキマスイッチ
 00:14:01 織姫とBABY / ねぐせ。
 00:20:04 melt bitter / さとうもか
-00:30:34 革命道中 / アイナ・ジ・エンド
+00:30:34 革命道中 - On The Way / アイナ・ジ・エンド
 00:38:31 だから僕は音楽を辞めた / ヨルシカ
 00:46:12 強風オールバック / ゆこぴ
 00:50:50 鬼ノ宴 / 友成空
@@ -3580,7 +3580,7 @@ video: https://www.youtube.com/watch?v=ilBbH_GPDpY
 
 video: https://www.youtube.com/watch?v=kQZKXSeH0XI
 
-00:06:21 革命道中 / アイナ・ジ・エンド
+00:06:21 革命道中 - On The Way / アイナ・ジ・エンド
 00:13:26 シネマ / Ayase
 00:19:16 初めての恋が終わる時 / ryo
 00:30:27 magnet / 流星P
@@ -3631,7 +3631,7 @@ video: https://www.youtube.com/watch?v=O6HV1ODwvuM
 
 video: https://www.youtube.com/watch?v=CsXCKDPxiYs
 
-00:04:35 革命道中 / アイナ・ジ・エンド
+00:04:35 革命道中 - On The Way / アイナ・ジ・エンド
 00:10:12 B級 / ちゃんみな
 00:15:34 Never Grow Up / ちゃんみな
 00:20:58 again / YUI
