@@ -607,6 +607,11 @@ video: https://www.youtube.com/watch?v=OTl5rBvCdzI
 1:10:50 Q / 椎名もた(ぽわぽわP)
 1:15:57 とくべチュ、して / ＝LOVE
 
+video: https://www.youtube.com/watch?v=ItveC2Je8Cw
+
+0:36:25 クラット・カラット / 白雪りんご
+0:44:22 チョコレイト・ウォー / 白雪りんご
+
 video: https://www.youtube.com/watch?v=kA2ixxqMYxk
 
 0:08:28 ファーストレディー / 奏音69
@@ -918,6 +923,12 @@ video: https://www.youtube.com/watch?v=Z2HxlnqtKy4
 1:25:47 ツギハギスタッカート / とあ
 1:30:05 メトロノーム / 米津玄師
 1:34:45 回る空うさぎ / Orangestar
+
+video: https://www.youtube.com/watch?v=R3zbGBaeS-c
+
+0:33:02 ペルソナズ・ハイグレイ / 白雪りんご
+0:36:21 Re:pois / 白雪りんご
+0:44:34 First Step! / 白雪りんご
 
 video: https://www.youtube.com/watch?v=5tjjSpngpBw
 
