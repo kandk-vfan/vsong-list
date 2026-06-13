@@ -682,4 +682,4 @@ document.getElementById("exactMatchArtists").addEventListener("change", renderAr
 document.getElementById("caseSensitiveArtists").addEventListener("change", renderArtists);
 
 document.getElementById("filterStreamsHikigatari").addEventListener("change", renderAll);
-document.getElementById("filterHikigatari").addEventListener("change", renderSongs);
+document.getElementById("filterHikigatari").addEventListener("change", renderAll);
