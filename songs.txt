@@ -429,7 +429,7 @@ video: https://www.youtube.com/watch?v=gYO0hurHtBs
 0:22:44 Fire◎Flower / halyosy
 0:29:41 マトリョシカ / ハチ
 0:33:27 劣等上等 / Giga
-0:38:34 革命道中 / アイナ・ジ・エンド
+0:38:34 革命道中 - On The Way / アイナ・ジ・エンド
 0:46:24 ワンルーム・オール・ザット・ジャズ / DATEKEN
 0:49:55 ネコミミアーカイブ / 糞田舎P
 0:54:01 ネバーフィクション / Kanaria feat. 星街すいせい
@@ -551,7 +551,7 @@ video: https://www.youtube.com/watch?v=SJ0jgA_G_TA
 0:23:40 テオ / Omoi
 0:27:34 Dizzy Dizzy / 蜂屋ななし
 0:37:01 メリッサ / ポルノグラフィティ
-0:42:27 革命道中 / アイナ・ジ・エンド
+0:42:27 革命道中 - On The Way / アイナ・ジ・エンド
 0:46:19 Q / 椎名もた(ぽわぽわP)
 0:51:43 乙女解剖 / DECO*27
 0:55:35 サンドリヨン(Cendrillon) / Dios(シグナルP)
@@ -721,7 +721,7 @@ video: https://www.youtube.com/watch?v=kvoLXYVyrdM
 0:29:41 夜明けと蛍 / n-buna
 0:39:01 好きすぎて滅！ / M!LK
 0:48:24 オリオンをなぞる / UNISON SQUARE GARDEN
-0:53:51 革命道中 / アイナ・ジ・エンド
+0:53:51 革命道中 - On The Way / アイナ・ジ・エンド
 0:57:17 初恋サイダー / Buono!
 
 video: https://www.youtube.com/watch?v=qInV4BAamwk
@@ -973,7 +973,7 @@ video: https://www.youtube.com/watch?v=lT9Mz3yoaDQ
 0:22:26 残響散歌 / Aimer
 0:25:41 一度だけの恋なら / ワルキューレ
 0:36:26 イケナイ太陽 / ORANGE RANGE
-0:40:45 革命道中 / アイナ・ジ・エンド
+0:40:45 革命道中 - On The Way / アイナ・ジ・エンド
 0:44:12 エンヴィキャットウォーク / トーマ
 0:48:17 九龍レトロ / トーマ
 0:51:54 アリアドネ / 黒うさP
