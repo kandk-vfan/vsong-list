@@ -246,7 +246,7 @@ function renderSummary(){
   <div class="summary-row"><span class="label">アーティスト数</span><span class="value">${artistSet.size}</span></div>
   `;
 
-  const isStreams = !document.getElementById("streams").classList.contains("hidden");
+  const isArtists = !document.getElementById("artists").classList.contains("hidden");
 
   if(isStreams){
     document.getElementById("streamsSummary").innerHTML = html;
