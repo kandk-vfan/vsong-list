@@ -377,10 +377,14 @@ function renderSongs(){
 <td>
   <div class="song-play-area">
     ${s.displayNote.includes("・") ? `
-    <button class="play-btn" onclick="play('${s.latestOngen.videoId}','${s.latestOngen.time}')">▶</button>
-    <div class="song-date">${formatDate(s.latestOngen.date)}<br>(音源)</div>
-    <button class="play-btn" onclick="play('${s.latestHikigatari.videoId}','${s.latestHikigatari.time}')">▶</button>
-    <div class="song-date">${formatDate(s.latestHikigatari.date)}<br>(弾き語り)</div>
+    <div class="play-group">
+      <button class="play-btn" onclick="play('${s.latestOngen.videoId}','${s.latestOngen.time}')">▶</button>
+      <div class="song-date">${formatDate(s.latestOngen.date)}<br>(音源)</div>
+    </div>
+    <div class="play-group">
+      <button class="play-btn" onclick="play('${s.latestHikigatari.videoId}','${s.latestHikigatari.time}')">▶</button>
+      <div class="song-date">${formatDate(s.latestHikigatari.date)}<br>(弾き語り)</div>
+    </div>
     ` : `
     <button class="play-btn" onclick="play('${s.latest.videoId}','${s.latest.time}')">▶</button>
     <div class="song-date">${formatDate(s.latest.date)}</div>
