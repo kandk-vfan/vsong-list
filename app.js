@@ -274,6 +274,11 @@ function renderSongs(){
     s.hasHikigatari = notes.has("弾き語り");
   });
 
+  const hikigatariOnly = document.getElementById("filterHikigatari").checked;
+  if(hikigatariOnly){
+    arr = arr.filter(s => s.hasHikigatari);
+  }
+
   let keyword = document.getElementById("searchSongs").value;
   const {mode, keywords} = parseKeyword(keyword);
   
@@ -677,3 +682,4 @@ document.getElementById("exactMatchArtists").addEventListener("change", renderAr
 document.getElementById("caseSensitiveArtists").addEventListener("change", renderArtists);
 
 document.getElementById("filterStreamsHikigatari").addEventListener("change", renderAll);
+document.getElementById("filterHikigatari").addEventListener("change", renderSongs);
