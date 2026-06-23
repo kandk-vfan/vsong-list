@@ -6,7 +6,6 @@ on:
       - hjm
       - kawaui
       - snowshir
-      - hoshino.a
 
 jobs:
   deploy:
@@ -63,20 +62,6 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
       # ======================
-      # hoshino.a
-      # ======================
-      - uses: actions/checkout@v4
-        with:
-          ref: hoshino.a
-          path: tmp-hoshino.a
-
-      - run: |
-          cd tmp-hoshino.a
-          node convert.js
-        env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-
-      # ======================
       # workspace
       # ======================
       - name: prepare workspace
@@ -115,11 +100,6 @@ jobs:
       - run: |
           mkdir -p public/snowshir
           rsync -av --exclude='.git' --exclude='.github' tmp-snowshir/ public/snowshir/
-
-      # copy hoshino.a
-      - run: |
-          mkdir -p public/hoshino.a
-          rsync -av --exclude='.git' --exclude='.github' tmp-hoshino.a/ public/hoshino.a/
 
       # ======================
       # commonの保持
