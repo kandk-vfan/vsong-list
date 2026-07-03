@@ -218,7 +218,7 @@ video: https://www.youtube.com/watch?v=SMWyXMjkjMc
 0:34:21 風になる / つじあやの
 0:41:13 祝日天国 / 35.7
 0:49:15 琥珀色の街、上海蟹の朝 / くるり
-0:59:00 織姫とBABY / ねぐせ。
+0:59:00 織姫とBABY / ねぐせ。 feat. 汐れいら
 1:08:20 ドライフラワー / 優里
 1:17:01 丸の内サディスティック / 椎名林檎
 1:23:28 LilaS / SawanoHiroyuki[nZk]:Honoka Takahashi
@@ -950,7 +950,7 @@ video: https://www.youtube.com/watch?v=X9A67fU20gg
 1:27:09 夜行 / ヨルシカ
 1:32:25 少女レイ / みきとP
 1:42:43 星座になれたら / 結束バンド
-1:51:07 織姫とBABY / ねぐせ。
+1:51:07 織姫とBABY / ねぐせ。 feat. 汐れいら
 2:06:53 風を食む / ヨルシカ
 2:16:52 remember you / YUI
 2:23:45 ninelie / Aimer with chelly(EGOIST)
@@ -1261,7 +1261,7 @@ video: https://www.youtube.com/watch?v=Dx3AP8_INKk
 1:29:40 勇侠青春謳 / ALI PROJECT
 1:38:12 美しきもの / Sound Horizon
 1:47:48 インドア系ならトラックメイカー / Yunomi & nicamoq
-1:54:49 織姫とBABY / ねぐせ。
+1:54:49 織姫とBABY / ねぐせ。 feat. 汐れいら
 2:04:47 アタシのドレス / ねぐせ。
 2:11:04 つきとさなぎ / ぼくのりりっくのぼうよみ
 2:17:32 六等星の夜 / Aimer
@@ -1547,7 +1547,7 @@ video: https://www.youtube.com/watch?v=ozXJjQZI0fU
 video: https://www.youtube.com/watch?v=LeaajTpDv4s
 
 0:06:19 JANE DOE / 米津玄師・宇多田ヒカル
-0:15:24 織姫とBABY / ねぐせ。
+0:15:24 織姫とBABY / ねぐせ。 feat. 汐れいら
 0:22:08 琥珀色の街、上海蟹の朝 / くるり
 0:29:24 フクロウ ～フクロウが知らせる客が来たと～ / KOKIA
 0:37:25 星座になれたら / 結束バンド
@@ -1687,7 +1687,7 @@ video: https://www.youtube.com/watch?v=oSXnYO_qMvM
 video: https://www.youtube.com/watch?v=teK2HbqMpqE
 
 0:05:49 あなた / 宇多田ヒカル
-0:14:02 織姫とBABY / ねぐせ。
+0:14:02 織姫とBABY / ねぐせ。 feat. 汐れいら
 0:20:23 水平線 / back number
 0:28:01 横顔 / aiko
 0:34:57 SAKURA / MONKEY MAJIK
@@ -1857,7 +1857,7 @@ video: https://www.youtube.com/watch?v=v0Cyw8XtmdI
 0:37:46 ロビンソン / スピッツ
 0:44:46 TAIDADA / ずっと真夜中でいいのに。
 0:59:07 ドラマチック / YUKI
-1:10:09 織姫とBABY / ねぐせ。
+1:10:09 織姫とBABY / ねぐせ。 feat. 汐れいら
 1:18:03 ムーンライト / 星街すいせい
 1:29:54 雨とカプチーノ / ヨルシカ
 1:39:42 盗作 / ヨルシカ
@@ -1943,7 +1943,7 @@ video: https://www.youtube.com/watch?v=O1JRbGqxbMI
 
 video: https://www.youtube.com/watch?v=u_oC9oHeMok
 
-0:04:44 織姫とBABY / ねぐせ。
+0:04:44 織姫とBABY / ねぐせ。 feat. 汐れいら
 0:15:31 me me she / RADWIMPS
 0:25:42 Call of Silence / 澤野弘之 feat.Gemie
 0:34:30 季節は次々死んでいく / amazarashi
@@ -2048,7 +2048,7 @@ video: https://www.youtube.com/watch?v=40C35J_9EuI
 1:09:04 本能 / 椎名林檎
 1:17:02 IRIS OUT / 米津玄師
 1:23:44 JANE DOE / 米津玄師・宇多田ヒカル
-1:30:36 織姫とBABY / ねぐせ。
+1:30:36 織姫とBABY / ねぐせ。 feat. 汐れいら
 1:40:58 恋風 / 幾田りら
 1:59:23 ブルーバード / いきものがかり
 2:08:15 ハルモニア / RYTHEM
@@ -2250,7 +2250,7 @@ video: https://www.youtube.com/watch?v=ll6uZAVL8q8
 02:37:02 ダブルラリアット / アゴアニキ
 02:42:13 Just Be Friends / Dixie Flatline
 02:49:28 寄り酔い / 和ぬか
-02:54:25 織姫とBABY / ねぐせ。
+02:54:25 織姫とBABY / ねぐせ。 feat. 汐れいら
 
 video: https://www.youtube.com/watch?v=5eavpy6xYhM
 
@@ -2332,7 +2332,7 @@ video: https://www.youtube.com/watch?v=emXo1FuyuK4
 01:12:38 ずうっといっしょ！ / キタニタツヤ
 01:20:17 春泥棒 / ヨルシカ
 01:30:17 革命道中 / アイナ・ジ・エンド
-01:35:10 織姫とBABY / ねぐせ。
+01:35:10 織姫とBABY / ねぐせ。 feat. 汐れいら
 01:41:15 SAD SONG / ちゃんみな
 01:50:11 Never Grow Up / ちゃんみな
 01:57:46 普通 / Conton Candy
@@ -2475,7 +2475,7 @@ video: https://www.youtube.com/watch?v=MPpzP4JO88M
 01:35:13 桃ノ花ビラ / 大塚愛
 01:41:38 プラネタリウム / 大塚愛
 01:48:42 愛のうた / 倖田來未
-01:56:00 織姫とBABY / ねぐせ。
+01:56:00 織姫とBABY / ねぐせ。 feat. 汐れいら
 02:01:27 おやすみTaxi / MON7A
 02:05:39 Overdose / なとり
 02:11:01 ダーリン / 須田景凪
@@ -2527,7 +2527,7 @@ video: https://www.youtube.com/watch?v=d19kTjbgSUU
 01:46:29 花占い / Vaundy
 01:52:23 B級 / ちゃんみな
 01:58:37 クロノスタシス / きのこ帝国
-02:08:58 織姫とBABY / ねぐせ。
+02:08:58 織姫とBABY / ねぐせ。 feat. 汐れいら
 02:16:00 モエチャッカファイア / 弌誠
 02:21:52 ずうっといっしょ！ / キタニタツヤ
 02:30:46 プロポーズ / 内緒のピアス
@@ -2559,7 +2559,7 @@ video: https://www.youtube.com/watch?v=7itwwnqsAB8
 00:14:35 東京フラッシュ / Vaundy
 00:21:52 クロノスタシス / きのこ帝国
 00:28:55 マリーゴールド / あいみょん
-00:35:49 織姫とBABY / ねぐせ。
+00:35:49 織姫とBABY / ねぐせ。 feat. 汐れいら
 00:42:02 YOU & IDOL / 相対性理論
 00:48:53 ヴィーナスとジーザス / やくしまるえつこ
 00:55:22 Tomorrow's way / YUI
@@ -2604,7 +2604,7 @@ video: https://www.youtube.com/watch?v=ZPWf-Ue69Zw
 video: https://www.youtube.com/watch?v=ilBbH_GPDpY
 
 00:03:35 奏 / スキマスイッチ
-00:14:01 織姫とBABY / ねぐせ。
+00:14:01 織姫とBABY / ねぐせ。 feat. 汐れいら
 00:20:04 melt bitter / さとうもか
 00:30:34 革命道中 / アイナ・ジ・エンド
 00:38:31 だから僕は音楽を辞めた / ヨルシカ
@@ -2724,7 +2724,7 @@ video: https://www.youtube.com/watch?v=fPjFukYgJUc
 01:58:17 青のすみか / キタニタツヤ
 02:04:17 火炎 / 女王蜂
 02:11:33 オリビアを聴きながら / 杏里
-02:18:27 織姫とBABY / ねぐせ。
+02:18:27 織姫とBABY / ねぐせ。 feat. 汐れいら
 02:24:51 貴方の恋人になりたい / チョーキューメイ
 02:33:39 食虫植物 / 理芽
 02:42:29 ヘビースモーク / にしな
@@ -2782,7 +2782,7 @@ video: https://www.youtube.com/watch?v=Y6cNmJ2Ame0
 00:33:39 napori / Vaundy
 00:40:14 ミュージック・アワー / ポルノグラフィティ
 00:48:29 おやすみ泣き声、さよなら歌姫 / クリープハイプ
-00:54:10 織姫とBABY / ねぐせ。
+00:54:10 織姫とBABY / ねぐせ。 feat. 汐れいら
 00:59:37 ハレンチ / ちゃんみな
 01:05:09 本能 / 椎名林檎
 01:12:54 ROSE / HANA
@@ -2843,7 +2843,7 @@ video: https://www.youtube.com/watch?v=jKPwmdWj4t0
 01:46:11 UNDEAD / YOASOBI
 01:51:22 ブタサンダー / ゆこぴ
 01:57:00 創聖のアクエリオン / AKINO from bless4
-02:04:45 織姫とBABY / ねぐせ。
+02:04:45 織姫とBABY / ねぐせ。 feat. 汐れいら
 02:11:08 雨とカプチーノ / ヨルシカ
 
 video: https://www.youtube.com/watch?v=IDBVVGrTZIE
@@ -2873,7 +2873,7 @@ video: https://www.youtube.com/watch?v=WwJtPq_fP8E
 
 0:05:21 言って。 / ヨルシカ
 0:14:53 火星人 / ヨルシカ
-0:24:02 織姫とBABY / ねぐせ。
+0:24:02 織姫とBABY / ねぐせ。 feat. 汐れいら
 0:30:55 プロポーズ / なとり
 0:36:40 マイハートハードピンチ / 相対性理論
 0:45:45 キスキツネ / ヒメヒナ(HIMEHINA)
