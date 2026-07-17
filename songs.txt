@@ -16,7 +16,7 @@ video: https://www.youtube.com/watch?v=as1oAoTH3SE
 1:28:44 女狐 / ロス
 1:33:51 歌舞伎町の女王 / 椎名林檎
 1:44:54 TAIDADA / ずっと真夜中でいいのに。
-1:51:03 華奢なリップ / ジェニーハイ feat.ちゃんみな
+1:51:03 華奢なリップ / ジェニーハイ feat. ちゃんみな
 1:58:06 あした地球がこなごなになっても / でんぱ組.inc
 2:06:32 ウールはゆっくり夢を見るか？ / やくしまるえつこ
 2:15:23 クラゲ、流れ星 / 大塚愛
@@ -46,7 +46,7 @@ video: https://www.youtube.com/watch?v=7I0SK4af1HY
 
 video: https://www.youtube.com/watch?v=Sua1soXqEps
 
-0:04:55 華奢なリップ / ジェニーハイ feat.ちゃんみな
+0:04:55 華奢なリップ / ジェニーハイ feat. ちゃんみな
 0:15:52 ヴィーナスとジーザス / やくしまるえつこ
 0:21:04 恋ノ行方 / あかせあかり
 0:26:31 Avid / SawanoHiroyuki[nZk]:mizuki
