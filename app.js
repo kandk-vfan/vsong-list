@@ -17,6 +17,9 @@ function getYomi(str, artist){
 }
 
 function matchText(text, keyword, exact, caseSensitive){
+  text = normalizeSearch(text);
+  keyword = normalizeSearch(keyword);
+
   if(!caseSensitive){
     text = text.toLowerCase();
     keyword = keyword.toLowerCase();
@@ -94,6 +97,10 @@ function syncDateInputs(start, end){
 
 function normalize(str){
   return str.replace(/^[\s　]+|[\s　]+$/g, "");
+}
+
+function normalizeSearch(str){
+  return normalize(str).normalize("NFKC");
 }
 
 function setDateRange(type){
