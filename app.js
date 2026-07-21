@@ -93,7 +93,9 @@ function syncDateInputs(start, end){
 }
 
 function normalize(str){
-  return str.replace(/^[\s　]+|[\s　]+$/g, "");
+  return str
+    .replace(/^[\s　]+|[\s　]+$/g, "")
+    .normalize("NFKC");
 }
 
 function setDateRange(type){
