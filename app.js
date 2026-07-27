@@ -296,7 +296,7 @@ function renderSongs(){
     const labels = [];
     if(notes.has("")) labels.push("音源");
     if(notes.has("弾き語り")) labels.push("弾き語り");
-    if(notes.has("権利上の都合によりミュート処理")) labels.push("権利上の都合によりミュート処理");
+    if(notes.has("権利上の都合でミュート処理")) labels.push("権利上の都合でミュート処理");
     if(labels.length === 1 && labels[0] === "音源"){
       s.displayNote = "";
     } else {
