@@ -545,8 +545,16 @@ function renderStreams(){
 
     const filtered = unique;
 
+    // 備考で表示したいワード (部分一致で検索される)
+    const streamNoteKeywords = [
+      "ミュート"
+    ];
+    
     const notes = unique
-      .filter(s => (s.note || "").trim())
+      .filter(s => {
+        const note = (s.note || "").trim();
+        return note && streamNoteKeywords.some(keyword => note.includes(keyword));
+      })
       .map(s => ({
         title: s.title,
         note: s.note.trim()
