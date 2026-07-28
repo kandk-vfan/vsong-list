@@ -544,6 +544,13 @@ function renderStreams(){
     });
 
     const filtered = unique;
+
+    const notes = unique
+      .filter(s => (s.note || "").trim())
+      .map(s => ({
+        title: s.title,
+        note: s.note.trim()
+      }));
     
     function isMatch(s){
       if(!keywords[0]) return false;
@@ -570,7 +577,20 @@ function renderStreams(){
 <div class="stream-title-row">
 <a href="https://youtube.com/watch?v=${vid}" target="_blank">${v.title}</a>
 </div>
+
 <div class="stream-date">${formatDate(v.latestDate)}</div>
+
+${notes.length ? `
+<div class="stream-notes">
+<b>備考</b>
+<ul>
+${notes.map(n => `
+<li>${n.title}：${n.note}</li>
+`).join("")}
+</ul>
+</div>
+` : ""}
+
 <div class="grid">
 ${filtered.map((s,i)=>`
 <div class="song-card ${isMatch(s) ? "highlight" : ""}">
