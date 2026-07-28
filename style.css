@@ -12,6 +12,23 @@ html{
   overflow-y: scroll;
 }
 
+.stream-notes {
+  margin: 8px 0 12px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,.05);
+  border-left: 4px solid #ffb347;
+  border-radius: 4px;
+}
+
+.stream-notes ul {
+  margin: 4px 0 0;
+  padding-left: 20px;
+}
+
+.stream-notes li {
+  margin: 2px 0;
+}
+
 .note-filter{
   display:inline-flex;
   align-items:center;
