@@ -8,6 +8,7 @@ const lines = text.split(/\r?\n/);
 let videoId = "";
 let videoInfo = null;
 const results = [];
+const streamNotes = {};
 
 let existing = [];
 try {
@@ -128,21 +129,28 @@ function parseSongLine(line) {
     if (line.startsWith("video:")) {
       const url = line.replace(/^video:\s*/, "");
       videoId = extractVideoId(url);
-    if (videoCache[videoId]) {
-      videoInfo = videoCache[videoId];
-    } else {
-      videoInfo = await fetchVideoInfo(videoId);
+      if (videoCache[videoId]) {
+        videoInfo = videoCache[videoId];
+      } else {
+        videoInfo = await fetchVideoInfo(videoId);
     
-      if (!videoInfo) {
-        videoId = "";
-        continue;
+        if (!videoInfo) {
+          videoId = "";
+          continue;
+        }
+    
+        videoCache[videoId] = videoInfo;
       }
-    
-      videoCache[videoId] = videoInfo;
-    }
       continue;
     }
-
+    
+    if (line.startsWith("note:")) {
+      if (videoId) {
+        streamNotes[videoId] = line.replace(/^note:\s*/, "").trim();
+      }
+      continue;
+    }
+    
     const parsed = parseSongLine(line);
     if (!parsed || !videoId || !videoInfo) continue;
 
@@ -150,6 +158,7 @@ function parseSongLine(line) {
       title: parsed.title,
       artist: parsed.artist,
       note: parsed.note || "",
+      streamNote: "",
       videoId,
       videoTitle: videoInfo.title,
       date: videoInfo.date,
@@ -157,5 +166,9 @@ function parseSongLine(line) {
     });
   }
 
+  results.forEach(item => {
+    item.streamNote = streamNotes[item.videoId] || "";
+  });
+  
   fs.writeFileSync("data.json", JSON.stringify(results, null, 2));
 })();
