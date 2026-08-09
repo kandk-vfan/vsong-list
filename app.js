@@ -498,7 +498,12 @@ function renderStreams(){
 
   src.forEach(d=>{
     if(!map[d.videoId]){
-      map[d.videoId]={title:d.videoTitle,latestDate:new Date(d.date),songs:[]};
+      map[d.videoId]={
+        title:d.videoTitle,
+        latestDate:new Date(d.date),
+        streamNote:d.streamNote || "",
+        songs:[]
+      };
     }
     map[d.videoId].songs.push(d);
   
@@ -593,14 +598,17 @@ function renderStreams(){
 
 <div class="stream-date">${formatDate(v.latestDate)}</div>
 
-${notes.length ? `
+${v.streamNote || notes.length ? `
 <div class="stream-notes">
-<b>備考</b>
-<ul>
-${notes.map(n => `
-<li>${n.title}：${n.note}</li>
-`).join("")}
-</ul>
+  <b>備考</b>
+  ${v.streamNote ? `<div>${v.streamNote}</div>` : ""}
+  ${notes.length ? `
+  <ul>
+  ${notes.map(n => `
+  <li>${n.title}：${n.note}</li>
+  `).join("")}
+  </ul>
+  ` : ""}
 </div>
 ` : ""}
 
