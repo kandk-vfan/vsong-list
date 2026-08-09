@@ -2502,6 +2502,8 @@ video: https://www.youtube.com/watch?v=l0a7xdqg36U
 
 video: https://www.youtube.com/watch?v=VJDBQyX8W6g
 
+note: 収益化解禁
+
 0:57:23 春風 / 奥華子 | 弾き語り
 1:04:32 Ocean Eyes / ビリー・アイリッシュ | 弾き語り
 1:10:30 JANE DOE / 米津玄師・宇多田ヒカル | 弾き語り
@@ -2665,6 +2667,8 @@ video: https://www.youtube.com/watch?v=bhONSAhYu1k
 2:24:22 寄り酔い / 和ぬか
 
 video: https://www.youtube.com/watch?v=X9A67fU20gg
+
+note: ch登録者500人突破
 
 0:08:02 Deep River / 宇多田ヒカル
 0:17:12 ふわふわ♪ / 牧野由依
