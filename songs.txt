@@ -2528,7 +2528,7 @@ video: https://www.youtube.com/watch?v=l0a7xdqg36U
 
 video: https://www.youtube.com/watch?v=VJDBQyX8W6g
 
-note: 収益化解禁
+note: 収益化開始
 
 0:57:23 春風 / 奥華子 | 弾き語り
 1:04:32 Ocean Eyes / ビリー・アイリッシュ | 弾き語り
