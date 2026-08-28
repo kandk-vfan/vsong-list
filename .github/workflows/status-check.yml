@@ -1,0 +1,40 @@
+name: Check Video Status
+
+on:
+  schedule:
+    # JST 0:00 = UTC 15:00 (前日)
+    - cron: '0 15 * * *'
+    # JST 18:00 = UTC 9:00
+    - cron: '0 9 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  check-status:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run status check
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node check_status.js
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- status.json; then
+            echo "No changes in status.json"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add status.json
+          git commit -m "chore: update status.json"
+          git push
