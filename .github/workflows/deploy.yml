@@ -6,6 +6,7 @@ on:
       - hjm
       - kawaui
       - snowshir
+      - onlyfortest
 
 jobs:
   deploy:
@@ -62,6 +63,20 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
       # ======================
+      # onlyfortest
+      # ======================
+      - uses: actions/checkout@v4
+        with:
+          ref: onlyfortest
+          path: tmp-onlyfortest
+
+      - run: |
+          cd tmp-onlyfortest
+          node convert.js
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
+      # ======================
       # workspace
       # ======================
       - name: prepare workspace
@@ -100,6 +115,11 @@ jobs:
       - run: |
           mkdir -p public/snowshir
           rsync -av --exclude='.git' --exclude='.github' tmp-snowshir/ public/snowshir/
+
+      # copy onlyfortest
+      - run: |
+          mkdir -p public/onlyfortest
+          rsync -av --exclude='.git' --exclude='.github' tmp-onlyfortest/ public/onlyfortest/
 
       # ======================
       # commonの保持
