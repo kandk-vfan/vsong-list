@@ -4,7 +4,7 @@ on:
   schedule:
     # JST 0:00 = UTC 15:00 (前日)
     #- cron: '0 15 * * *'
-    - cron: '30 14 * * *' # テスト用、JST23時半実行
+    - cron: '35 14 * * *' # テスト用、JST23時半実行
     # JST 18:00 = UTC 9:00
     - cron: '0 9 * * *'
   workflow_dispatch: {}
