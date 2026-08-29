@@ -1,8 +1,6 @@
 name: check video status (onlyfortest)
 
 on:
-  schedule:
-    - cron: '10 10 * * *'
   workflow_dispatch: {}
 
 jobs:
