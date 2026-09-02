@@ -1,7 +1,5 @@
 video: https://www.youtube.com/watch?v=0qisINTHJxk
 
-status: メンバー限定
-
 0:03:53 テレ東 / 相対性理論
 0:09:42 チャイナアドバイス / 相対性理論
 0:16:45 ペペロンチーノ・キャンディ / 相対性理論
