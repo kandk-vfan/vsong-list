@@ -879,11 +879,14 @@ body.hjm-theme #songsTable tbody tr:nth-child(odd){
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-width:40px;
-  padding:8px 12px;
+  width:40px;
+  height:40px;
+  padding:0;
+  font-size:14px;
   border-radius:8px;
   text-decoration:none;
   cursor:pointer;
+  box-sizing:border-box;
 }
 
 /* 再生ボタン */
