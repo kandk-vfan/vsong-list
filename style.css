@@ -875,6 +875,17 @@ body.hjm-theme #songsTable tbody tr:nth-child(odd){
   background:#f8fafc;
 }
 
+.play-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:40px;
+  padding:8px 12px;
+  border-radius:8px;
+  text-decoration:none;
+  cursor:pointer;
+}
+
 /* 再生ボタン */
 body.hjm-theme .play-btn{
   background:#ef4444;
