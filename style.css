@@ -53,6 +53,8 @@ html{
 }
 
 .note-filter-row{
+  display:flex;
+  align-items:center;
   margin-top:0;
   margin-bottom:10px;
 }
@@ -61,7 +63,6 @@ html{
   margin-left:10px;
   font-size:13px;
   color:#94a3b8;
-  vertical-align:middle;
 }
 
 .play-group{
