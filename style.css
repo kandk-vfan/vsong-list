@@ -53,8 +53,14 @@ html{
 }
 
 .note-filter-row{
-  margin-top:-10px;
+  margin-top:0;
   margin-bottom:10px;
+}
+
+.status-note-row{
+  font-size:13px;
+  color:#94a3b8;
+  margin-bottom:14px;
 }
 
 .play-group{
@@ -872,4 +878,18 @@ body.hjm-theme .play-btn{
   background:#ef4444;
   color:#ffffff;
   border:0px solid #ef4444;
+}
+
+/* 再生不可ボタン(unlisted / gone) */
+.play-btn:disabled{
+  opacity:0.35;
+  cursor:not-allowed;
+  background:#334155;
+}
+
+body.hjm-theme .play-btn:disabled{
+  background:#cbd5e1;
+  color:#6b7280;
+  opacity:0.6;
+  border-color:#6b7280;
 }
