@@ -57,10 +57,11 @@ html{
   margin-bottom:10px;
 }
 
-.status-note-row{
+.status-note-inline{
+  margin-left:10px;
   font-size:13px;
   color:#94a3b8;
-  margin-bottom:14px;
+  vertical-align:middle;
 }
 
 .play-group{
