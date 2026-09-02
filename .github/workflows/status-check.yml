@@ -33,3 +33,8 @@ jobs:
           git add status.json
           git commit -m "auto update status.json" || echo "no changes"
           git push origin HEAD:onlyfortest
+
+      - name: trigger deploy
+        run: gh workflow run deploy.yml --ref onlyfortest
+        env:
+          GH_TOKEN: ${{ github.token }}
