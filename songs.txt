@@ -1,5 +1,7 @@
 video: https://www.youtube.com/watch?v=0qisINTHJxk
 
+status: メンバー限定
+
 0:03:53 テレ東 / 相対性理論
 0:09:42 チャイナアドバイス / 相対性理論
 0:16:45 ペペロンチーノ・キャンディ / 相対性理論
@@ -23,6 +25,8 @@ video: https://www.youtube.com/watch?v=0qisINTHJxk
 2:21:38 忘れっぽい天使 / 中村佳穂
 
 video: https://www.youtube.com/watch?v=6mUCsMDSUJA
+
+status: 非公開
 
 0:04:28 若者のすべて / フジファブリック
 0:12:13 金木犀の夜 / きのこ帝国
