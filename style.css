@@ -909,3 +909,7 @@ body.hjm-theme .play-btn:disabled{
   opacity:0.6;
   border-color:#6b7280;
 }
+
+body.hjm-theme .status-note-inline{
+  color:#ffffff;
+}
