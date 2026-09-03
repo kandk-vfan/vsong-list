@@ -49,6 +49,8 @@ status: 非公開
 
 video: https://www.youtube.com/watch?v=cH2RPZuhAdU
 
+status: 限定公開
+
 0:07:02 Blizzard / Mrs. GREEN APPLE
 0:13:57 Night Diver / 三浦春馬
 0:19:55 最大公約数 / RADWIMPS
