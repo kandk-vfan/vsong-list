@@ -1,7 +1,5 @@
 video: https://www.youtube.com/watch?v=0qisINTHJxk
 
-status: メンバー限定
-
 0:03:53 テレ東 / 相対性理論
 0:09:42 チャイナアドバイス / 相対性理論
 0:16:45 ペペロンチーノ・キャンディ / 相対性理論
@@ -26,8 +24,6 @@ status: メンバー限定
 
 video: https://www.youtube.com/watch?v=6mUCsMDSUJA
 
-status: 非公開
-
 0:04:28 若者のすべて / フジファブリック
 0:12:13 金木犀の夜 / きのこ帝国
 0:18:21 私が明日死ぬなら / キタニタツヤ
@@ -48,8 +44,6 @@ status: 非公開
 2:17:09 変わらないもの / 奥華子
 
 video: https://www.youtube.com/watch?v=cH2RPZuhAdU
-
-status: 限定公開
 
 0:07:02 Blizzard / Mrs. GREEN APPLE
 0:13:57 Night Diver / 三浦春馬
@@ -2338,8 +2332,6 @@ video: https://www.youtube.com/watch?v=g7QTql1I0G8
 2:11:06 六等星の夜 / Aimer
 
 video: https://www.youtube.com/watch?v=qLyxjne_aDg
-
-status: 非公開
 
 0:05:30 僕が死のうと思ったのは / 中島美嘉
 0:16:26 空に歌えば / amazarashi
