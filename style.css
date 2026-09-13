@@ -1394,3 +1394,12 @@ body.hjm-theme .status-note-inline{
 .settings-danger button:hover{
   background:#991b1b;
 }
+
+.auth-hint-static{
+  position:fixed;
+  top:52px;
+  right:16px;
+  font-size:12px;
+  color:#94a3b8;
+  z-index:50;
+}
