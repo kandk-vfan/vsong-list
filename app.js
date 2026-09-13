@@ -1084,6 +1084,7 @@ function showProtectedTab(id, btn){
   if(!currentUsername){
     const panel = document.getElementById("authPanel");
     panel.classList.remove("hidden");
+    document.querySelector(".auth-hint-static")?.classList.add("hidden");
 
     let hint = document.getElementById("authHint");
     if(!hint){
