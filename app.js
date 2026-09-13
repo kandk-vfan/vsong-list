@@ -1514,3 +1514,13 @@ function onPlaylistPlayerStateChange(event){
     console.log("曲が終了しました(次の曲への処理は5番で実装予定)");
   }
 }
+
+function ytNow(){
+  const sec = Math.floor(ytPlayer.getCurrentTime());
+  const h = Math.floor(sec / 3600);
+  const m = Math.floor((sec % 3600) / 60);
+  const s = sec % 60;
+  const formatted = `${h}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+  console.log(formatted);
+  return formatted;
+}
