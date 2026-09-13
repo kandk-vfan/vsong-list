@@ -1577,17 +1577,11 @@ body.hjm-theme .status-note-inline{
 }
 
 .playlist-ctrl-main{
-  font-size:0;
   width:52px;
   height:52px;
   background:#3b82f6;
   color:#ffffff;
   border-radius:50%;
-}
-
-.playlist-ctrl-main::before{
-  content:"▶";
-  font-size:20px;
 }
 
 .playlist-ctrl-main:hover{
