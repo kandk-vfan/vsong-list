@@ -1558,8 +1558,8 @@ body.hjm-theme .status-note-inline{
   justify-content:center;
   background:transparent;
   border:none;
-  color:#e5e7eb;
-  font-size:16px;
+  color:#94a3b8;
+  font-size:20px;
   width:36px;
   height:36px;
   border-radius:50%;
@@ -1569,7 +1569,7 @@ body.hjm-theme .status-note-inline{
 }
 
 .playlist-ctrl-btn:hover{
-  background:#1e293b;
+  color:#e5e7eb;
 }
 
 .playlist-ctrl-btn.active{
@@ -1577,14 +1577,21 @@ body.hjm-theme .status-note-inline{
 }
 
 .playlist-ctrl-main{
-  font-size:20px;
-  width:48px;
-  height:48px;
+  font-size:0;
+  width:52px;
+  height:52px;
   background:#3b82f6;
   color:#ffffff;
+  border-radius:50%;
+}
+
+.playlist-ctrl-main::before{
+  content:"▶";
+  font-size:20px;
 }
 
 .playlist-ctrl-main:hover{
+  color:#ffffff;
   background:#2563eb;
 }
 
