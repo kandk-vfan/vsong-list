@@ -1471,3 +1471,46 @@ function openPrivacyModal(){
 function closePrivacyModal(){
   document.getElementById("privacyModal").classList.add("hidden");
 }
+
+let ytPlayer = null;
+let ytPlayerReady = false;
+let pendingPlaylistPlay = null;
+
+function onYouTubeIframeAPIReady(){
+  ytPlayer = new YT.Player("playlistPlayerVideo", {
+    height: "100%",
+    width: "100%",
+    playerVars: { autoplay: 1, playsinline: 1 },
+    events: {
+      onReady: () => {
+        ytPlayerReady = true;
+        if(pendingPlaylistPlay){
+          const req = pendingPlaylistPlay;
+          pendingPlaylistPlay = null;
+          playlistPlayVideo(req.videoId, req.startSeconds, req.endSeconds);
+        }
+      },
+      onStateChange: onPlaylistPlayerStateChange
+    }
+  });
+}
+
+function playlistPlayVideo(videoId, startSeconds, endSeconds){
+  if(!ytPlayerReady){
+    pendingPlaylistPlay = { videoId, startSeconds, endSeconds };
+    return;
+  }
+
+  const opts = { videoId, startSeconds: startSeconds || 0 };
+  if(endSeconds){
+    opts.endSeconds = endSeconds;
+  }
+
+  ytPlayer.loadVideoById(opts);
+}
+
+function onPlaylistPlayerStateChange(event){
+  if(event.data === YT.PlayerState.ENDED){
+    console.log("曲が終了しました(次の曲への処理は5番で実装予定)");
+  }
+}
