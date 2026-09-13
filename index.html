@@ -295,13 +295,28 @@
 </div>
 
 <div id="playlists" class="section hidden">
+  <button id="newPlaylistBtn" class="new-playlist-btn">＋ 新しいリストを作成</button>
+
   <div class="playlist-layout">
-    <div class="playlist-sidebar">
-      <button id="newPlaylistBtn" class="new-playlist-btn">＋ 新しいリストを作成</button>
-      <div id="playlistSidebarList"></div>
+    <div class="playlist-accordion" id="playlistAccordion"></div>
+
+    <div class="playlist-now-playing">
+      <div id="playlistPlayerVideoContainer">
+        <div id="playlistPlayerVideo"></div>
+      </div>
+      <div class="playlist-now-title" id="playlistNowTitle">再生する曲を選んでください</div>
+      <div class="playlist-now-artist" id="playlistNowArtist"></div>
     </div>
-    <div class="playlist-main" id="playlistMain">
-      <p class="playlist-empty-hint">左からリストを選んでください</p>
+  </div>
+
+  <div class="playlist-controlbar">
+    <input type="range" id="playlistSeek" value="0" min="0" max="100">
+    <div class="playlist-controls">
+      <button id="playlistShuffleBtn" class="playlist-ctrl-btn" title="シャッフル">🔀</button>
+      <button id="playlistPrevBtn" class="playlist-ctrl-btn" title="前へ">⏮</button>
+      <button id="playlistPlayPauseBtn" class="playlist-ctrl-btn playlist-ctrl-main" title="再生/一時停止">▶</button>
+      <button id="playlistNextBtn" class="playlist-ctrl-btn" title="次へ">⏭</button>
+      <button id="playlistRepeatBtn" class="playlist-ctrl-btn" title="ループ">🔁</button>
     </div>
   </div>
 </div>
