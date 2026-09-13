@@ -1067,6 +1067,7 @@ function renderAuthPanelBody(el, mode){
         await window.vsongAuth.logIn(username, password);
       }
       renderAuthArea(username);
+      renderAll();
     }catch(e){
       errorEl.textContent = e.message || "エラーが発生しました";
     }
