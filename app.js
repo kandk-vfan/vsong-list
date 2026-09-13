@@ -951,7 +951,7 @@ function renderAuthArea(user){
   lastRenderedAuthState = user;
   currentUsername = user;
 
-  document.querySelector(".auth-hint-static")?.classList.remove("hidden");
+  document.querySelector(".auth-hint-static")?.classList.toggle("hidden", !!user);
 
   const el = document.getElementById("authArea");
 
