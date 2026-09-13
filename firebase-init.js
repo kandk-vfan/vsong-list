@@ -58,6 +58,8 @@ async function signUp(username, password, recoveryEmail){
     createdAt: new Date().toISOString()
   });
 
+  await createPlaylist(cred.user.uid, "お気に入り");
+
   return cred.user;
 }
 
