@@ -1515,12 +1515,13 @@ function onPlaylistPlayerStateChange(event){
   }
 }
 
-function ytNow(){
-  const sec = Math.floor(ytPlayer.getCurrentTime());
-  const h = Math.floor(sec / 3600);
-  const m = Math.floor((sec % 3600) / 60);
-  const s = sec % 60;
-  const formatted = `${h}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
-  console.log(formatted);
-  return formatted;
+function ytTimeToSeconds(timeStr){
+  const parts = timeStr.split(":").map(Number);
+  return parts.reduce((acc, v) => acc * 60 + v, 0);
+}
+
+function ytTestEnd(videoId, endTimeStr, previewSeconds = 8){
+  const endSec = ytTimeToSeconds(endTimeStr);
+  const startSec = Math.max(0, endSec - previewSeconds);
+  playlistPlayVideo(videoId, startSec, endSec);
 }
