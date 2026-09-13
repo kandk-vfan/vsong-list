@@ -256,11 +256,11 @@ onAuthStateChanged(auth, async (user) => {
     return;
   }
 
-  const snap = await getDoc(doc(db, "users", user.uid));
-  if(!snap.exists()){
-    return;
-  }
-  window.renderAuthArea?.(snap.data().username);
   startBookmarkWatch(user.uid);
   startPlaylistWatch(user.uid);
+
+  const snap = await getDoc(doc(db, "users", user.uid));
+  if(snap.exists()){
+    window.renderAuthArea?.(snap.data().username);
+  }
 });
