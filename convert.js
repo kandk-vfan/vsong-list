@@ -104,11 +104,12 @@ function fetchVideoInfo(videoId) {
 }
 
 function parseSongLine(line) {
-  const timeMatch = line.match(/^(\d{1,2}:\d{2}:\d{2})\s+(.*)$/);
+  const timeMatch = line.match(/^(\d{1,2}:\d{2}:\d{2})(?:-(\d{1,2}:\d{2}:\d{2}))?\s+(.*)$/);
   if (!timeMatch) return null;
 
   const time = timeMatch[1];
-  let rest = timeMatch[2];
+  const endTime = timeMatch[2] || "";
+  let rest = timeMatch[3];
 
   let note = "";
 
@@ -124,6 +125,7 @@ function parseSongLine(line) {
   if (idx === -1) {
     return {
       time,
+      endTime,
       title: rest.trim(),
       artist: "",
       note
@@ -132,6 +134,7 @@ function parseSongLine(line) {
 
   return {
     time,
+    endTime,
     title: rest.slice(0, idx).trim(),
     artist: rest.slice(idx + separator.length).trim(),
     note
@@ -188,7 +191,8 @@ function parseSongLine(line) {
       videoId,
       videoTitle: videoInfo.title,
       date: videoInfo.date,
-      time: parsed.time
+      time: parsed.time,
+      endTime: parsed.endTime || ""
     });
   }
 
