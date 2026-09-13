@@ -973,11 +973,14 @@ function renderAuthArea(user){
     });
 
     document.getElementById("authTrigger").addEventListener("click", () => {
-      document.getElementById("authPanel").classList.toggle("hidden");
+      const panel = document.getElementById("authPanel");
+      panel.classList.toggle("hidden");
+      document.querySelector(".auth-hint-static")?.classList.toggle("hidden", !panel.classList.contains("hidden"));
     });
 
     document.getElementById("authClose").addEventListener("click", () => {
       document.getElementById("authPanel").classList.add("hidden");
+      document.querySelector(".auth-hint-static")?.classList.remove("hidden");
     });
   }else{
     renderAuthPanelBody(el, "login");
@@ -1017,11 +1020,14 @@ function renderAuthPanelBody(el, mode){
 
   document.getElementById("authTrigger").addEventListener("click", () => {
     document.getElementById("authHint")?.remove();
-    document.getElementById("authPanel").classList.toggle("hidden");
+    const panel = document.getElementById("authPanel");
+    panel.classList.toggle("hidden");
+    document.querySelector(".auth-hint-static")?.classList.toggle("hidden", !panel.classList.contains("hidden"));
   });
 
   document.getElementById("authClose").addEventListener("click", () => {
     document.getElementById("authPanel").classList.add("hidden");
+    document.querySelector(".auth-hint-static")?.classList.remove("hidden");
   });
 
   document.getElementById("authSwitch").addEventListener("click", () => {
