@@ -975,14 +975,11 @@ function renderAuthArea(user){
     });
 
     document.getElementById("authTrigger").addEventListener("click", () => {
-      const panel = document.getElementById("authPanel");
-      panel.classList.toggle("hidden");
-      document.querySelector(".auth-hint-static")?.classList.toggle("hidden", !panel.classList.contains("hidden"));
+      document.getElementById("authPanel").classList.toggle("hidden");
     });
 
     document.getElementById("authClose").addEventListener("click", () => {
       document.getElementById("authPanel").classList.add("hidden");
-      document.querySelector(".auth-hint-static")?.classList.remove("hidden");
     });
   }else{
     renderAuthPanelBody(el, "login");
