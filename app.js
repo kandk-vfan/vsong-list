@@ -989,6 +989,13 @@ function renderAuthArea(user){
   }
 }
 
+function markLoggedIn(){
+  if(!currentUsername){
+    currentUsername = "…";
+  }
+}
+window.markLoggedIn = markLoggedIn;
+
 function renderAuthPanelBody(el, mode){
   const isSignup = mode === "signup";
 
