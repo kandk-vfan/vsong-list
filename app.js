@@ -1271,8 +1271,8 @@ function renderPlaylistAccordion(){
     <div class="playlist-accordion-body ${p.id === expandedPlaylistId ? "" : "hidden"}" data-body-id="${p.id}"></div>
   `).join("");
 
-  el.querySelectorAll(".playlist-accordion-name").forEach(nameEl => {
-    nameEl.addEventListener("click", () => togglePlaylistExpand(nameEl.dataset.id));
+  el.querySelectorAll(".playlist-accordion-header").forEach(headerEl => {
+    headerEl.addEventListener("click", () => togglePlaylistExpand(headerEl.dataset.id));
   });
 
   el.querySelectorAll(".playlist-rename-btn").forEach(btn => {
