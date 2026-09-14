@@ -49,7 +49,7 @@ let myPlaylists = [];
 
 window.onPlaylistsChanged = function(playlists){
   myPlaylists = playlists;
-  renderPlaylistSidebar();
+  renderPlaylistAccordion();
 };
 
 function closePlaylistMenu(){
@@ -1242,24 +1242,27 @@ document.getElementById("clearBookmarks").addEventListener("click", ()=>{
   renderBookmarks();
 });
 
-let selectedPlaylistId = null;
+let expandedPlaylistId = null;
 let unsubPlaylistSongs = null;
+let nowPlayingKey = null;
 
-function renderPlaylistSidebar(){
-  const el = document.getElementById("playlistSidebarList");
+function renderPlaylistAccordion(){
+  const el = document.getElementById("playlistAccordion");
 
   el.innerHTML = myPlaylists.map(p => `
-    <div class="playlist-sidebar-item ${p.id === selectedPlaylistId ? "active" : ""}" data-id="${p.id}">
-      <span class="playlist-sidebar-name" data-id="${p.id}">${escapeHtml(p.name)}</span>
-      <div class="playlist-sidebar-actions">
+    <div class="playlist-accordion-header ${p.id === expandedPlaylistId ? "active" : ""}" data-id="${p.id}">
+      <span class="playlist-accordion-name" data-id="${p.id}">${escapeHtml(p.name)}</span>
+      <div class="playlist-accordion-actions">
         <button class="playlist-rename-btn" data-id="${p.id}" title="名前を変更">✎</button>
         <button class="playlist-delete-btn" data-id="${p.id}" title="削除">🗑</button>
+        <span class="playlist-accordion-chevron">${p.id === expandedPlaylistId ? "▾" : "▸"}</span>
       </div>
     </div>
+    <div class="playlist-accordion-body ${p.id === expandedPlaylistId ? "" : "hidden"}" data-body-id="${p.id}"></div>
   `).join("");
 
-  el.querySelectorAll(".playlist-sidebar-name").forEach(nameEl => {
-    nameEl.addEventListener("click", () => selectPlaylist(nameEl.dataset.id));
+  el.querySelectorAll(".playlist-accordion-name").forEach(nameEl => {
+    nameEl.addEventListener("click", () => togglePlaylistExpand(nameEl.dataset.id));
   });
 
   el.querySelectorAll(".playlist-rename-btn").forEach(btn => {
@@ -1283,34 +1286,40 @@ function renderPlaylistSidebar(){
       const uid = window.vsongAuth.auth.currentUser.uid;
       await window.vsongPlaylists.deletePlaylist(uid, btn.dataset.id);
 
-      if(selectedPlaylistId === btn.dataset.id){
-        selectedPlaylistId = null;
-        renderPlaylistMain();
+      if(expandedPlaylistId === btn.dataset.id){
+        expandedPlaylistId = null;
       }
+      renderPlaylistAccordion();
     });
   });
+
+  if(expandedPlaylistId){
+    renderPlaylistSongs(expandedPlaylistId);
+  }
 }
 
-function selectPlaylist(id){
-  selectedPlaylistId = id;
-  renderPlaylistSidebar();
-  renderPlaylistMain();
+function togglePlaylistExpand(id){
+  expandedPlaylistId = (expandedPlaylistId === id) ? null : id;
+  renderPlaylistAccordion();
 }
 
-function renderPlaylistMain(){
-  const el = document.getElementById("playlistMain");
+function renderPlaylistSongPlayButton(item){
+  const status = item.status || "public";
+  if(status !== "public"){
+    return renderPlayButton(item);
+  }
+  return `<button class="playlist-play-in-app-btn" data-video-id="${item.videoId}" data-time="${item.time}" data-end-time="${item.endTime || ""}" data-title="${escapeHtml(item.title)}" data-artist="${escapeHtml(item.artist)}" title="再生">▶</button>`;
+}
+
+function renderPlaylistSongs(playlistId){
+  const el = document.querySelector(`.playlist-accordion-body[data-body-id="${playlistId}"]`);
+  if(!el) return;
 
   unsubPlaylistSongs?.();
-  unsubPlaylistSongs = null;
-
-  if(!selectedPlaylistId){
-    el.innerHTML = `<p class="playlist-empty-hint">左からリストを選んでください</p>`;
-    return;
-  }
 
   const uid = window.vsongAuth.auth.currentUser.uid;
 
-  unsubPlaylistSongs = window.vsongPlaylists.watchPlaylistSongs(uid, selectedPlaylistId, allSongs => {
+  unsubPlaylistSongs = window.vsongPlaylists.watchPlaylistSongs(uid, playlistId, allSongs => {
     const songs = allSongs.filter(s => {
       const live = data.find(d => d.videoId === s.videoId && d.time === s.time);
       return (live?.status || "public") === "public";
@@ -1325,15 +1334,16 @@ function renderPlaylistMain(){
       const live = data.find(d => d.videoId === s.videoId && d.time === s.time);
       const status = live?.status || "public";
       const videoDate = live?.date;
+      const endTime = live?.endTime || "";
 
       return `
-      <div class="playlist-song-row" draggable="true" data-key="${s.key}">
+      <div class="playlist-song-row ${s.key === nowPlayingKey ? "now-playing" : ""}" draggable="true" data-key="${s.key}">
         <span class="playlist-drag-handle" title="ドラッグして並べ替え">⠿</span>
         <div class="playlist-song-reorder">
           <button class="playlist-move-up" data-key="${s.key}" ${i === 0 ? "disabled" : ""}>▲</button>
           <button class="playlist-move-down" data-key="${s.key}" ${i === songs.length - 1 ? "disabled" : ""}>▼</button>
         </div>
-        <span class="num">${renderPlayButton({videoId: s.videoId, time: s.time, status})}</span>
+        <span class="num">${renderPlaylistSongPlayButton({videoId: s.videoId, time: s.time, endTime, status, title: s.title, artist: s.artist})}</span>
         <div class="playlist-song-info">
           <div class="playlist-song-title">${escapeHtml(s.title)}${s.note === "弾き語り" ? "（弾き語り）" : ""}</div>
           <div class="playlist-song-artist">${escapeHtml(s.artist)}</div>
@@ -1347,7 +1357,7 @@ function renderPlaylistMain(){
     const keys = songs.map(s => s.key);
 
     async function applyReorder(newKeys){
-      await window.vsongPlaylists.reorderPlaylistSongs(uid, selectedPlaylistId, newKeys);
+      await window.vsongPlaylists.reorderPlaylistSongs(uid, playlistId, newKeys);
     }
 
     el.querySelectorAll(".playlist-move-up").forEach(btn => {
@@ -1373,7 +1383,7 @@ function renderPlaylistMain(){
     el.querySelectorAll(".playlist-song-remove").forEach(btn => {
       btn.addEventListener("click", async () => {
         await window.vsongPlaylists.removeSongFromPlaylist(
-          uid, selectedPlaylistId, btn.dataset.title, btn.dataset.artist, btn.dataset.videoId, btn.dataset.time
+          uid, playlistId, btn.dataset.title, btn.dataset.artist, btn.dataset.videoId, btn.dataset.time
         );
       });
     });
@@ -1431,7 +1441,7 @@ document.getElementById("newPlaylistBtn").addEventListener("click", async () => 
 
   const uid = window.vsongAuth.auth.currentUser.uid;
   const newId = await window.vsongPlaylists.createPlaylist(uid, name);
-  selectPlaylist(newId);
+  expandedPlaylistId = newId;
 });
 
 function openSettingsModal(){
@@ -1525,3 +1535,34 @@ function ytTestEnd(videoId, endTimeStr, previewSeconds = 8){
   const startSec = Math.max(0, endSec - previewSeconds);
   playlistPlayVideo(videoId, startSec, endSec);
 }
+
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".playlist-play-in-app-btn");
+  if(!btn) return;
+
+  const startSec = ytTimeToSeconds(btn.dataset.time);
+  const endSec = btn.dataset.endTime ? ytTimeToSeconds(btn.dataset.endTime) : null;
+
+  playlistPlayVideo(btn.dataset.videoId, startSec, endSec);
+
+  document.getElementById("playlistNowTitle").textContent = btn.dataset.title;
+  document.getElementById("playlistNowArtist").textContent = btn.dataset.artist;
+
+  nowPlayingKey = null;
+  const row = btn.closest(".playlist-song-row");
+  if(row){
+    nowPlayingKey = row.dataset.key;
+    document.querySelectorAll(".playlist-song-row").forEach(r => r.classList.toggle("now-playing", r.dataset.key === nowPlayingKey));
+  }
+});
+
+document.getElementById("playlistPlayPauseBtn").addEventListener("click", () => {
+  if(!ytPlayer) return;
+
+  const state = ytPlayer.getPlayerState();
+  if(state === YT.PlayerState.PLAYING){
+    ytPlayer.pauseVideo();
+  }else{
+    ytPlayer.playVideo();
+  }
+});
