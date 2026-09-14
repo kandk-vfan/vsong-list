@@ -1409,13 +1409,6 @@ body.hjm-theme .status-note-inline{
   margin-bottom:16px;
 }
 
-.playlist-layout{
-  display:grid;
-  grid-template-columns:1fr 320px;
-  gap:16px;
-  align-items:start;
-}
-
 .playlist-accordion{
   background:#111827;
   border-radius:12px;
