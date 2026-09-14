@@ -256,6 +256,8 @@ onAuthStateChanged(auth, async (user) => {
     return;
   }
 
+  window.markLoggedIn?.();
+
   startBookmarkWatch(user.uid);
   startPlaylistWatch(user.uid);
 
