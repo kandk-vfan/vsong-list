@@ -50,6 +50,9 @@ let myPlaylists = [];
 window.onPlaylistsChanged = function(playlists){
   myPlaylists = playlists;
   renderPlaylistAccordion();
+  renderSongs();
+  renderStreams();
+  renderBookmarks();
 };
 
 function closePlaylistMenu(){
