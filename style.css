@@ -1594,3 +1594,17 @@ body.hjm-theme .status-note-inline{
     grid-template-columns:1fr;
   }
 }
+
+.playlist-accordion-body.hidden{
+  display:none;
+}
+
+.playlist-accordion-body{
+  padding:4px 0;
+}
+
+.playlist-song-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
