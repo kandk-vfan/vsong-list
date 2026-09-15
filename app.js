@@ -1579,6 +1579,10 @@ function startPlaylistSong(song){
   currentSongStartSec = startSec;
   currentSongEndSec = endSec;
 
+  const seekEl = document.getElementById("playlistSeek");
+  seekEl.max = endSec != null ? (endSec - startSec) : 100;
+  seekEl.value = 0;
+
   playlistPlayVideo(song.videoId, startSec, endSec);
 
   document.getElementById("playlistNowTitle").textContent = song.title + (song.note === "弾き語り" ? "（弾き語り）" : "");
