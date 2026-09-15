@@ -1313,12 +1313,15 @@ function togglePlaylistExpand(id){
   renderPlaylistAccordion();
 }
 
+const PLAY_ICON_SVG = '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+const PAUSE_ICON_SVG = '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+
 function renderPlaylistSongPlayButton(item){
   const status = item.status || "public";
   if(status !== "public"){
     return renderPlayButton(item);
   }
-  return `<button class="playlist-play-in-app-btn" data-video-id="${item.videoId}" data-time="${item.time}" data-end-time="${item.endTime || ""}" data-title="${escapeHtml(item.title)}" data-artist="${escapeHtml(item.artist)}" title="再生">▶</button>`;
+  return `<button class="playlist-play-in-app-btn" data-key="${item.key}" data-video-id="${item.videoId}" data-time="${item.time}" data-end-time="${item.endTime || ""}" data-title="${escapeHtml(item.title)}" data-artist="${escapeHtml(item.artist)}" data-note="${escapeHtml(item.note || "")}" title="再生">${PLAY_ICON_SVG}</button>`;
 }
 
 function renderPlaylistSongs(playlistId){
@@ -1353,7 +1356,7 @@ function renderPlaylistSongs(playlistId){
           <button class="playlist-move-up" data-key="${s.key}" ${i === 0 ? "disabled" : ""}>▲</button>
           <button class="playlist-move-down" data-key="${s.key}" ${i === songs.length - 1 ? "disabled" : ""}>▼</button>
         </div>
-        <span class="num">${renderPlaylistSongPlayButton({videoId: s.videoId, time: s.time, endTime, status, title: s.title, artist: s.artist})}</span>
+        <span class="num">${renderPlaylistSongPlayButton({key: s.key, videoId: s.videoId, time: s.time, endTime, status, title: s.title, artist: s.artist, note: s.note})}</span>
         <div class="playlist-song-info">
           <div class="playlist-song-title">${escapeHtml(s.title)}${s.note === "弾き語り" ? "（弾き語り）" : ""}</div>
           <div class="playlist-song-artist">${escapeHtml(s.artist)}</div>
@@ -1496,11 +1499,17 @@ let ytPlayer = null;
 let ytPlayerReady = false;
 let pendingPlaylistPlay = null;
 
+let playlistQueue = [];
+let playlistQueueIndex = -1;
+let isShuffleOn = false;
+let isRepeatOn = false;
+let playlistSeekTimer = null;
+
 function onYouTubeIframeAPIReady(){
   ytPlayer = new YT.Player("playlistPlayerVideo", {
     height: "100%",
     width: "100%",
-    playerVars: { autoplay: 1, playsinline: 1 },
+    playerVars: { autoplay: 1, playsinline: 1, controls: 0 },
     events: {
       onReady: () => {
         ytPlayerReady = true;
@@ -1529,12 +1538,6 @@ function playlistPlayVideo(videoId, startSeconds, endSeconds){
   ytPlayer.loadVideoById(opts);
 }
 
-function onPlaylistPlayerStateChange(event){
-  if(event.data === YT.PlayerState.ENDED){
-    console.log("曲が終了しました(次の曲への処理は5番で実装予定)");
-  }
-}
-
 function ytTimeToSeconds(timeStr){
   const parts = timeStr.split(":").map(Number);
   return parts.reduce((acc, v) => acc * 60 + v, 0);
@@ -1546,24 +1549,156 @@ function ytTestEnd(videoId, endTimeStr, previewSeconds = 8){
   playlistPlayVideo(videoId, startSec, endSec);
 }
 
+function shuffleArray(arr){
+  const a = arr.slice();
+  for(let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function collectPlaylistSongsFromDOM(bodyEl){
+  return Array.from(bodyEl.querySelectorAll(".playlist-play-in-app-btn")).map(b => ({
+    key: b.dataset.key,
+    videoId: b.dataset.videoId,
+    time: b.dataset.time,
+    endTime: b.dataset.endTime,
+    title: b.dataset.title,
+    artist: b.dataset.artist,
+    note: b.dataset.note || ""
+  }));
+}
+
+function startPlaylistSong(song){
+  const startSec = ytTimeToSeconds(song.time);
+  const endSec = song.endTime ? ytTimeToSeconds(song.endTime) : null;
+
+  playlistPlayVideo(song.videoId, startSec, endSec);
+
+  document.getElementById("playlistNowTitle").textContent = song.title + (song.note === "弾き語り" ? "（弾き語り）" : "");
+  document.getElementById("playlistNowArtist").textContent = song.artist;
+
+  nowPlayingKey = song.key;
+  document.querySelectorAll(".playlist-song-row").forEach(r => r.classList.toggle("now-playing", r.dataset.key === nowPlayingKey));
+}
+
+function playPlaylistSongFrom(btn){
+  const clickedKey = btn.dataset.key;
+
+  if(clickedKey === nowPlayingKey && ytPlayer){
+    const state = ytPlayer.getPlayerState();
+    if(state === YT.PlayerState.PLAYING){
+      ytPlayer.pauseVideo();
+    }else{
+      ytPlayer.playVideo();
+    }
+    return;
+  }
+
+  const body = btn.closest(".playlist-accordion-body");
+  const allSongs = collectPlaylistSongsFromDOM(body);
+  const eligibleBase = allSongs.filter(s => s.endTime);
+  const eligible = isShuffleOn ? shuffleArray(eligibleBase) : eligibleBase;
+
+  const idx = eligible.findIndex(s => s.key === clickedKey);
+
+  if(idx === -1){
+    playlistQueue = [];
+    playlistQueueIndex = -1;
+    const clicked = allSongs.find(s => s.key === clickedKey);
+    if(clicked) startPlaylistSong(clicked);
+    return;
+  }
+
+  playlistQueue = eligible;
+  playlistQueueIndex = idx;
+  startPlaylistSong(eligible[idx]);
+}
+
+function playlistNext(){
+  if(playlistQueue.length === 0) return;
+
+  playlistQueueIndex++;
+  if(playlistQueueIndex >= playlistQueue.length){
+    if(!isRepeatOn){
+      playlistQueueIndex = playlistQueue.length - 1;
+      return;
+    }
+    playlistQueueIndex = 0;
+  }
+  startPlaylistSong(playlistQueue[playlistQueueIndex]);
+}
+
+function playlistPrev(){
+  if(playlistQueue.length === 0) return;
+
+  playlistQueueIndex--;
+  if(playlistQueueIndex < 0){
+    if(!isRepeatOn){
+      playlistQueueIndex = 0;
+      return;
+    }
+    playlistQueueIndex = playlistQueue.length - 1;
+  }
+  startPlaylistSong(playlistQueue[playlistQueueIndex]);
+}
+
+function updatePlaylistPlayIcon(isPlaying){
+  const bottomBtn = document.getElementById("playlistPlayPauseBtn");
+  bottomBtn.innerHTML = isPlaying ? PAUSE_ICON_SVG : PLAY_ICON_SVG;
+
+  if(nowPlayingKey){
+    const rowBtn = document.querySelector(`.playlist-play-in-app-btn[data-key="${nowPlayingKey}"]`);
+    if(rowBtn){
+      rowBtn.innerHTML = isPlaying ? PAUSE_ICON_SVG : PLAY_ICON_SVG;
+    }
+  }
+}
+
+function startPlaylistSeekTimer(){
+  clearInterval(playlistSeekTimer);
+  playlistSeekTimer = setInterval(() => {
+    if(!ytPlayer || typeof ytPlayer.getCurrentTime !== "function") return;
+    const seekEl = document.getElementById("playlistSeek");
+    if(document.activeElement === seekEl) return;
+    const duration = ytPlayer.getDuration() || 0;
+    const current = ytPlayer.getCurrentTime() || 0;
+    if(duration > 0){
+      seekEl.max = duration;
+      seekEl.value = current;
+    }
+  }, 500);
+}
+
+function stopPlaylistSeekTimer(){
+  clearInterval(playlistSeekTimer);
+}
+
+function onPlaylistPlayerStateChange(event){
+  if(event.data === YT.PlayerState.PLAYING){
+    updatePlaylistPlayIcon(true);
+    startPlaylistSeekTimer();
+  }
+
+  if(event.data === YT.PlayerState.PAUSED){
+    updatePlaylistPlayIcon(false);
+    stopPlaylistSeekTimer();
+  }
+
+  if(event.data === YT.PlayerState.ENDED){
+    updatePlaylistPlayIcon(false);
+    stopPlaylistSeekTimer();
+    setTimeout(() => {
+      playlistNext();
+    }, 500);
+  }
+}
+
 document.addEventListener("click", (e) => {
   const btn = e.target.closest(".playlist-play-in-app-btn");
   if(!btn) return;
-
-  const startSec = ytTimeToSeconds(btn.dataset.time);
-  const endSec = btn.dataset.endTime ? ytTimeToSeconds(btn.dataset.endTime) : null;
-
-  playlistPlayVideo(btn.dataset.videoId, startSec, endSec);
-
-  document.getElementById("playlistNowTitle").textContent = btn.dataset.title;
-  document.getElementById("playlistNowArtist").textContent = btn.dataset.artist;
-
-  nowPlayingKey = null;
-  const row = btn.closest(".playlist-song-row");
-  if(row){
-    nowPlayingKey = row.dataset.key;
-    document.querySelectorAll(".playlist-song-row").forEach(r => r.classList.toggle("now-playing", r.dataset.key === nowPlayingKey));
-  }
+  playPlaylistSongFrom(btn);
 });
 
 document.getElementById("playlistPlayPauseBtn").addEventListener("click", () => {
@@ -1575,4 +1710,22 @@ document.getElementById("playlistPlayPauseBtn").addEventListener("click", () => 
   }else{
     ytPlayer.playVideo();
   }
+});
+
+document.getElementById("playlistNextBtn").addEventListener("click", playlistNext);
+document.getElementById("playlistPrevBtn").addEventListener("click", playlistPrev);
+
+document.getElementById("playlistShuffleBtn").addEventListener("click", (e) => {
+  isShuffleOn = !isShuffleOn;
+  e.currentTarget.classList.toggle("active", isShuffleOn);
+});
+
+document.getElementById("playlistRepeatBtn").addEventListener("click", (e) => {
+  isRepeatOn = !isRepeatOn;
+  e.currentTarget.classList.toggle("active", isRepeatOn);
+});
+
+document.getElementById("playlistSeek").addEventListener("change", (e) => {
+  if(!ytPlayer) return;
+  ytPlayer.seekTo(Number(e.target.value), true);
 });
