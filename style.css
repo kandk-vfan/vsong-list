@@ -1536,7 +1536,10 @@ body.hjm-theme .status-note-inline{
 
 #playlistSeek{
   width:100%;
-  margin-bottom:10px;
+  box-sizing:border-box;
+  margin:0 0 10px;
+  padding:0;
+  display:block;
 }
 
 .playlist-controls{
