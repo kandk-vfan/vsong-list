@@ -1177,10 +1177,6 @@ body.hjm-theme .status-note-inline{
   color:#94a3b8;
 }
 
-.playlist-song-remove{
-  flex-shrink:0;
-}
-
 .playlist-song-reorder{
   display:flex;
   flex-direction:column;
