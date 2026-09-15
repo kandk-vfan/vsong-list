@@ -1115,6 +1115,8 @@ function showProtectedTab(id, btn){
 }
 
 function handleLogout(){
+  stopPlaylistPlayback();
+
   const protectedIds = ["bookmarks", "playlists"];
   const current = protectedIds.find(id => !document.getElementById(id).classList.contains("hidden"));
 
