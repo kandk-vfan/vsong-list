@@ -1261,7 +1261,7 @@ function renderPlaylistAccordion(){
 
   el.innerHTML = myPlaylists.map(p => `
     <div class="playlist-accordion-header ${p.id === expandedPlaylistId ? "active" : ""}" data-id="${p.id}">
-      <span class="playlist-accordion-name" data-id="${p.id}">${escapeHtml(p.name)}</span>
+      <span class="playlist-accordion-name" data-id="${p.id}">${escapeHtml(p.name)}<span class="playlist-count" data-count-id="${p.id}"></span></span>
       <div class="playlist-accordion-actions">
         <button class="playlist-rename-btn" data-id="${p.id}" title="名前を変更">✎</button>
         <button class="playlist-delete-btn" data-id="${p.id}" title="削除">🗑</button>
@@ -1333,6 +1333,9 @@ function renderPlaylistSongs(playlistId){
   const uid = window.vsongAuth.auth.currentUser.uid;
 
   unsubPlaylistSongs = window.vsongPlaylists.watchPlaylistSongs(uid, playlistId, allSongs => {
+    const countEl = document.querySelector(`.playlist-count[data-count-id="${playlistId}"]`);
+    if(countEl) countEl.textContent = `(${allSongs.length}曲)`;
+
     const songs = allSongs.filter(s => {
       const live = data.find(d => d.videoId === s.videoId && d.time === s.time);
       return (live?.status || "public") === "public";
@@ -1362,6 +1365,7 @@ function renderPlaylistSongs(playlistId){
           <div class="playlist-song-artist">${escapeHtml(s.artist)}</div>
         </div>
         <div class="playlist-song-date">${videoDate ? formatDate(videoDate) : ""}</div>
+        <div class="playlist-song-duration">${endTime ? formatSeekTime(ytTimeToSeconds(endTime) - ytTimeToSeconds(s.time)) : "-"}</div>
         <button class="playlist-song-remove" data-title="${escapeHtml(s.title)}" data-artist="${escapeHtml(s.artist)}" data-video-id="${s.videoId}" data-time="${s.time}">削除</button>
       </div>
     `;
@@ -1545,6 +1549,13 @@ function ytTimeToSeconds(timeStr){
   return parts.reduce((acc, v) => acc * 60 + v, 0);
 }
 
+function formatSeekTime(sec){
+  sec = Math.max(0, Math.floor(sec));
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return `${m}:${String(s).padStart(2, "0")}`;
+}
+
 function ytTestEnd(videoId, endTimeStr, previewSeconds = 8){
   const endSec = ytTimeToSeconds(endTimeStr);
   const startSec = Math.max(0, endSec - previewSeconds);
@@ -1580,8 +1591,12 @@ function startPlaylistSong(song){
   currentSongEndSec = endSec;
 
   const seekEl = document.getElementById("playlistSeek");
-  seekEl.max = endSec != null ? (endSec - startSec) : 100;
+  const songLength = endSec != null ? (endSec - startSec) : 100;
+  seekEl.max = songLength;
   seekEl.value = 0;
+
+  document.getElementById("playlistElapsed").textContent = "0:00";
+  document.getElementById("playlistDuration").textContent = formatSeekTime(songLength);
 
   playlistPlayVideo(song.videoId, startSec, endSec);
 
@@ -1692,6 +1707,7 @@ function startPlaylistSeekTimer(){
     if(songLength > 0){
       seekEl.max = songLength;
       seekEl.value = Math.max(0, current);
+      document.getElementById("playlistElapsed").textContent = formatSeekTime(Math.max(0, current));
     }
   }, 500);
 }
@@ -1787,4 +1803,18 @@ document.getElementById("playlistSeek").addEventListener("change", (e) => {
   ytPlayer.seekTo(currentSongStartSec + target, true);
   e.target.value = target;
   e.target.blur();
+  document.getElementById("playlistElapsed").textContent = formatSeekTime(target);
+});
+
+document.getElementById("playlistBack10Btn").addEventListener("click", () => {
+  if(!ytPlayer) return;
+  const target = Math.max(currentSongStartSec, ytPlayer.getCurrentTime() - 10);
+  ytPlayer.seekTo(target, true);
+});
+
+document.getElementById("playlistFwd10Btn").addEventListener("click", () => {
+  if(!ytPlayer) return;
+  const maxTime = currentSongEndSec != null ? currentSongEndSec : (ytPlayer.getDuration() || Infinity);
+  const target = Math.min(maxTime, ytPlayer.getCurrentTime() + 10);
+  ytPlayer.seekTo(target, true);
 });
