@@ -1510,6 +1510,7 @@ let repeatMode = "off"; // "off" | "all" | "one"
 let playlistSeekTimer = null;
 let currentSongStartSec = 0;
 let currentSongEndSec = null;
+let currentPlaylistId = null;
 
 function onYouTubeIframeAPIReady(){
   ytPlayer = new YT.Player("playlistPlayerVideo", {
@@ -1625,6 +1626,7 @@ function playPlaylistSongFrom(btn){
   }
 
   const body = btn.closest(".playlist-accordion-body");
+  currentPlaylistId = body.dataset.bodyId;
   const allSongs = collectPlaylistSongsFromDOM(body);
   const eligibleBase = allSongs.filter(s => s.endTime);
 
@@ -1774,10 +1776,15 @@ document.getElementById("playlistShuffleBtn").addEventListener("click", (e) => {
   if(playlistQueue.length === 0) return;
 
   const played = playlistQueue.slice(0, playlistQueueIndex + 1);
-  let remaining = playlistQueue.slice(playlistQueueIndex + 1);
+  const playedKeys = new Set(played.map(s => s.key));
+  let remaining;
 
   if(isShuffleOn){
-    remaining = shuffleArray(remaining);
+    remaining = shuffleArray(playlistQueue.slice(playlistQueueIndex + 1));
+  }else{
+    const body = document.querySelector(`.playlist-accordion-body[data-body-id="${currentPlaylistId}"]`);
+    const naturalOrder = body ? collectPlaylistSongsFromDOM(body).filter(s => s.endTime) : playlistQueue;
+    remaining = naturalOrder.filter(s => !playedKeys.has(s.key));
   }
 
   playlistQueue = played.concat(remaining);
