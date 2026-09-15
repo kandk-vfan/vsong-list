@@ -1743,6 +1743,17 @@ document.getElementById("playlistPrevBtn").addEventListener("click", playlistPre
 document.getElementById("playlistShuffleBtn").addEventListener("click", (e) => {
   isShuffleOn = !isShuffleOn;
   e.currentTarget.classList.toggle("active", isShuffleOn);
+
+  if(playlistQueue.length === 0) return;
+
+  const played = playlistQueue.slice(0, playlistQueueIndex + 1);
+  let remaining = playlistQueue.slice(playlistQueueIndex + 1);
+
+  if(isShuffleOn){
+    remaining = shuffleArray(remaining);
+  }
+
+  playlistQueue = played.concat(remaining);
 });
 
 document.getElementById("playlistRepeatBtn").addEventListener("click", (e) => {
