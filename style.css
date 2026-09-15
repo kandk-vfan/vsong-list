@@ -1415,6 +1415,9 @@ body.hjm-theme .status-note-inline{
   font-size:11px;
   color:#94a3b8;
   white-space:nowrap;
+  width:80px;
+  flex-shrink:0;
+  text-align:right;
 }
 
 .playlist-song-header{
@@ -1433,10 +1436,14 @@ body.hjm-theme .status-note-inline{
 
 .playlist-song-header-date{
   white-space:nowrap;
+  width:80px;
+  flex-shrink:0;
+  text-align:right;
 }
 
 .playlist-song-header-duration{
-  min-width:36px;
+  width:40px;
+  flex-shrink:0;
   text-align:right;
 }
 
@@ -1624,6 +1631,7 @@ body.hjm-theme .status-note-inline{
   font-size:11px;
   color:#94a3b8;
   white-space:nowrap;
-  min-width:36px;
+  width:40px;
+  flex-shrink:0;
   text-align:right;
 }
