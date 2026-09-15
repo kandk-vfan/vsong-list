@@ -1535,11 +1535,41 @@ body.hjm-theme .status-note-inline{
 }
 
 #playlistSeek{
+  -webkit-appearance:none;
+  appearance:none;
   width:100%;
+  height:4px;
+  background:#334155;
+  border-radius:2px;
   box-sizing:border-box;
   margin:0 0 10px;
   padding:0;
   display:block;
+}
+
+#playlistSeek::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  appearance:none;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#3b82f6;
+  cursor:pointer;
+}
+
+#playlistSeek::-moz-range-thumb{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#3b82f6;
+  border:none;
+  cursor:pointer;
+}
+
+#playlistSeek::-moz-range-track{
+  height:4px;
+  background:#334155;
+  border-radius:2px;
 }
 
 .playlist-controls{
