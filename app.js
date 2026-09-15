@@ -126,6 +126,12 @@ document.addEventListener("click", (e) => {
   const btn = e.target.closest(".playlist-add-btn");
   if(!btn) return;
   e.stopPropagation();
+
+  if(!btn.dataset.endTime){
+    showToast("終了時刻が未設定のため、リストに追加できません");
+    return;
+  }
+
   openPlaylistMenu(btn, btn.dataset.title, btn.dataset.artist, btn.dataset.videoId, btn.dataset.time, btn.dataset.note);
 });
 
@@ -368,7 +374,7 @@ function renderPlaylistAddButton(item){
   if(!currentUsername) return "";
   if(!item.status || item.status !== "public") return "";
 
-  return `<button class="playlist-add-btn" data-title="${escapeHtml(item.title)}" data-artist="${escapeHtml(item.artist)}" data-video-id="${item.videoId}" data-time="${item.time}" data-note="${escapeHtml(item.note || "")}" title="ブックマーク(曲)に追加">＋</button>`;
+  return `<button class="playlist-add-btn" data-title="${escapeHtml(item.title)}" data-artist="${escapeHtml(item.artist)}" data-video-id="${item.videoId}" data-time="${item.time}" data-end-time="${item.endTime || ""}" data-note="${escapeHtml(item.note || "")}" title="ブックマーク(曲)に追加">＋</button>`;
 }
 
 function formatDateTime(iso){
@@ -861,7 +867,7 @@ ${renderPlayButton({videoId: vid, time: s.time, status: s.status})}
 </div>
 <div class="song-card-title">${s.title}</div>
 <div class="song-card-artist">${s.artist}</div>
-${renderPlaylistAddButton({ title: s.title, artist: s.artist, videoId: vid, time: s.time, note: s.note, status: s.status })}
+${renderPlaylistAddButton({ title: s.title, artist: s.artist, videoId: vid, time: s.time, endTime: s.endTime, note: s.note, status: s.status })}
 </div>`).join("")}
 </div>`;
 
