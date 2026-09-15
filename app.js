@@ -1662,6 +1662,9 @@ function startPlaylistSong(song){
 
   nowPlayingKey = song.key;
   document.querySelectorAll(".playlist-song-row").forEach(r => r.classList.toggle("now-playing", r.dataset.key === nowPlayingKey));
+
+  updatePlaylistControlsEnabled(true);
+}
 }
 
 function playPlaylistSongFrom(btn){
@@ -1802,6 +1805,16 @@ function stopPlaylistPlayback(){
   stopPlaylistSeekTimer();
 
   document.querySelectorAll(".playlist-song-row").forEach(r => r.classList.remove("now-playing"));
+
+  updatePlaylistControlsEnabled(false);
+}
+}
+
+function updatePlaylistControlsEnabled(enabled){
+  ["playlistPlayPauseBtn", "playlistNextBtn", "playlistPrevBtn", "playlistBack10Btn", "playlistFwd10Btn", "playlistSeek"].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.disabled = !enabled;
+  });
 }
 
 function reconcilePlaylistQueue(currentKeys){
@@ -1934,3 +1947,5 @@ document.getElementById("playlistFwd10Btn").addEventListener("click", () => {
   const target = Math.min(maxTime, ytPlayer.getCurrentTime() + 10);
   ytPlayer.seekTo(target, true);
 });
+
+updatePlaylistControlsEnabled(false);
