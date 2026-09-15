@@ -1665,7 +1665,6 @@ function startPlaylistSong(song){
 
   updatePlaylistControlsEnabled(true);
 }
-}
 
 function playPlaylistSongFrom(btn){
   const clickedKey = btn.dataset.key;
@@ -1807,7 +1806,6 @@ function stopPlaylistPlayback(){
   document.querySelectorAll(".playlist-song-row").forEach(r => r.classList.remove("now-playing"));
 
   updatePlaylistControlsEnabled(false);
-}
 }
 
 function updatePlaylistControlsEnabled(enabled){
