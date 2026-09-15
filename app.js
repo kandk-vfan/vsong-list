@@ -1612,11 +1612,10 @@ function playPlaylistSongFrom(btn){
   const body = btn.closest(".playlist-accordion-body");
   const allSongs = collectPlaylistSongsFromDOM(body);
   const eligibleBase = allSongs.filter(s => s.endTime);
-  const eligible = isShuffleOn ? shuffleArray(eligibleBase) : eligibleBase;
 
-  const idx = eligible.findIndex(s => s.key === clickedKey);
+  const clickedSong = eligibleBase.find(s => s.key === clickedKey);
 
-  if(idx === -1){
+  if(!clickedSong){
     playlistQueue = [];
     playlistQueueIndex = -1;
     const clicked = allSongs.find(s => s.key === clickedKey);
@@ -1624,9 +1623,12 @@ function playPlaylistSongFrom(btn){
     return;
   }
 
-  playlistQueue = eligible;
-  playlistQueueIndex = idx;
-  startPlaylistSong(eligible[idx]);
+  const rest = eligibleBase.filter(s => s.key !== clickedKey);
+  const orderedRest = isShuffleOn ? shuffleArray(rest) : rest;
+
+  playlistQueue = [clickedSong, ...orderedRest];
+  playlistQueueIndex = 0;
+  startPlaylistSong(clickedSong);
 }
 
 function playlistNext(){
