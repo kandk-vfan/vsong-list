@@ -1502,7 +1502,7 @@ let pendingPlaylistPlay = null;
 let playlistQueue = [];
 let playlistQueueIndex = -1;
 let isShuffleOn = false;
-let isRepeatOn = false;
+let repeatMode = "off"; // "off" | "all" | "one"
 let playlistSeekTimer = null;
 let currentSongStartSec = 0;
 let currentSongEndSec = null;
@@ -1632,9 +1632,14 @@ function playPlaylistSongFrom(btn){
 function playlistNext(){
   if(playlistQueue.length === 0) return;
 
+  if(repeatMode === "one"){
+    startPlaylistSong(playlistQueue[playlistQueueIndex]);
+    return;
+  }
+
   playlistQueueIndex++;
   if(playlistQueueIndex >= playlistQueue.length){
-    if(!isRepeatOn){
+    if(repeatMode !== "all"){
       playlistQueueIndex = playlistQueue.length - 1;
       return;
     }
@@ -1648,7 +1653,7 @@ function playlistPrev(){
 
   playlistQueueIndex--;
   if(playlistQueueIndex < 0){
-    if(!isRepeatOn){
+    if(repeatMode !== "all"){
       playlistQueueIndex = 0;
       return;
     }
@@ -1756,9 +1761,22 @@ document.getElementById("playlistShuffleBtn").addEventListener("click", (e) => {
   playlistQueue = played.concat(remaining);
 });
 
+const REPEAT_ONE_ICON_SVG = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/><text x="12" y="15" font-size="9" fill="currentColor" stroke="none" text-anchor="middle">1</text></svg>';
+
+const REPEAT_ALL_ICON_SVG = document.getElementById("playlistRepeatBtn").innerHTML;
+
 document.getElementById("playlistRepeatBtn").addEventListener("click", (e) => {
-  isRepeatOn = !isRepeatOn;
-  e.currentTarget.classList.toggle("active", isRepeatOn);
+  if(repeatMode === "off"){
+    repeatMode = "all";
+  }else if(repeatMode === "all"){
+    repeatMode = "one";
+  }else{
+    repeatMode = "off";
+  }
+
+  e.currentTarget.classList.toggle("active", repeatMode !== "off");
+  e.currentTarget.innerHTML = repeatMode === "one" ? REPEAT_ONE_ICON_SVG : REPEAT_ALL_ICON_SVG;
+  e.currentTarget.title = repeatMode === "off" ? "ループ" : (repeatMode === "all" ? "全曲ループ" : "1曲ループ");
 });
 
 document.getElementById("playlistSeek").addEventListener("change", (e) => {
