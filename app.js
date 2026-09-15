@@ -1380,7 +1380,15 @@ function renderPlaylistSongs(playlistId){
       return;
     }
 
-    el.innerHTML = songs.map((s, i) => {
+    el.innerHTML = `
+      <div class="playlist-song-header">
+        <span class="playlist-song-header-info">曲名 / アーティスト</span>
+        <span class="playlist-song-header-date">配信日</span>
+        <span class="playlist-song-header-duration">長さ</span>
+        <span class="playlist-song-header-remove"></span>
+      </div>
+      <div class="playlist-accordion-body-scroll">
+    ` + songs.map((s, i) => {
       const live = data.find(d => d.videoId === s.videoId && d.time === s.time);
       const status = live?.status || "public";
       const videoDate = live?.date;
@@ -1403,7 +1411,7 @@ function renderPlaylistSongs(playlistId){
         <button class="playlist-song-remove" data-key="${s.key}" data-title="${escapeHtml(s.title)}" data-artist="${escapeHtml(s.artist)}" data-video-id="${s.videoId}" data-time="${s.time}">削除</button>
       </div>
     `;
-    }).join("");
+    }).join("") + `</div>`;
 
     const keys = songs.map(s => s.key);
 
