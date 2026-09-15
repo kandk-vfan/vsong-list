@@ -1584,6 +1584,10 @@ function startPlaylistSong(song){
   document.getElementById("playlistNowTitle").textContent = song.title + (song.note === "弾き語り" ? "（弾き語り）" : "");
   document.getElementById("playlistNowArtist").textContent = song.artist;
 
+  document.querySelectorAll(".playlist-play-in-app-btn").forEach(b => {
+    b.innerHTML = PLAY_ICON_SVG;
+  });
+
   nowPlayingKey = song.key;
   document.querySelectorAll(".playlist-song-row").forEach(r => r.classList.toggle("now-playing", r.dataset.key === nowPlayingKey));
 }
@@ -1685,10 +1689,13 @@ function stopPlaylistSeekTimer(){
   clearInterval(playlistSeekTimer);
 }
 
+let endedAdvancePending = false;
+
 function onPlaylistPlayerStateChange(event){
   if(event.data === YT.PlayerState.PLAYING){
     updatePlaylistPlayIcon(true);
     startPlaylistSeekTimer();
+    endedAdvancePending = false;
   }
 
   if(event.data === YT.PlayerState.PAUSED){
@@ -1699,6 +1706,10 @@ function onPlaylistPlayerStateChange(event){
   if(event.data === YT.PlayerState.ENDED){
     updatePlaylistPlayIcon(false);
     stopPlaylistSeekTimer();
+
+    if(endedAdvancePending) return;
+    endedAdvancePending = true;
+
     setTimeout(() => {
       playlistNext();
     }, 500);
