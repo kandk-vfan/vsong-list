@@ -81,12 +81,23 @@ async function openPlaylistMenu(btn, title, artist, videoId, time, note){
     <button class="playlist-menu-item playlist-menu-new" data-id="__new__">＋ 新しいリスト</button>
   `;
 
+  menu.style.visibility = "hidden";
   document.body.appendChild(menu);
 
   const rect = btn.getBoundingClientRect();
+  const menuHeight = menu.offsetHeight;
+  const spaceBelow = window.innerHeight - rect.bottom;
+
   menu.style.position = "fixed";
   menu.style.left = `${rect.left}px`;
-  menu.style.top = `${rect.bottom + 4}px`;
+
+  if(spaceBelow < menuHeight + 8){
+    menu.style.top = `${rect.top - menuHeight - 4}px`;
+  }else{
+    menu.style.top = `${rect.bottom + 4}px`;
+  }
+
+  menu.style.visibility = "";
 
   menu.querySelectorAll(".playlist-menu-item").forEach(item => {
     item.addEventListener("click", async (e) => {
