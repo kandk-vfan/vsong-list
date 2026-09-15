@@ -1331,7 +1331,8 @@ body.hjm-theme .status-note-inline{
   background:#111827;
   border-radius:12px;
   border:1px solid #334155;
-  overflow:hidden;
+  max-height:60vh;
+  overflow-y:auto;
 }
 
 .playlist-accordion-header{
@@ -1480,11 +1481,14 @@ body.hjm-theme .status-note-inline{
 }
 
 .playlist-controlbar{
-  margin-top:16px;
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
   background:#111827;
-  border-radius:12px;
-  border:1px solid #334155;
+  border-top:1px solid #334155;
   padding:12px 20px;
+  z-index:100;
 }
 
 .playlist-seek-row{
@@ -1644,4 +1648,8 @@ body.hjm-theme .status-note-inline{
 .playlist-song-remove:hover{
   color:#f87171;
   border-color:#f87171;
+}
+
+#playlists{
+  padding-bottom:100px;
 }
