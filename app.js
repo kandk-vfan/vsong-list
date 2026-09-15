@@ -1781,5 +1781,7 @@ document.getElementById("playlistRepeatBtn").addEventListener("click", (e) => {
 
 document.getElementById("playlistSeek").addEventListener("change", (e) => {
   if(!ytPlayer) return;
-  ytPlayer.seekTo(currentSongStartSec + Number(e.target.value), true);
+  const target = Number(e.target.value);
+  ytPlayer.seekTo(currentSongStartSec + target, true);
+  e.target.value = target;
 });
