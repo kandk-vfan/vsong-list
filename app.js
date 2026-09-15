@@ -1809,7 +1809,7 @@ function stopPlaylistPlayback(){
 }
 
 function updatePlaylistControlsEnabled(enabled){
-  ["playlistPlayPauseBtn", "playlistNextBtn", "playlistPrevBtn", "playlistBack10Btn", "playlistFwd10Btn", "playlistSeek"].forEach(id => {
+  ["playlistPlayPauseBtn", "playlistNextBtn", "playlistPrevBtn", "playlistBack10Btn", "playlistFwd10Btn", "playlistSeek", "playlistShuffleBtn", "playlistRepeatBtn"].forEach(id => {
     const el = document.getElementById(id);
     if(el) el.disabled = !enabled;
   });
