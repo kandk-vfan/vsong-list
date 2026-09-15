@@ -1382,6 +1382,9 @@ function renderPlaylistSongs(playlistId){
 
     el.innerHTML = `
       <div class="playlist-song-header">
+        <span></span>
+        <span></span>
+        <span></span>
         <span class="playlist-song-header-info">曲名 / アーティスト</span>
         <span class="playlist-song-header-date">配信日</span>
         <span class="playlist-song-header-duration">長さ</span>
