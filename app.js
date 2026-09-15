@@ -1784,4 +1784,5 @@ document.getElementById("playlistSeek").addEventListener("change", (e) => {
   const target = Number(e.target.value);
   ytPlayer.seekTo(currentSongStartSec + target, true);
   e.target.value = target;
+  e.target.blur();
 });
