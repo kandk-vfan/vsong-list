@@ -1813,6 +1813,9 @@ function updatePlaylistControlsEnabled(enabled){
     const el = document.getElementById(id);
     if(el) el.disabled = !enabled;
   });
+
+  const overlay = document.getElementById("playlistPlayerOverlay");
+  if(overlay) overlay.classList.toggle("hidden", enabled);
 }
 
 function reconcilePlaylistQueue(currentKeys){
