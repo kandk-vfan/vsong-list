@@ -1504,6 +1504,8 @@ let playlistQueueIndex = -1;
 let isShuffleOn = false;
 let isRepeatOn = false;
 let playlistSeekTimer = null;
+let currentSongStartSec = 0;
+let currentSongEndSec = null;
 
 function onYouTubeIframeAPIReady(){
   ytPlayer = new YT.Player("playlistPlayerVideo", {
@@ -1573,6 +1575,9 @@ function collectPlaylistSongsFromDOM(bodyEl){
 function startPlaylistSong(song){
   const startSec = ytTimeToSeconds(song.time);
   const endSec = song.endTime ? ytTimeToSeconds(song.endTime) : null;
+
+  currentSongStartSec = startSec;
+  currentSongEndSec = endSec;
 
   playlistPlayVideo(song.videoId, startSec, endSec);
 
@@ -1662,11 +1667,16 @@ function startPlaylistSeekTimer(){
     if(!ytPlayer || typeof ytPlayer.getCurrentTime !== "function") return;
     const seekEl = document.getElementById("playlistSeek");
     if(document.activeElement === seekEl) return;
-    const duration = ytPlayer.getDuration() || 0;
-    const current = ytPlayer.getCurrentTime() || 0;
-    if(duration > 0){
-      seekEl.max = duration;
-      seekEl.value = current;
+
+    const songLength = (currentSongEndSec != null)
+      ? currentSongEndSec - currentSongStartSec
+      : (ytPlayer.getDuration() || 0) - currentSongStartSec;
+
+    const current = (ytPlayer.getCurrentTime() || 0) - currentSongStartSec;
+
+    if(songLength > 0){
+      seekEl.max = songLength;
+      seekEl.value = Math.max(0, current);
     }
   }, 500);
 }
@@ -1727,5 +1737,5 @@ document.getElementById("playlistRepeatBtn").addEventListener("click", (e) => {
 
 document.getElementById("playlistSeek").addEventListener("change", (e) => {
   if(!ytPlayer) return;
-  ytPlayer.seekTo(Number(e.target.value), true);
+  ytPlayer.seekTo(currentSongStartSec + Number(e.target.value), true);
 });
