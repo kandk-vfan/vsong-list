@@ -1602,3 +1602,14 @@ body.hjm-theme .status-note-inline{
   align-items:center;
   gap:8px;
 }
+
+.playlist-play-in-app-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+  border:none;
+  color:#e5e7eb;
+  cursor:pointer;
+  padding:4px;
+}
