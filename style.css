@@ -1656,3 +1656,17 @@ body.hjm-theme .status-note-inline{
 #playlists{
   padding-bottom:100px;
 }
+
+.playlist-ctrl-btn:disabled{
+  opacity:0.3;
+  cursor:not-allowed;
+}
+
+.playlist-ctrl-btn:disabled:hover{
+  color:#94a3b8;
+}
+
+#playlistSeek:disabled{
+  opacity:0.3;
+  cursor:not-allowed;
+}
