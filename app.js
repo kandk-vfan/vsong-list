@@ -1302,6 +1302,10 @@ function renderPlaylistAccordion(){
       const uid = window.vsongAuth.auth.currentUser.uid;
       await window.vsongPlaylists.deletePlaylist(uid, btn.dataset.id);
 
+      if(currentPlaylistId === btn.dataset.id){
+        stopPlaylistPlayback();
+      }
+
       if(expandedPlaylistId === btn.dataset.id){
         expandedPlaylistId = null;
       }
@@ -1372,7 +1376,7 @@ function renderPlaylistSongs(playlistId){
         </div>
         <div class="playlist-song-date">${videoDate ? formatDate(videoDate) : ""}</div>
         <div class="playlist-song-duration">${endTime ? formatSeekTime(ytTimeToSeconds(endTime) - ytTimeToSeconds(s.time)) : "-"}</div>
-        <button class="playlist-song-remove" data-title="${escapeHtml(s.title)}" data-artist="${escapeHtml(s.artist)}" data-video-id="${s.videoId}" data-time="${s.time}">削除</button>
+        <button class="playlist-song-remove" data-key="${s.key}" data-title="${escapeHtml(s.title)}" data-artist="${escapeHtml(s.artist)}" data-video-id="${s.videoId}" data-time="${s.time}">削除</button>
       </div>
     `;
     }).join("");
@@ -1405,6 +1409,12 @@ function renderPlaylistSongs(playlistId){
 
     el.querySelectorAll(".playlist-song-remove").forEach(btn => {
       btn.addEventListener("click", async () => {
+        if(!confirm(`「${btn.dataset.title}」をリストから削除しますか？`)) return;
+
+        if(btn.dataset.key === nowPlayingKey){
+          stopPlaylistPlayback();
+        }
+
         await window.vsongPlaylists.removeSongFromPlaylist(
           uid, playlistId, btn.dataset.title, btn.dataset.artist, btn.dataset.videoId, btn.dataset.time
         );
@@ -1726,6 +1736,33 @@ function startPlaylistSeekTimer(){
 
 function stopPlaylistSeekTimer(){
   clearInterval(playlistSeekTimer);
+}
+
+function stopPlaylistPlayback(){
+  if(ytPlayer && typeof ytPlayer.stopVideo === "function"){
+    ytPlayer.stopVideo();
+  }
+
+  playlistQueue = [];
+  playlistQueueIndex = -1;
+  nowPlayingKey = null;
+  currentPlaylistId = null;
+  currentSongStartSec = 0;
+  currentSongEndSec = null;
+
+  document.getElementById("playlistNowTitle").textContent = "再生する曲を選んでください";
+  document.getElementById("playlistNowArtist").textContent = "";
+  document.getElementById("playlistElapsed").textContent = "0:00";
+  document.getElementById("playlistDuration").textContent = "0:00";
+
+  const seekEl = document.getElementById("playlistSeek");
+  seekEl.value = 0;
+  seekEl.max = 100;
+
+  updatePlaylistPlayIcon(false);
+  stopPlaylistSeekTimer();
+
+  document.querySelectorAll(".playlist-song-row").forEach(r => r.classList.remove("now-playing"));
 }
 
 let endedAdvancePending = false;
