@@ -1684,3 +1684,13 @@ body.hjm-theme .status-note-inline{
   opacity:0.3;
   cursor:not-allowed;
 }
+
+.playlist-ctrl-btn svg{
+  width:22px;
+  height:22px;
+}
+
+.playlist-ctrl-main svg{
+  width:26px;
+  height:26px;
+}
