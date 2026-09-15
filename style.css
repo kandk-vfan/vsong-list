@@ -1450,8 +1450,7 @@ body.hjm-theme .status-note-inline{
 
 .playlist-accordion-body-scroll{
   max-height:420px;
-  overflow-y:auto;
-  scrollbar-gutter:stable;
+  overflow-y:scroll;
 }
 
 .playlist-now-playing{
