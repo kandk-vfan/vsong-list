@@ -1353,6 +1353,17 @@ function renderPlaylistSongs(playlistId){
       return (live?.status || "public") === "public";
     });
 
+    if(playlistId === currentPlaylistId){
+      const eligibleKeys = songs
+        .filter(s => {
+          const live = data.find(d => d.videoId === s.videoId && d.time === s.time);
+          return live?.endTime;
+        })
+        .map(s => s.key);
+
+      reconcilePlaylistQueue(eligibleKeys);
+    }
+
     if(songs.length === 0){
       el.innerHTML = `<p class="playlist-empty-hint">${allSongs.length === 0 ? "まだ曲がありません。曲一覧・配信一覧の＋ボタンから追加できます" : "視聴可能な曲がありません(非公開になった曲は自動的に非表示になっています)"}</p>`;
       return;
@@ -1521,8 +1532,7 @@ let ytPlayer = null;
 let ytPlayerReady = false;
 let pendingPlaylistPlay = null;
 
-let playlistQueue = [];
-let playlistQueueIndex = -1;
+let queueKeys = [];
 let isShuffleOn = false;
 let repeatMode = "off"; // "off" | "all" | "one"
 let playlistSeekTimer = null;
@@ -1651,56 +1661,60 @@ function playPlaylistSongFrom(btn){
   const clickedSong = eligibleBase.find(s => s.key === clickedKey);
 
   if(!clickedSong){
-    playlistQueue = [];
-    playlistQueueIndex = -1;
+    queueKeys = [];
     const clicked = allSongs.find(s => s.key === clickedKey);
     if(clicked) startPlaylistSong(clicked);
     return;
   }
 
   if(isShuffleOn){
-    const rest = eligibleBase.filter(s => s.key !== clickedKey);
-    playlistQueue = [clickedSong, ...shuffleArray(rest)];
-    playlistQueueIndex = 0;
+    const rest = eligibleBase.filter(s => s.key !== clickedKey).map(s => s.key);
+    queueKeys = [clickedKey, ...shuffleArray(rest)];
   }else{
-    playlistQueue = eligibleBase;
-    playlistQueueIndex = eligibleBase.findIndex(s => s.key === clickedKey);
+    queueKeys = eligibleBase.map(s => s.key);
   }
 
   startPlaylistSong(clickedSong);
 }
 
+function getPlaylistSongByKey(key){
+  const body = document.querySelector(`.playlist-accordion-body[data-body-id="${currentPlaylistId}"]`);
+  if(!body) return null;
+  return collectPlaylistSongsFromDOM(body).find(s => s.key === key) || null;
+}
+
 function playlistNext(){
-  if(playlistQueue.length === 0) return;
+  if(queueKeys.length === 0) return;
 
   if(repeatMode === "one"){
-    startPlaylistSong(playlistQueue[playlistQueueIndex]);
+    const song = getPlaylistSongByKey(nowPlayingKey);
+    if(song) startPlaylistSong(song);
     return;
   }
 
-  playlistQueueIndex++;
-  if(playlistQueueIndex >= playlistQueue.length){
-    if(repeatMode !== "all"){
-      playlistQueueIndex = playlistQueue.length - 1;
-      return;
-    }
-    playlistQueueIndex = 0;
+  let idx = queueKeys.indexOf(nowPlayingKey);
+  idx++;
+  if(idx >= queueKeys.length){
+    if(repeatMode !== "all") return;
+    idx = 0;
   }
-  startPlaylistSong(playlistQueue[playlistQueueIndex]);
+
+  const song = getPlaylistSongByKey(queueKeys[idx]);
+  if(song) startPlaylistSong(song);
 }
 
 function playlistPrev(){
-  if(playlistQueue.length === 0) return;
+  if(queueKeys.length === 0) return;
 
-  playlistQueueIndex--;
-  if(playlistQueueIndex < 0){
-    if(repeatMode !== "all"){
-      playlistQueueIndex = 0;
-      return;
-    }
-    playlistQueueIndex = playlistQueue.length - 1;
+  let idx = queueKeys.indexOf(nowPlayingKey);
+  idx--;
+  if(idx < 0){
+    if(repeatMode !== "all") return;
+    idx = queueKeys.length - 1;
   }
-  startPlaylistSong(playlistQueue[playlistQueueIndex]);
+
+  const song = getPlaylistSongByKey(queueKeys[idx]);
+  if(song) startPlaylistSong(song);
 }
 
 function updatePlaylistPlayIcon(isPlaying){
@@ -1745,8 +1759,7 @@ function stopPlaylistPlayback(){
     ytPlayer.stopVideo();
   }
 
-  playlistQueue = [];
-  playlistQueueIndex = -1;
+  queueKeys = [];
   nowPlayingKey = null;
   currentPlaylistId = null;
   currentSongStartSec = 0;
@@ -1765,6 +1778,27 @@ function stopPlaylistPlayback(){
   stopPlaylistSeekTimer();
 
   document.querySelectorAll(".playlist-song-row").forEach(r => r.classList.remove("now-playing"));
+}
+
+function reconcilePlaylistQueue(currentKeys){
+  if(!isShuffleOn){
+    queueKeys = currentKeys;
+    return;
+  }
+
+  const idx = queueKeys.indexOf(nowPlayingKey);
+  const before = idx >= 0 ? queueKeys.slice(0, idx + 1).filter(k => currentKeys.includes(k)) : [];
+  let after = queueKeys.slice(idx + 1).filter(k => currentKeys.includes(k));
+
+  const known = new Set(queueKeys);
+  const newKeys = currentKeys.filter(k => !known.has(k));
+
+  newKeys.forEach(k => {
+    const pos = Math.floor(Math.random() * (after.length + 1));
+    after.splice(pos, 0, k);
+  });
+
+  queueKeys = before.concat(after);
 }
 
 let endedAdvancePending = false;
@@ -1818,21 +1852,23 @@ document.getElementById("playlistShuffleBtn").addEventListener("click", (e) => {
   isShuffleOn = !isShuffleOn;
   e.currentTarget.classList.toggle("active", isShuffleOn);
 
-  if(playlistQueue.length === 0) return;
+  if(queueKeys.length === 0) return;
 
-  const played = playlistQueue.slice(0, playlistQueueIndex + 1);
-  const playedKeys = new Set(played.map(s => s.key));
+  const idx = queueKeys.indexOf(nowPlayingKey);
+  const played = idx >= 0 ? queueKeys.slice(0, idx + 1) : [];
+  const playedSet = new Set(played);
+
   let remaining;
 
   if(isShuffleOn){
-    remaining = shuffleArray(playlistQueue.slice(playlistQueueIndex + 1));
+    remaining = shuffleArray(queueKeys.slice(idx + 1));
   }else{
     const body = document.querySelector(`.playlist-accordion-body[data-body-id="${currentPlaylistId}"]`);
-    const naturalOrder = body ? collectPlaylistSongsFromDOM(body).filter(s => s.endTime) : playlistQueue;
-    remaining = naturalOrder.filter(s => !playedKeys.has(s.key));
+    const naturalOrder = body ? collectPlaylistSongsFromDOM(body).filter(s => s.endTime).map(s => s.key) : queueKeys;
+    remaining = naturalOrder.filter(k => !playedSet.has(k));
   }
 
-  playlistQueue = played.concat(remaining);
+  queueKeys = played.concat(remaining);
 });
 
 const REPEAT_ONE_ICON_SVG = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/><text x="12" y="15" font-size="9" fill="currentColor" stroke="none" text-anchor="middle">1</text></svg>';
