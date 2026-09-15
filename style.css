@@ -1482,9 +1482,12 @@ body.hjm-theme .status-note-inline{
 
 .playlist-controlbar{
   position:fixed;
-  left:0;
-  right:0;
+  left:50%;
   bottom:0;
+  transform:translateX(-50%);
+  width:100%;
+  max-width:1350px;
+  box-sizing:border-box;
   background:#111827;
   border-top:1px solid #334155;
   padding:12px 20px;
