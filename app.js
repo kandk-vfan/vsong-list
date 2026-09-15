@@ -1638,11 +1638,15 @@ function playPlaylistSongFrom(btn){
     return;
   }
 
-  const rest = eligibleBase.filter(s => s.key !== clickedKey);
-  const orderedRest = isShuffleOn ? shuffleArray(rest) : rest;
+  if(isShuffleOn){
+    const rest = eligibleBase.filter(s => s.key !== clickedKey);
+    playlistQueue = [clickedSong, ...shuffleArray(rest)];
+    playlistQueueIndex = 0;
+  }else{
+    playlistQueue = eligibleBase;
+    playlistQueueIndex = eligibleBase.findIndex(s => s.key === clickedKey);
+  }
 
-  playlistQueue = [clickedSong, ...orderedRest];
-  playlistQueueIndex = 0;
   startPlaylistSong(clickedSong);
 }
 
