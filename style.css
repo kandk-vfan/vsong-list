@@ -1440,6 +1440,8 @@ body.hjm-theme .status-note-inline{
 }
 
 .playlist-song-header-duration{
+  display:block;
+  width:100%;
   text-align:right;
 }
 
