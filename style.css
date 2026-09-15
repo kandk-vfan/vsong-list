@@ -1458,11 +1458,24 @@ body.hjm-theme .status-note-inline{
 }
 
 #playlistPlayerVideoContainer{
+  position:relative;
   aspect-ratio:16/9;
   background:#000;
   border-radius:8px;
   overflow:hidden;
   margin-bottom:10px;
+}
+
+.playlist-player-overlay{
+  position:absolute;
+  inset:0;
+  background:transparent;
+  cursor:default;
+  z-index:5;
+}
+
+.playlist-player-overlay.hidden{
+  display:none;
 }
 
 #playlistPlayerVideo{
