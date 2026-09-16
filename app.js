@@ -1862,7 +1862,7 @@ function onPlaylistPlayerStateChange(event){
 
     setTimeout(() => {
       playlistNext();
-    }, 1000);
+    }, 1200);
   }
 }
 
