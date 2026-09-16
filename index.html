@@ -420,6 +420,14 @@
 </div>
 
 <script type="module" src="firebase-init.js"></script>
+<script>
+  window.onYouTubeIframeAPIReady = function(){
+    window.__ytApiReady = true;
+    if(window.__initYtPlayer){
+      window.__initYtPlayer();
+    }
+  };
+</script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script src="app.js"></script>
 </body>
