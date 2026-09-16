@@ -238,7 +238,7 @@ video: https://www.youtube.com/watch?v=K0_Md4hINEI
 
 video: https://www.youtube.com/watch?v=rEZnPy--1EY
 
-0:05:10 MONOCHROME / 水槽
+0:05:12-0:08:17 MONOCHROME / 水槽
 0:11:44 Sleepwalk / なとり
 0:17:06 チョコレートミルク / あぷえら
 0:21:28 Midnight Mayoi / Mori Calliope × Kobo Kanaeru
