@@ -1564,7 +1564,7 @@ let currentSongStartSec = 0;
 let currentSongEndSec = null;
 let currentPlaylistId = null;
 
-function onYouTubeIframeAPIReady(){
+window.__initYtPlayer = function(){
   ytPlayer = new YT.Player("playlistPlayerVideo", {
     height: "100%",
     width: "100%",
@@ -1581,6 +1581,10 @@ function onYouTubeIframeAPIReady(){
       onStateChange: onPlaylistPlayerStateChange
     }
   });
+}
+
+if(window.__ytApiReady){
+  window.__initYtPlayer();
 }
 
 function playlistPlayVideo(videoId, startSeconds, endSeconds){
