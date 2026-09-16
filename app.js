@@ -1857,6 +1857,10 @@ function onPlaylistPlayerStateChange(event){
     updatePlaylistPlayIcon(false);
     stopPlaylistSeekTimer();
 
+    const seekEl = document.getElementById("playlistSeek");
+    seekEl.value = seekEl.max;
+    document.getElementById("playlistElapsed").textContent = document.getElementById("playlistDuration").textContent;
+
     if(endedAdvancePending) return;
     endedAdvancePending = true;
 
