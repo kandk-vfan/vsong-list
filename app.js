@@ -1637,6 +1637,8 @@ function collectPlaylistSongsFromDOM(bodyEl){
 }
 
 function startPlaylistSong(song){
+  endedAdvancePending = false;
+
   const startSec = ytTimeToSeconds(song.time);
   const endSec = song.endTime ? ytTimeToSeconds(song.endTime) : null;
 
@@ -1843,9 +1845,9 @@ let endedAdvancePending = false;
 
 function onPlaylistPlayerStateChange(event){
   if(event.data === YT.PlayerState.PLAYING){
+    if(endedAdvancePending) return;
     updatePlaylistPlayIcon(true);
     startPlaylistSeekTimer();
-    endedAdvancePending = false;
   }
 
   if(event.data === YT.PlayerState.PAUSED){
