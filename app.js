@@ -1637,8 +1637,6 @@ function collectPlaylistSongsFromDOM(bodyEl){
 }
 
 function startPlaylistSong(song){
-  endedAdvancePending = false;
-
   const startSec = ytTimeToSeconds(song.time);
   const endSec = song.endTime ? ytTimeToSeconds(song.endTime) : null;
 
@@ -1845,9 +1843,9 @@ let endedAdvancePending = false;
 
 function onPlaylistPlayerStateChange(event){
   if(event.data === YT.PlayerState.PLAYING){
-    if(endedAdvancePending) return;
     updatePlaylistPlayIcon(true);
     startPlaylistSeekTimer();
+    endedAdvancePending = false;
   }
 
   if(event.data === YT.PlayerState.PAUSED){
@@ -1859,16 +1857,10 @@ function onPlaylistPlayerStateChange(event){
     updatePlaylistPlayIcon(false);
     stopPlaylistSeekTimer();
 
-    const seekEl = document.getElementById("playlistSeek");
-    seekEl.value = seekEl.max;
-    document.getElementById("playlistElapsed").textContent = document.getElementById("playlistDuration").textContent;
-
     if(endedAdvancePending) return;
     endedAdvancePending = true;
 
     setTimeout(() => {
-      document.getElementById("playlistElapsed").textContent = "0:00";
-      document.getElementById("playlistDuration").textContent = "0:00";
       playlistNext();
     }, 500);
   }
