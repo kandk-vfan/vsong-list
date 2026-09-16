@@ -1865,6 +1865,8 @@ function onPlaylistPlayerStateChange(event){
     endedAdvancePending = true;
 
     setTimeout(() => {
+      document.getElementById("playlistElapsed").textContent = "0:00";
+      document.getElementById("playlistDuration").textContent = "0:00";
       playlistNext();
     }, 500);
   }
