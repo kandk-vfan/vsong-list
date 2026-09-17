@@ -1524,26 +1524,26 @@ video: https://www.youtube.com/watch?v=9LVblkX682s
 
 video: https://www.youtube.com/watch?v=dOtxvrd_c3A
 
-0:05:21 長い間 / Kiroro
-0:12:18 あの娘シークレット / Eve
-0:18:48 Little Bouquet / Aimer
-0:25:05 ミスター･ブルースカイ / マカロニえんぴつ
-0:30:47 Feel so good / supercell
-0:37:15 HACK / Shuta Sueyoshi
-0:42:20 秒針を噛む / ずっと真夜中でいいのに。
-0:48:23 Happy Birthday to you you / YUI
-0:54:36 Last Summer / 加藤ミリヤ
-1:01:46 Os-宇宙人 / エリオをかまってちゃん
-1:10:10 祝日天国 / 35.7
-1:17:34 夜の踊り子 / サカナクション
-1:24:36 キタカゼ / SIX LOUNGE
-1:32:40 ふりそでーしょん / きゃりーぱみゅぱみゅ
-1:39:24 ミッドナイト・リフレクション / NOMELON NOLEMON
-1:47:31 香水 / 瑛人
-1:55:33 寄り酔い / 和ぬか
-2:10:48 夏の林檎 / Kalafina
-2:18:52 カタオモイ / Aimer
-2:24:21 魔法の人 / 奥華子
+0:05:20-0:10:05 長い間 / Kiroro
+0:12:15-0:16:07 あの娘シークレット / Eve
+0:18:47-0:22:58 Little Bouquet / Aimer
+0:25:03-0:28:59 ミスター･ブルースカイ / マカロニえんぴつ
+0:30:43-0:35:41 Feel so good / supercell
+0:37:12-0:40:27 HACK / Shuta Sueyoshi
+0:42:18-0:46:34 秒針を噛む / ずっと真夜中でいいのに。
+0:48:23-0:52:24 Happy Birthday to you you / YUI
+0:54:35-0:59:25 Last Summer / 加藤ミリヤ
+1:01:45-1:05:05 Os-宇宙人 / エリオをかまってちゃん
+1:10:09-1:14:09 祝日天国 / 35.7
+1:17:33-1:22:34 夜の踊り子 / サカナクション
+1:24:36-1:28:08 キタカゼ / SIX LOUNGE
+1:32:45-1:36:54 ふりそでーしょん / きゃりーぱみゅぱみゅ
+1:39:22-1:43:02 ミッドナイト・リフレクション / NOMELON NOLEMON
+1:47:30-1:51:40 香水 / 瑛人
+1:55:38-1:59:19 寄り酔い / 和ぬか
+2:10:46-2:14:47 夏の林檎 / Kalafina
+2:18:51-2:22:23 カタオモイ / Aimer
+2:24:20-2:28:52 魔法の人 / 奥華子
 
 video: https://www.youtube.com/watch?v=hmH92h-S4bw
 
