@@ -385,7 +385,7 @@ function renderPlaylistAddButton(item){
   if(!currentUsername) return "";
   if(!item.status || item.status !== "public") return "";
 
-  return `<button class="playlist-add-btn" data-title="${escapeHtml(item.title)}" data-artist="${escapeHtml(item.artist)}" data-video-id="${item.videoId}" data-time="${item.time}" data-end-time="${item.endTime || ""}" data-note="${escapeHtml(item.note || "")}" title="ブックマーク(曲)に追加">＋</button>`;
+  return `<button class="playlist-add-btn" data-title="${escapeHtml(item.title)}" data-artist="${escapeHtml(item.artist)}" data-video-id="${item.videoId}" data-time="${item.time}" data-end-time="${item.endTime || ""}" data-note="${escapeHtml(item.note || "")}" title="プレイリストに追加">＋</button>`;
 }
 
 function formatDateTime(iso){
