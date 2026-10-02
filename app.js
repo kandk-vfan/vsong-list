@@ -649,9 +649,11 @@ function renderStreams(){
 
     const filtered = unique;
 
-    // 備考で表示したいワード (部分一致で検索される)
+    // 配信一覧ページの備考で表示したいワード (部分一致で検索される)
     const streamNoteKeywords = [
-      "ミュート"
+      "ミュート",
+      "練習",
+      "途中"
     ];
     
     const notes = unique
