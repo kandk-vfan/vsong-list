@@ -384,15 +384,11 @@ function renderSongs(){
     const notes = s.notes;
     const noteList = [...notes];
     const muteNote = noteList.find(n => n.includes("ミュート"));
-    const practiceNote = noteList.find(n => n.includes("練習"));
-    const midNote = noteList.find(n => n.includes("途中"));
     const labels = [];
   
     if(notes.has("")) labels.push("音源");
     if(notes.has("弾き語り")) labels.push("弾き語り");
     if(muteNote) labels.push(muteNote);
-    if(practiceNote) labels.push(practiceNote);
-    if(midNote) labels.push(midNote);
   
     if(labels.length === 1 && labels[0] === "音源"){
       s.displayNote = "";
