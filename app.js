@@ -804,7 +804,9 @@ function renderStreamList(config){
 
     // 備考で表示したいワード (部分一致で検索される)
     const streamNoteKeywords = [
-      "ミュート"
+      "ミュート",
+      "途中",
+      "練習"
     ];
     
     const notes = unique
