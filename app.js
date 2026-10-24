@@ -1,4 +1,5 @@
 let data = [];
+let dataLoaded = false;
 let currentRangeType = null;
 
 const STORAGE_KEY = "tableTheme";
@@ -340,6 +341,7 @@ Promise.all([
     title: normalize(d.title),
     artist: normalize(d.artist)
   }));
+  dataLoaded = true;
 
   document.querySelectorAll(".statusCheckedAt").forEach(el=>{
     el.textContent = formatDateTime(statusJson?.checkedAt);
@@ -349,6 +351,10 @@ Promise.all([
   document.querySelectorAll(".endDate").forEach(el=>el.value="");
 
   renderAll();
+
+  if(expandedPlaylistId && window.vsongAuth?.auth?.currentUser){
+    renderPlaylistSongs(expandedPlaylistId);
+  }
 });
 
 function key(d){
@@ -1360,7 +1366,8 @@ function renderPlaylistSongs(playlistId){
   unsubPlaylistSongs = window.vsongPlaylists.watchPlaylistSongs(uid, playlistId, allSongs => {
     const songs = allSongs.filter(s => {
       const live = data.find(d => d.videoId === s.videoId && d.time === s.time);
-      return (live?.status || "public") === "public";
+      if(!live) return !dataLoaded;
+      return (live.status || "public") === "public";
     });
 
     const countEl = document.querySelector(`.playlist-count[data-count-id="${playlistId}"]`);
