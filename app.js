@@ -1358,13 +1358,13 @@ function renderPlaylistSongs(playlistId){
   const uid = window.vsongAuth.auth.currentUser.uid;
 
   unsubPlaylistSongs = window.vsongPlaylists.watchPlaylistSongs(uid, playlistId, allSongs => {
-    const countEl = document.querySelector(`.playlist-count[data-count-id="${playlistId}"]`);
-    if(countEl) countEl.textContent = `(${allSongs.length}曲)`;
-
     const songs = allSongs.filter(s => {
       const live = data.find(d => d.videoId === s.videoId && d.time === s.time);
       return (live?.status || "public") === "public";
     });
+
+    const countEl = document.querySelector(`.playlist-count[data-count-id="${playlistId}"]`);
+    if(countEl) countEl.textContent = `(${songs.length}曲)`;
 
     if(playlistId === currentPlaylistId){
       const eligibleKeys = songs
