@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - hjm
-      - kawaui
-      - snowshir
       - onlyfortest
   workflow_dispatch: {}
 
@@ -31,34 +29,6 @@ jobs:
 
       - run: |
           cd tmp-hjm
-          node convert.js
-        env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-
-      # ======================
-      # kawaui
-      # ======================
-      - uses: actions/checkout@v4
-        with:
-          ref: kawaui
-          path: tmp-kawaui
-
-      - run: |
-          cd tmp-kawaui
-          node convert.js
-        env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-
-      # ======================
-      # snowshir
-      # ======================
-      - uses: actions/checkout@v4
-        with:
-          ref: snowshir
-          path: tmp-snowshir
-
-      - run: |
-          cd tmp-snowshir
           node convert.js
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
@@ -106,16 +76,6 @@ jobs:
       - run: |
           mkdir -p public/hjm
           rsync -av --exclude='.git' --exclude='.github' tmp-hjm/ public/hjm/
-
-      # copy kawaui
-      - run: |
-          mkdir -p public/kawaui
-          rsync -av --exclude='.git' --exclude='.github' tmp-kawaui/ public/kawaui/
-
-      # copy snowshir
-      - run: |
-          mkdir -p public/snowshir
-          rsync -av --exclude='.git' --exclude='.github' tmp-snowshir/ public/snowshir/
 
       # copy onlyfortest
       - run: |
